@@ -1,59 +1,80 @@
-# Reproduction et critères de réussite
+# Reproduction and success criteria
 
-Le point d’entrée est `python scripts/reproduce.py`. Toutes les commandes utilisent le même `sys.executable`, y compris dans les sous-processus. Les paramètres principaux sont versionnés dans `config/reproduction.json`.
+Run commands from a complete repository checkout or source archive, using the Python 3.12 environment in the root [README](../README.md). The engine wheel alone does not include research data or audit scripts. `scripts/reproduce.py` uses the same `sys.executable` for all subprocesses. Main settings are versioned in `config/reproduction.json`.
 
-| Profil | Travail exécuté |
+## Profiles
+
+| Profile | Work performed |
 |---|---|
-| `proofs` | Reconstruit le nouveau dual depuis les contraintes ; exporte les preuves rédigées et contrôle les identités/certificats rationnels |
-| `market` | Rejoue un instantané brut, reconstruit sélection/courbes/grille, résout les deux schémas puis leur intersection avec un témoin commun |
-| `core` | Preuves, certificat polynomial d’origine et nouvel ajustement, marché `attempt_03`, traçabilité complète, exemples discriminants et vérification des archives numériques |
-| `study` | Revérifie les preuves archivées puis recalcule les 12 cas avec leurs CSV originaux, sur trois niveaux |
-| `all` | `core`, les quatre instantanés du 26 octobre et les 12 cas recalculés |
-
-Exemple :
+| `proofs` | Rebuild the additional dual from constraints, export written proofs, and check rational identities and certificates |
+| `market` | Replay one raw snapshot, reconstruct selection/curves/grid, solve both stencils and their intersection with a common witness |
+| `core` | Proofs, original and newly fitted polynomial certificates, `attempt_03`, provenance, discriminating examples, and archived numerical verification |
+| `study` | Reverify archived evidence and recompute 12 cases from their original CSV inputs on three levels |
+| `all` | `core`, all four historical snapshots, and all 12 recomputed synthetic cases |
 
 ```powershell
-& $PyDupire scripts/reproduce.py --profile market --snapshot live_capture --out runs/rejeu_capture
+& $PyDupire scripts/reproduce.py --profile core --out runs/reproduction
+& $PyDupire scripts/reproduce.py --profile market --snapshot live_capture --out runs/replay_capture
+& $PyDupire scripts/reproduce.py --profile all --out runs/full_reproduction
 ```
 
-`live_capture` est le nom d’un **instantané historique**, collecté le 26 octobre à 20:09 UTC. Il ne déclenche aucun téléchargement actuel.
+Each command needs a different empty output directory. `live_capture` was recorded on 26 October 2026 at 20:09 UTC and makes no fresh Yahoo request.
 
-Le parcours marché vérifie le statut exact, le nombre d’observations, la géométrie reconstruite et son identité avec l’original. Le critère `joint` produit un unique vecteur rationnel, contrairement aux deux témoins distincts du lanceur historique `valider_yahoo.py`. Le script d’audit relie ce certificat jusqu’aux lignes bid/ask brutes.
-
-Chaque échec donne un code de sortie non nul, un `summary.json` avec `status: failed` et un journal précis. Un dossier de sortie non vide est refusé. Les entrées figées ne sont jamais écrasées. Les données téléchargées ne sont publiées à leur chemin final qu’après contrôle de taille et de SHA-256.
-
-## Ce qui est reproduit exactement
-
-Les octets bruts, les observations originales, les contraintes rationnelles, les marges des certificats duals et les identités algébriques décrites sont contrôlés exactement. Une empreinte lie des octets ; elle n’authentifie pas Yahoo.
-
-Le nouvel ajustement polynomial retrouve la conclusion certifiée avec des paramètres décimaux exacts 0.18 et 0.22. Le témoin d’origine utilisait des bornes enregistrées en rationnels issus de binary64 : il est conservé et vérifié séparément, sans lui substituer les paramètres décimaux du nouvel ajustement.
-
-Les fichiers `.npz`, les témoins numériques et les rapports de l’étude d’origine restent dans `reference/study/`. Leur environnement d’origine est enregistré dans chaque `report.json`. Le verrou actuel ne prétend pas reconstituer cet ancien environnement CUDA. Le recalcul utilise leurs **CSV originaux**, ce qui préserve les entrées malgré les différences d’arrondi entre générateurs CPU et GPU. Les temps, bases du solveur et décisions numériques indéterminées peuvent varier ; les nouveaux résultats sont conservés pour comparaison. Les témoins primaux de cette étude sont contrôlés numériquement ; leurs certificats duals portent sur les LP binary64 enregistrés.
-
-Le profil `all`/`study` produit aussi `study_comparison.json` et exige les mêmes 108 modèles LP et conclusions. Dans l’environnement verrouillé testé, les 32 conclusions numériques positives, 70 négatives certifiées et 6 indéterminées sont retrouvées. Si un autre environnement les modifie, le parcours s’arrête et conserve le détail de l’écart ; il ne transforme pas cet écart en reproduction réussie.
-
-Les 12 cas ne sont pas douze journées de marché : ce sont des expériences synthétiques BS/discrètes/perturbées/Heston. Les quatre instantanés Yahoo concernent une seule journée. Les profils de reproduction n’effectuent aucun appel Ollama et ne convertissent jamais les annotations bibliographiques en lectures acceptées.
-
-## Autres commandes
+For the manuscript's original computation tree, check out commit `173d1cf0c941a14669bb14fd65ac438f7796a0de` in a separate clean directory before installation. To fetch its archived inputs explicitly:
 
 ```powershell
-# Contrôler un nouveau dossier Yahoo terminé, sans résolution ni réseau
-& $PyDupire valider_yahoo.py --verify runs/nouveau_marche
+& $PyDupire scripts/download_data.py frozen --source github `
+  --repo malikberrada/DupireLocalVolatilityForward `
+  --ref 173d1cf0c941a14669bb14fd65ac438f7796a0de
+```
 
-# Contrôler uniquement les preuves archivées de l’étude
+## Outputs and failure handling
+
+The market workflow checks exact status, observation counts, reconstructed geometry, and agreement with the original grid. `joint` returns one rational vector. The historical `valider_yahoo.py` launcher returns separate forward and backward witnesses. The provenance audit links the joint certificate back to the raw bid-ask records.
+
+A failed step produces a nonzero exit, a `summary.json` with `status: failed`, and a diagnostic log. Nonempty output directories are rejected. Frozen inputs are not overwritten. Downloads are installed at their destination only after size and SHA-256 checks.
+
+Successful runs write `summary.json`, `environment.json`, commands and step logs, and `outputs.sha256.json`. `study` and `all` also write `study_comparison.json`.
+
+## Exact and numerical evidence
+
+Raw bytes, original observations, rational constraints, dual margins, and the specified algebraic identities are checked exactly. A hash binds bytes; it does not authenticate Yahoo.
+
+The new polynomial fit interprets the parameter strings `0.18` and `0.22` exactly before squaring. The original witness used rational representations of recorded binary64 bounds and is verified separately, without substituting the new decimal parameters.
+
+Archived `.npz` models, numerical witnesses, and reports remain in `reference/study/`. Each `report.json` records the original environment. The current lock does not recreate that older CUDA environment. Recalculation replays the **original CSV inputs**, preserving inputs despite rounding differences between CPU and GPU generators.
+
+The archived study contains 108 comparisons: 12 synthetic cases, three refinement levels, and `F0`/forward/backward models. It contains 32 numerical feasible witnesses, 70 exact negative certificates for the stored binary64 LPs, and six indeterminate outcomes. `study` and `all` require the same LP models and conclusions; any difference stops the workflow and is retained in the comparison file. Solver bases, timings, and selected witnesses may vary.
+
+The 12 cases are synthetic Black-Scholes, discrete, perturbed, and Heston experiments. The four Yahoo snapshots are from one date. Reproduction profiles make no Ollama calls and do not accept bibliographic annotations as human-reviewed readings.
+
+## Independent commands
+
+```powershell
+# Inspect a completed new Yahoo run without solving or network access.
+& $PyDupire valider_yahoo.py --verify runs/new_market
+
+# Reverify only the archived synthetic evidence.
 & $PyDupire scripts/verify_reference.py
 
-# Recalcul synthétique depuis la graine (en plus des CSV originaux archivés)
-& $PyDupire -m dupire_joint study --device cpu --seed 20261025 --cases 12 --families bs,discrete,corrupt,heston --nt 5 --nx 25 --stagger --levels 0,1,2 --relax --threads 2 --out runs/etude_generee
+# Reconstruct rational proofs using only the Python standard library.
+& $PyDupire -I -S analyse_dependances/generer_dependances.py --out runs/proofs
+& $PyDupire -I -S runs/proofs/verifier_dependances.py --verify-json runs/proofs/preuves_dependances.json
 
-# Recompiler la note si pdflatex est installé
-& $PyDupire -I -S analyse_dependances/generer_dependances.py --out runs/preuves_pdf --compile-pdf
+# Generate an additional synthetic study from a seed.
+& $PyDupire -m dupire_joint study --device cpu --seed 20261025 --cases 12 --families bs,discrete,corrupt,heston --nt 5 --nx 25 --stagger --levels 0,1,2 --relax --threads 2 --out runs/generated_study
+
+# Recompile the original proof note when pdflatex is installed.
+& $PyDupire -I -S analyse_dependances/generer_dependances.py --out runs/proofs_pdf --compile-pdf
+
+# Test the engine and supporting workflows.
+& $PyDupire -m pytest -q
 ```
 
-Sans `--compile-pdf`, le PDF joint est copié ; les certificats et calculs rationnels sont bien recalculés. Les textes de preuves générales sont exportés depuis le LaTeX rédigé, sans prétendre à une démonstration formelle automatique.
+The seeded study is additional analysis; exact archived comparison uses the original CSVs. Without `--compile-pdf`, the generator copies the supplied PDF. Certificates and rational calculations are still reconstructed. General proof fragments are exported from the authored LaTeX, not discovered or formally proved by the program. The original proof note retains its source language.
 
-## Nettoyage de l’archive d’origine
+## Source provenance
 
-La racine de l’archive contenait un moteur 0.1.1 et un second arbre `source/` en 0.1.6. Le présent dépôt prend **l’arbre 0.1.6**, identique aux modules Python de la roue 0.1.6 fournie. Les anciens correctifs, sauvegardes, roues, archives imbriquées, caches Python et exécutions intermédiaires ont été écartés. Les données/certificats de référence utiles et les tests existants ont été conservés. Les entrées exactes des dossiers scellés restent inchangées et protégées contre la conversion des fins de ligne par `.gitattributes`.
+The source archive originally contained engine 0.1.1 at its root and a second `source/` tree at 0.1.6. This repository uses the 0.1.6 tree, matching the supplied 0.1.6 wheel's Python modules. Old patches, backups, bundled wheels, nested archives, caches, and intermediate runs were removed; useful reference inputs, certificates, and tests were retained. `.gitattributes` protects sealed inputs against line-ending conversion.
 
-Les profils se lancent depuis un checkout ou une archive source complète ; la roue du moteur seule ne contient pas les données de recherche et les scripts d’audit.
+The [validation record](../VALIDATION.md) separates original local receipts from subsequent native Ubuntu/Windows CI. No GPU is required by the locked CPU workflow. Optional CUDA evaluates or generates surfaces; HiGHS LP solving and rational checking remain on CPU.

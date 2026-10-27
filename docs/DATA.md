@@ -1,34 +1,63 @@
-# Données, collecte et provenance
+# Data acquisition and provenance
 
-Les chaînes brutes sont des archives réelles Yahoo reçues par `yfinance.Ticker.option_chain`. Elles contiennent les calls, puts, informations de sous-jacent et heures de requête. La liste exhaustive des échéances, nombres de contrats, tailles et empreintes est dans `data/manifest.json`.
+The raw files are real Yahoo responses obtained through `yfinance.Ticker.option_chain`. They contain calls, puts, underlying information, and request times. [The data manifest](../data/manifest.json) records every expiry, contract count, byte size, and SHA-256 hash.
 
-| ID | Début de collecte UTC, le 26 octobre 2026 | Utilisation |
+| Snapshot ID | Acquisition start on 26 October 2026, UTC | Use |
 |---|---|---|
-| `attempt_01` | 19:31:29 | Rejeu du premier instantané d’origine |
-| `attempt_02` | 19:31:59 | Rejeu du deuxième instantané d’origine |
-| `attempt_03` | 19:32:31 | Entrée principale du critère conjoint et de l’audit de traçabilité |
-| `live_capture` | 20:09:06 | Capture ultérieure du même jour, archivée dans les validations d’origine |
+| `attempt_01` | 19:31:29 | Replay of the first original snapshot |
+| `attempt_02` | 19:31:59 | Replay of the second original snapshot |
+| `attempt_03` | 19:32:31 | Main joint-criterion and provenance input |
+| `live_capture` | 20:09:06 | Later capture from the same date, retained in the original validation |
 
-Une copie incluse au dépôt et un téléchargement GitHub à SHA complet donnent les mêmes octets. Le fournisseur ne propose pas ici un mécanisme de rejeu historique des bid/ask : les appels actuels `option_chain` sont archivés comme de **nouvelles données**, sans remplacer ces quatre instantanés.
+These are four observations from one trading date. `live_capture` is an archive identifier, not an instruction to make a live request.
 
-## Chaîne de traitement
+## Frozen downloads and new observations
 
-1. Le collecteur enregistre le protocole avant téléchargement : symbole `^SPX`, racine `SPXW`, fenêtre de strikes 95 %–105 % du spot, strikes multiples de 50, échéances de 14 à 180 jours, six dates demandées au maximum. Le spot sert à la sélection, jamais comme forward estimé.
-2. Toutes les chaînes reçues restent dans `raw_snapshot.json`. La sélection et les motifs d’exclusion sont enregistrés ; les bid/ask retenus sont inchangés. Une règle fixe pendant un rejeu ne prouve pas rétrospectivement qu’elle a été choisie avant les prix lors du développement.
-3. Les courbes nominales forward/discount sont estimées par la parité call-put. Elles ne sont pas remplacées par des taux ou dividendes inventés.
-4. La normalisation des calls et puts conserve 121 intervalles sur la grille retenue. La monotonie, les pentes, la convexité et les boîtes sont vérifiées exactement sur les coordonnées rationnelles déclarées.
-5. Le lanceur historique certifie séparément forward et backward. Le parcours `scripts/reproduce.py` ajoute le critère **conjoint** et vérifie un seul témoin satisfaisant les deux systèmes.
+A bundled copy and a download pinned to a full Git commit contain the same bytes. From the repository root:
 
-Les garanties sont conditionnelles aux courbes nominales, à la sélection et aux bornes 5 %–100 % annualisées. Les horodatages de récupération/`lastTradeDate` ne sont pas des heures certifiées du bid/ask. Le parcours ne démontre pas une absence d’arbitrage de tous les contrats bruts ni la robustesse à toute l’incertitude sur les courbes.
+```powershell
+& $PyDupire scripts/download_data.py frozen
+& $PyDupire scripts/download_data.py frozen --source github
+```
 
-Le calendrier de collecte intégré couvre 2026–2028. La collecte actuelle respecte les séances régulières prévues et refuse une séance fermée. Cette garde n’est pas une détection des suspensions de marché. Sources techniques du projet : [yfinance](https://github.com/ranaroussi/yfinance), [horaires Cboe](https://www.cboe.com/about/hours/us-options).
+The first command verifies bundled inputs without network access. The second resolves the repository's `origin` and full `HEAD`, then downloads the archived files from GitHub. For a source ZIP without Git metadata:
 
-## Articles bibliographiques
+```powershell
+& $PyDupire scripts/download_data.py frozen --source github `
+  --repo malikberrada/DupireLocalVolatilityForward `
+  --ref 173d1cf0c941a14669bb14fd65ac438f7796a0de
+```
 
-`data/papers_manifest.json` conserve les URLs et empreintes des sept fichiers PDF du dossier d’origine, dont les six textes indexés pour les 18 corrections. Aucun PDF tiers n’est nécessaire à la reproduction numérique principale. `python scripts/download_data.py papers --id BR2016` télécharge une version précise, avec contrôle d’empreinte ; une page HTML, un refus d’accès ou une version modifiée provoquent un échec explicite. Le script ne contourne pas les restrictions d’accès.
+Size and hash checks precede installation at the destination. The default working directory is `data/downloaded/yahoo_20261026/`, with an `acquisition.json` receipt. `--id attempt_03` selects one input; `--out PATH` selects another destination.
 
-Les lectures corrigées dans `reference/readings/` restent en attente de validation. Les empreintes et arguments mathématiques peuvent être vérifiés localement ; récupérer un article n’établit ni sa bonne interprétation, ni une priorité scientifique.
+Current `option_chain` calls cannot recreate the old bid-ask observations. They are archived as new inputs:
 
-## Conditions des tiers
+```powershell
+& $PyDupire scripts/download_data.py live --symbol '^SPX' --root SPXW --out runs/new_capture
+```
 
-La licence MIT du dépôt s’applique au code de l’auteur. Les données Yahoo sont conservées comme entrées de recherche et ne sont pas déclarées sous licence MIT ; les conditions de Yahoo et des ayants droit restent applicables. Les articles appartiennent à leurs auteurs/éditeurs. Les instantanés ne contiennent pas de clés d’API ni de cookies d’authentification et le collecteur ne les demande pas.
+## Processing chain
+
+1. The collector records the protocol: symbol `^SPX`, root `SPXW`, strikes from 95% to 105% of spot in multiples of 50, expiries from 14 to 180 calendar days, and at most six requested dates. Spot determines selection; it is not substituted for the forward.
+2. All received chains remain in `raw_snapshot.json`. Selection and exclusion reasons are recorded. Retained bid-ask intervals are unchanged. A fixed replay rule does not retrospectively establish that every development choice preceded inspection of prices.
+3. Put-call parity determines admissible nominal forward and discount curves. No invented interest rate or dividend series replaces them.
+4. Normalization retains 121 call/put intervals on the selected grid. Price boxes, slopes, convexity, and calendars are checked on the declared rational geometry.
+5. The historical launcher certifies forward and backward separately. `scripts/reproduce.py` additionally solves the **joint** criterion and checks a single common witness.
+
+The market result is conditional on the nominal curves, retained observations, and annualized volatility bounds of 5% to 100%. Retrieval times and `lastTradeDate` are not authenticated bid-ask timestamps. The result does not cover every raw contract or every curve in the parity uncertainty set.
+
+The embedded acquisition calendar covers 2026 through 2028. The collector checks scheduled regular sessions and refuses a closed session; this does not detect every trading halt or later exceptional schedule change. See [Yahoo normalization](YAHOO_NORMALIZATION.md) for settlement overrides. Project sources include [yfinance](https://github.com/ranaroussi/yfinance) and [Cboe trading hours](https://www.cboe.com/about/hours/us-options).
+
+## Bibliographic inputs
+
+`data/papers_manifest.json` records URLs and hashes for seven original PDF files, including the six indexed full texts used by the 18 corrections. Third-party PDFs are optional for the main numerical reproduction.
+
+```powershell
+& $PyDupire scripts/download_data.py papers --id BR2016
+```
+
+The downloader checks the recorded version. HTML responses, access failures, or changed PDF bytes cause explicit failure. It does not bypass access controls. Original corrected readings in `reference/readings/` retain their pending validation status. A retrieved text and its hash do not validate an interpretation or establish scientific priority.
+
+## Third-party terms
+
+The repository's MIT license applies to the author's code. Archived Yahoo data remain subject to Yahoo's and the relevant rights holders' terms; they are not declared MIT-licensed. Articles remain the property of their authors or publishers. The snapshots contain no API keys or authentication cookies, and the collector does not request them.

@@ -1,257 +1,133 @@
-# Compléter les lectures et analyses — 0.5.3
+# Reading and analysis workflow
 
-## Corriger les arguments du cahier v052
+Version **0.5.3**. This workflow retrieves accessible source texts, retains their bytes, extracts page and line locators, prepares C1-C3 comparisons, and incorporates explicitly declared readings. Missing access remains visible. Model output is a draft requiring review against the source, particularly for equations.
 
-Les 18 brouillons ont été produits ; leur réussite structurelle n’est pas une
-validation des arguments. La version 0.5.3 fournit une révision documentée de
-ces analyses. Utiliser `rectifier_lectures.py --workbook ... --campaign ...
---out ...` comme indiqué dans le README. Aucun nouvel appel Ollama n’est requis.
+## Correct the historical v052 workbook
 
-Le dossier de sortie contient `lectures_corrigees.json`, l’entrée initiale,
-les changements par champ, les liaisons aux sources et
-`verification_bibliographique.md`. C’est ce nouveau cahier qu’il faut copier
-hors du dossier scellé pour une lecture et une déclaration ultérieures.
-Ne pas écraser le cahier ni les reçus dans `analyses_bibliographiques_v052`.
+The 18 completed drafts passed structural checks, which do not validate their arguments. Version 0.5.3 supplies documented revisions through `rectifier_lectures.py --workbook ... --campaign ... --out ...`; see the [audit README](README.md). No new Ollama request is required.
 
-La révision retire la référence circulaire dans ZHANG/C3 et les qualifications
-erronées de nécessité de C1. Elle établit une dérivation de la composante seuil
-C3 depuis les contraintes BR et précise l’obstacle à une application littérale
-du lemme S0.2 à toute la classe C1. Les autres dérivabilités restent ouvertes.
-Le rapport explique la portée de chaque conclusion ; aucune lecture intégrale
-ni validation du lecteur ne sont enregistrées automatiquement.
+Outputs include `lectures_corrigees.json`, the original input, field-level changes, source links, and `verification_bibliographique.md`. Copy the corrected workbook outside its sealed output before further review; retain the old workbook and receipts.
 
-## Reprendre les six comparaisons manquantes
+The revision removes the circular ZHANG/C3 reference and incorrect necessity claims for C1. It derives C3's scalar threshold from Buehler-Ryskin inequalities and documents the obstruction to a literal application of Zhang Lemma S0.2 to the full C1 class. It does not automatically record a whole-text reading or accept a reader's interpretation. Later mathematical results are summarized in [the research guide](../docs/RESEARCH.md).
 
-L’exécution 0.5.1 jointe a produit huit nouveaux brouillons et repris les quatre
-anciens : **12 au total**, sans lecture acceptée automatiquement. Le cahier
-confirme deux C1, cinq C2 et cinq C3. Les six paires encore en échec sont :
+## Prepare a campaign
 
-| Paire | Dernière catégorie indiquée par le journal console |
-|---|---|
-| SANOS2026_C1 | invalid_analysis_schema |
-| CCD2020_C1 | incomplete_hypothesis_coverage |
-| ZHANG2025_C1 | invalid_analysis_schema |
-| ZHANG2025_C2 | invalid_analysis_schema |
-| ZHANG2025_C3 | incomplete_hypothesis_coverage |
-| FH2015_C1 | invalid_analysis_schema |
-
-Le détail du champ rejeté n’est pas dans ces deux pièces jointes. Le lire dans
-`analysis_log.json` et les fichiers `diagnostics/*.response.json` du dossier
-0.5.1. Il n’y a pas de troncature signalée dans le journal console fourni.
-Ce constat ne remplace pas l’examen des réponses d’Ollama.
-
-Après extraction du correctif :
+Install from the repository root in `.venv312`; `$PyDupire` is the explicit interpreter defined in the root README.
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py analyser `
-  --campaign .\runs\lectures_bibliographiques_v050 `
-  --model 'qwen3.5:35b' `
-  --resume .\runs\analyses_bibliographiques_v051 `
-  --axes-per-call 1 --retries 2 `
-  --out .\runs\analyses_bibliographiques_v052
+& $PyDupire -m pip install -r audit_apport/requirements_lectures.txt
+
+& $PyDupire -u audit_apport/completer_lectures.py preparer `
+  --priority-dir runs/priorite_bibliographique_v040 `
+  --telecharger --decouvrir --workers 2 --out runs/reading_campaign
 ```
 
-Le programme vérifie les empreintes de la même campagne, copie les douze
-fichiers de brouillons réussis sans les réécrire et relance les six paires
-manquantes. Les cahiers ou dossiers scellés ne doivent pas être modifiés avant
-la reprise. Un nouveau dossier de sortie est nécessaire à chaque exécution.
+`--telecharger` tries named public routes from `bibliography/source_routes.json`. `--decouvrir` also examines Crossref full-text links after known routes fail. There is no paid-account login, author messaging, or access bypass. Progress and access errors are recorded without converting failures into completed readings.
 
-Les six paires totalisent **69 axes**. Avec `--axes-per-call 1`, chaque axe a
-son propre appel ; les échecs peuvent provoquer jusqu’à deux essais
-supplémentaires. Le projet et les passages antérieurs accompagnent chaque
-appel, avec leurs rôles respectifs. Le serveur doit déjà disposer du modèle.
-
-Le schéma 0.5.2 utilise une propriété obligatoire par identifiant d’axe,
-également présentée au modèle dans le prompt. Le décodage ne fait que
-convertir cet objet en la liste habituelle du cahier, dans l’ordre attendu.
-Il ne complète aucun contenu manquant. Un ancien format en liste reste
-accepté si sa couverture exacte et tous ses champs sont valides. Les clés
-JSON dupliquées sont refusées plutôt qu’écrasées silencieusement.
-
-Les valeurs par défaut restent `--num-predict 8000`, `--thinking off`,
-`--axes-per-call 7`, `--retries 1`. Un lot multi-axes rejeté après ces essais
-est repris automatiquement par appels individuels, avec les mêmes contrôles.
-Un problème de connexion ne multiplie pas les appels par hypothèse.
-Une divergence entre les conclusions des appels reste `unresolved`.
-
-Pour consulter le diagnostic après exécution :
+To attach legitimately obtained local texts, repeat preparation into a new output:
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py diagnostiquer `
-  --workbook .\runs\analyses_bibliographiques_v052\lectures_a_valider.json `
-  --analysis-dir .\runs\analyses_bibliographiques_v052
-```
-
-Les nouvelles catégories précisent notamment les champs vides, les relations
-inconnues, les références manquantes et les identifiants incohérents.
-Les messages et `details.path` identifient le champ rejeté. Les diagnostics
-conservent la réponse finale, `done_reason`, les compteurs de tokens et les
-réglages ; le raisonnement privé du modèle n’est pas enregistré.
-Les réponses tronquées, JSON incomplets, citations inventées et demandes
-d’outils restent refusés. Un éventuel bloc Markdown unique entourant un JSON
-complet peut être retiré, en le signalant dans le reçu.
-
-L’ancien tableau homogène imposait le nombre d’entrées, mais ses contraintes
-n’interdisaient pas la répétition d’un identifiant d’axe. C’est une faiblesse
-reproductible du schéma, cohérente avec la catégorie de couverture observée.
-Sans les réponses originales, on ne peut pas affirmer que la duplication
-était la cause précise des deux échecs de couverture du journal.
-La documentation officielle [Ollama : sorties structurées](https://docs.ollama.com/capabilities/structured-outputs)
-décrit le schéma dans `format` et recommande aussi de l’inclure dans le prompt.
-
-Les **19 comparaisons sans source** restent à documenter à l’étape suivante
-de récupération des textes. Une exécution partielle renvoie le code de sortie
-2 tout en conservant ses résultats utilisables. Les brouillons obtenus sont
-à contrôler, corriger et déclarer après lecture ; leur présence ne certifie
-pas la priorité scientifique. La différence de cadre ou l’absence d’une
-formule identique ne suffit pas à exclure un corollaire ou une adaptation.
-
-## Préparer une nouvelle campagne
-
-Ce module reprend le dossier `priorite_bibliographique_v040` déjà vérifié.
-Il récupère les textes accessibles, conserve leurs octets, extrait les pages,
-prépare les comparaisons C1–C3 et intègre des lectures explicitement déclarées.
-Il conserve les lacunes quand un document manque. Une analyse de modèle reste
-un brouillon à contrôler dans le texte source, particulièrement pour les équations.
-
-## 1. Installer l’extracteur PDF et préparer les textes
-
-Depuis le dossier du projet, dans `.venv312` :
-
-```powershell
-python -m pip install -r .\audit_apport\requirements_lectures.txt
-
-python -u .\audit_apport\completer_lectures.py preparer `
-  --priority-dir .\runs\priorite_bibliographique_v040 `
-  --telecharger --decouvrir --workers 2 `
-  --out .\runs\lectures_bibliographiques_v050
-```
-
-`--telecharger` essaie les routes publiques nommées dans
-`bibliography/source_routes.json`. `--decouvrir` consulte aussi les liens de
-texte intégral Crossref après échec des routes connues. Aucun compte payant,
-message aux auteurs ou contournement d’accès n’est effectué.
-Le script affiche l’avancement par travail et consigne les erreurs sans les
-convertir en lectures accomplies.
-
-Pour un PDF obtenu par ta bibliothèque ou l’auteur, l’ajouter à la même commande
-de préparation, dans un nouveau dossier de sortie :
-
-```powershell
-python -u .\audit_apport\completer_lectures.py preparer `
-  --priority-dir .\runs\priorite_bibliographique_v040 `
+& $PyDupire -u audit_apport/completer_lectures.py preparer `
+  --priority-dir runs/priorite_bibliographique_v040 `
   --source 'KKT2024=C:\Articles\KKT2024.pdf' `
-  --source 'KUNDU2017=C:\Articles\These_Kundu.pdf' `
-  --telecharger --decouvrir `
-  --out .\runs\lectures_avec_textes_complets
+  --source 'KUNDU2017=C:\Articles\Kundu_Thesis.pdf' `
+  --telecharger --decouvrir --out runs/campaign_with_sources
 ```
 
-Une nouvelle URL publique peut être ajoutée avec `--url 'WORK_ID=https://...'`.
-Sans `--telecharger`, seuls les fichiers locaux ou déjà joints au dossier sont lus.
-Le CV institutionnel de Tomar n’est jamais téléchargé comme s’il s’agissait de la thèse.
-Les pages éditeur contenant un aperçu, un résumé ou une barrière d’accès sont
-signalées. Un PDF extrait reste un candidat dont l’identité, la version et
-l’étendue doivent être contrôlées : un PDF d’une seule page peut être un aperçu.
+`--url 'WORK_ID=https://...'` adds a public route. Without `--telecharger`, only local or attached files are read. An institutional CV is not treated as a thesis. Abstracts, previews, and access barriers are flagged. An extracted PDF still requires identity, version, and extent checks; a one-page PDF may be a preview.
 
-Les sorties sont :
+| Output | Contents |
+|---|---|
+| `documents.json` | Retrieval outcomes, hashes, and indicative title check |
+| `documents/WORK_ID/pages.json` | Extracted pages and lines |
+| `tasks.json` | 37 comparisons with assumptions and candidate passages |
+| `lectures.md` | Retrieved texts and remaining access gaps |
+| `lectures_a_valider.json` | Workbook requiring review |
 
-- `documents.json` : succès, échecs, empreintes et contrôle indicatif du titre ;
-- `documents/WORK_ID/pages.json` : toutes les pages et lignes extraites ;
-- `tasks.json` : les 37 comparaisons, avec hypothèses et passages candidats ;
-- `lectures.md` : les textes récupérés et les lacunes ;
-- `lectures_a_valider.json` : le cahier de lecture à compléter.
+Locators use **physical PDF pages starting at 1**, not printed page numbers. HTML/text uses labeled virtual blocks of 80 lines. Scans require external OCR; extraction errors remain recorded.
 
-Les localisateurs utilisent les **pages physiques du PDF**, à compter de 1,
-et non les numéros imprimés. Pour HTML/texte, les pages sont explicitement
-des blocs virtuels de 80 lignes. Les scans sans texte demandent un traitement
-OCR externe ; le module ne simule pas leur lecture. Les erreurs d’extraction
-restent enregistrées.
+## Optional local Ollama drafts
 
-## 2. Produire les brouillons d’analyse avec Ollama, si souhaité
-
-Cette étape est facultative. Elle utilise un serveur Ollama **local**, avec un
-modèle déjà installé ; aucun service distant ni téléchargement de modèle n’est
-déclenché par le module. Exemple, si `qwen3.5:35b` est disponible :
+A local Ollama server and an already installed model are required. This module does not download a model or invoke a remote model service.
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py analyser `
-  --campaign .\runs\lectures_bibliographiques_v050 `
-  --model 'qwen3.5:35b' `
-  --out .\runs\analyses_bibliographiques_v050
+& $PyDupire -u audit_apport/completer_lectures.py analyser `
+  --campaign runs/reading_campaign --model 'qwen3.5:35b' `
+  --out runs/reading_drafts
+
+# Start with one comparison.
+& $PyDupire -u audit_apport/completer_lectures.py analyser `
+  --campaign runs/reading_campaign --model 'qwen3.5:35b' `
+  --pair CARR2014_C1 --max-pairs 1 --out runs/carr_c1_draft
 ```
 
-Pour commencer par une comparaison :
+For each work/claim pair and batch, the schema requires all relevant axes (14 for C1, 6 for C2, 7 for C3), prior assumptions and conclusion with quantifiers, direct-specialization analysis, limits, and passage IDs from the supplied source.
+
+Invented passages, missing axes, truncated outputs, and tool requests are rejected. Passage existence can be checked; semantic interpretation cannot. Up to ten selected blocks per comparison do not constitute a whole-work reading. Absence from selected blocks does not mean absence from the source.
+
+Outputs are `WORK_ID_Cn.draft.json`, `analysis_log.json`, and `lectures_a_valider.json`, saved after each comparison. Server failure is explicit. No comparison is accepted automatically; a wholly failed run exits with code 2.
+
+## Resume and diagnose historical partial drafts
+
+The retained 0.5.1 execution contained twelve drafts (two C1, five C2, five C3), none automatically accepted. Its six failed pairs were:
+
+| Pair | Recorded console category |
+|---|---|
+| `SANOS2026_C1` | `invalid_analysis_schema` |
+| `CCD2020_C1` | `incomplete_hypothesis_coverage` |
+| `ZHANG2025_C1` | `invalid_analysis_schema` |
+| `ZHANG2025_C2` | `invalid_analysis_schema` |
+| `ZHANG2025_C3` | `incomplete_hypothesis_coverage` |
+| `FH2015_C1` | `invalid_analysis_schema` |
+
+These are historical run states, not the current 18-draft correction count. The precise rejected fields require that run's `analysis_log.json` and `diagnostics/*.response.json`. Its console log did not report truncation. The old array schema allowed duplicate axis IDs, but the supplied log alone does not establish that duplication caused a particular failure.
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py analyser `
-  --campaign .\runs\lectures_bibliographiques_v050 `
-  --model 'qwen3.5:35b' --pair CARR2014_C1 --max-pairs 1 `
-  --out .\runs\analyse_carr_c1
+& $PyDupire -u audit_apport/completer_lectures.py analyser `
+  --campaign runs/lectures_bibliographiques_v050 --model 'qwen3.5:35b' `
+  --resume runs/analyses_bibliographiques_v051 `
+  --axes-per-call 1 --retries 2 --out runs/resumed_drafts
+
+& $PyDupire -u audit_apport/completer_lectures.py diagnostiquer `
+  --workbook runs/resumed_drafts/lectures_a_valider.json `
+  --analysis-dir runs/resumed_drafts
 ```
 
-Le schéma impose, pour chaque paire travail/revendication, puis dans chaque lot :
+Resume checks the same campaign's hashes, copies successful drafts unchanged, and retries missing comparisons. Do not modify sealed inputs first. The six pairs cover 69 axes; one-axis calls can each incur up to two retries.
 
-1. toutes les hypothèses de la revendication concernée (14 pour C1, 6 pour C2, 7 pour C3) ;
-2. les hypothèses et la conclusion du résultat antérieur, avec les quantificateurs ;
-3. une analyse de spécialisation directe et ses limites ;
-4. des identifiants de passages présents dans le texte réellement fourni.
+The 0.5.2 schema requires a property for every axis ID and includes the schema in the prompt. Decoding converts that object to the workbook's ordered list without filling missing content. Older lists remain accepted only with complete, valid, unique coverage; duplicate JSON keys are rejected.
 
-Le programme refuse les passages inventés, les hypothèses omises, les sorties
-tronquées et les demandes d’outils. Il peut vérifier l’existence d’un passage,
-pas la justesse de l’interprétation du modèle. La sélection fournit jusqu’à dix
-blocs pertinents par comparaison ; elle ne représente pas une lecture de tout
-l’article. Un passage absent de la sélection n’est jamais réputé absent du texte.
+Defaults remain `--num-predict 8000`, `--thinking off`, `--axes-per-call 7`, and `--retries 1`. A rejected multi-axis batch falls back to individual-axis calls with the same checks; connection failures do not multiply per-axis requests. Divergent conclusions remain `unresolved`.
 
-Les résultats arrivent dans `WORK_ID_Cn.draft.json`, `analysis_log.json` et
-`lectures_a_valider.json`. Le cahier est sauvegardé après chaque comparaison.
-Un serveur indisponible produit un échec explicite ; aucune comparaison n’est
-acceptée automatiquement. Si toutes les analyses échouent, le processus sort
-avec le code 2.
+Diagnostics identify empty fields, unknown relations, missing references, and inconsistent IDs through messages and `details.path`. They retain final responses, `done_reason`, token counts, and settings, rather than private reasoning. One complete JSON object wrapped in a Markdown fence may be unwrapped and logged. Incomplete JSON, invented citations, and tool requests remain rejected. See [Ollama structured-output documentation](https://docs.ollama.com/capabilities/structured-outputs).
 
-## 3. Contrôler et déclarer les lectures
+The 19 source-missing comparisons remain open in the archived workbook. Partial runs return code 2 while preserving usable results. Different assumptions or a missing identical formula do not by themselves exclude a corollary or adaptation.
 
-Copier le cahier hors du dossier scellé avant de le modifier :
+## Review and declare readings
+
+Copy the workbook outside the sealed folder:
 
 ```powershell
-Copy-Item .\runs\analyses_bibliographiques_v050\lectures_a_valider.json `
-  .\runs\mes_lectures.json
+Copy-Item runs/reading_drafts/lectures_a_valider.json runs/my_readings.json
 ```
 
-Sans Ollama, partir du cahier produit à l’étape 1. Pour chaque source effectivement
-lue, renseigner `reviewer`, `review_date`, `version_id`, `identity_confirmed`
-et `pages_reviewed`. Contrôler puis corriger les champs `analysis` de chaque
-revendication ; les hypothèses et références doivent refléter la lecture effectuée.
-Les références peuvent viser tous les blocs de l’index, au-delà de la sélection
-initiale. Le format des IDs est `p0001:l0001-0016`.
+Without Ollama, start from preparation's workbook. For each source actually read, supply `reviewer`, `review_date`, `version_id`, `identity_confirmed`, and `pages_reviewed`. Check and correct every claim's `analysis`. References can use any indexed block, including passages beyond the initial selection. IDs have the form `p0001:l0001-0016`.
 
-Après ce contrôle, une comparaison peut être déclarée par commande :
+After actual review, record a comparison:
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py valider `
-  --campaign .\runs\lectures_bibliographiques_v050 `
-  --workbook .\runs\mes_lectures.json `
-  --work-id CARR2014 --claim C1 `
-  --reviewer 'Abdelmalik Berrada' --date 2026-10-27 `
-  --pages '27-30' --scope selected_statement --identity-confirmed `
-  --out .\runs\mes_lectures_carr_validees.json
+& $PyDupire -u audit_apport/completer_lectures.py valider `
+  --campaign runs/reading_campaign --workbook runs/my_readings.json `
+  --work-id CARR2014 --claim C1 --reviewer 'Abdelmalik Berrada' `
+  --date 2026-10-27 --pages '27-30' --scope selected_statement `
+  --identity-confirmed --out runs/carr_reviewed.json
 ```
 
-**Adapter la date et les pages à la lecture réellement effectuée.** La commande
-ne modifie que la décision nommée. Elle contrôle aussi que les passages cités
-se trouvent sur les pages déclarées lues. Pour plusieurs décisions, utiliser
-successivement le dernier cahier obtenu, ou modifier explicitement leurs
-`decision` en `accepted` dans le cahier.
+Use the actual date and pages reviewed. This changes only the named decision and checks that cited passages lie on declared pages. For multiple decisions, use the newest output workbook in each successive command or explicitly edit their `decision` fields to `accepted`.
 
-`selected_statement` convient à une lecture ciblée. `full_work` exige toutes
-les pages déclarées lues, `full_text_extent_confirmed: true`, chaque hypothèse
-résolue et une analyse de dérivabilité renseignée. La commande correspondante
-demande aussi `--extent-confirmed`. La couverture des pages est une déclaration
-du lecteur, pas une preuve automatique de lecture ou de vérité du théorème.
+`selected_statement` records a targeted reading. `full_work` requires all pages declared read, `full_text_extent_confirmed: true`, resolved hypotheses, a derivability analysis, and `--extent-confirmed`. These are reader declarations, not automatic proof of reading or theorem truth.
 
-Si la version effectivement lue diffère du registre, indiquer son identifiant
-exact. Sa date publique reste inconnue tant qu’un événement sourcé ne la relie
-pas à cette version. Le champ facultatif `public_version_event` peut documenter
-ce lien après contrôle de la notice primaire, par exemple :
+Record the exact version actually reviewed. Its public date remains unknown until a sourced event identifies that version. For example, a checked `public_version_event` may contain:
 
 ```json
 {
@@ -264,51 +140,27 @@ ce lien après contrôle de la notice primaire, par exemple :
 }
 ```
 
-Ne pas recopier cet exemple comme date d’un autre travail. Ne pas dater une
-version récente par le premier dépôt d’un autre fichier.
+This example is not another work's publication date. A newer PDF must not be dated by the first submission of a different file.
 
-## 4. Intégrer les analyses validées et revérifier
-
-```powershell
-python -u .\audit_apport\completer_lectures.py exporter `
-  --campaign .\runs\lectures_bibliographiques_v050 `
-  --workbook .\runs\mes_lectures_carr_validees.json `
-  --out .\runs\priorite_bibliographique_v050
-
-python -u .\audit_apport\priorite_bibliographique.py `
-  --verify .\runs\priorite_bibliographique_v050
-```
-
-L’export reprend les preuves mathématiques et la référence publique du projet
-déjà présentes. Il joint automatiquement les sources exactes des décisions
-acceptées, leurs pages/lignes et les annotations par hypothèse. Une comparaison
-ciblée améliore le dossier tout en laissant ouverte l’exclusion du texte entier.
-Les autres lectures manquantes restent ouvertes.
-
-Si la lecture est postérieure à l’arrêté du registre, ajouter à `exporter`
-`--as-of YYYY-MM-DD`. Pour intégrer une référence publique nouvelle du projet,
-ajouter `--project-record chemin.json --project-source article_public.pdf`.
-Le modèle de notice publique de la version 0.4 reste applicable.
-
-Pour vérifier le dossier de lecture, avec une nouvelle extraction des pages :
+## Export accepted analyses and reverify
 
 ```powershell
-python -u .\audit_apport\completer_lectures.py verifier `
-  --campaign .\runs\lectures_bibliographiques_v050 --reextraire
+& $PyDupire -u audit_apport/completer_lectures.py exporter `
+  --campaign runs/reading_campaign --workbook runs/carr_reviewed.json `
+  --out runs/reviewed_priority_record
+
+& $PyDupire -u audit_apport/priorite_bibliographique.py --verify runs/reviewed_priority_record
+
+& $PyDupire -u audit_apport/completer_lectures.py verifier `
+  --campaign runs/reading_campaign --reextraire
 ```
 
-La relecture ordinaire contrôle les octets, empreintes, passages et décisions
-sans réseau ni modèle. `--reextraire` compare en plus une nouvelle extraction
-du PDF ; un changement de version de l’extracteur peut demander un contrôle.
-`scientific_priority_certified` demeure `false` : la conclusion bibliographique
-reste limitée aux textes et annotations effectivement documentés.
+Export carries existing mathematical evidence and public project records, attaches accepted sources with page/line locators and hypothesis annotations, and preserves remaining gaps. A targeted comparison does not exclude the rest of a source.
 
-## Validation livrée
+Use `exporter --as-of YYYY-MM-DD` when review occurs after the registry cutoff. Add `--project-record PATH.json --project-source public_article.pdf` to record a newly public project version.
 
-Les tests comprennent des PDF synthétiques, des aperçus, des sources manquantes,
-des références inventées, des hypothèses omises, les approbations ciblées et
-les exports partiels/complets. Les cas positifs utilisent des publications
-fictives explicitement signalées. Le contrat Ollama est testé avec des réponses
-simulées ; aucun grand modèle n’a été exécuté dans l’environnement de livraison.
-Un essai réel de récupération et d’extraction du corpus est résumé dans
-`validation/reading_retrieval.json`. Les PDF de tiers ne sont pas redistribués.
+Ordinary verification checks bytes, hashes, passages, and decisions without a network or model. `--reextraire` also compares a fresh PDF extraction, which can require review after extractor-version changes. `scientific_priority_certified` stays `false`; the bibliographic conclusion is limited to documented sources and annotations.
+
+## Recorded tests
+
+Tests cover synthetic PDFs, previews, missing sources, invented references, omitted axes, targeted acceptance, and partial/full exports. Positive priority-workflow fixtures use explicitly fictional publications. Ollama's contract is tested with simulated responses; no large model was run for the original delivery validation. `validation/reading_retrieval.json` records the actual retrieval/extraction trial. Third-party PDFs are not redistributed.

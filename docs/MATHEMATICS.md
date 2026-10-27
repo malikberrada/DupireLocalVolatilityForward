@@ -1,202 +1,112 @@
-# Formulation et portée des garanties
+# Numerical LP formulation and certificate scope
 
-La référence principale depuis 0.1.6 est
-[CRITERE_PROUVE.md](CRITERE_PROUVE.md) : alternative exacte sur grille
-fixée, construction suffisante et preuve du seuil de raffinement.
-La présente note documente les commandes historiques `solve`, `verify`,
-`bound` et leurs audits binary64. Les nouveaux chemins `criterion` et
-`verify-criterion` assemblent et vérifient les coefficients géométriques
-en rationnels depuis les données déclarées, et ne sont donc pas limités
-au LP binary64 sauvegardé.
+For exact geometry from declared inputs, use [CRITERE_PROUVE.md](CRITERE_PROUVE.md): `criterion` and `verify-criterion` assemble and check rational coefficients directly. This note documents the historical `solve`, `verify`, and `bound` commands and their **binary64 LP** audits.
 
-Les variables sont les calls normalisés `c(T,x) = C(T,x F(T))/(D(T) F(T))`,
-avec `x = K/F(T)`. Les expériences synthétiques utilisent `F=D=1`.
-Pour le marché, `F,D,T`, le style européen et le règlement doivent être fournis
-et vérifiés par famille de contrats. L'analyse est conditionnelle à ces valeurs.
+Normalized calls are `c(T,x)=C(T,x*F(T))/(D(T)*F(T))`, with `x=K/F(T)`. Synthetic experiments use `F=D=1`. Market normalization requires declared and checked forward, discount, time, European exercise, and settlement conventions for each contract family. Every conclusion is conditional on them.
 
-## Grille et opérateurs
+## Grid and operators
 
-La grille est commune et irrégulière : `T_j`, `x_i`. L'union des strikes
-observés est utilisée. Les nœuds non cotés sont des inconnues ; aucune
-interpolation n'est ajoutée aux observations. Ajouter des dates de calcul
-ne fabrique aucune nouvelle cotation.
+Use a common irregular grid `T_j,x_i`, taking the union of observed strikes. Unquoted nodes are unknowns. Adding computation dates creates no new observations. For `h_minus=x_i-x_(i-1)` and `h_plus=x_(i+1)-x_i`,
 
-Avec `h- = x_i-x_(i-1)`, `h+ = x_(i+1)-x_i` :
-
-\[
+$$
 \Gamma_{j,i}=\frac{2}{h^-+h^+}
 \left(\frac{c_{j,i+1}-c_{j,i}}{h^+}-\frac{c_{j,i}-c_{j,i-1}}{h^-}\right).
-\]
+$$
 
-Le LP impose :
+The LP imposes price bounds `(1-x)^+<=c<=1`, exact first-row payoff if `T_0=0`, slopes in `[-1,0]`, discrete convexity, increasing calendars, a convex left connection to `(0,1)`, and every observed interval, including duplicates or contradictions. At interior spatial nodes,
 
-- `(1-x)+ <= c <= 1` ; payoff exact à la première tranche si `T_0=0` ;
-- pentes entre -1 et 0 ; convexité discrète ; calendriers croissants ;
-- convexité du raccord de la première tranche de strikes à `c(T,0)=1` ;
-- intervalles bid/ask, y compris les observations dupliquées ou contradictoires ;
-- à tous les nœuds spatiaux intérieurs et sur chaque intervalle de temps,
-
-\[
-\frac12\underline v_{j,i}x_i^2\Delta T_j\Gamma^*_{j,i}
+$$
+\tfrac12\underline v_{j,i}x_i^2\Delta T_j\Gamma^*_{j,i}
 \le c_{j+1,i}-c_{j,i}
-\le\frac12\overline v_{j,i}x_i^2\Delta T_j\Gamma^*_{j,i}.
-\]
+\le\tfrac12\overline v_{j,i}x_i^2\Delta T_j\Gamma^*_{j,i}.
+$$
 
-`Gamma* = Gamma_j` en forward, `Gamma_(j+1)` en backward.
-Les variantes sont résolues séparément. Les bornes portent sur `v = sigma²`.
-L'interface CLI demande des volatilités décimales et les élève au carré.
-L'API `build_lp` accepte aussi des tableaux de bornes par cellule.
+Forward uses `Gamma_j`; backward uses `Gamma_(j+1)`. The historical variants are solved separately. Bounds concern **variance** `v=sigma^2`; the CLI squares decimal volatility inputs. `build_lp` also accepts cellwise bound arrays.
 
-Les cellules `Gamma=Theta=0` satisfont les inégalités, mais ne permettent pas
-d'identifier une variance. Le quotient y est enregistré `NaN`, jamais zéro
-par convention. Un seuil numérique `gamma_tol=1e-12` identifie les quotients
-exploitables ; ce seuil ne modifie pas le LP.
+When `Gamma=Theta=0`, the inequalities hold but variance is unidentified. Quotients are stored as `NaN`, not zero. The numerical `gamma_tol=1e-12` identifies usable quotients without changing the LP.
 
-## Domaine, bords et non-arbitrage
+## Finite domain and boundaries
 
-Par défaut, l'étude porte sur une fenêtre finie en strikes et en maturités.
-Les prix des deux extrémités sont des variables, sauf cotations observées.
-On ne pose pas artificiellement le dernier call à zéro. Les contraintes de
-forme sont nécessaires pour une surface globale sans arbitrage ; une solution
-sur cette fenêtre ne certifie ni un prolongement global aux queues ni une
-diffusion continue ou un noyau de transition reproduisant les prix.
+Boundary prices remain variables unless observed. The last strike call is not artificially zero. The finite-window shape restrictions are necessary for a global arbitrage-free surface, but feasibility here proves no global tail extension, continuous diffusion, or transition kernel.
 
-L'option `--tail-x B` ajoute explicitement un strike `B` à prix zéro pour toutes
-les maturités : elle fait l'hypothèse supplémentaire d'un support borné. Elle
-change le problème scientifique. Les certificats et rapports enregistrent
-cette hypothèse. Elle ne doit pas être utilisée pour prétendre avoir certifié
-la surface Black–Scholes globale, dont la queue n'est pas de support borné.
+`--tail-x B` explicitly adds a zero-priced strike at every maturity, imposing bounded support and changing the problem. Reports and certificates record this assumption. It does not certify the global Black-Scholes tail, whose support is unbounded.
 
-`F0` signifie ici : fourchettes + contraintes de forme enregistrées, sur ce
-domaine. `Fh` ajoute les bornes locales du schéma choisi. C'est une formulation
-sur grille commune dans l'esprit du problème Buehler–Ryskin ; elle ne reproduit
-pas tous leurs opérateurs de transport sur grilles différentes ou leurs noyaux.
+`F0` denotes intervals plus the recorded finite-window shape restrictions. `Fh` adds the chosen local stencil's bounds. This common-grid formulation does not reproduce every Buehler-Ryskin moving-grid transport or transition-kernel construction.
 
-## Statuts et certificats
+## Status values and evidence
 
-| Statut | Garantie |
-| --- | --- |
-| `feasible_numeric` | Un témoin passe deux audits CPU indépendants à la tolérance indiquée. |
-| `infeasible_certified_binary_lp` | Une inégalité séparatrice est vérifiée en arithmétique rationnelle exacte sur les coefficients binary64 sauvegardés. |
-| `infeasible_solver_only` | Le solveur annonce une infaisabilité, sans certificat exact vérifié par ce programme. |
-| `indeterminate` | Aucun des résultats précédents n'est établi : limite de temps, problème numérique, etc. |
+| Status | Guarantee |
+|---|---|
+| `feasible_numeric` | A witness passes two independent CPU audits at the declared tolerance |
+| `infeasible_certified_binary_lp` | A separating inequality is checked in exact rational arithmetic on the stored binary64 coefficients |
+| `infeasible_solver_only` | Solver reports infeasibility, without an exact certificate verified by this program |
+| `indeterminate` | No preceding result established, for example because of a time limit or numerical failure |
 
-Les coefficients géométriques sont calculés en double précision. Un certificat
-exact concerne donc le LP à coefficients flottants sauvegardé, pas un LP à
-coefficients symboliques exacts, ni les prix de marché inconnus. La faisabilité
-est numérique : elle n'est pas présentée comme un certificat rationnel exact.
+On this historical path, geometry is computed in double precision. An exact negative certificate therefore concerns the **stored floating-point LP**, not symbolic geometry or unknown true market prices. Positive feasibility is numerical.
 
-L'audit 1 recalcule `A x - b` et les bornes sans utiliser les résidus du solveur.
-L'audit 2 recalcule directement les pentes, Gamma, calendriers et différences
-temporelles sans réutiliser les matrices du LP. Les résidus locaux sont mesurés
-sur les inégalités multipliées par `DeltaT`, en unités de call normalisé.
-Une petite erreur en prix peut induire une grande erreur sur le quotient de
-variance quand Gamma est petit : les résidus et les cellules non identifiables
-doivent être examinés avec les quotients.
+Audit 1 recomputes `A*x-b` and box residuals without trusting solver residuals. Audit 2 directly recomputes slopes, gamma, calendars, and time increments without reusing LP matrices. Local residuals are measured after multiplication by `DeltaT`, in normalized call-price units. Small price residuals can imply large variance-quotient errors when gamma is small; inspect residuals and unidentified cells alongside ratios.
 
-Pour l'infaisabilité, si `A x <= b`, `l <= x <= u` et `y>=0`, alors :
+For `A*x<=b`, `l<=x<=u`, and `y>=0`, set
 
-\[
+$$
 r=A^Ty,\qquad d=b^Ty,\qquad
-\min_{l\le x\le u} r^Tx = \sum_j \min(r_jl_j,r_ju_j).
-\]
+\min_{l\le x\le u}r^Tx=\sum_j\min(r_jl_j,r_ju_j).
+$$
 
-Si ce minimum est strictement supérieur à `d`, le système est impossible.
-Le calcul est fait avec `fractions.Fraction`, qui représente exactement les
-flottants sauvegardés. Cette correction par la boîte des variables reste
-valide lorsque `A^T y` n'est pas exactement nul. Le programme essaie d'abord
-le rayon dual de HiGHS, puis un LP de Farkas auxiliaire si nécessaire.
-`verify` recharge le modèle, contrôle son SHA-256 et refait tout ce calcul.
+If the minimum exceeds `d`, the system is infeasible. `fractions.Fraction` represents the stored floats exactly. This box correction remains valid even when `A^T*y` is not exactly zero. The program first tries the HiGHS dual ray, then an auxiliary Farkas LP if needed. `verify` reloads the model, checks SHA-256, and repeats the calculation.
 
-`F0` certifié impossible indique une incompatibilité des observations sous les
-hypothèses enregistrées. `F0` numériquement faisable et `Fh` certifié impossible
-indiquent une incompatibilité conjointe sur cette grille. Une grille plus fine
-faisable montre une dépendance au maillage avec un témoin numérique. Plusieurs
-échecs ne prouvent aucune inexistence continue. Les ensembles ne sont pas
-supposés emboîtés au raffinement.
+Certified infeasible `F0` means observations conflict with the recorded assumptions. Numerically feasible `F0` and certified infeasible `Fh` identify incompatibility of observations, bounds, and grid. A feasible refinement supplies numerical evidence of a grid effect for that instance. Repeated failures do not prove continuous nonexistence; feasible sets are not assumed nested.
 
-## Deux relâchements distincts
+## Two different relaxations
 
-`--relax` résout d'abord le LP :
+With `--relax`, the first LP minimizes quote widening:
 
-\[
-\min \varepsilon,\quad
-b_k-\varepsilon w_k\le c_k\le a_k+\varepsilon w_k,\quad \varepsilon\ge0.
-\]
+$$
+\min\varepsilon,\quad b_k-\varepsilon w_k\le c_k\le a_k+\varepsilon w_k,
+\quad\varepsilon\ge0.
+$$
 
-Par défaut `w_k=max(|ask-bid|/2,1e-5)`, en prix normalisés. Une colonne CSV
-`weight` permet d'imposer un tick/une échelle propre à chaque observation.
-Le seul élargissement concerne les cotations : les contraintes de forme
-et les bornes de variance restent imposées. L'optimum est numérique ; une
-limite de temps avec un témoin admissible n'est pas étiquetée optimum.
+Default `w_k=max(|ask-bid|/2,1e-5)` is in normalized prices. An optional CSV `weight` sets an observation-specific tick or scale. Only quote intervals widen; shape and variance bounds remain imposed. The optimum is numerical. A time-limited feasible candidate is not labeled an optimum.
 
-Ensuite, si `F0` est numériquement faisable, une dichotomie à grille fixe cherche
-le plus petit lambda permettant `(vmin-lambda)+ <= vh <= vmax+lambda`.
-Chaque lambda fixé définit un LP. La réponse est un intervalle numérique,
-en **variance**, avec l'historique de toutes les évaluations. Le bord inférieur
-n'est pas annoncé comme un certificat exact d'optimalité. Un statut inconnu
-interrompt la dichotomie ; il n'est jamais assimilé à une infaisabilité.
-Optimiser lambda et les prix simultanément produirait des produits bilinéaires.
+If `F0` is numerically feasible, fixed-grid bisection then searches for the smallest `lambda` allowing `(vmin-lambda)^+<=vh<=vmax+lambda`. Each fixed `lambda` defines an LP. The result is a numerical interval in **variance units**, with evaluation history. Its lower endpoint is not an exact optimality certificate. An unknown status stops bisection rather than being treated as infeasible. Joint optimization in prices and `lambda` would be bilinear.
 
-## Borne quantitative conditionnelle sur grille commune
+## Conditional quantitative estimate
 
-Pour une surface continue supposée donnée, soit :
+For an assumed continuous surface on the whole rectangle, require `c_xx>=gamma0>0`, derivative bounds `|c_xxx|<=M3`, `|c_xxxx|<=M4`, `|c_tt|<=Mtt`, `0<=v<=vmax`, `x>=xmin>0`, and a variance margin `delta_v` from the prescribed limits.
 
-- `c_xx >= gamma0 > 0` sur tout le rectangle étudié ;
-- `|c_xxx| <= M3`, `|c_xxxx| <= M4`, `|c_tt| <= Mtt` sur les segments nécessaires ;
-- `0 <= v <= vmax`, `x>=xmin>0` ;
-- une marge de variance `delta_v` par rapport aux bornes prescrites.
+Taylor bounds give
 
-Taylor donne, pour chaque nœud :
-
-\[
+$$
 E_\Gamma=\frac{|h^+-h^-|}{3}M_3+
 \frac{(h^+)^3+(h^-)^3}{12(h^++h^-)}M_4,
 \qquad E_\Theta=\frac{\Delta T}{2}M_{tt}.
-\]
+$$
 
-Si `E_Gamma < gamma0`, pour le schéma forward au temps gauche ou backward
-au temps droit :
+If `E_Gamma<gamma0`, the forward ratio at the left endpoint or backward ratio at the right endpoint satisfies
 
-\[
-|v_h-v|\le
-\frac{\Delta T M_{tt}/x_{min}^2+v_{max}E_\Gamma}
+$$
+|v_h-v|\le\frac{\Delta T M_{tt}/x_{\min}^2+v_{\max}E_\Gamma}
 {\gamma_0-E_\Gamma}.
-\]
+$$
 
-Pour la première formule, développer chaque pente jusqu'au terme cubique :
-le terme de `c_xxx` vaut `(h+-h-)/3` ; les restes sont majorés par
-`(h+³+h-³) M4/[12(h++h-)]`. Pour la seconde formule, écrire
-`2 Theta_h/(x² Gamma_h) - v = [2(Theta_h-c_t)/x² - v(Gamma_h-c_xx)]/Gamma_h`
-et utiliser le minorant du dénominateur.
+The cubic spatial term is `(h_plus-h_minus)*c_xxx/3`; fourth-order remainders give the other gamma term. The quotient identity
 
-Si la borne finale est <= `delta_v`, les échantillons de cette surface
-respectent les bornes locales discrètes. Il faut **en plus** que cette surface
-soit compatible avec toutes les fourchettes et les hypothèses de bord.
-L'outil `bound` cherche un niveau dyadique satisfaisant cette condition, en
-diminuant `h-`, `h+` et `DeltaT` simultanément. Les constantes sont fournies par
-l'utilisateur : des maxima simplement échantillonnés ne sont pas des bornes
-globales certifiées. Cette estimation standard n'est pas revendiquée comme
-une nouveauté scientifique ni comme une caractérisation autonome de non-vacuité.
+$$
+\frac{2\Theta_h}{x^2\Gamma_h}-v
+=\frac{2(\Theta_h-c_t)/x^2-v(\Gamma_h-c_{xx})}{\Gamma_h}
+$$
 
-Il n'y a aucun terme d'interpolation temporelle dans cette implémentation sur
-grille commune. Un futur transport entre grilles indépendantes devrait traiter
-explicitement les erreurs de type `h_interp²/DeltaT`. L'outil ne prétend pas
-implémenter ou certifier cette extension.
+gives the variance estimate using a positive denominator bound. If it is at most `delta_v`, samples satisfy the discrete local bounds **provided the surface also satisfies all observed intervals and boundary assumptions**.
 
-## Références
+`bound` searches for a dyadic level by reducing adjacent spatial steps and the time step together. User-supplied derivative constants must be certified global bounds; sampled maxima do not suffice. This standard estimate is not a standalone data-only nonemptiness criterion. The constructive path in [CONSTRUCTIVE.md](CONSTRUCTIVE.md) instead computes and certifies a polynomial witness.
 
-- Buehler, H., Ryskin, E. *Discrete Local Volatility for Large Time Steps*,
-  version extensive 2.401, §3.3, p. 18 :
-  https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf
-- HiGHS, interface Python et matrices creuses :
-  https://ergo-code.github.io/HiGHS/dev/interfaces/python/example-py/
-- HiGHS, callbacks : https://ergo-code.github.io/HiGHS/dev/callbacks/
-- HiGHS, limitations de la construction GPU : https://ergo-code.github.io/HiGHS/dev/guide/gpu/
-- Cboe, SPX/XSP : https://www.cboe.com/en/tradable-products/sp-500/spx-options/
-  et https://www.cboe.com/tradable_products/sp_500/mini_spx_options/european_style/
-- Source yfinance, `option_chain` : https://github.com/ranaroussi/yfinance/blob/main/yfinance/ticker.py
+No temporal interpolation term occurs on this common grid. A future moving-grid transport would need to account explicitly for terms such as `h_interp^2/DeltaT`.
 
-Les comparateurs Andreasen–Huge, SSVI, SANOS, Tikhonov et les méthodes de
-réparation Cohen–Reisinger–Wang ne sont pas implémentés ici. Leur absence ou
-leur échec ne serait pas un certificat d'inexistence pour ce problème.
+## References and comparisons
+
+- [Buehler-Ryskin, extensive version 2.401](https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf), Section 3.3, page 18.
+- HiGHS: [Python interface](https://ergo-code.github.io/HiGHS/dev/interfaces/python/example-py/), [callbacks](https://ergo-code.github.io/HiGHS/dev/callbacks/), and [GPU guide](https://ergo-code.github.io/HiGHS/dev/guide/gpu/).
+- Cboe: [SPX](https://www.cboe.com/en/tradable-products/sp-500/spx-options/) and [European-style XSP](https://www.cboe.com/tradable_products/sp_500/mini_spx_options/european_style/).
+- [yfinance `option_chain` source](https://github.com/ranaroussi/yfinance/blob/main/yfinance/ticker.py).
+
+The engine does not implement Andreasen-Huge, SSVI, SANOS, Tikhonov, or the full Cohen-Reisinger-Wang repair framework as general calibration comparators. The separate positioning module includes limited, explicitly adapted experiments. A comparator's absence or numerical failure is not a nonexistence certificate for this problem.

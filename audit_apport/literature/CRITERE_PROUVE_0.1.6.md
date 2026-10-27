@@ -1,509 +1,334 @@
-# Critères prouvés de faisabilité et de raffinement — version 0.1.6
+# Proven feasibility and refinement criteria
 
-Cette note donne deux résultats : un critère **nécessaire et suffisant sur une
-grille finie fixée**, puis un critère **suffisant constructif**, accompagné
-d'un seuil de raffinement conservant toutes les observations. Les preuves
-portent sur les contraintes écrites ci-dessous. La recherche de certificats
-par un solveur flottant reste une procédure incomplète ; chaque certificat
-accepté est vérifié en arithmétique rationnelle exacte.
+Engine version **0.1.6**. This note states an exact necessary and sufficient alternative on a fixed finite grid, followed by a constructive sufficient condition and an observation preserving refinement threshold. The proofs concern the constraints below. Floating-point certificate discovery is incomplete; every accepted certificate is checked in exact rational arithmetic.
 
-## 1. Hypothèses : observations, normalisation et domaine
+Theorem 1 here corresponds to manuscript Theorem 1. Theorem 2 here is the sufficient refinement result, numbered Theorem 4 in the manuscript. See [the research guide](../../docs/RESEARCH.md) for the three-strike and endpoint-separation results.
 
-**O1 — Normalisation fixée.** Les observations sont des fourchettes de calls
-européens, ou de puts traduits en calls par parité. Pour chaque maturité,
-les valeurs de règlement, le temps annuel `T`, le forward `F(T)>0` et
-l'actualisation `D(T)>0` sont fixés. On utilise
+## 1. Observations, normalization, and domain
 
-\[
+**O1: fixed normalization.** Observations are European call intervals or put intervals translated into calls by parity. Settlement conventions, year fraction `T`, forward `F(T)>0`, and discount factor `D(T)>0` are fixed for each maturity:
+
+$$
 x=K/F(T),\qquad [b,a]=[\mathrm{bid},\mathrm{ask}]/(D(T)F(T)).
-\]
+$$
 
-Un put normalisé contraint le **même** call via l'intervalle
-`[put_bid/(DF)+1-x, put_ask/(DF)+1-x]`. Les observations calls et puts
-ne sont pas fusionnées en un milieu. Le résultat est conditionnel à cette
-normalisation ; il ne quantifie pas l'erreur sur `F,D,T`, et ne démontre pas
-la synchronisation des livres.
+A put constrains the **same call** through `[put_bid/(DF)+1-x, put_ask/(DF)+1-x]`. Call and put observations remain distinct intervals; they are not averaged. The result is conditional on normalization. It does not quantify errors in `F,D,T` or establish synchronized quotes.
 
-**O2 — Observations finies.** On dispose de `N>=1` quadruplets
-`(t_k,x_k,b_k,a_k)` de nombres finis. Les doublons sont conservés comme
-contraintes distinctes. Pour l'alternative du théorème 1, un livre croisé
-`b_k>a_k`, ou une borne de prix négative, est conservé : il peut donner un
-certificat d'impossibilité. Le théorème 2 exige que le témoin respecte
-effectivement chacun des intervalles, ce qui exclut ces contradictions.
+**O2: finite observations.** There are `N>=1` finite quadruples `(t_k,x_k,b_k,a_k)`. Duplicates remain separate constraints. For Theorem 1, crossed intervals `b_k>a_k` and negative quoted bounds are retained and may imply infeasibility. Theorem 2 requires a witness satisfying every interval, which excludes such contradictions.
 
-**G1 — Grille commune.** Les nœuds de calcul forment le produit cartésien
+**G1: common grid.** Computation uses the Cartesian product
 
-\[
+$$
 \mathcal G=\{T_0<\cdots<T_m\}\times\{0<x_0<\cdots<x_n\},
 \quad m\ge1,\ n\ge2,\ T_0\ge0.
-\]
+$$
 
-Chaque observation est exactement un nœud de cette grille. Des strikes
-observés différents selon l'échéance sont permis : on prend leur union et
-les prix aux nœuds non observés deviennent des inconnues. Aucune quote n'est
-interpolée. Les pas sont strictement positifs, sans hypothèse de régularité
-de leur rapport. Une grille spatiale mobile avec un opérateur de transport
-entre échéances sort du présent cadre.
+Every observation is exactly a node. Different observed strikes across expiries are permitted: their union supplies the common axis, and unquoted nodes become unknown prices. No observed quote is interpolated. Steps are positive, without a mesh-ratio bound. Moving spatial grids with transport between expiries are outside this formulation.
 
-**G2 — Fenêtre finie.** La grille couvre une fenêtre finie en temps et en
-strike. Le raccord gauche au point `(x,c)=(0,1)` est imposé. Le dernier
-prix n'est pas fixé à zéro. Une hypothèse de support borné ou d'extension
-globale des queues doit faire l'objet d'un autre problème.
+**G2: finite window.** A convex connection to `(x,c)=(0,1)` is imposed on the left. The final strike price is not fixed to zero. Bounded support and global tail extension define additional problems.
 
-**B1 — Bornes fixées.** Pour le théorème 1, des bornes de **variance**
-`0<=v_min[j,i]<=v_max[j,i]<infinity` sont prescrites par cellule intérieure.
-Les bornes peuvent être égales. La CLI demande des volatilités :
-`v_min=sigma_min^2`, `v_max=sigma_max^2`. Le théorème 2 utilise des bornes
-constantes strictement distinctes et une marge intérieure explicite.
-L'API `finite_criterion.Problem` accepte les tableaux par cellule ; la
-commande de recherche `criterion` utilise les bornes scalaires passées
-sur sa ligne de commande. `verify-criterion` respecte les tableaux du
-problème sauvegardé qu'il vérifie.
+**B1: prescribed bounds.** Theorem 1 permits finite cellwise **variance** bounds `0<=v_min[j,i]<=v_max[j,i]`, including equality. CLI inputs are volatilities, squared to obtain variance. Theorem 2 uses distinct constant bounds and an explicit interior margin. `finite_criterion.Problem` accepts cellwise arrays; `criterion` searches with scalar CLI bounds; `verify-criterion` honors the arrays in the saved problem.
 
-Ces hypothèses définissent un problème mathématique sur des données
-déclarées. Elles n'affirment pas que des valeurs téléchargées sont les prix
-exacts d'un marché sans arbitrage.
+These declarations define a mathematical problem. Downloaded observations are not thereby asserted to be exact arbitrage-free market prices.
 
-## 2. Contraintes sur la grille fixée
+## 2. Fixed-grid constraints
 
-Les inconnues sont les calls normalisés `c[j,i]`. Posons
+The unknowns are normalized calls `c[j,i]`. Define
 
-\[
+$$
 h_i^-=x_i-x_{i-1},\quad h_i^+=x_{i+1}-x_i,\quad
-s_{j,i}={c_{j,i+1}-c_{j,i}\over x_{i+1}-x_i},
-\]
+s_{j,i}=\frac{c_{j,i+1}-c_{j,i}}{x_{i+1}-x_i},
+$$
 
-\[
-\Gamma_{j,i}={2\over h_i^-+h_i^+}
- \left({c_{j,i+1}-c_{j,i}\over h_i^+}
-       -{c_{j,i}-c_{j,i-1}\over h_i^-}\right),\qquad
-\Theta_{j,i}={c_{j+1,i}-c_{j,i}\over\Delta T_j}.
-\]
+$$
+\Gamma_{j,i}=\frac{2}{h_i^-+h_i^+}
+\left(\frac{c_{j,i+1}-c_{j,i}}{h_i^+}-\frac{c_{j,i}-c_{j,i-1}}{h_i^-}\right),
+\qquad \Theta_{j,i}=\frac{c_{j+1,i}-c_{j,i}}{\Delta T_j}.
+$$
 
-L'ensemble `F0` impose exactement :
+`F0` imposes:
 
-1. `(1-x_i)^+ <= c[j,i] <= 1` ; si `T_0=0`, la première ligne est le payoff ;
-2. `-1 <= s[j,i] <= 0` et `Gamma[j,i]>=0` ;
-3. `c[j+1,i]>=c[j,i]` à tous les strikes ;
-4. `(c[j,0]-1)/x_0 <= s[j,0]`, raccord convexe au point d'origine ;
-5. `b_k <= c[j(k),i(k)] <= a_k` pour **chaque** observation.
+1. `(1-x_i)^+ <= c[j,i] <= 1`, with the exact payoff on the first row if `T_0=0`;
+2. `-1 <= s[j,i] <= 0` and `Gamma[j,i]>=0`;
+3. `c[j+1,i]>=c[j,i]` at every strike;
+4. `(c[j,0]-1)/x_0 <= s[j,0]`, the convex left connection;
+5. `b_k <= c[j(k),i(k)] <= a_k` for **every** observation.
 
-Pour un schéma `s`, l'ensemble `F_s` ajoute
+For stencil `s`, `F_s` additionally imposes
 
-\[
+$$
 \tfrac12\underline v_{j,i}x_i^2\Delta T_j\Gamma^s_{j,i}
 \le c_{j+1,i}-c_{j,i}
-\le\tfrac12\overline v_{j,i}x_i^2\Delta T_j\Gamma^s_{j,i},
+\le\tfrac12\overline v_{j,i}x_i^2\Delta T_j\Gamma^s_{j,i}.
 \tag{L}
-\]
+$$
 
-avec `Gamma^forward[j,i]=Gamma[j,i]` et
-`Gamma^backward[j,i]=Gamma[j+1,i]`. L'ensemble `F_joint` impose les deux
-sur **un même vecteur de prix**. Deux témoins obtenus séparément établissent
-`F_forward` et `F_backward` non vides, sans établir que leur intersection
-est non vide.
+`Gamma^forward[j,i]=Gamma[j,i]`; `Gamma^backward[j,i]=Gamma[j+1,i]`. `F_joint` imposes both on **one price vector**. Two separately feasible vectors do not establish a nonempty intersection.
 
-La formulation (L) reste définie si `Gamma=0` : elle impose alors une
-différence temporelle nulle. Elle ne définit aucune variance par quotient
-dans cette cellule. Si l'on veut une variance partout identifiable, il
-faut une hypothèse supplémentaire de gamma strictement positif ; le
-théorème 2 l'établit sur son témoin.
+At `Gamma=0`, (L) requires zero time increment and remains well-defined. It identifies no variance quotient. Strictly positive gamma is needed to identify variance everywhere; Theorem 2 establishes it on its witness.
 
-## 3. Théorème 1 — Alternative exacte sur grille fixée
+## 3. Theorem 1: exact alternative on a fixed grid
 
-Sous O1–O2, G1–G2 et B1, choisir `F0`, `F_forward`, `F_backward` ou
-`F_joint`. Toutes ses contraintes hors boîte s'écrivent
+Under O1-O2, G1-G2, and B1, choose `F0`, `F_forward`, `F_backward`, or `F_joint`. Write its non-box constraints as
 
-\[
-A c\le b,\qquad l\le c\le u,
-\tag{P}
-\]
+$$
+Ac\le b,\qquad l\le c\le u,\tag{P}
+$$
 
-où `l[j,i]=(1-x_i)^+`, `u[j,i]=1`, avec `u[0,i]=l[0,i]` si `T_0=0`.
-Les coefficients de `A,b,l,u` sont explicitement calculables à partir
-des pas, des observations et des bornes. La boîte est non vide et compacte.
+where `l[j,i]=(1-x_i)^+`, `u[j,i]=1`, and the first row's upper and lower bounds agree if `T_0=0`. The coefficients are explicitly computable from geometry, observations, and variance bounds. The box is compact and nonempty.
 
-**Énoncé.** Exactement une des deux situations suivantes se produit :
+**Statement.** Exactly one alternative holds:
 
-- il existe un vecteur de prix `c` satisfaisant (P) ;
-- il existe un vecteur `lambda>=0` tel que
+- a price vector `c` satisfies (P);
+- a vector `lambda>=0` satisfies
 
-\[
-\boxed{\quad
-\sum_{q}\min\{r_q l_q,r_q u_q\}>\lambda^T b,
-\qquad r=A^T\lambda.\quad}
-\tag{S}
-\]
+$$
+\sum_q\min\{r_ql_q,r_qu_q\}>\lambda^Tb,
+\qquad r=A^T\lambda.\tag{S}
+$$
 
-En particulier, l'absence de tout séparateur (S) est un critère nécessaire
-et suffisant de non-vacuité de l'ensemble choisi. Pour des données
-rationnelles, un témoin rationnel existe dans l'une ou l'autre situation.
-Le membre gauche de (S) corrige exactement le résidu dual `A^T lambda` :
-il n'est pas nécessaire que ce résidu soit nul.
+For rational data, the relevant witness can be chosen rational. The box term accounts exactly for a nonzero dual residual `A^T lambda`.
 
-### Preuve
+### Proof
 
-Si `c` est admissible et `lambda>=0`, alors
+If `c` is feasible and `lambda>=0`,
 
-\[
+$$
 \sum_q\min\{r_ql_q,r_qu_q\}\le r^Tc
- =\lambda^TAc\le\lambda^Tb.
-\]
+=\lambda^TAc\le\lambda^Tb.
+$$
 
-Un séparateur (S) est donc incompatible avec tout témoin admissible.
+Thus (S) excludes feasibility. Conversely, put `B=[l,u]` and `K={Ac+s:c in B,s>=0}`. The set is nonempty, convex, and closed: `AB` is compact and its sum with the closed orthant is closed. Feasibility is equivalent to `b in K`.
 
-Réciproquement, soit `B=[l,u]` et
-`K={Ac+s : c in B, s>=0}`. Cet ensemble est convexe, non vide et fermé :
-`AB` est compact et sa somme avec l'orthant fermé est fermée. La faisabilité
-de (P) équivaut à `b in K`. Si elle échoue, soit `z` le point de `K` le plus
-proche de `b`, et `lambda=z-b`. La condition de projection sur un convexe
-donne `lambda^T(k-z)>=0` pour tout `k in K`.
+If `b` lies outside `K`, let `z` be its projection onto `K` and set `lambda=z-b`. Projection gives `lambda^T(k-z)>=0` for every `k in K`. Since `z+t*e_i in K` for every `t>=0`, each component of `lambda` is nonnegative. Furthermore,
 
-Comme `z+t e_i in K` pour `t>=0`, on obtient `lambda_i>=0`. Par ailleurs
-
-\[
+$$
 \min_{k\in K}\lambda^Tk=\lambda^Tz
- =\lambda^Tb+\|z-b\|^2>\lambda^Tb.
-\]
+=\lambda^Tb+\|z-b\|^2>\lambda^Tb.
+$$
 
-Pour `lambda>=0`, ce minimum est
-`min_{c in B} lambda^T A c`, soit précisément
-`sum_q min(r_q l_q,r_q u_q)`. C'est (S).
+For nonnegative `lambda`, this minimum is `min_{c in B} lambda^T A c`, exactly the left side of (S).
 
-Si les coefficients sont rationnels, une boîte intersectée avec des
-demi-espaces rationnels est un polytope rationnel compact. Lorsqu'il est
-non vide, il possède un sommet rationnel, obtenu par résolution d'un
-système linéaire rationnel de contraintes actives. Lorsqu'il est vide,
-l'écart strict de (S), fonction continue de `lambda`, reste positif après
-une approximation rationnelle suffisamment précise de `lambda` dans
-l'orthant positif. Les deux types de preuves peuvent ainsi être finis
-et rationnels. Ce résultat est une forme de l'alternative de Farkas. □
+For rational inputs, a nonempty compact rational polytope has a rational vertex, obtainable by solving rational active constraints. In the infeasible case, the strict gap persists under a sufficiently close rational approximation to `lambda` within the nonnegative orthant. Both forms of evidence can therefore be finite and rational. This is a bounded-variable form of the classical Farkas alternative.
 
-### Vérification et diagnostic
+### Verification and diagnosis
 
-`finite_criterion.py` construit les coefficients **directement en
-rationnels**. La matrice flottante n'est qu'un outil de recherche. Un
-témoin positif est contrôlé sur toutes les lignes exactes et la boîte ;
-un témoin négatif est contrôlé par (S), sur ces mêmes coefficients exacts.
+`finite_criterion.py` assembles coefficients **directly as rationals**. Floating-point matrices are used only for discovery. Positive witnesses are checked against every exact row and box bound; negative witnesses are checked by (S) on the same exact system.
 
-Les données CSV du nouveau chemin `criterion` sont interprétées comme
-des décimaux exacts. `--logical-grid` accepte les coordonnées rationnelles
-avant arrondi, notamment `F0.exact_grid.json` du collecteur Yahoo. Le
-certificat est lié par SHA-256 à l'ensemble du problème déclaré : grille,
-observations, bornes, schéma et provenance. Un hash établit une liaison
-entre fichiers ; il n'authentifie pas un fournisseur externe.
+`criterion --quotes` interprets CSV decimals exactly. `--logical-grid` uses declared rational coordinates before rounding, including the collector's `F0.exact_grid.json`. SHA-256 binds the full problem: grid, observations, bounds, stencil, and provenance. It does not authenticate an external provider.
 
-| Résultat vérifié | Conclusion justifiée |
-| --- | --- |
-| `F0` impossible | Observations et contraintes de forme incompatibles sous la normalisation fixée |
-| `F0` faisable, `F_s` impossible | Bornes et grille choisies incompatibles avec ces observations |
-| `F_joint` faisable | Un même témoin satisfait les deux schémas sur cette grille |
-| Aucun témoin exact trouvé | `not_certified`, aucune conclusion de faisabilité ou d'impossibilité |
+| Verified result | Justified conclusion |
+|---|---|
+| `F0` infeasible | Observations and shape restrictions conflict under the fixed normalization |
+| `F0` feasible, `F_s` infeasible | Those observations conflict with the chosen bounds and grid |
+| `F_joint` feasible | One witness satisfies both stencils on that grid |
+| No exact witness recovered | `not_certified`; feasibility and infeasibility remain undecided |
 
-La deuxième ligne n'isole pas à elle seule une faute des bornes ou de la
-grille. Une nouvelle grille, avec **les mêmes observations**, peut établir
-un effet du maillage. Écarter des observations ou élargir des fourchettes
-définit un autre problème.
+The second row does not by itself determine whether bounds or geometry should change. A feasible new grid with **the same observations** demonstrates a grid effect. Dropping observations or widening intervals changes the problem.
 
-Le théorème est une alternative complète ; le chercheur numérique de
-certificats n'est pas un algorithme exact complet. Une limite de temps,
-un LP dégénéré ou une reconstruction rationnelle manquée peut produire
-`not_certified` malgré l'existence mathématique d'un des témoins.
+The theorem is a complete alternative. Numerical certificate discovery is not a complete exact decision algorithm: time limits, degeneracy, or failed rational reconstruction can produce `not_certified` despite mathematical existence of a certificate.
 
-## 4. Théorème 2 — Condition suffisante et raffinement explicite
+## 4. Theorem 2: sufficient condition and explicit refinement
 
-Considérons un rectangle intérieur
-`R=[T_a,T_b] x [x_a,x_b]`, avec `T_a>0`, `x_a>0`, contenant toutes les
-observations et la grille de base. Les grilles ont les mêmes extrémités
-que le rectangle. Outre O1–O2 et G1–G2, supposons que l'on ait
-**construit et certifié** un polynôme rationnel `P(T,x)` tel que, sur `R` :
+Let `R=[T_a,T_b] x [x_a,x_b]` be an interior rectangle with `T_a>0`, `x_a>0`, containing all observations and the base grid, with matching endpoints. Suppose a rational polynomial `P(T,x)` has been **constructed and certified** on `R` to satisfy
 
-\[
+$$
 \begin{gathered}
-(1-x)^+\le P\le1,\quad -1\le P_x\le0,\quad
-P_{xx}\ge\gamma_0>0,\quad
-1-P(T,x_a)+x_aP_x(T,x_a)\ge0,\\
-b_k\le P(t_k,x_k)\le a_k\quad\text{pour toute observation},\\
-0\le v_{\min}<v_{\max}<\infty,\quad
-0<2\delta<v_{\max}-v_{\min},\quad
-v_{\min}+\delta\le {2P_T\over x^2P_{xx}}\le v_{\max}-\delta.
-\end{gathered}
-\tag{C}
-\]
+(1-x)^+\le P\le1,\quad -1\le P_x\le0,\quad P_{xx}\ge\gamma_0>0,\\
+1-P(T,x_a)+x_aP_x(T,x_a)\ge0,\qquad b_k\le P(t_k,x_k)\le a_k,\\
+0\le v_{\min}<v_{\max}<\infty,\quad 0<2\delta<v_{\max}-v_{\min},\\
+v_{\min}+\delta\le\frac{2P_T}{x^2P_{xx}}\le v_{\max}-\delta.
+\end{gathered}\tag{C}
+$$
 
-On certifie également les constantes globales
-`|P_xxx|<=M3`, `|P_xxxx|<=M4`, `|P_TT|<=Mtt`. Les maxima d'un
-échantillon numérique de dérivées ne suffisent pas à cette hypothèse.
-La section 5 donne un système fini calculable établissant (C) et ces bornes.
+Also certify global bounds `|P_xxx|<=M3`, `|P_xxxx|<=M4`, and `|P_TT|<=Mtt`. Numerical derivative samples alone do not establish these bounds. Section 5 supplies a finite sufficient certificate.
 
-Sur les axes de base, poser
+For the base axes, define
 
-\[
+$$
 H=\max_i(x_{i+1}-x_i),\quad
 D_h=\max_i|(x_{i+1}-x_i)-(x_i-x_{i-1})|,\quad
 \tau=\max_j\Delta T_j.
-\]
+$$
 
-Au niveau `ell`, diviser **chaque** intervalle spatial et temporel de base
-en `r=2^ell` intervalles égaux. Définir
+At level `ell`, subdivide **every** original spatial and temporal interval into `r=2^ell` equal parts. Set
 
-\[
-a={D_h M_3\over3},\quad b={H^2M_4\over12},\quad
-d={\tau M_{TT}\over x_a^2},\qquad
+$$
+a=\frac{D_hM_3}{3},\quad b=\frac{H^2M_4}{12},\quad
+ d=\frac{\tau M_{TT}}{x_a^2},\qquad
 A=d+(v_{\max}+\delta)a,\quad
 B=(v_{\max}+\delta)b,\quad C=\delta\gamma_0>0.
-\]
+$$
 
-**Énoncé.** Si (C) est certifiée, la condition finie
+**Statement.** Under (C) and the certified derivative bounds,
 
-\[
-\boxed{\quad C r^2-A r-B\ge0,\qquad r=2^\ell\quad}
-\tag{Q}
-\]
+$$
+Cr^2-Ar-B\ge0,\qquad r=2^\ell\tag{Q}
+$$
 
-garantit que les prix `c[j,i]=P(T_j,x_i)` sont dans `F_joint` sur le
-maillage raffiné. Ils satisfont donc simultanément toutes les observations,
-les contraintes de forme et les deux bornes locales discrètes. Tous les
-gammas intérieurs sont strictement positifs. Le même résultat vaut à tous
-les niveaux dyadiques ultérieurs, avec le **même polynôme**, les **mêmes
-observations** et les **mêmes bornes**.
+guarantees `c[j,i]=P(T_j,x_i) in F_joint` on the refined grid, with strictly positive interior gammas. The **same polynomial**, original observations, and variance bounds work at every subsequent dyadic level.
 
-Un seuil fini est explicite :
+An explicit sufficient threshold is
 
-\[
-r_*={A+\sqrt{A^2+4BC}\over2C},\qquad
+$$
+r_* = \frac{A+\sqrt{A^2+4BC}}{2C},\qquad
 \ell_* = \min\{\ell\in\mathbb N_0:2^\ell\ge\max(1,r_*)\}.
-\]
+$$
 
-Une borne entière, moins précise mais sans racine carrée, est
+A looser rational-only integer bound is
 
-\[
-R_0=\max\left(1,\left\lceil{A+B\over C}\right\rceil\right),
-\qquad \ell_*\le\left\lceil\log_2 R_0\right\rceil.
-\tag{U}
-\]
+$$
+R_0=\max\left(1,\left\lceil\frac{A+B}{C}\right\rceil\right),
+\qquad \ell_*\le\lceil\log_2R_0\rceil.\tag{U}
+$$
 
-Le programme teste (Q) en rationnels et fournit aussi (U), même lorsqu'un
-plafond de recherche empêche de parcourir tous les niveaux. Le seuil est
-celui de cette **borne suffisante**, pas le premier niveau nécessairement
-faisable parmi toutes les calibrations possibles.
+The implementation tests (Q) in rationals and reports (U), including when a search cap prevents enumerating every level. This is a threshold for the **sufficient estimate**, not the earliest grid admitting any calibration.
 
-### Preuve
+### Proof
 
-Pour un nœud intérieur, Taylor appliqué aux deux pentes spatiales donne
+Taylor expansion of the two spatial slopes gives
 
-\[
-\left|\Gamma_h(T,x_i)-P_{xx}(T,x_i)\right|
-\le {|h_i^+-h_i^-|M_3\over3}
- +{(h_i^+)^3+(h_i^-)^3\over12(h_i^++h_i^-)}M_4.
-\tag{E1}
-\]
+$$
+|\Gamma_h(T,x_i)-P_{xx}(T,x_i)|
+\le\frac{|h_i^+-h_i^-|M_3}{3}
++\frac{(h_i^+)^3+(h_i^-)^3}{12(h_i^++h_i^-)}M_4.\tag{E1}
+$$
 
-En effet, les termes constants et linéaires de chaque développement se
-compensent dans la seconde différence. Le terme cubique restant est
-`(h_i^+-h_i^-) P_xxx/3`. Le reste d'ordre quatre dans chaque prix est
-majoré par `M4*h^4/24` ; la division par le pas puis par
-`(h_i^++h_i^-)/2` donne le second terme de (E1).
+The constant and linear price terms cancel in the second difference. The cubic term is `(h_i^+-h_i^-)*P_xxx/3`. Each fourth-order price remainder is bounded by `M4*h^4/24`; division by the step and by `(h_i^++h_i^-)/2` gives the second term in (E1).
 
-Après subdivision dyadique, à un ancien nœud les deux pas adjacents sont
-divisés par `r` ; à un nouveau nœud situé dans un intervalle de base ils
-sont égaux. Comme `(p^3+q^3)/(p+q)=p^2-pq+q^2<=max(p,q)^2` pour
-`p,q>0`, l'erreur spatiale est uniformément majorée par
+At an original node, adjacent steps scale by `1/r`; at a new node inside an original interval, the steps are equal. Since `(p^3+q^3)/(p+q)=p^2-p*q+q^2<=max(p,q)^2`, the uniform spatial error is at most
 
-\[
-e_r={a\over r}+{b\over r^2}.
-\]
+$$
+e_r=a/r+b/r^2.
+$$
 
-Au bord gauche **ou** au bord droit `T_*` d'une cellule temporelle,
-la différence temporelle est la moyenne de `P_T` ; le théorème fondamental
-de l'analyse donne
+At **either** temporal endpoint `T_*`, the time difference is the average of `P_T`. Hence
 
-\[
-|\Theta_h-P_T(T_*,x_i)|\le {\tau M_{TT}\over2r}.
-\tag{E2}
-\]
+$$
+|\Theta_h-P_T(T_*,x_i)|\le\frac{\tau M_{TT}}{2r}.\tag{E2}
+$$
 
-Si `e_r<gamma0`, alors `Gamma_h>=gamma0-e_r>0`. Avec
-`v=2 P_T/(x_i^2 P_xx)` et les deux dérivées au même bord `T_*`,
+For `e_r<gamma0`, `Gamma_h>=gamma0-e_r>0`. Use `v=2*P_T/(x_i^2*P_xx)` and both derivatives at the same temporal endpoint:
 
-\[
-{2\Theta_h\over x_i^2\Gamma_h}-v
-={2(\Theta_h-P_T)/x_i^2-v(\Gamma_h-P_{xx})\over\Gamma_h}.
-\]
+$$
+\frac{2\Theta_h}{x_i^2\Gamma_h}-v
+=\frac{2(\Theta_h-P_T)/x_i^2-v(\Gamma_h-P_{xx})}{\Gamma_h}.
+$$
 
-Par (E1), (E2), `x_i>=x_a` et `0<=v<=v_max`,
+Equations (E1)-(E2), `x_i>=x_a`, and `0<=v<=v_max` imply
 
-\[
-|v_h-v|\le
- {d/r+v_{\max}e_r\over\gamma_0-e_r}.
-\tag{E3}
-\]
+$$
+|v_h-v|\le\frac{d/r+v_{\max}e_r}{\gamma_0-e_r}.\tag{E3}
+$$
 
-La condition (Q) équivaut à
-`d/r+(v_max+delta)e_r<=delta*gamma0`. Elle implique
-`e_r<=delta*gamma0/(v_max+delta)<gamma0`, car `v_max>0`.
-Elle implique donc aussi que (E3) est au plus `delta`. La marge de (C)
-donne `v_min<=v_h<=v_max`, au bord gauche pour forward et au bord droit
-pour backward, avec les **mêmes valeurs** `P(T_j,x_i)`.
+Condition (Q) is exactly `d/r+(v_max+delta)*e_r<=delta*gamma0`. It implies `e_r<=delta*gamma0/(v_max+delta)<gamma0` and makes (E3) at most `delta`. The interior margin then puts the forward ratio at the left endpoint and the backward ratio at the right endpoint inside the prescribed bounds, for the **same sampled prices**.
 
-Les pentes discrètes de `P` sont des moyennes de `P_x` : elles appartiennent
-à `[-1,0]`. Leur croissance résulte de `P_xx>0`. La condition locale
-continue donne `P_T>0`, donc les calendriers. Le raccord gauche découle de
+Discrete slopes are averages of `P_x`, so they lie in `[-1,0]`; convexity follows from positive `P_xx`. The continuous variance margin gives `P_T>0`, hence increasing calendars. The left connection follows from
 
-\[
-{P(T,x_a)-1\over x_a}\le P_x(T,x_a)
-\le {P(T,x_1)-P(T,x_a)\over x_1-x_a}.
-\]
+$$
+\frac{P(T,x_a)-1}{x_a}\le P_x(T,x_a)
+\le\frac{P(T,x_1)-P(T,x_a)}{x_1-x_a}.
+$$
 
-Les autres bornes et les observations sont conservées par évaluation de
-`P` aux nœuds d'origine, qui restent des nœuds de chaque raffinement.
+Other price bounds and all observed intervals follow by evaluating `P` at retained nodes. Finally, `A,B>=0` and `C>0`; the quadratic stays nonnegative above its positive root. For `r>=1`, `Ar+B<=(A+B)r`, proving (U). When `A=B=0`, level zero suffices. This establishes finite mathematical termination and every stated conclusion.
 
-Enfin, `A,B>=0` et `C>0`. Le polynôme `C r^2-A r-B` est non négatif pour
-`r>=r_*`; il le reste aux niveaux suivants. Pour `r>=1`,
-`Ar+B<=(A+B)r`, d'où la borne (U). Le cas `A=B=0` donne immédiatement
-`ell_*=0`. Cela prouve la terminaison mathématique et toutes les assertions. □
+## 5. Finite certification from observations and bounds
 
-## 5. Condition finie calculable sur les observations et les bornes
+For degrees `p>=1`, `q>=2`, search for rational coefficients of
 
-Le théorème 2 n'est pas utilisé avec l'hypothèse invérifiée d'une surface
-inconnue. Pour des degrés `p>=1`, `q>=2`, on cherche les coefficients
-rationnels `alpha_ab` du polynôme de Bernstein tensoriel
+$$
+P_\alpha(T,x)=\sum_{a=0}^p\sum_{b=0}^q\alpha_{ab}
+B_a^p\left(\frac{T-T_a}{T_b-T_a}\right)
+B_b^q\left(\frac{x-x_a}{x_b-x_a}\right).
+$$
 
-\[
-P_\alpha(T,x)=\sum_{a=0}^p\sum_{b=0}^q
-\alpha_{ab}B_a^p\left({T-T_a\over T_b-T_a}\right)
-B_b^q\left({x-x_a\over x_b-x_a}\right).
-\]
+Let `B(f)` denote Bernstein coefficients after degree elevation when needed. The following are finite **linear inequalities in alpha**:
 
-Notons `mathcal B(f)` les coefficients de Bernstein d'un polynôme `f`,
-après élévation de degré lorsque nécessaire. Les conditions suivantes
-forment un **système fini d'inégalités linéaires en alpha** :
-
-\[
+$$
 \begin{aligned}
-&b_k\le P_\alpha(t_k,x_k)\le a_k\quad(1\le k\le N),\\
+&b_k\le P_\alpha(t_k,x_k)\le a_k,\\
 &\mathcal B(P_\alpha),\ \mathcal B(P_\alpha-1+x),\ \mathcal B(1-P_\alpha)\ge0,\\
 &\mathcal B(-P_{\alpha,x}),\ \mathcal B(1+P_{\alpha,x})\ge0,\\
-&\mathcal B(P_{\alpha,xx}-g)\ge0\quad\text{pour }g>0,\\
+&\mathcal B(P_{\alpha,xx}-g)\ge0\quad(g>0),\\
 &\mathcal B(P_{\alpha,T}-\tfrac12(v_{\min}+\delta)x^2P_{\alpha,xx})\ge0,\\
 &\mathcal B(\tfrac12(v_{\max}-\delta)x^2P_{\alpha,xx}-P_{\alpha,T})\ge0,\\
 &\mathcal B_T(1-P_\alpha(T,x_a)+x_aP_{\alpha,x}(T,x_a))\ge0.
-\end{aligned}
-\tag{BC}
-\]
+\end{aligned}\tag{BC}
+$$
 
-Les degrés actuellement pris en charge par `construct` sont
-`1<=p<=8`, `2<=q<=20` ; cette limite de calcul ne restreint pas l'énoncé
-mathématique pour un polynôme de degré fini arbitraire.
+The implementation supports `1<=p<=8`, `2<=q<=20`; the theorem allows any finite polynomial degree.
 
-**Corollaire constructif.** Un vecteur rationnel `alpha` satisfaisant (BC)
-et une grille satisfaisant (Q) constituent un critère fini suffisant de
-faisabilité conjointe, directement relié aux fourchettes et aux bornes.
+**Constructive corollary.** A rational vector satisfying (BC), together with a grid satisfying (Q), gives a finite sufficient criterion directly linked to the observations and local bounds.
 
-**Preuve.** Les polynômes de base de Bernstein sont non négatifs et leur
-somme vaut un. Chaque polynôme dont tous les coefficients sont positifs
-ou nuls est donc positif ou nul sur le rectangle. Ainsi (BC) implique (C).
-On peut certifier
+**Proof.** Bernstein basis functions are nonnegative and sum to one. Nonnegative coefficients imply a nonnegative polynomial throughout the rectangle. Thus (BC) implies (C), and it certifies
 
-\[
-\gamma_0=\min\mathcal B(P_{\alpha,xx})\ge g,
-\quad M_3=\max|\mathcal B(P_{\alpha,xxx})|,
-\quad M_4=\max|\mathcal B(P_{\alpha,xxxx})|,
-\quad M_{TT}=\max|\mathcal B(P_{\alpha,TT})|.
-\]
+$$
+\gamma_0=\min\mathcal B(P_{\alpha,xx})\ge g,\quad
+M_3=\max|\mathcal B(P_{\alpha,xxx})|,\quad
+M_4=\max|\mathcal B(P_{\alpha,xxxx})|,\quad
+M_{TT}=\max|\mathcal B(P_{\alpha,TT})|.
+$$
 
-Ces constantes et les quantités de (Q) sont calculables en rationnels.
-Le théorème 2 s'applique. □
+All constants and (Q) are rationally computable, so Theorem 2 applies.
 
-Cette condition est suffisante à degré fixé. Un échec ne prouve ni
-l'impossibilité de (P), ni l'absence d'une autre surface régulière.
-Le LP numérique ne reçoit que les observations ; les coefficients du
-générateur de la démonstration ne lui sont pas fournis.
+This condition is sufficient at fixed degree. Failure proves neither discrete infeasibility nor absence of another regular surface. The fit receives observations only; the demonstration generator's coefficients are not supplied to it.
 
-## 6. Utilisation et sémantique des fichiers
+## 6. Commands and authoritative arithmetic
+
+Use the environment established in the root README. The archived accepted logical grid provides a reproducible example:
 
 ```powershell
-# Depuis le dossier de l'archive, dans .venv312 :
-python -m pip install --upgrade --only-binary=:all: .\dist\dupire_joint-0.1.6-py3-none-any.whl
-
-# Grille exacte provenant de TON téléchargement, déjà accepté par le collecteur :
-python -u -m dupire_joint criterion `
-  --logical-grid ".\runs\yahoo_valide_20261026T203526_495751Z\collecte\accepted\F0.exact_grid.json" `
+& $PyDupire -u -m dupire_joint criterion `
+  --logical-grid reference/market/grids/F0.exact_grid.json `
   --scheme joint --sigma-min 0.05 --sigma-max 1.0 --threads 4 `
-  --out .\runs\critere_yahoo
+  --out runs/criterion
 
-# Vérification indépendante, sans téléchargement ni résolution :
-python -u -m dupire_joint verify-criterion `
-  --problem .\runs\critere_yahoo\criterion.problem.json `
-  --certificate .\runs\critere_yahoo\criterion.certificate.json `
-  --logical-grid ".\runs\yahoo_valide_20261026T203526_495751Z\collecte\accepted\F0.exact_grid.json" `
-  --out .\runs\critere_yahoo_verifie
+& $PyDupire -u -m dupire_joint verify-criterion `
+  --problem runs/criterion/criterion.problem.json `
+  --certificate runs/criterion/criterion.certificate.json `
+  --logical-grid reference/market/grids/F0.exact_grid.json `
+  --out runs/criterion_verified
 
-# Critère constructif et seuil prouvé sur un exemple contrôlé :
-python -u -m dupire_joint construct --demo --device cpu `
-  --degree-time 2 --degree-space 4 --threads 4 --out .\runs\construction_prouvee
-python -u -m dupire_joint verify-construct `
-  --certificate .\runs\construction_prouvee\constructive.certificate.json `
-  --quotes .\runs\construction_prouvee\observations.csv `
-  --out .\runs\construction_verifiee
+& $PyDupire -u -m dupire_joint construct --demo --device cpu `
+  --degree-time 2 --degree-space 4 --threads 4 --out runs/constructive
+
+& $PyDupire -u -m dupire_joint verify-construct `
+  --certificate runs/constructive/constructive.certificate.json `
+  --quotes runs/constructive/observations.csv `
+  --out runs/constructive_verified
 ```
 
-Pour un autre fichier normalisé, utiliser `criterion --quotes fichier.csv`.
-Les raffinements du théorème 1 se demandent par `--space-level` et
-`--time-level` ; ils conservent toutes les lignes observées, sans garantir
-la faisabilité. Le théorème 2, lorsqu'il est certifié, garantit les niveaux
-à partir du seuil calculé et n'a pas besoin de relancer les LP à ces niveaux.
+Use `criterion --quotes PATH.csv` for other normalized observations. `--space-level` and `--time-level` preserve every observed row but alone provide no feasibility guarantee. Once certified, Theorem 2 guarantees levels beyond its sufficient threshold without resolving a nodal LP at every level.
 
-| Chemin | Arithmétique faisant autorité |
-| --- | --- |
-| `criterion --quotes` | Décimaux du CSV interprétés exactement comme rationnels |
-| `criterion --logical-grid` | Rationnels déclarés dans le JSON, avant arrondi du LP numérique |
-| `construct`, `verify-construct` | Valeurs binary64 du CSV interprétées exactement comme rationnels ; paramètres des bornes et marges saisis exactement depuis 0.1.6 |
-| Anciennes commandes `solve`, `verify` | LP binary64 et audits/certificats décrits dans `MATHEMATICS.md` |
+| Path | Authoritative arithmetic |
+|---|---|
+| `criterion --quotes` | CSV decimals interpreted as exact rationals |
+| `criterion --logical-grid` | Declared JSON rationals before numerical rounding |
+| `construct`, `verify-construct` | Exact rational representations of CSV binary64 values; bound and margin parameter strings interpreted exactly since 0.1.6 |
+| Historical `solve`, `verify` | Stored binary64 LP and the audits described in [MATHEMATICS.md](../../docs/MATHEMATICS.md) |
 
-Les exports NPZ de `construct` sont arrondis et audités séparément. La preuve
-porte sur le polynôme rationnel et les axes rationnels de `mesh.exact.json`.
-La limite `--max-nodes` borne l'export, sans invalider le seuil théorique.
-`construction.json` contient `quadratic_criterion`, ses constantes et la
-marge exacte de chaque niveau essayé. `verify-construct` recalcule ces
-quantités à partir du témoin, sans croire aux minima enregistrés.
+Constructive NPZ exports are rounded and audited separately. The proof concerns the rational polynomial and axes in `mesh.exact.json`. `--max-nodes` limits export size, without invalidating the theoretical threshold. `construction.json` records `quadratic_criterion`, constants, and exact tested margins. `verify-construct` recomputes them from the witness.
 
-Codes retour de `criterion` : `0` faisabilité exacte ; `4` impossibilité
-exacte sur le problème déclaré ; `3` résultat non certifié ; `2` erreur
-d'entrée ou d'exécution. `verify-criterion` renvoie `0` pour une preuve
-valide, qu'elle soit positive ou négative. Un certificat négatif F0 se
-vérifie avec `F0.problem.json` et `F0.certificate.json`.
+| Command | Exit code | Meaning |
+|---|---:|---|
+| `criterion` | 0 | Exact feasibility |
+| `criterion` | 4 | Exact infeasibility of the declared problem |
+| `criterion` | 3 | Not certified |
+| `criterion` | 2 | Input or execution error |
+| `verify-criterion` | 0 | Valid certificate, whether positive or negative |
 
-## 7. Portée scientifique
+Verify a negative `F0` result with `F0.problem.json` and `F0.certificate.json`.
 
-Le résultat répond à une question de non-vacuité **dans une classe précisée**.
-Le théorème 1 caractérise exactement le système discret déclaré. Le
-théorème 2 fournit une condition suffisante sur une classe de témoins lisses,
-avec un seuil quantifié préservant les observations. Il ne repose pas sur
-l'emboîtement des ensembles de calibrations discrètes, qui n'est pas
-affirmé.
+## 7. Scientific scope and references
 
-Le théorème 2 exclut `T=0`, les gammas nuls, les bornes par cellule et les
-grilles spatiales mobiles. Aucun des deux théorèmes ne démontre une
-extension des queues à l'infini, une diffusion martingale globale, une
-robustesse simultanée à toutes les courbes `F,D` possibles, ou la cohérence
-de toute la chaîne Yahoo brute après une sélection de strikes. Une
-sélection préalable au pas de 50 est une restriction des observations,
-pas le raffinement préservant les observations du théorème 2.
+Theorem 1 characterizes the declared finite system. Theorem 2 gives a sufficient condition on a regular witness class with quantified observation preserving refinement. It does not assume nested feasible sets.
 
-Les outils de séparation convexe/Farkas, de Bernstein et de Taylor sont
-classiques. Cette formulation précise leurs hypothèses et leur liaison
-au système implémenté. Une revendication de nouveauté ou de résolution
-générale de la question de Buehler–Ryskin demanderait un travail
-bibliographique et mathématique supplémentaire.
+Theorem 2 excludes `T=0`, zero gamma, cellwise variance bounds, and moving spatial grids. Neither theorem establishes a global tail extension, a martingale diffusion, robustness over every possible nominal curve, or consistency of an entire raw Yahoo chain after selection. Selecting strikes in multiples of 50 restricts observations; it is different from the observation preserving subdivision in Theorem 2.
 
-## Références primaires
+Convex separation, Bernstein positivity, and Taylor estimates are classical tools. General priority or a complete solution of the broader Buehler-Ryskin question is not established by these computations.
 
-1. S. Plotkin, *CS361B — Advanced Algorithms*, Stanford, 2014, §7.1 :
-   [alternative de Farkas et certificats de faisabilité](https://web.stanford.edu/class/cs361b/files/cs361b-notes.pdf).
-2. N. M. Patrikalakis, T. Maekawa, W. Cho, *Shape Interrogation for Computer
-   Aided Design and Manufacturing*, §1.3.1–1.3.2 :
-   [positivité, partition de l'unité et dérivées de Bernstein](https://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node9.html).
-3. H. Buehler, E. Ryskin, *Discrete Local Volatility for Large Time Steps*,
-   version extensive 2.401, §3.3 et annexe A.1 :
-   [problème sous bornes et différences sur grilles non uniformes](https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf).
+Primary references retained from the original note:
+
+1. S. Plotkin, *CS361B Advanced Algorithms*, Stanford, 2014, Section 7.1: [Farkas alternative and certificates](https://web.stanford.edu/class/cs361b/files/cs361b-notes.pdf).
+2. N. M. Patrikalakis, T. Maekawa, and W. Cho, *Shape Interrogation for Computer Aided Design and Manufacturing*, Sections 1.3.1-1.3.2: [Bernstein properties and derivatives](https://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node9.html).
+3. H. Buehler and E. Ryskin, *Discrete Local Volatility for Large Time Steps*, extensive version 2.401, Section 3.3 and Appendix A.1: [full text](https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf).

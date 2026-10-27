@@ -1,82 +1,45 @@
-# Diagnostic et collecte Yahoo — 0.1.4
+# Yahoo snapshot quality and expiry selection
 
-La version 0.1.4 ajoute des diagnostics et une sélection d'échéances. Elle ne
-reconstitue aucun bid/ask absent, ne remplace aucun zéro par `lastPrice` et ne
-modifie pas les règles d'estimation ni la signification des certificats 0.1.3.
+Diagnostics and expiry selection were introduced in 0.1.4 and remain available in **0.1.6**. Missing bid-ask books are not reconstructed, zeros are not replaced by `lastPrice`, and book counts do not establish a feasible Dupire surface.
 
-## Diagnostic d'un instantané enregistré
+## Diagnose a saved snapshot
 
 ```powershell
-python -u -m dupire_joint diagnose-snapshot `
-  --snapshot .\runs\yahoo_snapshot\snapshot.json `
-  --check-parity `
-  --out .\runs\yahoo_diagnostic
+& $PyDupire -u -m dupire_joint diagnose-snapshot `
+  --snapshot runs/yahoo_snapshot/snapshot.json `
+  --check-parity --out runs/yahoo_diagnostic
 ```
 
-`snapshot.quality.json` fournit, par racine et échéance, les nombres de calls,
-puts, livres entièrement nuls, livres valides et strikes appariés. Le test de
-parité optionnel vérifie aussi les bandes exactes. Un nombre suffisant de
-paires ne garantit pas que leurs bandes sont compatibles. Aucun compte de
-livres ne démontre la faisabilité d'une surface Dupire.
+`snapshot.quality.json` reports calls, puts, all-zero books, valid books, and matched strikes by root and expiry. Optional parity checking reconstructs exact bands. Enough matched pairs alone does not imply compatible bands. `estimate-curves` writes `input_quality.json` and records each expiry's acceptance or rejection reason. Existing curve certificates remain verifiable.
 
-`estimate-curves` écrit maintenant `input_quality.json` et affiche le résultat
-de chaque échéance, y compris le motif des rejets. Les anciens certificats
-de courbes restent revérifiables : le cœur de l'estimateur est inchangé.
-
-## Nouvelle collecte
+## Acquire a broader expiry selection
 
 ```powershell
-python -u -m dupire_joint snapshot `
-  --symbols "^SPX,^XSP" `
-  --expiry-selection spread `
-  --min-days 7 --max-days 365 `
-  --max-expiries 24 --rps 0.5 --retries 3 `
-  --require-matched-pairs 3 `
-  --out .\runs\yahoo_snapshot_v014
+& $PyDupire -u -m dupire_joint snapshot `
+  --symbols "^SPX,^XSP" --expiry-selection spread `
+  --min-days 7 --max-days 365 --max-expiries 24 `
+  --rps 0.5 --retries 3 --require-matched-pairs 3 `
+  --out runs/yahoo_snapshot_spread
 ```
 
-`spread` répartit au plus 24 échéances par symbole sur l'ensemble des dates
-proposées dans la fenêtre, en conservant la première et la dernière. Cette
-sélection dépend des dates, avant toute consultation des prix. Elle ne choisit
-pas les résultats les plus favorables. La sélection historique des premières
-dates reste `front`, valeur par défaut pour les anciennes commandes.
+`spread` distributes at most 24 dates per symbol across the available window, retaining the first and last. Selection depends on dates before inspecting prices. `front` preserves the historical first-dates behavior and remains the default for older commands.
 
-Les bornes du téléchargement portent sur des jours calendaires depuis le jour
-UTC de collecte. L'estimation applique ensuite ses propres bornes ACT/365F
-jusqu'au fixing, comme dans la version 0.1.3. Les échéances retenues et le
-nombre de dates disponibles sont conservés dans `snapshot.json`.
+Download windows use calendar days from the UTC acquisition date. Estimation then applies its own ACT/365F bounds to fixing. Selected expiries and available-date counts are saved in `snapshot.json`.
 
-Le téléchargement archive les données et écrit `snapshot.quality.json`.
-`--require-matched-pairs 3` retourne le code 3 si aucune racine/échéance n'a
-trois strikes call-put avec deux livres valides. Les données restent disponibles
-pour l'audit. Cette condition est nécessaire à la configuration d'estimation
-par défaut ; elle ne garantit ni la parité ni la calibration. Le seuil ne
-compte pas des contrats de racines ou d'échéances différentes ensemble.
+The command archives the data and writes `snapshot.quality.json`. `--require-matched-pairs 3` returns code 3 if no individual root/expiry has three strikes with valid call and put books. Attempts remain available. The threshold is necessary for the default estimation configuration but guarantees neither parity nor calibration. Counts are not pooled across roots or expiries.
 
-## Résultat sur l'archive utilisateur auditée
+## Historical diagnostic example
 
-L'instantané fourni a été collecté le 25 octobre 2026, entre
-16:29:09.843070 et 16:30:57.750179 UTC. Les résultats sont :
+An earlier development snapshot was collected on **25 October 2026, 16:29:09.843070 to 16:30:57.750179 UTC**. It is distinct from the four 26 October inputs used for the published replay.
 
-| Racine | Contrats | Livres bid=ask=0 | Livres valides | Strikes appariés valides |
-| --- | ---: | ---: | ---: | ---: |
+| Root | Contracts | Books with bid=ask=0 | Valid books | Valid matched strikes |
+|---|---:|---:|---:|---:|
 | SPXW | 6974 | 6900 | 72 | 0 |
 | SPX | 560 | 521 | 38 | 0 |
 | XSP | 4203 | 4064 | 138 | 4 |
 
-Les quatre paires XSP appartiennent au 20 novembre 2026. Elles n'ont pas de
-facteur d'actualisation commun compatible : certaines bandes imposent
-D >= 13377/13250, d'autres D <= 15667/16500. La première borne dépasse la
-seconde. L'échec ne provient donc pas d'une tolérance numérique du solveur.
+The four XSP pairs belonged to 20 November 2026 and had incompatible discount-factor bands: some required `D>=13377/13250`, others `D<=15667/16500`. The first bound exceeds the second, so the failure was not a solver-tolerance issue.
 
-Les racines et l'appariement sont corrects pour cette archive. Pour SPXW,
-écarter le livre croisé ne ferait apparaître aucune paire. L'archive ne
-permet pas de produire les courbes requises pour la normalisation demandée.
-Les dates `lastTradeDate` des rares contrats XSP appariés datent de mai à
-septembre ; ce sont des dates de transactions, pas des horodatages bid/ask.
-Le fait que la collecte soit un dimanche ne prouve pas la cause des zéros.
+Root classification and matching were correct for that example. Excluding SPXW's crossed book would still yield no valid pair. The snapshot could not provide the required normalization curves. The rare matched XSP contracts had `lastTradeDate` values from May through September, which are transaction dates rather than bid-ask timestamps. Acquisition on a Sunday alone does not prove the cause of the zero books.
 
-Une nouvelle collecte sur un horizon plus large peut fournir de meilleurs
-livres, sans garantie. Si les livres restent absents ou incohérents, une
-validation sur ces données Yahoo reste impossible dans ce cadre. Le patch
-ne change pas de fournisseur ni de famille d'instruments implicitement.
+A broader future capture can provide better books without a guarantee. If books remain absent or inconsistent, this framework cannot validate that Yahoo input. It does not silently change provider or instrument family. See [crossed-book policy](CROSSED_BOOK_POLICY.md), [normalization](YAHOO_NORMALIZATION.md), and [the retained research inputs](DATA.md).
