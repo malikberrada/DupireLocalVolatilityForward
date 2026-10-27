@@ -1,0 +1,39 @@
+{
+  "format": "dupire-joint-box-separation-v1",
+  "lp_sha256": "db3c86054a1353c62b68a0580af88bcf5a5e35b2cae9c69d5aea9605ef3476c3",
+  "rows": [
+    521,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    706,
+    759,
+    772
+  ],
+  "multipliers": [
+    0.012913407316738323,
+    0.045915761890381726,
+    0.13137584147720435,
+    0.08139584684771603,
+    0.060924764726258324,
+    0.0361813931329315,
+    0.02080755073760574,
+    0.006624270487310739,
+    1.0,
+    0.0910859764440567,
+    0.49618773050174586
+  ],
+  "verification": {
+    "verified": true,
+    "exact_margin_numerator": "10529913469669375854414699950779",
+    "exact_margin_denominator": "5192296858534827628530496329220096",
+    "margin_approx": 0.0020279875663042745,
+    "support_size": 11,
+    "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+  },
+  "source": "HiGHS dual ray, corrected by the exact variable box"
+}

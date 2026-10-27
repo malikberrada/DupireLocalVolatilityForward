@@ -1,0 +1,5389 @@
+{
+  "settings": {
+    "symbol": "^SPX",
+    "root": "SPXW",
+    "min_days": 14,
+    "max_days": 180,
+    "reference_spot": null,
+    "moneyness_min": 0.95,
+    "moneyness_max": 1.05,
+    "strike_step": 50.0
+  },
+  "selection": {
+    "symbol": "^SPX",
+    "root": "SPXW",
+    "moneyness_min": 0.95,
+    "moneyness_max": 1.05,
+    "references": [
+      {
+        "expiry": "2026-11-09",
+        "spot": 7680.37,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "14592703/2000",
+        "strike_upper": "16128777/2000"
+      },
+      {
+        "expiry": "2026-11-16",
+        "spot": 7680.27,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "14592513/2000",
+        "strike_upper": "16128567/2000"
+      },
+      {
+        "expiry": "2026-11-23",
+        "spot": 7680.21,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "14592399/2000",
+        "strike_upper": "16128441/2000"
+      },
+      {
+        "expiry": "2026-12-03",
+        "spot": 7680.3,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "1459257/200",
+        "strike_upper": "1612863/200"
+      },
+      {
+        "expiry": "2027-01-15",
+        "spot": 7680.2,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "729619/100",
+        "strike_upper": "806421/100"
+      },
+      {
+        "expiry": "2027-04-16",
+        "spot": 7680.05,
+        "origin": "Yahoo_underlying_regularMarketPrice",
+        "strike_lower": "2918419/400",
+        "strike_upper": "3225621/400"
+      }
+    ],
+    "outlier_removal_by_feasibility": false,
+    "book_prices_modified": false,
+    "strike_step": "50",
+    "strike_origin": "0",
+    "selection_protocol": "fixed_before_download",
+    "full_raw_chain_certified": false
+  },
+  "excluded": [
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07430000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7430",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07510000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7510",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07585000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7585",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07605000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7605",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07615000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7615",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07635000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7635",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07645000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7645",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07655000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7655",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07665000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7665",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07685000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7685",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07695000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7695",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07705000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7705",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07715000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7715",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07735000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7735",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07745000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7745",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07755000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7755",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07765000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7765",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07785000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7785",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07795000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7795",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07805000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7805",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07815000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7815",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07835000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7835",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07840000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7840",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07860000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7860",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07870000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7870",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07880000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7880",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07890000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7890",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07910000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7910",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07920000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7920",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07925000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7925",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07930000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7930",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07940000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7940",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07960000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7960",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C07975000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7975",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08025000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8025",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08325000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C08800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C09000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109C09200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P03200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P03400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P03800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P04000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P04200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P04400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P04600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P04800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P05000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P05200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P05400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P05600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P05800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06625000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06650000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06675000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06725000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06750000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06775000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06825000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06850000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06875000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06925000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06950000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P06975000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07025000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07050000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07280000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07290000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07310000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7310",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07320000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7320",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07330000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7330",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07340000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7340",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07360000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7360",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07370000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7370",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07375000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7375",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07380000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7380",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07390000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7390",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07410000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7410",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07420000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7420",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07430000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7430",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07440000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7440",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07460000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7460",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07470000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7470",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07480000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7480",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07490000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7490",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07510000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7510",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07515000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7515",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07535000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7535",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07545000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7545",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07555000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7555",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07565000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7565",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07585000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7585",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07595000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7595",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07605000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7605",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07615000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7615",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07635000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7635",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07645000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7645",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07655000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7655",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07665000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7665",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07685000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7685",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07695000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7695",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07705000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7705",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07715000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7715",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07735000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7735",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07745000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7745",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07755000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7755",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07765000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7765",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07785000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7785",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07795000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7795",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07840000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7840",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07860000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7860",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07870000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7870",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07890000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7890",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07920000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7920",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P07925000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7925",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P08175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P08225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P08325000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P08350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-09",
+      "contract": "SPXW261109P09800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C06975000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07420000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7420",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07430000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7430",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07480000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7480",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07840000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7840",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07860000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7860",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07870000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7870",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07880000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7880",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07890000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7890",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07910000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7910",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07925000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7925",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C07975000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7975",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08025000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8025",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08325000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C08800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C09000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C09200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116C10000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P03200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P03400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P04000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P04200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P04400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P04600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P04800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P05000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P05200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P05400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P05600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P05800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06650000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06675000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06725000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06750000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06775000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06825000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06850000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06875000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06925000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06950000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P06975000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07025000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07050000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07370000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7370",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07375000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7375",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07390000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7390",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07410000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7410",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07420000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7420",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07430000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7430",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07440000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7440",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07470000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7470",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07480000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7480",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07490000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7490",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07510000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7510",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07840000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7840",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07870000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7870",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P07880000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7880",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P08275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-16",
+      "contract": "SPXW261116P08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C06975000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07925000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7925",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C07975000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7975",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08025000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8025",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123C08800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P03200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P04200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P04400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P04600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P04800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P05000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P05200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P05400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P05600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P05800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06625000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06650000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06675000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06725000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06750000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06775000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06825000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06850000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06875000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06925000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06950000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P06975000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07025000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07050000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07375000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7375",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07710000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7710",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07720000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7720",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07730000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7730",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P07830000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7830",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-11-23",
+      "contract": "SPXW261123P08275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07925000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7925",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C07975000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7975",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C08100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C08300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C08400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C08600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203C09200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P03200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P03400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P04400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P04600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P04800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P05000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P05400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P05600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P05800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06300000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P06900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07275000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07375000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7375",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07675000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7675",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2026-12-03",
+      "contract": "SPXW261203P07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C05500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C05900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06830000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06875000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06890000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06900000",
+      "reason": "invalid_strike_or_book: SPXW270115C06900000",
+      "bid": 0.0,
+      "ask": 0.0
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06930000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C06970000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07025000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07050000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07080000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07160000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07175000",
+      "reason": "invalid_strike_or_book: SPXW270115C07175000",
+      "bid": 0.0,
+      "ask": 0.0
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07270000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07280000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07340000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7340",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07360000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7360",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07380000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7380",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07415000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7415",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07460000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7460",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07470000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7470",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07505000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7505",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07510000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7510",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07555000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7555",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07565000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7565",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07610000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7610",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07620000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7620",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07630000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7630",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07715000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7715",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07725000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7725",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07740000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7740",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07755000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7755",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07760000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7760",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07765000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7765",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07770000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7770",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07780000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7780",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07785000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7785",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07790000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7790",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07795000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7795",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07855000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7855",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07865000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7865",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07875000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7875",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07885000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7885",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07890000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7890",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07940000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7940",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07975000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7975",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07980000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7980",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C07990000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7990",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08025000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8025",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08030000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8030",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08040000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8040",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08070000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08080000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08125000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08180000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08190000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08210000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08220000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08225000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08260000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08310000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08320000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08330000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08340000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08425000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08750000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C08900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C09000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C09200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C09400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C09600000",
+      "reason": "invalid_strike_or_book: SPXW270115C09600000",
+      "bid": 0.0,
+      "ask": 0.0
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C10000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C10400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C10600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115C10800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P03200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P03800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P03900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P04000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P04200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P04400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P04700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P04800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05000000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05400000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05450000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05600000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05650000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05750000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05900000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P05950000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06250000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06475000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06570000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06630000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06640000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06650000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06670000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06675000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06680000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06690000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06730000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06780000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06790000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06800000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06810000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06820000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06825000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06830000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06840000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06850000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06860000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06870000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06880000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06920000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06925000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06930000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06940000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06950000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P06960000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07025000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07090000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07110000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07130000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07140000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07175000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07195000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07205000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07210000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07215000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07220000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07265000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07305000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7305",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07325000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7325",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07360000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7360",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07365000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7365",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07370000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7370",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07375000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7375",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07380000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7380",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07420000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7420",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07425000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7425",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07460000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7460",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07475000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7475",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07485000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7485",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07510000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7510",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07520000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7520",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07525000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7525",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07530000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7530",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07540000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7540",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07545000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7545",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07555000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7555",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07560000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7560",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07565000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7565",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07570000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7570",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07575000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7575",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07580000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7580",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07590000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7590",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07625000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7625",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07635000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7635",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07640000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7640",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07645000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7645",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07660000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7660",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07670000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7670",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07680000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7680",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07685000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7685",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07690000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7690",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07755000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7755",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07765000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7765",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07775000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7775",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07785000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7785",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07795000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7795",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07805000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7805",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07810000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7810",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07815000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7815",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07820000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7820",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07825000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7825",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07840000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7840",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07860000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7860",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07885000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7885",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07910000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7910",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07920000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7920",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P07930000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "7930",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08010000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8010",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08020000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8020",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08030000",
+      "reason": "outside_predeclared_strike_mesh",
+      "strike": "8030",
+      "strike_step": "50",
+      "strike_origin": "0"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08075000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08090000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08100000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08110000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08150000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08200000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08220000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08275000",
+      "reason": "invalid_strike_or_book: SPXW270115P08275000",
+      "bid": 0.0,
+      "ask": 0.0
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08350000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08500000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P08700000",
+      "reason": "outside_predeclared_strike_window"
+    },
+    {
+      "expiry": "2027-01-15",
+      "contract": "SPXW270115P10000000",
+      "reason": "outside_predeclared_strike_window"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "YOO2024",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.1007/s10614-024-10590-9",
+  "retrieved_at": "2026-10-27T07:26:59.592999+00:00",
+  "raw_response_sha256": "16336ccd95ef0d1d68ac161fa4a99e684fc302f22e02270591a32d3b0e6ec98c",
+  "projection": {
+    "DOI": "10.1007/s10614-024-10590-9",
+    "title": [
+      "Calibration of Local Volatility Surfaces from Observed Market Call and Put Option Prices"
+    ],
+    "author": [
+      {
+        "given": "Changwoo",
+        "family": "Yoo",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Soobin",
+        "family": "Kwak",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Youngjin",
+        "family": "Hwang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Hanbyeol",
+        "family": "Jang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Hyundong",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0484-9189",
+        "authenticated-orcid": false,
+        "given": "Junseok",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Computational Economics"
+    ],
+    "volume": "65",
+    "issue": "3",
+    "page": "1147-1168",
+    "published": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          5
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          5
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          3
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          5
+        ]
+      ],
+      "date-time": "2024-04-05T04:02:04Z",
+      "timestamp": 1712289724000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          4
+        ]
+      ],
+      "date-time": "2025-03-04T08:44:13Z",
+      "timestamp": 1741077853000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          9
+        ]
+      ],
+      "date-time": "2026-04-09T02:53:18Z",
+      "timestamp": 1775703198069,
+      "version": "3.50.1"
+    },
+    "URL": "https://doi.org/10.1007/s10614-024-10590-9",
+    "link": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s10614-024-10590-9.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s10614-024-10590-9/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s10614-024-10590-9.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ]
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

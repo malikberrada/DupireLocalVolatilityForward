@@ -1,0 +1,456 @@
+{
+  "format": "dupire-joint-report-v1",
+  "complete": true,
+  "fingerprint": "710c611a8833a4e6000bed6da938de12d8834109f2d3e3626669103591a311ef",
+  "inputs": {
+    "package_version": "0.1.1",
+    "versions": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "highspy": "1.15.1"
+    },
+    "quotes_sha256": "eb2e912b5cd8067c9da5359ff3675b4d63d8be36d2c8e2055cb4bb64f48765ad",
+    "times": [
+      0.25,
+      1.0
+    ],
+    "strikes": [
+      0.9,
+      1.0,
+      1.1
+    ],
+    "tail_x": null,
+    "vmin": 0.0324,
+    "vmax": 0.0484,
+    "schemes": [
+      "forward",
+      "backward"
+    ],
+    "solver": {
+      "threads": 10,
+      "time_limit": 120.0,
+      "tolerance": 1e-09,
+      "method": "choose",
+      "backend": "highs"
+    },
+    "audit_tol": 1e-08,
+    "relax": true,
+    "bisect_steps": 16
+  },
+  "domain": {
+    "time": [
+      0.25,
+      1.0
+    ],
+    "strike": [
+      0.9,
+      1.1
+    ],
+    "shape": [
+      2,
+      3
+    ],
+    "boundary": "c(0)=1 convex chord; free right window endpoint; no global tail existence claim"
+  },
+  "continuous_existence_proved": false,
+  "variants": {
+    "forward": {
+      "status": "infeasible",
+      "native_status": "Infeasible",
+      "objective": null,
+      "simplex_iterations": 0,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 0.0,
+      "lp_sha256": "a51bde750a5b7fa90aef72f117b6407c737418d67847e7fc9261638e228f31e1",
+      "model_file": "forward.lp.npz",
+      "conclusion": "infeasible_certified_binary_lp",
+      "certificate_file": "forward.certificate.json",
+      "certificate_verification": {
+        "verified": true,
+        "exact_margin_numerator": "40443843583914930398109861975804634121560949",
+        "exact_margin_denominator": "11417981541647679048466287755595961091061972992",
+        "margin_approx": 0.0035421184940958184,
+        "support_size": 5,
+        "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+      },
+      "diagnosis": "joint_constraints_incompatible_on_this_grid_F0_numerically_feasible",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 104.22282811845817,
+        "simplex_iterations": 8,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 0.0,
+        "lp_sha256": "5b37490b8a3f3a93d2521ff59aea2ca0ee64673a28b8c41bbdafda87b61fb58a",
+        "model_file": "forward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 4.163336342344337e-17,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 0.0,
+            "left_chord": 0.0,
+            "calendar": 0.0,
+            "local_lower": 4.163336342344337e-17,
+            "local_upper": 0.0,
+            "ask": 0.0,
+            "bid": 0.0
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 0.0,
+            "bid": 0.0,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 0.0,
+            "calendar": 0.0,
+            "left_chord": 0.0,
+            "local_lower": 0.0,
+            "local_upper": 0.0
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "forward_epsilon.witness.npz",
+        "unidentified_cells": 0,
+        "total_interior_cells": 1,
+        "local_variance_range": [
+          0.03239999999999999,
+          0.03239999999999999
+        ],
+        "epsilon_upper_bound_numeric": 104.22282811845817,
+        "epsilon_star_numeric": 104.22282811845817
+      },
+      "variance_relaxation": {
+        "status": "bracketed_numeric",
+        "bracket": [
+          0.003659393310546875,
+          0.0036601318359375003
+        ],
+        "absolute_width": 7.385253906252304e-07,
+        "units": "variance, not volatility",
+        "exact_lower_bound_certified": false,
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0484,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0242,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0121,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.00605,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.003025,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0045375,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.00378125,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.003403125,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0035921875,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.00368671875,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.003639453125,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0036630859375,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.00365126953125,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0036571777343750002,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0036601318359375003,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0036586547851562502,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.003659393310546875,
+            "result": "infeasible_solver"
+          }
+        ]
+      }
+    },
+    "backward": {
+      "status": "infeasible",
+      "native_status": "Infeasible",
+      "objective": null,
+      "simplex_iterations": 0,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 0.0,
+      "lp_sha256": "cd8e3490401eeb462f5fcd67b7ef72e7e7689d975ad4be202eaade8946d4dc58",
+      "model_file": "backward.lp.npz",
+      "conclusion": "infeasible_certified_binary_lp",
+      "certificate_file": "backward.certificate.json",
+      "certificate_verification": {
+        "verified": true,
+        "exact_margin_numerator": "1384433662144432535586651627471864914227079027",
+        "exact_margin_denominator": "1461501637330902918203684832716283019655932542976",
+        "margin_approx": 0.0009472679515246953,
+        "support_size": 5,
+        "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+      },
+      "diagnosis": "joint_constraints_incompatible_on_this_grid_F0_numerically_feasible",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 47.36339757623539,
+        "simplex_iterations": 9,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 0.01499999999987267,
+        "lp_sha256": "8681571a1249b0cb23f08a1b0d976814115cb91537aa289ac4cfb65c19ac8aec",
+        "model_file": "backward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 0.0,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 0.0,
+            "left_chord": 0.0,
+            "calendar": 0.0,
+            "local_lower": 0.0,
+            "local_upper": 0.0,
+            "ask": 0.0,
+            "bid": 0.0
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 6.938893903907228e-18,
+            "bid": 6.938893903907228e-18,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 0.0,
+            "calendar": 0.0,
+            "left_chord": 0.0,
+            "local_lower": 0.0,
+            "local_upper": 0.0
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "backward_epsilon.witness.npz",
+        "unidentified_cells": 0,
+        "total_interior_cells": 1,
+        "local_variance_range": [
+          0.04839999999999993,
+          0.04839999999999993
+        ],
+        "epsilon_upper_bound_numeric": 47.36339757623539,
+        "epsilon_star_numeric": 47.36339757623539
+      },
+      "variance_relaxation": {
+        "status": "bracketed_numeric",
+        "bracket": [
+          0.005997564697265626,
+          0.00599830322265625
+        ],
+        "absolute_width": 7.38525390624363e-07,
+        "units": "variance, not volatility",
+        "exact_lower_bound_certified": false,
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0484,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0242,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0121,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.00605,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.003025,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0045375,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.00529375,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.005671875,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0058609375,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.00595546875,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.006002734375,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0059791015625,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0059909179687500005,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.005996826171875001,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0059997802734375,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.00599830322265625,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.005997564697265626,
+            "result": "infeasible_solver"
+          }
+        ]
+      }
+    }
+  },
+  "F0": {
+    "status": "optimal",
+    "native_status": "Optimal",
+    "objective": 0.0,
+    "simplex_iterations": 0,
+    "ipm_iterations": 0,
+    "backend": "highs",
+    "version": "1.15.1",
+    "wall_seconds": 0.016000000000076398,
+    "lp_sha256": "7196ce6d8d5ee5a0a0ee9f7e5cbeb2640c4b9a37fb37a6588eb3e4643b3109f5",
+    "model_file": "F0.lp.npz",
+    "conclusion": "feasible_numeric",
+    "audit": {
+      "passed": true,
+      "max_violation": 0.0,
+      "bound_violation": 0.0,
+      "groups": {
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 0.0,
+        "left_chord": 0.0,
+        "calendar": 0.0,
+        "ask": 0.0,
+        "bid": 0.0
+      },
+      "tolerance": 1e-08,
+      "semantics": "absolute residuals of unscaled binary64 LP"
+    },
+    "independent_audit": {
+      "passed": true,
+      "checks": {
+        "ask": 0.0,
+        "bid": 0.0,
+        "call_lower": 0.0,
+        "call_upper": 0.0,
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 0.0,
+        "calendar": 0.0,
+        "left_chord": 0.0
+      },
+      "tolerance": 1e-08,
+      "method": "direct finite differences, independently of sparse assembly"
+    },
+    "witness_file": "F0.witness.npz",
+    "unidentified_cells": 0,
+    "total_interior_cells": 1,
+    "local_variance_range": [
+      0.02874029025159039,
+      0.02874029025159039
+    ]
+  },
+  "artifacts_sha256": {
+    "backward.certificate.json": "79dfc5f8a4f91ca329ad0f3fba4fde4367aae561b065e2aeccfaaeda991594dc",
+    "backward.lp.npz": "8acdffa44eddd28551047d122d25baf456e06034ee052e0548c7a05c0c3032e6",
+    "backward_epsilon.lp.npz": "72b17410702672c54b4edb222ecdd1a0269c499d7c6e7ea23c0dd0b937eaa74e",
+    "backward_epsilon.surface.csv": "2fa4daeb2fdfc167c3abd3d7b14fa0b55ad779f6841d158fa7097415498a77d3",
+    "backward_epsilon.witness.npz": "5230e79b131b771fee98edcfa2aabba64209a863adcd73438f3c4cccd2d5b4da",
+    "F0.lp.npz": "73720556e52143099e0f3b0466e87efa3e7453f4e6acdc9583b7d6dfaf379c4f",
+    "F0.surface.csv": "331f5f5e89d4c0a71430e68e0358b2b6f21c39a16ad0bcba600bb5aa2f69f04c",
+    "F0.witness.npz": "5061f2a78a4b0ffa14326d5bfd53bb602408ab0c48fb0ce4b9252e92c34f413d",
+    "forward.certificate.json": "07be4a95cebf6af94f34005dae23845626f1fe3f0b0d2183a2ac1b7845696b82",
+    "forward.lp.npz": "6d52bcc2f3b5037281f1521c3ef626ff1ff1ce4c6e15ae79402570f5b5f789eb",
+    "forward_epsilon.lp.npz": "77d1310ef03096238aebe3455b94e68684a2ffaa0c109fbf13c5c4f6030d8d28",
+    "forward_epsilon.surface.csv": "73c282672c2e754140e69b1322a17287514db7b1a6c27a4e3b6cb8e1e8da810f",
+    "forward_epsilon.witness.npz": "5a1bc5a4cba185e50ac1b7fecfbd218231d91422569f439763a78f6ea1753657",
+    "observations.csv": "55fc11ccdb6eba5a2e56444664303f1e4831808fc6bc97264947eab63d4d2bc9"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "primary_snapshot": "attempt_03",
+  "symbol": "^SPX",
+  "root": "SPXW",
+  "strike_step": "50",
+  "sigma_min": "0.05",
+  "sigma_max": "1.0",
+  "expected_market": {
+    "expiries": 5,
+    "calls": 59,
+    "puts": 62,
+    "observations": 121,
+    "grid_shape": [5, 75],
+    "conclusion": "feasible_exact"
+  },
+  "study": {
+    "seed": 20261025,
+    "cases": 12,
+    "families": "bs,discrete,corrupt,heston",
+    "nt": 5,
+    "nx": 25,
+    "levels": "0,1,2",
+    "half_spread": "0.00001",
+    "sigma_min": "0.18",
+    "sigma_max": "0.22"
+  }
+}

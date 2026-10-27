@@ -1,0 +1,53 @@
+{
+  "runs": [
+    {
+      "level": 0,
+      "shape": [
+        5,
+        25
+      ],
+      "F0": "feasible_numeric",
+      "variants": {
+        "forward": "infeasible_certified_binary_lp",
+        "backward": "feasible_numeric"
+      },
+      "report": "level_00/report.json",
+      "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+    },
+    {
+      "level": 1,
+      "shape": [
+        9,
+        49
+      ],
+      "F0": "feasible_numeric",
+      "variants": {
+        "forward": "infeasible_certified_binary_lp",
+        "backward": "feasible_numeric"
+      },
+      "report": "level_01/report.json",
+      "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+    },
+    {
+      "level": 2,
+      "shape": [
+        17,
+        97
+      ],
+      "F0": "feasible_numeric",
+      "variants": {
+        "forward": "infeasible_certified_binary_lp",
+        "backward": "infeasible_certified_binary_lp"
+      },
+      "report": "level_02/report.json",
+      "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+    }
+  ],
+  "mesh_dependence_demonstrated_numeric_fine_witness": {
+    "forward": false,
+    "backward": false
+  },
+  "continuous_existence_proved": false,
+  "nested_feasible_sets_assumed": false,
+  "observation_hash_unchanged": true
+}

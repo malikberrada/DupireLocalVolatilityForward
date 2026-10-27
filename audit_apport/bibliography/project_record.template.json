@@ -1,0 +1,20 @@
+{
+  "format": "dupire-project-public-record-v1",
+  "identifier": null,
+  "version": null,
+  "public_url": null,
+  "date_parts": null,
+  "source_sha256": null,
+  "claim_locators": {
+    "C1": null,
+    "C2": null,
+    "C3": null
+  },
+  "metadata": {
+    "provider": null,
+    "record_url": null,
+    "locator": null,
+    "date_kind": null
+  },
+  "instructions": "Indiquer un dépôt public déjà existant, la version exacte et ses pages; joindre le document avec --source PROJECT=... . Ne pas utiliser un horodatage local, une réception privée ni inventer un identifiant. Aucun dépôt externe n’est effectué par ce programme."
+}

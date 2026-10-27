@@ -1,0 +1,10 @@
+{
+  "original_archive": "DupireVolatiliteLocaleForward(3).zip",
+  "original_archive_sha256": "2868e530e026ca6f2333d84b794afa5e470c17e285741e41f5691ae599edd63a",
+  "engine_source": "source/src/dupire_joint in original archive; identical to the supplied 0.1.6 wheel modules",
+  "old_root_engine_not_used": "0.1.1",
+  "chosen_engine_version": "0.1.6",
+  "collector_version": "0.2.0",
+  "audit_version": "0.5.3",
+  "reference_data_bytes_preserved": true
+}

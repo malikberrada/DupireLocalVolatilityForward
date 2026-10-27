@@ -1,0 +1,14 @@
+{
+  "format": "dupire-audit-manifest-v1",
+  "sha256": {
+    "argument_checks.json": "3775f1a820b01476f607b13ee0cf87250d6da0c79ed677b3267c633472f0c014",
+    "changes.json": "108cce08ecc20b6ba99435a97f05ec8640a9f80a3d2f57d9f85d6e45fa41cb48",
+    "correction_packet.json": "8015d6c26971cfb3001a4e8851b7b4488986cf7b48a245e7aef29f3f5ed9d283",
+    "input_workbook.json": "63105b2f24c16ed5fc350c6a7facf87435c2c0344c5dd0b85157c8c65f20bff6",
+    "lectures_corrigees.json": "49f6e9812b419e5238effea65328473fa33680a945bae5eb97643511b3b32247",
+    "source_bindings.json": "99b5588140fd881dfebd2f9f3a8b3b7356dad298a4bb35ab45818d861aa6e612",
+    "verification.json": "10509914c37724af093b4b1299adcdcf95ed32d6624d754c4c0e550c2b912679",
+    "verification_bibliographique.md": "a227c060d7a990aabca433f79a3fd38cc73463206200bd135125d356b2263a43"
+  },
+  "provider_authentication": false
+}

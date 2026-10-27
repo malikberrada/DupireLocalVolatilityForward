@@ -1,0 +1,54 @@
+{
+  "status": "scoped_bibliographic_arguments_checked",
+  "BR2016_C3_threshold_component": {
+    "polynomial_identity_verified": true,
+    "starting_point": "BR2016 (18),(21), restricted to the project three-strike constant-neighbour class",
+    "positive_assumptions": "a=x^2*DeltaT/2>0; kappa>0; gamma0>0; 0<l<u",
+    "common_increment_interval": "[a*l*gamma0, a*u*gamma0/(1+a*u*kappa)]",
+    "iff": "DeltaT <= 2*(u-l)/(x^2*kappa*l*u)",
+    "scope": "threshold component derived algebraically; not attribution of the printed formula or of the entire refinement construction to BR2016"
+  },
+  "ZHANG2025_C1_literal_A5_application": {
+    "polynomial": "4/5-x+x^2*(1+T/50)/4",
+    "domain": {
+      "T": [
+        "1/4",
+        "7/20"
+      ],
+      "x": [
+        "9/10",
+        "27/25"
+      ]
+    },
+    "variance_bounds": [
+      "19/1000",
+      "21/1000"
+    ],
+    "delta": "1/2000",
+    "gamma_floor": "1/2",
+    "M3": "0",
+    "M4": "0",
+    "Mtt": "0",
+    "C1_continuous_conditions_checked": true,
+    "bounds": {
+      "P_min": "6529/500000",
+      "P_max": "41567/400000",
+      "P_minus_intrinsic_lower_bound": "281/80000",
+      "Px_min": "-2191/4000",
+      "Px_max": "-22811/50000",
+      "Pxx_min": "201/400",
+      "Pxx_max": "1007/2000",
+      "raccord_lower_bound": "32281/80000",
+      "variance_min": "20/1007",
+      "variance_max": "4/201"
+    },
+    "P_TT": "0",
+    "exact_time_quadratic_fit_curvature": "0",
+    "positive_time_mesh_violates_displayed_A5_with_exact_zero_envelope": true,
+    "scope": "blocks the literal hypothesis identification C=P with the exact curvature envelope; does not disprove Lemma S0.2 or establish scientific originality"
+  },
+  "scientific_priority_certified": false,
+  "solver_called": false,
+  "third_party_imports": false,
+  "network_used": false
+}

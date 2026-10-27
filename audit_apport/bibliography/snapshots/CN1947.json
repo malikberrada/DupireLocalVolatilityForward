@@ -1,0 +1,115 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "CN1947",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.1017/S0305004100023197",
+  "retrieved_at": "2026-10-27T07:31:08.665649+00:00",
+  "raw_response_sha256": "6e2ac3c05d46a88510fcf5d7c1576b097a7b0c37442b81fcac7fe216a2ba8f6e",
+  "projection": {
+    "DOI": "10.1017/s0305004100023197",
+    "title": [
+      "A practical method for numerical evaluation of solutions of partial differential equations of the heat-conduction type"
+    ],
+    "author": [
+      {
+        "given": "J.",
+        "family": "Crank",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "P.",
+        "family": "Nicolson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Mathematical Proceedings of the Cambridge Philosophical Society"
+    ],
+    "volume": "43",
+    "issue": "1",
+    "page": "50-67",
+    "published": {
+      "date-parts": [
+        [
+          1947,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2008,
+          10,
+          24
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1947,
+          1
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2008,
+          11,
+          7
+        ]
+      ],
+      "date-time": "2008-11-07T10:56:52Z",
+      "timestamp": 1226055412000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2019,
+          6,
+          8
+        ]
+      ],
+      "date-time": "2019-06-08T07:02:17Z",
+      "timestamp": 1559977337000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          24
+        ]
+      ],
+      "date-time": "2026-10-24T01:29:06Z",
+      "timestamp": 1792805346405,
+      "version": "4.5.0"
+    },
+    "URL": "https://doi.org/10.1017/s0305004100023197",
+    "link": [
+      {
+        "URL": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0305004100023197",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ]
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

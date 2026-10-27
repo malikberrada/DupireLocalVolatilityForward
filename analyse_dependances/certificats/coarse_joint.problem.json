@@ -1,0 +1,75 @@
+{
+  "format": "dupire-exact-grid-problem-v1",
+  "times": [
+    "1/4",
+    "7/20"
+  ],
+  "strikes": [
+    "9/10",
+    "1",
+    "27/25"
+  ],
+  "observations": [
+    [
+      "1/4",
+      "9/10",
+      "102499/1000000",
+      "102501/1000000"
+    ],
+    [
+      "1/4",
+      "1",
+      "49999/1000000",
+      "50001/1000000"
+    ],
+    [
+      "1/4",
+      "27/25",
+      "11599/1000000",
+      "11601/1000000"
+    ],
+    [
+      "7/20",
+      "9/10",
+      "102499/1000000",
+      "102501/1000000"
+    ],
+    [
+      "7/20",
+      "1",
+      "101/2000",
+      "511/10000"
+    ],
+    [
+      "7/20",
+      "27/25",
+      "11599/1000000",
+      "11601/1000000"
+    ]
+  ],
+  "vmin": [
+    [
+      "3/100"
+    ]
+  ],
+  "vmax": [
+    [
+      "1/25"
+    ]
+  ],
+  "scheme": "joint",
+  "source": {
+    "kind": "controlled_synthetic_search",
+    "family": "constant_boundary_one_interior_node_v1",
+    "parameters": {
+      "delta_t": "1/10",
+      "vmin": "3/100",
+      "vmax": "1/25",
+      "epsilon": "1/1000000",
+      "center_increment_bid": "1/2000",
+      "center_increment_ask": "11/10000"
+    }
+  },
+  "tail": "finite_window_no_zero_tail_anchor",
+  "normalization": "fixed_nominal_F_D_and_settlement_times"
+}

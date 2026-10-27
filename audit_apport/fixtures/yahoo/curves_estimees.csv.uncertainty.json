@@ -1,0 +1,385 @@
+{
+  "format": "dupire.curves.interval.v1",
+  "settings": {
+    "symbol": "^SPX",
+    "root": "SPXW",
+    "min_pairs": 3,
+    "max_pairs": 2000,
+    "min_days": "14",
+    "max_days": "180",
+    "time_limit": 60.0,
+    "asof": null,
+    "crossed_policy": "reject"
+  },
+  "settlement_overrides": {},
+  "asof_utc": "2026-10-26T19:32:39.823465+00:00",
+  "asof_range_utc": [
+    "2026-10-26T19:32:31.538595+00:00",
+    "2026-10-26T19:32:48.108334+00:00"
+  ],
+  "time_source": "retrieval_window_not_bid_ask_time",
+  "day_count": "ACT/365F_to_scheduled_index_fixing",
+  "groups": [
+    {
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "expiry": "2026-11-09",
+      "status": "accepted",
+      "fixing": {
+        "fixing_utc": "2026-11-09T21:00:00+00:00",
+        "settlement": "PM",
+        "source": "https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf",
+        "calendar_source": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/",
+        "calendar": "scheduled_NYSE_2026_2028",
+        "early_close": false,
+        "assumption": "scheduled_underlying_equity_close_no_exceptional_closure"
+      },
+      "time": "242968035307/6307200000000",
+      "time_range": [
+        "607415945833/15768000000000",
+        "80989897427/2102400000000"
+      ],
+      "pair_count": 12,
+      "excluded_books": [],
+      "unmatched_strikes": [
+        "7400",
+        "7450",
+        "7500",
+        "8050"
+      ],
+      "vertices_A_D": [
+        [
+          "46019/6",
+          "374/375"
+        ],
+        [
+          "76369/10",
+          "993/1000"
+        ],
+        [
+          "76447/10",
+          "497/500"
+        ],
+        [
+          "30793/4",
+          "1001/1000"
+        ]
+      ],
+      "nominal": {
+        "prepaid_forward": "1838981/240",
+        "discount": "2989/3000",
+        "forward": "45974525/5978"
+      },
+      "bounds": {
+        "prepaid_forward": [
+          "76369/10",
+          "30793/4"
+        ],
+        "discount": [
+          "993/1000",
+          "1001/1000"
+        ],
+        "forward": [
+          "338375/44",
+          "546050/71"
+        ]
+      }
+    },
+    {
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "expiry": "2026-11-16",
+      "status": "accepted",
+      "fixing": {
+        "fixing_utc": "2026-11-16T21:00:00+00:00",
+        "settlement": "PM",
+        "source": "https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf",
+        "calendar_source": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/",
+        "calendar": "scheduled_NYSE_2026_2028",
+        "early_close": false,
+        "assumption": "scheduled_underlying_equity_close_no_exceptional_closure"
+      },
+      "time": "363928035307/6307200000000",
+      "time_range": [
+        "909815945833/15768000000000",
+        "121309897427/2102400000000"
+      ],
+      "pair_count": 13,
+      "excluded_books": [],
+      "unmatched_strikes": [
+        "7350",
+        "7450",
+        "8000"
+      ],
+      "vertices_A_D": [
+        [
+          "15357/2",
+          "499/500"
+        ],
+        [
+          "191434/25",
+          "622/625"
+        ],
+        [
+          "38344/5",
+          "299/300"
+        ],
+        [
+          "7679",
+          "499/500"
+        ],
+        [
+          "23113/3",
+          "751/750"
+        ]
+      ],
+      "nominal": {
+        "prepaid_forward": "5758199/750",
+        "discount": "12473/12500",
+        "forward": "287909950/37419"
+      },
+      "bounds": {
+        "prepaid_forward": [
+          "191434/25",
+          "23113/3"
+        ],
+        "discount": [
+          "622/625",
+          "751/750"
+        ],
+        "forward": [
+          "3839250/499",
+          "2300640/299"
+        ]
+      }
+    },
+    {
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "expiry": "2026-11-23",
+      "status": "accepted",
+      "fixing": {
+        "fixing_utc": "2026-11-23T21:00:00+00:00",
+        "settlement": "PM",
+        "source": "https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf",
+        "calendar_source": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/",
+        "calendar": "scheduled_NYSE_2026_2028",
+        "early_close": false,
+        "assumption": "scheduled_underlying_equity_close_no_exceptional_closure"
+      },
+      "time": "484888035307/6307200000000",
+      "time_range": [
+        "1212215945833/15768000000000",
+        "161629897427/2102400000000"
+      ],
+      "pair_count": 10,
+      "excluded_books": [],
+      "unmatched_strikes": [
+        "7300",
+        "7350",
+        "7400",
+        "7450",
+        "7900",
+        "7950"
+      ],
+      "vertices_A_D": [
+        [
+          "191441/25",
+          "2487/2500"
+        ],
+        [
+          "305309/40",
+          "1983/2000"
+        ],
+        [
+          "38183/5",
+          "124/125"
+        ],
+        [
+          "38414/5",
+          "499/500"
+        ],
+        [
+          "192221/25",
+          "2497/2500"
+        ]
+      ],
+      "nominal": {
+        "prepaid_forward": "7659721/1000",
+        "discount": "49751/50000",
+        "forward": "382986050/49751"
+      },
+      "bounds": {
+        "prepaid_forward": [
+          "305309/40",
+          "192221/25"
+        ],
+        "discount": [
+          "1983/2000",
+          "2497/2500"
+        ],
+        "forward": [
+          "19144100/2487",
+          "3841400/499"
+        ]
+      }
+    },
+    {
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "expiry": "2026-12-03",
+      "status": "accepted",
+      "fixing": {
+        "fixing_utc": "2026-12-03T21:00:00+00:00",
+        "settlement": "PM",
+        "source": "https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf",
+        "calendar_source": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/",
+        "calendar": "scheduled_NYSE_2026_2028",
+        "early_close": false,
+        "assumption": "scheduled_underlying_equity_close_no_exceptional_closure"
+      },
+      "time": "657688035307/6307200000000",
+      "time_range": [
+        "1644215945833/15768000000000",
+        "219229897427/2102400000000"
+      ],
+      "pair_count": 8,
+      "excluded_books": [],
+      "unmatched_strikes": [
+        "7300",
+        "7450",
+        "7600",
+        "7850",
+        "7900",
+        "7950",
+        "8000"
+      ],
+      "vertices_A_D": [
+        [
+          "384259/50",
+          "1247/1250"
+        ],
+        [
+          "382749/50",
+          "621/625"
+        ],
+        [
+          "76659/10",
+          "199/200"
+        ],
+        [
+          "38368/5",
+          "249/250"
+        ],
+        [
+          "154339/20",
+          "601/600"
+        ],
+        [
+          "231533/30",
+          "1127/1125"
+        ]
+      ],
+      "nominal": {
+        "prepaid_forward": "13834313/1800",
+        "discount": "134677/135000",
+        "forward": "1037573475/134677"
+      },
+      "bounds": {
+        "prepaid_forward": [
+          "382749/50",
+          "231533/30"
+        ],
+        "discount": [
+          "621/625",
+          "1127/1125"
+        ],
+        "forward": [
+          "9606475/1247",
+          "1533180/199"
+        ]
+      }
+    },
+    {
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "expiry": "2027-01-15",
+      "status": "accepted",
+      "fixing": {
+        "fixing_utc": "2027-01-15T21:00:00+00:00",
+        "settlement": "PM",
+        "source": "https://cdn.cboe.com/resources/xsp/XSP_Options_Fact_Sheet.pdf",
+        "calendar_source": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/",
+        "calendar": "scheduled_NYSE_2026_2028",
+        "early_close": false,
+        "assumption": "scheduled_underlying_equity_close_no_exceptional_closure"
+      },
+      "time": "1400728035307/6307200000000",
+      "time_range": [
+        "3501815945833/15768000000000",
+        "466909897427/2102400000000"
+      ],
+      "pair_count": 3,
+      "excluded_books": [],
+      "unmatched_strikes": [
+        "7350",
+        "7450",
+        "7550",
+        "7600",
+        "7650",
+        "7700",
+        "7750",
+        "7800",
+        "8000"
+      ],
+      "vertices_A_D": [
+        [
+          "267513/35",
+          "1727/1750"
+        ],
+        [
+          "266688/35",
+          "3443/3500"
+        ],
+        [
+          "267473/35",
+          "3453/3500"
+        ],
+        [
+          "268298/35",
+          "866/875"
+        ]
+      ],
+      "nominal": {
+        "prepaid_forward": "267493/35",
+        "discount": "6907/7000",
+        "forward": "53498600/6907"
+      },
+      "bounds": {
+        "prepaid_forward": [
+          "266688/35",
+          "268298/35"
+        ],
+        "discount": [
+          "3443/3500",
+          "866/875"
+        ],
+        "forward": [
+          "13375650/1727",
+          "26747300/3453"
+        ]
+      }
+    }
+  ],
+  "accepted_count": 5,
+  "rejected_count": 0,
+  "outside_window_count": 0,
+  "all_selected_passed": true,
+  "arithmetic": "exact rationals of JSON decimal representations",
+  "uncertainty_semantics": "deterministic feasible-set bounds; not confidence intervals",
+  "quote_synchronization_verified": false,
+  "robust_calibration_certified": false,
+  "snapshot_sha256": "e11b2f5730bbc6d784b0d872d08d9bc9dbd1bd4905ead3f858580b4e640b36d6",
+  "allow_partial": false,
+  "curves_sha256": "a2ee23338d7b2f07c226fc0c50da4a0cf4cd5267e7399951c6e3a6ee6161f0ca"
+}

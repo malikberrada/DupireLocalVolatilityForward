@@ -1,0 +1,6 @@
+{
+  "analytic_generator": "Black-Scholes",
+  "sigma": 0.19594373667377893,
+  "different_observed_strikes_by_maturity": true,
+  "controlled_perturbation": "crossed quote, gap .01 normalized units"
+}

@@ -1,0 +1,431 @@
+{
+  "format": "dupire-joint-report-v1",
+  "complete": true,
+  "fingerprint": "ea844eb0f0f64966d7831de82eeaebe881a9905cb0fd578193f93081aebcacaf",
+  "inputs": {
+    "package_version": "0.1.1",
+    "versions": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "highspy": "1.15.1"
+    },
+    "quotes_sha256": "5015f14d50db62ba7015b9207905c7d91a73cd47180b09833ea69c3f345357b7",
+    "times": [
+      0.1,
+      0.11945698525097308,
+      0.13891397050194615,
+      0.1583709557529192,
+      0.1778279410038923,
+      0.21242789725712868,
+      0.2470278535103651,
+      0.2816278097636015,
+      0.31622776601683794,
+      0.3777561558102157,
+      0.43928454560359353,
+      0.5008129353969712,
+      0.5623413251903491,
+      0.6717559938927617,
+      0.7811706625951745,
+      0.8905853312975873,
+      1.0
+    ],
+    "strikes": [
+      0.65,
+      0.6588526310897254,
+      0.6677052621794508,
+      0.6765578932691763,
+      0.6854105243589017,
+      0.6931785818993574,
+      0.7009466394398132,
+      0.7087146969802689,
+      0.7164827545207246,
+      0.7253844823892595,
+      0.7342862102577943,
+      0.7431879381263291,
+      0.7520896659948639,
+      0.7592527056942724,
+      0.7664157453936808,
+      0.7735787850930893,
+      0.7807418247924977,
+      0.7900577072021524,
+      0.799373589611807,
+      0.8086894720214617,
+      0.8180053544311164,
+      0.8274459537174781,
+      0.8368865530038399,
+      0.8463271522902016,
+      0.8557677515765633,
+      0.8618397446175452,
+      0.8679117376585272,
+      0.8739837306995092,
+      0.8800557237404911,
+      0.8890218857868903,
+      0.8979880478332896,
+      0.9069542098796888,
+      0.9159203719260881,
+      0.9232786940704554,
+      0.9306370162148226,
+      0.9379953383591899,
+      0.9453536605035572,
+      0.9552143412486533,
+      0.9650750219937494,
+      0.9749357027388456,
+      0.9847963834839417,
+      0.9939411309500594,
+      1.0030858784161771,
+      1.012230625882295,
+      1.0213753733484128,
+      1.028969880002398,
+      1.0365643866563832,
+      1.0441588933103683,
+      1.0517533999643536,
+      1.0580221107049743,
+      1.0642908214455948,
+      1.0705595321862154,
+      1.076828242926836,
+      1.0881485833161908,
+      1.0994689237055457,
+      1.1107892640949004,
+      1.1221096044842551,
+      1.1298445622882203,
+      1.1375795200921854,
+      1.1453144778961506,
+      1.1530494357001155,
+      1.1609213414185304,
+      1.168793247136945,
+      1.1766651528553598,
+      1.1845370585737744,
+      1.1935836975988134,
+      1.2026303366238524,
+      1.2116769756488917,
+      1.2207236146739306,
+      1.2278303255216436,
+      1.2349370363693566,
+      1.2420437472170696,
+      1.2491504580647825,
+      1.2564813306628446,
+      1.2638122032609065,
+      1.2711430758589684,
+      1.2784739484570304,
+      1.2878718788846966,
+      1.2972698093123625,
+      1.3066677397400284,
+      1.3160656701676945,
+      1.324836473378239,
+      1.3336072765887834,
+      1.3423780797993279,
+      1.3511488830098723,
+      1.3590232524473005,
+      1.3668976218847284,
+      1.3747719913221566,
+      1.3826463607595847,
+      1.3923263256017357,
+      1.4020062904438868,
+      1.411686255286038,
+      1.4213662201281891,
+      1.4285246650961418,
+      1.4356831100640945,
+      1.4428415550320473,
+      1.45
+    ],
+    "tail_x": null,
+    "vmin": 0.0324,
+    "vmax": 0.0484,
+    "schemes": [
+      "forward",
+      "backward"
+    ],
+    "solver": {
+      "threads": 10,
+      "time_limit": 120.0,
+      "tolerance": 1e-09,
+      "method": "choose",
+      "backend": "highs"
+    },
+    "audit_tol": 1e-08,
+    "relax": true,
+    "bisect_steps": 16
+  },
+  "domain": {
+    "time": [
+      0.1,
+      1.0
+    ],
+    "strike": [
+      0.65,
+      1.45
+    ],
+    "shape": [
+      17,
+      97
+    ],
+    "boundary": "c(0)=1 convex chord; free right window endpoint; no global tail existence claim"
+  },
+  "continuous_existence_proved": false,
+  "variants": {
+    "forward": {
+      "status": "infeasible",
+      "native_status": "Infeasible",
+      "objective": null,
+      "simplex_iterations": 9062,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 2.5150000000003274,
+      "lp_sha256": "3e1bb597553669edc1e4e7f17626882123ec3e6ce7037a4c45226b99b6db6a6a",
+      "model_file": "forward.lp.npz",
+      "conclusion": "infeasible_certified_binary_lp",
+      "certificate_file": "forward.certificate.json",
+      "certificate_verification": {
+        "verified": true,
+        "exact_margin_numerator": "2139548224628853033121094766504052537501026942807299271759047899",
+        "exact_margin_denominator": "6739986666787659948666753771754907668409286105635143120275902562304",
+        "margin_approx": 0.00031744101737942777,
+        "support_size": 1528,
+        "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+      },
+      "diagnosis": "joint_constraints_incompatible_on_this_grid_F0_numerically_feasible",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 13.443488929860015,
+        "simplex_iterations": 31407,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 5.25,
+        "lp_sha256": "1f48ddbc6efd1b46afafa9517fe2c5cef187ef631d4007451366d2e03180dccf",
+        "model_file": "forward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 4.1642612082682e-09,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 8.131516293641283e-20,
+            "slope_lower": 0.0,
+            "convexity": 3.637978807091713e-12,
+            "left_chord": 1.7763568394002505e-15,
+            "calendar": 1.1102230246251565e-16,
+            "local_lower": 1.454392162258955e-14,
+            "local_upper": 4.1642612082682e-09,
+            "ask": 8.881784197001252e-16,
+            "bid": 4.0766001685454967e-17
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 8.881784197001252e-16,
+            "bid": 4.119968255444917e-17,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 8.131516293641283e-20,
+            "slope_lower": 0.0,
+            "convexity": 3.794106802783025e-12,
+            "calendar": 1.1102230246251565e-16,
+            "left_chord": 5.551115123125783e-15,
+            "local_lower": 1.2584117775604753e-14,
+            "local_upper": 4.164261208241095e-09
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "forward_epsilon.witness.npz",
+        "unidentified_cells": 27,
+        "total_interior_cells": 1520,
+        "local_variance_range": [
+          0.0,
+          0.05632526917700125
+        ],
+        "epsilon_upper_bound_numeric": 13.443488929860015,
+        "epsilon_star_numeric": 13.443488929860015
+      },
+      "variance_relaxation": {
+        "status": "indeterminate",
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0484,
+            "result": "unknown"
+          }
+        ]
+      }
+    },
+    "backward": {
+      "status": "infeasible",
+      "native_status": "Infeasible",
+      "objective": null,
+      "simplex_iterations": 3705,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 0.9369999999998981,
+      "lp_sha256": "9dd1de23c2c232e1c942d95c6972d0ab7075244156ba3d1d79c241b5d174c698",
+      "model_file": "backward.lp.npz",
+      "conclusion": "infeasible_certified_binary_lp",
+      "certificate_file": "backward.certificate.json",
+      "certificate_verification": {
+        "verified": true,
+        "exact_margin_numerator": "7364681874907593970082702526722678086997689775237342890103552419",
+        "exact_margin_denominator": "215679573337205118357336120696157045389097155380324579848828881993728",
+        "margin_approx": 3.4146404135329275e-05,
+        "support_size": 1003,
+        "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+      },
+      "diagnosis": "joint_constraints_incompatible_on_this_grid_F0_numerically_feasible",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 1.430528852856133,
+        "simplex_iterations": 4247,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 0.5460000000002765,
+        "lp_sha256": "4fa06b7db7ad078587d65a69ed60173ad128b53092e1749050db3ed5849f421c",
+        "model_file": "backward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 2.7284841053187847e-12,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 2.7284841053187847e-12,
+            "left_chord": 1.7763568394002505e-15,
+            "calendar": 1.853308088592409e-18,
+            "local_lower": 3.552713678800501e-15,
+            "local_upper": 4.440892098500626e-15,
+            "ask": 1.3877787807814457e-17,
+            "bid": 5.551115123125783e-16
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 6.940587969801737e-18,
+            "bid": 5.616235016110693e-16,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 2.7583864130347883e-12,
+            "calendar": 1.853308088592409e-18,
+            "left_chord": 5.773159728050814e-15,
+            "local_lower": 3.630342554350463e-15,
+            "local_upper": 4.218413812706601e-15
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "backward_epsilon.witness.npz",
+        "unidentified_cells": 0,
+        "total_interior_cells": 1520,
+        "local_variance_range": [
+          0.03239999999963769,
+          0.04840000079912289
+        ],
+        "epsilon_upper_bound_numeric": 1.430528852856133,
+        "epsilon_star_numeric": 1.430528852856133
+      },
+      "variance_relaxation": {
+        "status": "indeterminate",
+        "bracket": [
+          0.0,
+          0.0484
+        ],
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0484,
+            "result": "feasible_numeric"
+          },
+          {
+            "lambda": 0.0242,
+            "result": "unknown"
+          }
+        ]
+      }
+    }
+  },
+  "F0": {
+    "status": "optimal",
+    "native_status": "Optimal",
+    "objective": 0.0,
+    "simplex_iterations": 1835,
+    "ipm_iterations": 0,
+    "backend": "highs",
+    "version": "1.15.1",
+    "wall_seconds": 0.03099999999994907,
+    "lp_sha256": "75fc50484434911d85a2bad5de3e1a08e97ab84a6cb67b313ef1c5c7211b4dcf",
+    "model_file": "F0.lp.npz",
+    "conclusion": "feasible_numeric",
+    "audit": {
+      "passed": true,
+      "max_violation": 2.7284841053187847e-12,
+      "bound_violation": 0.0,
+      "groups": {
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 2.7284841053187847e-12,
+        "left_chord": 0.0,
+        "calendar": 1.1102230246251565e-16,
+        "ask": 0.0,
+        "bid": 0.0
+      },
+      "tolerance": 1e-08,
+      "semantics": "absolute residuals of unscaled binary64 LP"
+    },
+    "independent_audit": {
+      "passed": true,
+      "checks": {
+        "ask": 0.0,
+        "bid": 0.0,
+        "call_lower": 0.0,
+        "call_upper": 0.0,
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 1.499314762135177e-12,
+        "calendar": 1.1102230246251565e-16,
+        "left_chord": 0.0
+      },
+      "tolerance": 1e-08,
+      "method": "direct finite differences, independently of sparse assembly"
+    },
+    "witness_file": "F0.witness.npz",
+    "unidentified_cells": 1276,
+    "total_interior_cells": 1520,
+    "local_variance_range": [
+      -7.91191704611645e-18,
+      304447487705.8093
+    ]
+  },
+  "artifacts_sha256": {
+    "backward.certificate.json": "a49415e0c74880e775835b58e435102ea1670427f847de9a3e1c7b3f0c9c9436",
+    "backward.lp.npz": "27ab5aaaf673162f3da725c46b40f2f2891262a035ed9d4d93ab734fb5c76a9b",
+    "backward_epsilon.lp.npz": "e701c5d42117b6336bc0afca1ba029edca87f5efea8649b760009b943df33907",
+    "backward_epsilon.surface.csv": "624b4feab9d58a091bc841cc2d37128e8cd5bfbfd29d67e9ebdccfd23bc53bb9",
+    "backward_epsilon.witness.npz": "18b11088434e32e998aff46d1100417f5193beba9a1fb566493fe5438a5ccdf2",
+    "F0.lp.npz": "3132721c4e8da63f7378a4c747ede65a578380a8238d2dbf051d031d340cff80",
+    "F0.surface.csv": "e6d0b47e1995987c3ec0ef7045f4d2cd15cb4f085e8a7483f6aed2f044cf992f",
+    "F0.witness.npz": "4b28609cc75125c0df0b52427cb2d1a3d74fa6ab74d39be748bce00a07df8e86",
+    "forward.certificate.json": "98b9e2e9b1c7f8fe5555558a653cb2ed5ccd2e33dd614b8fe8c6f9451d02613a",
+    "forward.lp.npz": "6401de40c3d86992d025ec7b04fe54bc52778071a81a319ea5d787f23babf4f0",
+    "forward_epsilon.lp.npz": "f215db1de856612c2fe9571a34a93e53da5f6a12714f91cb5caa9cae0f761451",
+    "forward_epsilon.surface.csv": "75ee9a48b42df315c63df924f2bed80a20a44a5b283b112dcde98fc686b1090d",
+    "forward_epsilon.witness.npz": "e3f37d46c2d324a39e1877a5a5b2daac254e4c7095567b2fe1449edb322fa7c8",
+    "observations.csv": "131cf26b7cbcb448e4697cc5bbd719fbd8cf750ce2701d1e4173f7f6f4b3abc9"
+  }
+}

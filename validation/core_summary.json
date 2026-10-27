@@ -1,0 +1,29 @@
+{
+  "profile": "core",
+  "output": "<REPO>/runs/verification/core",
+  "network_used": false,
+  "status": "reproduced_and_checked",
+  "results": {
+    "exact_dependencies": {
+      "dual_support_size": 10,
+      "dual_strict_margin": "4739/384000000",
+      "robust_terminal_price_gap": "1153/128000000"
+    },
+    "constructive": {
+      "conclusion": "feasible_from_guaranteed_level",
+      "guaranteed_level": 2
+    },
+    "attempt_03": {
+      "raw_sha256": "add46f2a167f37e3895179ac1c0f5172a689386ca1932f715dad666f8b594d65",
+      "conclusion": "feasible_exact",
+      "observations": 121,
+      "shape": [
+        5,
+        75
+      ]
+    },
+    "audit": "joint_separation_and_time_refinement_certified",
+    "archived_study": "evidence_reverified_with_original_quotes"
+  },
+  "scientific_priority_certified": false
+}

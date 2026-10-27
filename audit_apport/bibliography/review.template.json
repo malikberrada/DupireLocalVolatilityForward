@@ -1,0 +1,17 @@
+[
+  {
+    "work_id": "KKT2024",
+    "claim_id": "C1",
+    "version_id": "version-of-record",
+    "reviewer": "À RENSEIGNER",
+    "review_date": "2026-10-27",
+    "source_sha256": null,
+    "scope": "full_work",
+    "relation": "unresolved",
+    "locator": "Pages, théorèmes et équations exacts après lecture.",
+    "hypotheses": "Comparer chacune des hypothèses de C1, notamment marge, convexité et grille.",
+    "conclusion": "Comparer la conclusion et les quantificateurs.",
+    "derivability": "unresolved",
+    "derivation_note": "Établir ou écarter une spécialisation directe, avec justification mathématique. Ce modèle est volontairement incomplet et refusé tel quel."
+  }
+]

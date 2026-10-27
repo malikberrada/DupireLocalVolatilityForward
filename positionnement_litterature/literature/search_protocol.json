@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-26",
+  "queries": [
+    "\"Bernstein\" \"local volatility\" arbitrage calibration",
+    "\"constructive\" \"local volatility\" feasibility bounds grid refinement",
+    "\"SANOS\" volatility surface",
+    "\"Detecting and repairing arbitrage\" option prices Cohen Reisinger Wang",
+    "\"Bernstein polynomial\" \"arbitrage\" option surface",
+    "\"Volatility Interpolation\" Andreasen Huge 2011 pdf",
+    "\"local volatility\" \"bounds\" \"Bernstein\"",
+    "\"arbitrage-free smoothing\" Fengler 2009 pdf",
+    "\"A Semi-Closed Form Approximation\" \"Bernstein\"",
+    "\"Bernstein\" \"option price surface\" arbitrage",
+    "\"shape-restricted\" \"local volatility\"",
+    "\"local volatility\" \"feasibility\" refinement bounds",
+    "\"Tikhonov regularization\" \"option pricing\" Egger Engl 2005",
+    "\"Beyond Surrogate Modeling\" \"Local Volatility\" arxiv",
+    "\"A Semi-Closed Form Approximation\" \"pdf\" Kundu Tomar",
+    "\"Deep Local Volatility\" arxiv Chataigner Crépey Dixon",
+    "Fengler Hin call option price surface 2015",
+    "Fengler Hin Bernstein 184 242 261",
+    "Consistency of option prices under bid-ask spreads"
+  ],
+  "engines": [
+    "web system1",
+    "web system2"
+  ],
+  "selection": "Mechanism-based screening; primary versions prioritized, recent SANOS versions checked; not exhaustive.",
+  "exclusions": [
+    {
+      "title": "DYSANOS",
+      "url": "https://arxiv.org/abs/2608.12587",
+      "reason": "Dynamic surface generation is outside this static constructive theorem comparison."
+    },
+    {
+      "title": "GROMM",
+      "url": "https://arxiv.org/abs/2610.16732",
+      "reason": "Dynamic risk-neutral market model, a different target."
+    },
+    {
+      "title": "The Mathematics of Volatility Surfaces",
+      "url": "https://arxiv.org/html/2608.05198v1",
+      "reason": "Broad dynamic framework screened; no theorem-equivalence review completed."
+    }
+  ],
+  "access_problems": [
+    "KKT2024 full text restricted",
+    "AH SSRN direct access returned 403",
+    "Deep Local Volatility PDF unavailable during review"
+  ],
+  "negative_claim_policy": "No absence or novelty conclusion is inferred from failed access or a missing keyword."
+}

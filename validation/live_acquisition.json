@@ -1,0 +1,9 @@
+{
+  "started_utc": "2026-10-27T14:12:10.582596+00:00",
+  "ended_utc": "2026-10-27T14:12:29.254155+00:00",
+  "chains_downloaded": 6,
+  "network_errors": [],
+  "raw_sha256": "bf9240265a6274fe65c4e17ef6304dcec919689f57353f74eaa736fbdaf11ac2",
+  "validation_status": "rejected_parity_or_data_quality_failed",
+  "new_data_committed_as_historical_input": false
+}

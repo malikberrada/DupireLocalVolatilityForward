@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-27",
+  "review_type": "targeted_not_exhaustive",
+  "queries_actually_executed": [
+    {
+      "engine": "system2",
+      "q": "\"local volatility\" \"forward\" \"backward\" \"intersection\" feasibility"
+    },
+    {
+      "engine": "system2",
+      "q": "\"local volatility\" \"gamma ratio\" bounds"
+    },
+    {
+      "engine": "system2",
+      "q": "\"local volatility\" \"joint feasibility\" discretization"
+    },
+    {
+      "engine": "system1",
+      "q": "\"local volatility\" \"forward\" \"backward\" \"intersection\" bounds"
+    },
+    {
+      "engine": "system1",
+      "q": "\"Dupire\" \"joint\" \"feasibility\""
+    },
+    {
+      "engine": "system1",
+      "q": "\"local volatility\" \"compatibility\" \"time step\" bounds"
+    }
+  ],
+  "sources_rechecked": [
+    {
+      "id": "ZHANG2025",
+      "url": "https://arxiv.org/html/2511.09175v1",
+      "sections": "§3.3–3.4, Lemma S0.2; §7.1"
+    },
+    {
+      "id": "KKT2024",
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5",
+      "sections": "Abstract and public Technical Appendix; main text unavailable"
+    },
+    {
+      "id": "AUSTING2020",
+      "url": "https://www.risk.net/media/download/1053071/download",
+      "sections": "Discretisation, local volatility equations (22)–(24), conclusion"
+    }
+  ],
+  "other_retrieval_attempts": [
+    {
+      "url": "https://arxiv.org/html/2608.12587v1",
+      "status": "HTML retrieval disabled; no theorem exclusion based on this source"
+    }
+  ],
+  "interpretation": "No equivalent statement identified in inspected passages; no universal absence or scientific priority is proved.",
+  "new_math_evidence_source": "joint_discriminant exact certificates and literature/JOINT_SEPARATION.md",
+  "scientific_priority_certified": false
+}

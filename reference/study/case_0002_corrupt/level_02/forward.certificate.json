@@ -1,0 +1,21 @@
+{
+  "format": "dupire-joint-box-separation-v1",
+  "lp_sha256": "6249b413683eab90cab198e8d7bdb6f42a85e6eb00f6c853163809309049291a",
+  "rows": [
+    9521,
+    9588
+  ],
+  "multipliers": [
+    1.0,
+    1.0
+  ],
+  "verification": {
+    "verified": true,
+    "exact_margin_numerator": "2882303761517117",
+    "exact_margin_denominator": "288230376151711744",
+    "margin_approx": 0.009999999999999998,
+    "support_size": 2,
+    "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+  },
+  "source": "HiGHS dual ray, corrected by the exact variable box"
+}

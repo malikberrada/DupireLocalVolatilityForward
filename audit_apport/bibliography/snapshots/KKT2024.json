@@ -1,0 +1,142 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "KKT2024",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.1007/s10614-023-10368-5",
+  "retrieved_at": "2026-10-27T07:26:55.952590+00:00",
+  "raw_response_sha256": "06fd8faf4b89e7b98e3747782e4cecc12c857c3157c66bbe356d99980cdf3810",
+  "projection": {
+    "DOI": "10.1007/s10614-023-10368-5",
+    "title": [
+      "A Semi-Closed Form Approximation of Arbitrage-Free Call Option Price Surface"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1819-0474",
+        "authenticated-orcid": false,
+        "given": "Arindam",
+        "family": "Kundu",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Sumit",
+        "family": "Kumar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Nutan Kumar",
+        "family": "Tomar",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Computational Economics"
+    ],
+    "volume": "63",
+    "issue": "4",
+    "page": "1431-1457",
+    "published": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          10
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          10
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          4
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          3,
+          26
+        ]
+      ],
+      "date-time": "2023-03-26T21:21:38Z",
+      "timestamp": 1679865698000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          20
+        ]
+      ],
+      "date-time": "2024-04-20T09:09:31Z",
+      "timestamp": 1713604171000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2025,
+          2,
+          21
+        ]
+      ],
+      "date-time": "2025-02-21T07:20:37Z",
+      "timestamp": 1740122437048,
+      "version": "3.37.3"
+    },
+    "URL": "https://doi.org/10.1007/s10614-023-10368-5",
+    "link": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s10614-023-10368-5.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s10614-023-10368-5/fulltext.html",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s10614-023-10368-5.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ]
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

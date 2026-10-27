@@ -1,0 +1,24 @@
+{
+  "hash_algorithm": "sha256",
+  "files": {
+    "Analyse_dependances_Dupire_20261027.pdf": "42ba1302a55e912e3bbfe3a4855e4f18d446be7fd0a30ea768410987ef79dbd7",
+    "Analyse_dependances_Dupire_20261027.tex": "b42aa0c6e41bf12b86d24cc3af8a7d8fff0958369e30780fb17d47ebfe55056d",
+    "README.txt": "abc00e51a7547562820459c6208c5aff2a74d74d934b290604a19cdf205af7cc",
+    "certificats/coarse_backward.certificate.json": "6c62fc1ad74be9b664ae75149a4940eb21c70627f050f8d95aa3c3563b980bff",
+    "certificats/coarse_backward.problem.json": "a72c6193b92e97a078eb97540910afc5ec505479bd75cc1c87e22f6aec86a647",
+    "certificats/coarse_forward.certificate.json": "c46e5a8ed2664dc21599aa9eebf1f44ff4dcb9d6aa0c48d0eada08921b84bdd2",
+    "certificats/coarse_forward.problem.json": "09c353d499104513455ea750749ad8beb2e8aeb113401131fd869deedbcc56ed",
+    "certificats/coarse_joint.certificate.json": "a0da5964ae092ed036e382ad07d020468959313e525998721d64b578f0fbad13",
+    "certificats/coarse_joint.problem.json": "7250c7bca0a8081b16e0e81450477578143cd1f4e54af3140bff90306fc10770",
+    "certificats/conservation_endpoint.certificate.json": "ac180d9bbca282a6938a017ff9f77f82c40152c593926685e5aab2669665dae8",
+    "certificats/conservation_endpoint.problem.json": "a65a2f5b410f0a3ac30a0a8548c5374b53e0ef437b10116095738b9469133d73",
+    "certificats/refined_joint.certificate.json": "d49bcf958a84cbf13bab56ba993f380ef247f35ca5a7fb9dfabe4b3a735c2ba8",
+    "certificats/refined_joint.problem.json": "72bfab72ea8a20e8b800f764f4f1437fdbb6728ae13fe4e30810e1de089979a1",
+    "certificats/result.json": "5c90c697577e56192e23940d10b482386938d5b38248964852e43ca0213ec833",
+    "generer_dependances.py": "cf700f8d62eb6ed2e1a3d251d1348318f13443968ac5cac99b971c72c4f4a400",
+    "preuves_dependances.json": "757a8e1872ddd466cd8bb82b5fbae0a8b3fba54221680ccd39db69ec0c64c8ab",
+    "sources.json": "f70a8ac058c6a7ca07a33edd376ac451a7aee017cf27a16c83a2fb912ad47ed1",
+    "verifier_dependances.py": "8d0bab3554d0336ec2457cfa2eed4a121366ca2b30d144d96173636973461ed7",
+    "verifier_joint_independant.py": "bdbcaea5359ac261c8138e4755fb5ccde2839e0bdc28ff5d4665c775e88a9848"
+  }
+}

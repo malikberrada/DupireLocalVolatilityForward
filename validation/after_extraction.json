@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "installation": "fresh independent Python 3.12 venv; source installed from the extracted delivery ZIP",
+  "tests": {
+    "tests": 318,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3
+  },
+  "passed": 315,
+  "core_profile": "reproduced_and_checked",
+  "steps": 16,
+  "native_windows_executed": false,
+  "cuda_executed": false
+}

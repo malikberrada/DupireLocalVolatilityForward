@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-27",
+  "scope": "targeted_not_exhaustive",
+  "queries_actually_executed": [
+    {
+      "engine": "system2",
+      "q": "\"Discrete Local Volatility for Large Time Steps (Extended Version)\" \"13 Aug 2015\""
+    },
+    {
+      "engine": "system2",
+      "q": "\"Semi-Nonparametric Estimation\" \"17 Aug 2011\""
+    },
+    {
+      "engine": "system1",
+      "q": "site.papers.ssrn.com 2642630 \"Posted\" \"2015\"",
+      "result_note": "irrelevant results; no absence conclusion"
+    },
+    {
+      "engine": "system1",
+      "q": "site.papers.ssrn.com 1910737 \"Posted\" \"2011\"",
+      "result_note": "irrelevant results; no absence conclusion"
+    },
+    {
+      "engine": "primary-page citations",
+      "q": "Springer KKT2024 similar-article links: Yoo et al. and Nam et al."
+    },
+    {
+      "engine": "system2",
+      "q": "\"Austing\" \"Finite difference schemes with exact recovery\" 2020"
+    },
+    {
+      "engine": "system2",
+      "q": "\"Fengler\" \"Hin\" \"Semi-nonparametric\" pdf alexandria"
+    }
+  ],
+  "retrievals": [
+    {
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5/fulltext.html",
+      "status": "HTTP 200 but publisher subscription preview; not full text",
+      "raw_response_sha256": "29bf27525b9899a66fd047d9c58df2db99c9218079d630512ade888ad092b724"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1308.2326v2",
+      "status": "PDF retrieved; selected statements read",
+      "sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "source_bytes_not_redistributed": true
+    },
+    {
+      "url": "https://ux-tauri.unisg.ch/RePEc/usg/econwp/EWP-1136.pdf",
+      "status": "Institutional working-paper PDF retrieved; selected statements read; internal label May 2013 not used as public-release evidence",
+      "sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "source_bytes_not_redistributed": true
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2642630",
+      "status": "direct open 403; indexed primary metadata read"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910737",
+      "status": "direct open 403; indexed primary metadata read"
+    },
+    {
+      "url": "https://www.iitp.ac.in/library/",
+      "status": "official library route failed; thesis contents not obtained"
+    }
+  ],
+  "metadata": {
+    "provider": "Crossref",
+    "stored_fields": "Bibliographic fact projections plus SHA256 of actual response; created/indexed/deposited retained as non-publication metadata."
+  },
+  "absence_of_equivalent_not_proven": true,
+  "project_public_identifier_not_supplied": true
+}

@@ -1,0 +1,305 @@
+{
+  "status": "joint_separation_and_time_refinement_certified",
+  "selected_candidate": 1,
+  "F_forward": "feasible_exact",
+  "F_backward": "feasible_exact",
+  "F_joint": "infeasible_exact",
+  "origin": "controlled_synthetic_search",
+  "observations_sha256": "450e74c57fbe737e19d1f4ad9b77ca90ff9209f4d1242c7bff5358e568ef724e",
+  "observation_count": 6,
+  "coarse_shape": [
+    2,
+    3
+  ],
+  "variance_bounds": [
+    "3/100",
+    "1/25"
+  ],
+  "same_observations_and_bounds": true,
+  "individual_audits": {
+    "forward": {
+      "selected_scheme": "forward",
+      "selected_scheme_passed": true,
+      "joint_passed": false,
+      "all_stencil_diagnostics": {
+        "passed": false,
+        "shape_passed": true,
+        "quotes_passed": true,
+        "minimum_slack": {
+          "price_box": "1/400",
+          "slope_upper": "12/25",
+          "slope_lower": "19/40",
+          "left_chord": "17/36",
+          "convexity": "2/7",
+          "calendar": "0",
+          "forward_local_lower": "3/28000",
+          "forward_local_upper": "1/7000",
+          "backward_local_lower": "3/7000",
+          "backward_local_upper": "-1/3500",
+          "bid": "1/1000000",
+          "ask": "1/1000000"
+        },
+        "violation_counts": {
+          "price_box": 0,
+          "slope_upper": 0,
+          "slope_lower": 0,
+          "left_chord": 0,
+          "convexity": 0,
+          "calendar": 0,
+          "forward_local_lower": 0,
+          "forward_local_upper": 0,
+          "backward_local_lower": 0,
+          "backward_local_upper": 1,
+          "bid": 0,
+          "ask": 0
+        },
+        "minimum_gamma": "2/7",
+        "zero_gamma_nodes": 0,
+        "variance_ranges": {
+          "forward": {
+            "min": "6/175",
+            "max": "6/175",
+            "identified_cells": 1,
+            "cells": 1
+          },
+          "backward": {
+            "min": "3/50",
+            "max": "3/50",
+            "identified_cells": 1,
+            "cells": 1
+          }
+        },
+        "observation_count": 6,
+        "observations_sha256": "450e74c57fbe737e19d1f4ad9b77ca90ff9209f4d1242c7bff5358e568ef724e",
+        "arithmetic": "exact rational on declared coordinates and values"
+      }
+    },
+    "backward": {
+      "selected_scheme": "backward",
+      "selected_scheme_passed": true,
+      "joint_passed": false,
+      "all_stencil_diagnostics": {
+        "passed": false,
+        "shape_passed": true,
+        "quotes_passed": true,
+        "minimum_slack": {
+          "price_box": "1/400",
+          "slope_upper": "12/25",
+          "slope_lower": "19/40",
+          "left_chord": "17/36",
+          "convexity": "7/20",
+          "calendar": "0",
+          "forward_local_lower": "-3/20000",
+          "forward_local_upper": "1/2500",
+          "backward_local_lower": "3/40000",
+          "backward_local_upper": "1/10000",
+          "bid": "1/1000000",
+          "ask": "1/1000000"
+        },
+        "violation_counts": {
+          "price_box": 0,
+          "slope_upper": 0,
+          "slope_lower": 0,
+          "left_chord": 0,
+          "convexity": 0,
+          "calendar": 0,
+          "forward_local_lower": 1,
+          "forward_local_upper": 0,
+          "backward_local_lower": 0,
+          "backward_local_upper": 0,
+          "bid": 0,
+          "ask": 0
+        },
+        "minimum_gamma": "7/20",
+        "zero_gamma_nodes": 0,
+        "variance_ranges": {
+          "forward": {
+            "min": "3/125",
+            "max": "3/125",
+            "identified_cells": 1,
+            "cells": 1
+          },
+          "backward": {
+            "min": "6/175",
+            "max": "6/175",
+            "identified_cells": 1,
+            "cells": 1
+          }
+        },
+        "observation_count": 6,
+        "observations_sha256": "450e74c57fbe737e19d1f4ad9b77ca90ff9209f4d1242c7bff5358e568ef724e",
+        "arithmetic": "exact rational on declared coordinates and values"
+      }
+    }
+  },
+  "joint_separator": {
+    "eta": "1/200",
+    "combined_quote_minimum": "991/8000000",
+    "forward_lower_multiplier": "3/2",
+    "backward_upper_multiplier": "1",
+    "verified": true,
+    "exact_separation_margin": "991/8000000",
+    "box_minimum": "0",
+    "combined_rhs": "-991/8000000",
+    "support_size": 7,
+    "arithmetic": "exact rationals on the original declared data and geometry",
+    "kind": "dual",
+    "scheme": "joint",
+    "problem_sha256": "6036117cf66731ef093e11ad3a3a407379ef2d473b327076fb9b5b46e40f4a56",
+    "local_groups_used": [
+      "forward_local_lower",
+      "backward_local_upper"
+    ]
+  },
+  "minimal_grid_for_declared_three_point_stencil": true,
+  "refined_joint": "feasible_exact",
+  "first_materialized_time_level": 1,
+  "first_feasible_time_level_proved": true,
+  "theory": {
+    "lemma": "one_interior_node_fixed_boundary_time_compatibility",
+    "critical_time_step_for_frozen_boundaries": "1/15",
+    "required_subdivision_factor_for_the_constructed_family": "3/2",
+    "guaranteed_time_level": 1,
+    "harmonic_midpoint_variance": "6/175",
+    "lambda": "3/7",
+    "kappa": "250",
+    "terminal_increment_bounds_for_all_subdivisions": [
+      "3/5000",
+      "3/3500"
+    ],
+    "all_dyadic_levels_from_threshold_preserve_original_quotes": true,
+    "boundary_assumption_for_step_necessity": "constant neighboring prices; not all spread selections",
+    "refinement_axes": "time_only_fixed_irregular_strikes",
+    "same_polynomial_as_theorem_2_claimed": false,
+    "scientific_priority_certified": false
+  },
+  "attempts": [
+    {
+      "candidate": 1,
+      "parameters": {
+        "delta_t": "1/10",
+        "vmin": "3/100",
+        "vmax": "1/25",
+        "epsilon": "1/1000000",
+        "center_increment_bid": "1/2000",
+        "center_increment_ask": "11/10000"
+      },
+      "individual_witnesses_verified": true,
+      "joint_infeasible_exact": true,
+      "time_levels": [
+        {
+          "level": 0,
+          "shape": [
+            2,
+            3
+          ],
+          "sampled_witness_passed": false,
+          "witness_failure_proves_LP_infeasible": false
+        },
+        {
+          "level": 1,
+          "shape": [
+            3,
+            3
+          ],
+          "sampled_witness_passed": true,
+          "witness_failure_proves_LP_infeasible": false
+        }
+      ]
+    }
+  ],
+  "scientific_priority_certified": false,
+  "solver_called": false,
+  "network_used": false,
+  "refined_shape": [
+    3,
+    3
+  ],
+  "refined_audit": {
+    "selected_scheme": "joint",
+    "selected_scheme_passed": true,
+    "joint_passed": true,
+    "all_stencil_diagnostics": {
+      "passed": true,
+      "shape_passed": true,
+      "quotes_passed": true,
+      "minimum_slack": {
+        "price_box": "1/400",
+        "slope_upper": "12/25",
+        "slope_lower": "19/40",
+        "left_chord": "17/36",
+        "convexity": "625/1922",
+        "calendar": "0",
+        "forward_local_lower": "3/307520",
+        "forward_local_upper": "7/76880",
+        "backward_local_lower": "21/307520",
+        "backward_local_upper": "1/76880",
+        "bid": "1/1000000",
+        "ask": "1/1000000"
+      },
+      "violation_counts": {
+        "price_box": 0,
+        "slope_upper": 0,
+        "slope_lower": 0,
+        "left_chord": 0,
+        "convexity": 0,
+        "calendar": 0,
+        "forward_local_lower": 0,
+        "forward_local_upper": 0,
+        "backward_local_lower": 0,
+        "backward_local_upper": 0,
+        "bid": 0,
+        "ask": 0
+      },
+      "minimum_gamma": "625/1922",
+      "zero_gamma_nodes": 0,
+      "variance_ranges": {
+        "forward": {
+          "min": "24/775",
+          "max": "24/775",
+          "identified_cells": 2,
+          "cells": 2
+        },
+        "backward": {
+          "min": "24/625",
+          "max": "24/625",
+          "identified_cells": 2,
+          "cells": 2
+        }
+      },
+      "observation_count": 6,
+      "observations_sha256": "450e74c57fbe737e19d1f4ad9b77ca90ff9209f4d1242c7bff5358e568ef724e",
+      "arithmetic": "exact rational on declared coordinates and values"
+    }
+  },
+  "refined_compatibility": {
+    "cells": [
+      {
+        "time_cell": 0,
+        "strike_index": 1,
+        "gamma_forward": "1/2",
+        "gamma_backward": "25/62",
+        "increment": "3/7750",
+        "joint_increment_lower": "3/8000",
+        "joint_increment_upper": "1/2480",
+        "nonnegative_gammas": true,
+        "admissible_increment_interval_nonempty": true,
+        "this_increment_is_admissible": true
+      },
+      {
+        "time_cell": 1,
+        "strike_index": 1,
+        "gamma_forward": "25/62",
+        "gamma_backward": "625/1922",
+        "increment": "3/9610",
+        "joint_increment_lower": "3/9920",
+        "joint_increment_upper": "5/15376",
+        "nonnegative_gammas": true,
+        "admissible_increment_interval_nonempty": true,
+        "this_increment_is_admissible": true
+      }
+    ],
+    "all_cells_admissible": true,
+    "zero_gamma_quotient_avoided": true
+  }
+}

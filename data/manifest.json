@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "dataset_id": "yahoo-spxw-20261026",
+  "source": "Yahoo Finance via yfinance",
+  "historical_provider_replay_available": false,
+  "historical_distribution": "Git-tracked original bytes; GitHub raw endpoint at a full commit SHA",
+  "files": [
+    {
+      "id": "attempt_01",
+      "path": "data/raw/yahoo/2026-10-26/attempt_01.json",
+      "sha256": "0c44b9b66a46b238d891ffbeb21fcaf65299f4987a9cf8b9f51993921e60db41",
+      "bytes": 919067,
+      "provider": "Yahoo Finance",
+      "api": "yfinance.Ticker.option_chain",
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "started_utc": "2026-10-26T19:31:29.106182+00:00",
+      "ended_utc": "2026-10-26T19:31:43.546751+00:00",
+      "expiries": [
+        "2026-11-09",
+        "2026-11-16",
+        "2026-11-23",
+        "2026-12-03",
+        "2027-01-15",
+        "2027-04-16"
+      ],
+      "raw_calls": 799,
+      "raw_puts": 1042,
+      "original_archive_path": "fixtures/yahoo_20261026/attempt_01.json",
+      "bid_ask_timestamps_certified": false
+    },
+    {
+      "id": "attempt_02",
+      "path": "data/raw/yahoo/2026-10-26/attempt_02.json",
+      "sha256": "a1d569a311389ab28b1cd1abe37ba040d7d34ae64db45aadf46d4df08ee47a5a",
+      "bytes": 919105,
+      "provider": "Yahoo Finance",
+      "api": "yfinance.Ticker.option_chain",
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "started_utc": "2026-10-26T19:31:59.484322+00:00",
+      "ended_utc": "2026-10-26T19:32:15.758121+00:00",
+      "expiries": [
+        "2026-11-09",
+        "2026-11-16",
+        "2026-11-23",
+        "2026-12-03",
+        "2027-01-15",
+        "2027-04-16"
+      ],
+      "raw_calls": 799,
+      "raw_puts": 1042,
+      "original_archive_path": "fixtures/yahoo_20261026/attempt_02.json",
+      "bid_ask_timestamps_certified": false
+    },
+    {
+      "id": "attempt_03",
+      "path": "data/raw/yahoo/2026-10-26/attempt_03.json",
+      "sha256": "add46f2a167f37e3895179ac1c0f5172a689386ca1932f715dad666f8b594d65",
+      "bytes": 919142,
+      "provider": "Yahoo Finance",
+      "api": "yfinance.Ticker.option_chain",
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "started_utc": "2026-10-26T19:32:31.538595+00:00",
+      "ended_utc": "2026-10-26T19:32:48.108334+00:00",
+      "expiries": [
+        "2026-11-09",
+        "2026-11-16",
+        "2026-11-23",
+        "2026-12-03",
+        "2027-01-15",
+        "2027-04-16"
+      ],
+      "raw_calls": 799,
+      "raw_puts": 1042,
+      "original_archive_path": "fixtures/yahoo_20261026/attempt_03.json",
+      "bid_ask_timestamps_certified": false
+    },
+    {
+      "id": "live_capture",
+      "path": "data/raw/yahoo/2026-10-26/live_capture.json",
+      "sha256": "37b290ee90e1e93dd3c80a86ee327ffe7d9e20f7e52d3f3b9b7e8d23d990f84c",
+      "bytes": 927921,
+      "provider": "Yahoo Finance",
+      "api": "yfinance.Ticker.option_chain",
+      "symbol": "^SPX",
+      "root": "SPXW",
+      "started_utc": "2026-10-26T20:09:06.164246+00:00",
+      "ended_utc": "2026-10-26T20:09:26.052870+00:00",
+      "expiries": [
+        "2026-11-09",
+        "2026-11-16",
+        "2026-11-23",
+        "2026-12-03",
+        "2027-01-15",
+        "2027-04-16"
+      ],
+      "raw_calls": 799,
+      "raw_puts": 1042,
+      "original_archive_path": "fixtures/yahoo_20261026/live_capture.json",
+      "bid_ask_timestamps_certified": false
+    }
+  ]
+}

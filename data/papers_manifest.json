@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "id": "BR2016",
+      "path": "data/papers/BR2016.pdf",
+      "urls": [
+        "https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf"
+      ],
+      "sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+      "bytes": 1756938
+    },
+    {
+      "id": "SANOS2026",
+      "path": "data/papers/SANOS2026.pdf",
+      "urls": [
+        "https://arxiv.org/pdf/2601.11209v4"
+      ],
+      "sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+      "bytes": 4573612
+    },
+    {
+      "id": "CCD2020",
+      "path": "data/papers/CCD2020.pdf",
+      "urls": [
+        "https://arxiv.org/pdf/2007.10462v1"
+      ],
+      "sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+      "bytes": 3937320
+    },
+    {
+      "id": "ZHANG2025",
+      "path": "data/papers/ZHANG2025.pdf",
+      "urls": [
+        "https://arxiv.org/pdf/2511.09175v1"
+      ],
+      "sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+      "bytes": 2193653
+    },
+    {
+      "id": "CARR2014",
+      "path": "data/papers/CARR2014.pdf",
+      "urls": [
+        "https://arxiv.org/pdf/1308.2326v2"
+      ],
+      "sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "bytes": 662169
+    },
+    {
+      "id": "FH2015",
+      "path": "data/papers/FH2015.pdf",
+      "urls": [
+        "https://ux-tauri.unisg.ch/RePEc/usg/econwp/EWP-1136.pdf"
+      ],
+      "sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "bytes": 825579
+    },
+    {
+      "id": "AUSTING2020",
+      "path": "data/papers/AUSTING2020.pdf",
+      "urls": [
+        "https://www.risk.net/media/download/1053071/download"
+      ],
+      "sha256": "787cd4eb128ddce197921317f3213e49819c95275e587b51d77bbf161e306601",
+      "bytes": 836381
+    }
+  ],
+  "notes": "Exact source bytes from the uploaded campaign. Access restrictions or hash differences are errors, never completed readings."
+}

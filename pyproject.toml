@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dupire-joint"
+version = "0.1.6"
+description = "Reproducible discrete Dupire feasibility, exact certificates and observation-preserving refinement"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Abdelmalik Berrada"}]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.12,<2", "highspy>=1.10,<2", "tqdm>=4.66,<5"]
+
+[project.optional-dependencies]
+cuda = ["torch>=2.4,<3"]
+market = ["yfinance>=0.2.54,<2", "pandas>=2,<4", "tzdata>=2024.1"]
+test = ["pytest>=8,<10"]
+literature = ["pypdf>=6,<7"]
+
+[project.scripts]
+dupire-joint = "dupire_joint.bootstrap:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "audit_apport/tests", "positionnement_litterature/tests"]
+pythonpath = [".", "scripts", "tests"]
+

@@ -1,0 +1,758 @@
+{
+  "seed": 20261025,
+  "cases": [
+    {
+      "case": 0,
+      "family": "bs",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.2001628385514867,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "e89a9e71aaa5b98f5c425d7e976ead6131aa617d7fca6157535e93dd0971f334"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "e89a9e71aaa5b98f5c425d7e976ead6131aa617d7fca6157535e93dd0971f334"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "indeterminate",
+              "backward": "indeterminate"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "e89a9e71aaa5b98f5c425d7e976ead6131aa617d7fca6157535e93dd0971f334"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 1,
+      "family": "discrete",
+      "reference": {
+        "scheme": "backward",
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "feasible_numeric"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "5015f14d50db62ba7015b9207905c7d91a73cd47180b09833ea69c3f345357b7"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "feasible_numeric"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "5015f14d50db62ba7015b9207905c7d91a73cd47180b09833ea69c3f345357b7"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "5015f14d50db62ba7015b9207905c7d91a73cd47180b09833ea69c3f345357b7"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 2,
+      "family": "corrupt",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.20155248304085646,
+        "different_observed_strikes_by_maturity": true,
+        "controlled_perturbation": "crossed quote, gap .01 normalized units"
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "fb576970139eef7344fef4749e51074d9b57bb82c93eaf65e35a8b93de666169"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "fb576970139eef7344fef4749e51074d9b57bb82c93eaf65e35a8b93de666169"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "fb576970139eef7344fef4749e51074d9b57bb82c93eaf65e35a8b93de666169"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 3,
+      "family": "heston",
+      "reference": {
+        "quadrature_error_indicator": 6.112061236520337e-09,
+        "tolerance": 1e-07,
+        "rigorous_enclosure": false,
+        "nodes_final": 512,
+        "cutoff_final": 320.0,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "5f5a8f928d6266ad3b99b08c49d0ffc72db2811584d74344fd9fa7ccb3211b13"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "5f5a8f928d6266ad3b99b08c49d0ffc72db2811584d74344fd9fa7ccb3211b13"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "5f5a8f928d6266ad3b99b08c49d0ffc72db2811584d74344fd9fa7ccb3211b13"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 4,
+      "family": "bs",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.19671418740865337,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "fab9e9e0801cd542ae277fc95bd2810f82a4d15a83f29614d051605f571e6c47"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "fab9e9e0801cd542ae277fc95bd2810f82a4d15a83f29614d051605f571e6c47"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "indeterminate",
+              "backward": "indeterminate"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "fab9e9e0801cd542ae277fc95bd2810f82a4d15a83f29614d051605f571e6c47"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 5,
+      "family": "discrete",
+      "reference": {
+        "scheme": "backward",
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "feasible_numeric"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "feasible_numeric"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "57fcc086dbcf53dd1c897ea621343d29dc4f7a2aac651870a2651dd5cdd97fc0"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 6,
+      "family": "corrupt",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.19171493759214522,
+        "different_observed_strikes_by_maturity": true,
+        "controlled_perturbation": "crossed quote, gap .01 normalized units"
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "78083b92bf6edc44344d7c3a21f336887b76602506af8d9f6cf046a98c1e51e8"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "78083b92bf6edc44344d7c3a21f336887b76602506af8d9f6cf046a98c1e51e8"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "78083b92bf6edc44344d7c3a21f336887b76602506af8d9f6cf046a98c1e51e8"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 7,
+      "family": "heston",
+      "reference": {
+        "quadrature_error_indicator": 6.2821894352888604e-09,
+        "tolerance": 1e-07,
+        "rigorous_enclosure": false,
+        "nodes_final": 512,
+        "cutoff_final": 320.0,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "81c48a351c605a69537901fda6c0189c22b5af5a09482bd9a58d8b7f13f0b720"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "81c48a351c605a69537901fda6c0189c22b5af5a09482bd9a58d8b7f13f0b720"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "81c48a351c605a69537901fda6c0189c22b5af5a09482bd9a58d8b7f13f0b720"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 8,
+      "family": "bs",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.1969295188066587,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "2b5db8a5d70c4e6675b296291943a573dd63a174f73a2b4512a67b7bfb71594f"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "2b5db8a5d70c4e6675b296291943a573dd63a174f73a2b4512a67b7bfb71594f"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "indeterminate",
+              "backward": "indeterminate"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "2b5db8a5d70c4e6675b296291943a573dd63a174f73a2b4512a67b7bfb71594f"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 9,
+      "family": "discrete",
+      "reference": {
+        "scheme": "backward",
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "feasible_numeric"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "5a998c960c5f3b243c552254a71e1dc6b5781efbc3ea900d7850d7f7e30bf4bf"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "5a998c960c5f3b243c552254a71e1dc6b5781efbc3ea900d7850d7f7e30bf4bf"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "5a998c960c5f3b243c552254a71e1dc6b5781efbc3ea900d7850d7f7e30bf4bf"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 10,
+      "family": "corrupt",
+      "reference": {
+        "analytic_generator": "Black-Scholes",
+        "sigma": 0.19594373667377893,
+        "different_observed_strikes_by_maturity": true,
+        "controlled_perturbation": "crossed quote, gap .01 normalized units"
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "5c3e24201421e56f04d5ab7ca43c81ae28ef4a5935327cae7e05cddf3fcca901"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "5c3e24201421e56f04d5ab7ca43c81ae28ef4a5935327cae7e05cddf3fcca901"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "infeasible_certified_binary_lp",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "5c3e24201421e56f04d5ab7ca43c81ae28ef4a5935327cae7e05cddf3fcca901"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    },
+    {
+      "case": 11,
+      "family": "heston",
+      "reference": {
+        "quadrature_error_indicator": 5.919317103142417e-09,
+        "tolerance": 1e-07,
+        "rigorous_enclosure": false,
+        "nodes_final": 512,
+        "cutoff_final": 320.0,
+        "different_observed_strikes_by_maturity": true
+      },
+      "result": {
+        "runs": [
+          {
+            "level": 0,
+            "shape": [
+              5,
+              25
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_00/report.json",
+            "quotes_sha256": "52c9e5850df5aca375f27c0c612c44403504bc0217ec4e76b93842ae63af5e41"
+          },
+          {
+            "level": 1,
+            "shape": [
+              9,
+              49
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_01/report.json",
+            "quotes_sha256": "52c9e5850df5aca375f27c0c612c44403504bc0217ec4e76b93842ae63af5e41"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              97
+            ],
+            "F0": "feasible_numeric",
+            "variants": {
+              "forward": "infeasible_certified_binary_lp",
+              "backward": "infeasible_certified_binary_lp"
+            },
+            "report": "level_02/report.json",
+            "quotes_sha256": "52c9e5850df5aca375f27c0c612c44403504bc0217ec4e76b93842ae63af5e41"
+          }
+        ],
+        "mesh_dependence_demonstrated_numeric_fine_witness": {
+          "forward": false,
+          "backward": false
+        },
+        "continuous_existence_proved": false,
+        "nested_feasible_sets_assumed": false,
+        "observation_hash_unchanged": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,993 @@
+{
+  "format": "dupire-theorem-crosswalk-v2",
+  "review_date": "2026-10-27",
+  "scientific_priority_certified": false,
+  "project_reference": "CRITERE_PROUVE_0.1.6.md, Theorem 2 and (BC); JOINT_SEPARATION.md, lemmas 1–3. The axes describe distinct project results, not one merged theorem.",
+  "annotation_method": "Explicit source reading and labelled scope inference; no automated semantic theorem proof",
+  "axes": [
+    {
+      "id": "normalization",
+      "label": "Normalisation",
+      "project_condition": "F,D et temps de règlement fixés, x=K/F"
+    },
+    {
+      "id": "observations",
+      "label": "Observations",
+      "project_condition": "Toutes les fourchettes retenues sont des contraintes dures"
+    },
+    {
+      "id": "grid",
+      "label": "Grille",
+      "project_condition": "Produit cartésien commun, pas irréguliers, observations aux nœuds"
+    },
+    {
+      "id": "domain",
+      "label": "Domaine",
+      "project_condition": "Rectangle intérieur fini, T_min>0 et x_min>0"
+    },
+    {
+      "id": "boundary",
+      "label": "Bords",
+      "project_condition": "Raccord convexe à (0,1), aucun ancrage de queue à zéro"
+    },
+    {
+      "id": "representation",
+      "label": "Représentation",
+      "project_condition": "Polynôme rationnel de Bernstein tensoriel"
+    },
+    {
+      "id": "gamma",
+      "label": "Convexité",
+      "project_condition": "P_xx >= gamma0 > 0 partout"
+    },
+    {
+      "id": "local_bounds",
+      "label": "Bornes locales",
+      "project_condition": "Variance continue dans [v_min+delta,v_max-delta]"
+    },
+    {
+      "id": "derivatives",
+      "label": "Régularité quantifiée",
+      "project_condition": "Bornes globales certifiées M3,M4,Mtt"
+    },
+    {
+      "id": "stencils",
+      "label": "Schémas discrets",
+      "project_condition": "Un même témoin satisfait forward ET backward"
+    },
+    {
+      "id": "refinement",
+      "label": "Raffinement",
+      "project_condition": "Subdivision dyadique de chaque intervalle, observations inchangées"
+    },
+    {
+      "id": "threshold",
+      "label": "Seuil explicite",
+      "project_condition": "C*r^2-A*r-B >= 0 et tous niveaux ultérieurs"
+    },
+    {
+      "id": "conclusion",
+      "label": "Conclusion",
+      "project_condition": "Condition suffisante constructive ; pas une condition nécessaire"
+    },
+    {
+      "id": "arithmetic",
+      "label": "Arithmétique",
+      "project_condition": "Vérification rationnelle de toutes les inégalités du certificat"
+    },
+    {
+      "id": "joint_separation",
+      "label": "Faisabilité séparée et conjointe",
+      "project_condition": "Exemple exact F_forward et F_backward non vides mais intersection vide, mêmes six spreads (nouvel exemple)"
+    },
+    {
+      "id": "time_compatibility",
+      "label": "Compatibilité temporelle dans une classe spéciale",
+      "project_condition": "Trois strikes, voisins constants, gamma initial positif : seuil exact sur le pas pour une extrémité centrale libre (nouveau lemme)"
+    }
+  ],
+  "results": [
+    {
+      "id": "BR_R3_2_R3_3",
+      "paper_id": "BR2016",
+      "title": "Discrete Local Volatility for Large Time Steps",
+      "url": "https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf",
+      "version": "Header 2.401 (2015–2016); current PDF history also lists typo corrections 2.5 (2026)",
+      "statement_locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "Le transport et les bords doivent être transformés avant toute implication entre les deux systèmes.",
+      "unresolved": "Comparer la non-vacuité dans la classe commune ; ne pas substituer notre modèle au transport complet.",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Prix normalisés ; grilles par échéance",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "observations": {
+          "prior_condition": "Objectif de fit et bornes de volatilité implicite",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "grid": {
+          "prior_condition": "Grilles mobiles et transport entre échéances",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "domain": {
+          "prior_condition": "Grille discrète, incluant les bords",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "boundary": {
+          "prior_condition": "Prix intrinsèques aux bords et strikes auxiliaires",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "representation": {
+          "prior_condition": "Prix nodaux et opérateurs de transition",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "gamma": {
+          "prior_condition": "Gamma non négatif ; convention pour gamma nul",
+          "relation": "additional_project_hypothesis",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "local_bounds": {
+          "prior_condition": "Bornes locales linéaires prescrites",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "derivatives": {
+          "prior_condition": "Aucune constante de Taylor dans ces résultats",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "stencils": {
+          "prior_condition": "Forward et backward formulés séparément",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "refinement": {
+          "prior_condition": "Non-vacuité sous bornes laissée ouverte",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "threshold": {
+          "prior_condition": "Pas de seuil dyadique dans ces énoncés",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "conclusion": {
+          "prior_condition": "Optimalité conditionnelle à une solution",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "arithmetic": {
+          "prior_condition": "Arithmétique exacte non évaluée",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "joint_separation": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        },
+        "time_compatibility": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2; §3.2–3.3, Results 3.2–3.3, (18)–(22); Appendix A.1"
+        }
+      }
+    },
+    {
+      "id": "KKTG_SHAPE",
+      "paper_id": "KKTG2016",
+      "title": "Call option price function in Bernstein polynomial basis with no-arbitrage inequality constraints",
+      "url": "https://link.springer.com/article/10.1186/s13660-016-1097-x",
+      "version": "2016, article 153; DOI 10.1186/s13660-016-1097-x",
+      "statement_locator": "§3.2, (18)–(23); §3.3, (24)–(25)",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "La comparaison vise la formulation par échéance ; aucune affirmation sur tous les travaux des auteurs.",
+      "unresolved": "",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Taux et maturité fixés par tranche",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "observations": {
+          "prior_condition": "Moindres carrés sur les prix observés",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "grid": {
+          "prior_condition": "Strikes observés non uniformes ; régression",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "domain": {
+          "prior_condition": "Intervalle de strikes fini par tranche",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "boundary": {
+          "prior_condition": "Bornes du prix et de sa pente",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "representation": {
+          "prior_condition": "Bernstein univarié",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "gamma": {
+          "prior_condition": "Convexité non stricte",
+          "relation": "additional_project_hypothesis",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "local_bounds": {
+          "prior_condition": "Bornes locales hors formulation par tranche",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "derivatives": {
+          "prior_condition": "Dérivées temporelles hors formulation",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "stencils": {
+          "prior_condition": "Dimension temporelle absente de cette régression",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "refinement": {
+          "prior_condition": "AIC : degré, pas raffinement nodal",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "threshold": {
+          "prior_condition": "Pas de seuil dyadique dans la formulation",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "conclusion": {
+          "prior_condition": "Conditions suffisantes de forme et QP",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "arithmetic": {
+          "prior_condition": "Arithmétique exacte non évaluée",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "joint_separation": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        },
+        "time_compatibility": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, (18)–(23); §3.3, (24)–(25)"
+        }
+      }
+    },
+    {
+      "id": "KKT2024_SURFACE",
+      "paper_id": "KKT2024",
+      "title": "A Semi-Closed Form Approximation of Arbitrage-Free Call Option Price Surface",
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5",
+      "version": "Online 10 March 2023; Computational Economics 63 (2024), 1431–1457",
+      "statement_locator": "Résumé éditeur ; annexe technique publique, QP (35), blocs A1 et A2",
+      "access": "abstract_and_public_appendix_reviewed",
+      "scope_note": "Le texte principal et la preuve complète du théorème 1 restent non consultés. L’annexe publique précise la structure du QP ; certaines dimensions et entrées affichées peuvent contenir des coquilles.",
+      "unresolved": "Comparer le texte principal, les hypothèses du théorème 1 et ses preuves ; aucune priorité n’est conclue de cet accès partiel.",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Non évaluée",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "observations": {
+          "prior_condition": "Données bid/ask mentionnées ; statut dur inconnu",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "grid": {
+          "prior_condition": "Détails de grille inconnus",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "domain": {
+          "prior_condition": "Domaine exact inconnu",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "boundary": {
+          "prior_condition": "Conditions de bord inconnues",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "representation": {
+          "prior_condition": "Coefficients de Bernstein regroupés par maturité ; blocs de forme et différences calendaires (-I,I).",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "Résumé ; annexe technique, matrices A1 et A2"
+        },
+        "gamma": {
+          "prior_condition": "Positivité stricte inconnue",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "local_bounds": {
+          "prior_condition": "Bornes conjointes inconnues",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "derivatives": {
+          "prior_condition": "Constantes globales inconnues",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "stencils": {
+          "prior_condition": "Schémas comparables inconnus",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "refinement": {
+          "prior_condition": "Conservation des observations inconnue",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "threshold": {
+          "prior_condition": "Garantie équivalente inconnue",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "conclusion": {
+          "prior_condition": "Objectif quadratique et contraintes linéaires décrits dans l’annexe.",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Annexe technique publique, QP (35) et matrices"
+        },
+        "arithmetic": {
+          "prior_condition": "Arithmétique exacte inconnue",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Résumé éditeur"
+        },
+        "joint_separation": {
+          "prior_condition": "Texte principal non consulté ; conclusion équivalente inconnue.",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Annexe publique seulement ; texte principal à examiner"
+        },
+        "time_compatibility": {
+          "prior_condition": "Texte principal non consulté ; conclusion équivalente inconnue.",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "Annexe publique seulement ; texte principal à examiner"
+        }
+      }
+    },
+    {
+      "id": "SANOS_P3_8",
+      "paper_id": "SANOS2026",
+      "title": "SANOS — Smoothed Linear Interpolation within Bid/Ask",
+      "url": "https://arxiv.org/html/2601.11209v4",
+      "version": "arXiv:2601.11209v4, 22 May 2026",
+      "statement_locator": "§3.3, assumptions preceding Proposition 3.8 and its proof",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "La conclusion porte sur le lissage, sans identifier son paramètre à notre niveau de subdivision.",
+      "unresolved": "",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Modèle en unités normalisées",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "observations": {
+          "prior_condition": "Spreads positifs ; témoin strictement sous ask",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "grid": {
+          "prior_condition": "Strikes intérieurs du modèle observés",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "domain": {
+          "prior_condition": "Strikes et échéances du modèle",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "boundary": {
+          "prior_condition": "Prix intrinsèques aux ancrages extrêmes",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "representation": {
+          "prior_condition": "Mélange lissé de calls Black–Scholes",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "gamma": {
+          "prior_condition": "Densités martingales puis lissage",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "local_bounds": {
+          "prior_condition": "Bornes conjointes hors de cette proposition",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "derivatives": {
+          "prior_condition": "Continuité en intensité de lissage",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "stencils": {
+          "prior_condition": "Nos deux stencils hors de cette proposition",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "refinement": {
+          "prior_condition": "Lissage dans les spreads conservés",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "threshold": {
+          "prior_condition": "Existence positive du paramètre de lissage",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "conclusion": {
+          "prior_condition": "Interpolation lisse entre bid et ask",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "arithmetic": {
+          "prior_condition": "Certificat rationnel non évalué",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "joint_separation": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        },
+        "time_compatibility": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3, assumptions preceding Proposition 3.8 and its proof"
+        }
+      }
+    },
+    {
+      "id": "SANOS_T3_7",
+      "paper_id": "SANOS2026",
+      "title": "SANOS — Implied Discrete Local Volatilities",
+      "url": "https://arxiv.org/html/2601.11209v4",
+      "version": "arXiv:2601.11209v4, 22 May 2026",
+      "statement_locator": "§3.2, Theorems 3.6–3.7, (21)–(24)",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "Même sur grille commune, reproduction par opérateur et certificat de bornes conjointes sont des conclusions distinctes.",
+      "unresolved": "",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Densités de moyenne unité",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "observations": {
+          "prior_condition": "Prix admissibles donnés",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "grid": {
+          "prior_condition": "Grilles variables avec interpolation",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "domain": {
+          "prior_condition": "Strikes de support avec ancrages",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "boundary": {
+          "prior_condition": "Prix extrêmes intrinsèques",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "representation": {
+          "prior_condition": "Opérateur implicite de transition",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "gamma": {
+          "prior_condition": "Convention 0/0=0",
+          "relation": "additional_project_hypothesis",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "local_bounds": {
+          "prior_condition": "Paramètres DLV déduits des prix",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "derivatives": {
+          "prior_condition": "Bornes de Taylor hors résultat",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "stencils": {
+          "prior_condition": "Gamma final et prix antérieurs transportés",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "refinement": {
+          "prior_condition": "Interpolation entre grilles",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "threshold": {
+          "prior_condition": "Seuil dyadique hors résultat",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "conclusion": {
+          "prior_condition": "Reproduction des prix par transition",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "arithmetic": {
+          "prior_condition": "Arithmétique exacte non évaluée",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "joint_separation": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        },
+        "time_compatibility": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.2, Theorems 3.6–3.7, (21)–(24)"
+        }
+      }
+    },
+    {
+      "id": "CCD_METHOD",
+      "paper_id": "CCD2020",
+      "title": "Deep Local Volatility — methodological comparator",
+      "url": "https://arxiv.org/html/2007.10462v1",
+      "version": "arXiv:2007.10462v1, 20 July 2020",
+      "statement_locator": "§2–3; §6, half-variance penalization",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "Ce comparateur est une méthode, pas un théorème de non-vacuité sous fourchettes dures.",
+      "unresolved": "",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Changement de variables Dupire",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "observations": {
+          "prior_condition": "Ajustement supervisé de prix",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "grid": {
+          "prior_condition": "Apprentissage puis évaluations",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "domain": {
+          "prior_condition": "Domaine d’apprentissage",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "boundary": {
+          "prior_condition": "Payoff et bords du modèle",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "representation": {
+          "prior_condition": "Réseaux neuronaux",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "gamma": {
+          "prior_condition": "Contraintes dures ou pénalisations",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "local_bounds": {
+          "prior_condition": "Pénalisation de demi-variance",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "derivatives": {
+          "prior_condition": "Constantes de raffinement hors méthode",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "stencils": {
+          "prior_condition": "Dérivées du réseau, pas nos stencils",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "refinement": {
+          "prior_condition": "Raffinement préservant quotes non évalué",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "threshold": {
+          "prior_condition": "Seuil quantifié non évalué",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "conclusion": {
+          "prior_condition": "Méthode et évaluations numériques",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "arithmetic": {
+          "prior_condition": "Arithmétique exacte non évaluée",
+          "relation": "unknown",
+          "basis": "not_reviewed",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "joint_separation": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2–3; §6, half-variance penalization"
+        },
+        "time_compatibility": {
+          "prior_condition": "Cette conclusion ne figure pas dans les énoncés sélectionnés ; aucune absence dans le reste de l’article n’est affirmée.",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§2–3; §6, half-variance penalization"
+        }
+      }
+    },
+    {
+      "id": "ZHANG_S0_2",
+      "paper_id": "ZHANG2025",
+      "title": "Proof-Carrying No-Arbitrage Surfaces",
+      "url": "https://arxiv.org/html/2511.09175v1",
+      "version": "Preprint v1, 12 November 2025",
+      "statement_locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "Les conclusions énoncées sont comparées ; la validité de tous les théorèmes du préprint n’est pas certifiée par ce registre.",
+      "unresolved": "Aucune priorité générale déduite de ces différences de conclusion.",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Prix C(tau,K), métrique pondérée par vega",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "observations": {
+          "prior_condition": "Pas de fourchettes dures dans les hypothèses du lemme S0.2",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "grid": {
+          "prior_condition": "Fits quadratiques locaux et conditions de maillage A5",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "domain": {
+          "prior_condition": "Domaine temps-strike avec traitement des bords de type Neumann",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "boundary": {
+          "prior_condition": "Traitement de bord distinct du raccord à (0,1)",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "representation": {
+          "prior_condition": "Surface régulière ; dérivées estimées par ajustement polynomial local",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "gamma": {
+          "prior_condition": "C_KK minoré strictement sur la grille",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "local_bounds": {
+          "prior_condition": "Quotient écrêté dans un intervalle prescrit",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "derivatives": {
+          "prior_condition": "Régularité C3 en K, C2 en tau et constantes d’erreur dépendant de la régularité",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "stencils": {
+          "prior_condition": "Opérateurs de dérivation par ajustement quadratique ; erreur en L2(W)",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "refinement": {
+          "prior_condition": "Estimations asymptotiques d’erreur ; pas l’énoncé de conservation des quotes du projet",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "threshold": {
+          "prior_condition": "B*(h_tau+h_K^2) en L2(W), pas notre seuil rationnel uniforme",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "conclusion": {
+          "prior_condition": "Stabilité du quotient de Dupire et transmission par projection",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "arithmetic": {
+          "prior_condition": "Pas de certificat rationnel dans ce lemme et ses équations",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "joint_separation": {
+          "prior_condition": "Pas de contre-exemple séparé/conjoint dans ce lemme",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        },
+        "time_compatibility": {
+          "prior_condition": "Pas le seuil de compatibilité pour trois strikes à voisins constants",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "§3.3–3.4, Lemma S0.2, equations (1)–(5); §7.1"
+        }
+      }
+    },
+    {
+      "id": "AUSTING_RECOVERY",
+      "paper_id": "AUSTING2020",
+      "title": "Finite difference schemes with exact recovery of vanilla option prices",
+      "url": "https://www.risk.net/media/download/1053071/download",
+      "version": "Risk, November 2020",
+      "statement_locator": "Discretisation; Local volatility, equations (22)–(24); conclusion",
+      "access": "full_text_sections_reviewed",
+      "scope_note": "Reproduction de prix donnés et non-vacuité sous bornes prescrites sont deux conclusions distinctes.",
+      "unresolved": "Aucune priorité générale déduite de ces différences de conclusion.",
+      "comparisons": {
+        "normalization": {
+          "prior_condition": "Prix actualisés, forward et dérive dans une formule de Dupire discrète",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "observations": {
+          "prior_condition": "Prix de calls donnés sur les nœuds, généralement issus d’une surface interpolée",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "grid": {
+          "prior_condition": "Grille spatiale fixe pouvant être non uniforme et grille temporelle",
+          "relation": "same_component",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "domain": {
+          "prior_condition": "Spot nul au bord gauche et bord droit grand, limite de queue discutée",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "boundary": {
+          "prior_condition": "Conditions de bord et limite de queue distinctes",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "representation": {
+          "prior_condition": "Prix nodaux et densités reliés par opérateurs discrets",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "gamma": {
+          "prior_condition": "Dénominateur de Dupire à partir de la courbure discrète",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "local_bounds": {
+          "prior_condition": "La dérivation sélectionnée reconstruit la variance ; elle n’impose pas notre intervalle dur",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "derivatives": {
+          "prior_condition": "Discrétisation analytique par opérateurs ; pas nos constantes M3,M4,Mtt",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "stencils": {
+          "prior_condition": "Schéma implicite et adjoint de l’équation de densité",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "refinement": {
+          "prior_condition": "Reproduction des prix de la grille donnée ; pas notre subdivision conservant les seules observations",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "threshold": {
+          "prior_condition": "Pas notre seuil dyadique dans la dérivation sélectionnée",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "conclusion": {
+          "prior_condition": "Reproduction exacte des prix vanilles donnés par un schéma compatible",
+          "relation": "different_framework",
+          "basis": "source_reading",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "arithmetic": {
+          "prior_condition": "Exactitude algébrique de reproduction ; pas un certificat LP rationnel dans le passage",
+          "relation": "different_framework",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "joint_separation": {
+          "prior_condition": "Pas l’exemple d’intersection vide des deux systèmes sélectionnés",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        },
+        "time_compatibility": {
+          "prior_condition": "Pas le seuil de compatibilité pour les trois strikes du projet dans ce passage",
+          "relation": "outside_selected_statement",
+          "basis": "scope_inference",
+          "locator": "Discretisation; Local volatility, equations (22)–(24); conclusion"
+        }
+      }
+    }
+  ],
+  "critical_source_gaps": [
+    "KKT2024 main text and complete proof",
+    "Kundu 2017 thesis contents"
+  ],
+  "background_sources": [
+    {
+      "paper_id": "KUNDU2017",
+      "url": "https://www.iitp.ac.in/images/faculty/nktomar.pdf",
+      "access": "institutional_metadata_only",
+      "locator": "PhD student guidance: Arindam Kundu, 2010–2017",
+      "title": "Modelling and Numerics For Arbitrage-Free Option Pricing using Bernstein Polynomial Basis",
+      "limitation": "Thesis contents not retrieved; attaching a file does not complete the review."
+    },
+    {
+      "paper_id": "JANSSON2004",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/S1052623402416839",
+      "access": "publisher_abstract_only",
+      "locator": "Publisher abstract",
+      "title": "Rigorous Lower and Upper Bounds in Linear Programming",
+      "limitation": "Generic rigorous LP validation is prior work; the full paper was not reviewed here."
+    },
+    {
+      "paper_id": "SW2014",
+      "url": "https://portal.findresearcher.sdu.dk/en/publications/robust-stability-of-switched-systems/",
+      "access": "institutional_abstract_only",
+      "locator": "Abstract, DOI 10.1109/CDC.2014.7040119",
+      "title": "Robust stability of switched systems",
+      "limitation": "Generic LP plus Bernstein positivity certificates are prior work in another application."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "NAM2026",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.1007/s40819-026-02112-y",
+  "retrieved_at": "2026-10-27T07:26:59.593584+00:00",
+  "raw_response_sha256": "05c18dc990d3009458f91f29e9c4665b760139a0966184366709d3cdc4abfaf8",
+  "projection": {
+    "DOI": "10.1007/s40819-026-02112-y",
+    "title": [
+      "Reconstructing the Quadratic Local Volatility Surface for European Options"
+    ],
+    "author": [
+      {
+        "given": "Yunjae",
+        "family": "Nam",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Daeun",
+        "family": "Jeong",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Hyundong",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Minjoon",
+        "family": "Bang",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Changwoo",
+        "family": "Yoo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhengang",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Junseok",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "International Journal of Applied and Computational Mathematics"
+    ],
+    "volume": "12",
+    "issue": "3",
+    "article-number": "41",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          8
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          8
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          8
+        ]
+      ],
+      "date-time": "2026-04-08T14:37:15Z",
+      "timestamp": 1775659035000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          15
+        ]
+      ],
+      "date-time": "2026-06-15T11:39:39Z",
+      "timestamp": 1781523579000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          15
+        ]
+      ],
+      "date-time": "2026-06-15T11:56:19Z",
+      "timestamp": 1781524579792,
+      "version": "3.54.1"
+    },
+    "URL": "https://doi.org/10.1007/s40819-026-02112-y",
+    "link": [
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s40819-026-02112-y.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/article/10.1007/s40819-026-02112-y",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://link.springer.com/content/pdf/10.1007/s40819-026-02112-y.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ]
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

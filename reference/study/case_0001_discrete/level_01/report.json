@@ -1,0 +1,410 @@
+{
+  "format": "dupire-joint-report-v1",
+  "complete": true,
+  "fingerprint": "bdacaaf48c096c9e140d750ec7af2cb5cd52bd4282973510beca888166a957e3",
+  "inputs": {
+    "package_version": "0.1.1",
+    "versions": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "highspy": "1.15.1"
+    },
+    "quotes_sha256": "5015f14d50db62ba7015b9207905c7d91a73cd47180b09833ea69c3f345357b7",
+    "times": [
+      0.1,
+      0.13891397050194615,
+      0.1778279410038923,
+      0.2470278535103651,
+      0.31622776601683794,
+      0.43928454560359353,
+      0.5623413251903491,
+      0.7811706625951745,
+      1.0
+    ],
+    "strikes": [
+      0.65,
+      0.6677052621794508,
+      0.6854105243589017,
+      0.7009466394398132,
+      0.7164827545207246,
+      0.7342862102577943,
+      0.7520896659948639,
+      0.7664157453936808,
+      0.7807418247924977,
+      0.799373589611807,
+      0.8180053544311164,
+      0.8368865530038399,
+      0.8557677515765633,
+      0.8679117376585272,
+      0.8800557237404911,
+      0.8979880478332896,
+      0.9159203719260881,
+      0.9306370162148226,
+      0.9453536605035572,
+      0.9650750219937494,
+      0.9847963834839417,
+      1.0030858784161771,
+      1.0213753733484128,
+      1.0365643866563832,
+      1.0517533999643536,
+      1.0642908214455948,
+      1.076828242926836,
+      1.0994689237055457,
+      1.1221096044842551,
+      1.1375795200921854,
+      1.1530494357001155,
+      1.168793247136945,
+      1.1845370585737744,
+      1.2026303366238524,
+      1.2207236146739306,
+      1.2349370363693566,
+      1.2491504580647825,
+      1.2638122032609065,
+      1.2784739484570304,
+      1.2972698093123625,
+      1.3160656701676945,
+      1.3336072765887834,
+      1.3511488830098723,
+      1.3668976218847284,
+      1.3826463607595847,
+      1.4020062904438868,
+      1.4213662201281891,
+      1.4356831100640945,
+      1.45
+    ],
+    "tail_x": null,
+    "vmin": 0.0324,
+    "vmax": 0.0484,
+    "schemes": [
+      "forward",
+      "backward"
+    ],
+    "solver": {
+      "threads": 10,
+      "time_limit": 120.0,
+      "tolerance": 1e-09,
+      "method": "choose",
+      "backend": "highs"
+    },
+    "audit_tol": 1e-08,
+    "relax": true,
+    "bisect_steps": 16
+  },
+  "domain": {
+    "time": [
+      0.1,
+      1.0
+    ],
+    "strike": [
+      0.65,
+      1.45
+    ],
+    "shape": [
+      9,
+      49
+    ],
+    "boundary": "c(0)=1 convex chord; free right window endpoint; no global tail existence claim"
+  },
+  "continuous_existence_proved": false,
+  "variants": {
+    "forward": {
+      "status": "infeasible",
+      "native_status": "Infeasible",
+      "objective": null,
+      "simplex_iterations": 925,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 0.07800000000042928,
+      "lp_sha256": "2a50edee4b6082a2b276c28cdb2a4e66b5134f81f847a472cac6fdcd0f64f3a0",
+      "model_file": "forward.lp.npz",
+      "conclusion": "infeasible_certified_binary_lp",
+      "certificate_file": "forward.certificate.json",
+      "certificate_verification": {
+        "verified": true,
+        "exact_margin_numerator": "6804357252143816140300488887557259594257469063759627",
+        "exact_margin_denominator": "12259964326927110866866776217202473468949912977468817408",
+        "margin_approx": 0.0005550062847409025,
+        "support_size": 401,
+        "scope": "exact rational arithmetic on saved binary64 coefficients and bounds"
+      },
+      "diagnosis": "joint_constraints_incompatible_on_this_grid_F0_numerically_feasible",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 23.48479626924678,
+        "simplex_iterations": 2978,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 0.14099999999962165,
+        "lp_sha256": "8c261ac99b75ccf164e3d04e9d24a2825a323b21f5f963fbb3d08e165a6abbbe",
+        "model_file": "forward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 6.821210263296962e-13,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 6.821210263296962e-13,
+            "left_chord": 1.7763568394002505e-15,
+            "calendar": 5.551115123125783e-17,
+            "local_lower": 3.587408148320037e-15,
+            "local_upper": 2.348121697082206e-14,
+            "ask": 2.541098841762901e-20,
+            "bid": 0.0
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 1.0923336887791457e-17,
+            "bid": 1.0923336887791457e-17,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 5.261472586088829e-13,
+            "calendar": 5.551115123125783e-17,
+            "left_chord": 5.551115123125783e-16,
+            "local_lower": 3.58046925441613e-15,
+            "local_upper": 2.328822898411964e-14
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "forward_epsilon.witness.npz",
+        "unidentified_cells": 13,
+        "total_interior_cells": 376,
+        "local_variance_range": [
+          0.0323999999968332,
+          0.04840000044662464
+        ],
+        "epsilon_upper_bound_numeric": 23.48479626924678,
+        "epsilon_star_numeric": 23.48479626924678
+      },
+      "variance_relaxation": {
+        "status": "indeterminate",
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0484,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.0968,
+            "result": "infeasible_solver"
+          },
+          {
+            "lambda": 0.1936,
+            "result": "unknown"
+          }
+        ]
+      }
+    },
+    "backward": {
+      "status": "optimal",
+      "native_status": "Optimal",
+      "objective": 0.0,
+      "simplex_iterations": 685,
+      "ipm_iterations": 0,
+      "backend": "highs",
+      "version": "1.15.1",
+      "wall_seconds": 0.03099999999994907,
+      "lp_sha256": "483f000d0fb80d931978c87313434bcbe5df327aa46b0fe2113f4fcdc6e3cfb8",
+      "model_file": "backward.lp.npz",
+      "conclusion": "feasible_numeric",
+      "audit": {
+        "passed": true,
+        "max_violation": 1.365241253381555e-12,
+        "bound_violation": 0.0,
+        "groups": {
+          "slope_upper": 0.0,
+          "slope_lower": 0.0,
+          "convexity": 5.684341886080801e-13,
+          "left_chord": 0.0,
+          "calendar": 0.0,
+          "local_lower": 2.4424906541753444e-14,
+          "local_upper": 1.365241253381555e-12,
+          "ask": 0.0,
+          "bid": 0.0
+        },
+        "tolerance": 1e-08,
+        "semantics": "absolute residuals of unscaled binary64 LP"
+      },
+      "independent_audit": {
+        "passed": true,
+        "checks": {
+          "ask": 0.0,
+          "bid": 0.0,
+          "call_lower": 0.0,
+          "call_upper": 0.0,
+          "slope_upper": 0.0,
+          "slope_lower": 0.0,
+          "convexity": 7.085757923892765e-13,
+          "calendar": 0.0,
+          "left_chord": 0.0,
+          "local_lower": 2.4522918418146133e-14,
+          "local_upper": 1.3653784049563744e-12
+        },
+        "tolerance": 1e-08,
+        "method": "direct finite differences, independently of sparse assembly"
+      },
+      "witness_file": "backward.witness.npz",
+      "unidentified_cells": 0,
+      "total_interior_cells": 376,
+      "local_variance_range": [
+        0.03239999999887584,
+        0.04840000014829887
+      ],
+      "diagnosis": "discrete_feasibility_verified_to_tolerance",
+      "quote_relaxation": {
+        "status": "optimal",
+        "native_status": "Optimal",
+        "objective": 0.0,
+        "simplex_iterations": 756,
+        "ipm_iterations": 0,
+        "backend": "highs",
+        "version": "1.15.1",
+        "wall_seconds": 0.032000000000152795,
+        "lp_sha256": "583a88c505619f2ff29bc0b7e733f0741b5ba98caf01eaaa8ce451b694602b7e",
+        "model_file": "backward_epsilon.lp.npz",
+        "conclusion": "feasible_numeric",
+        "audit": {
+          "passed": true,
+          "max_violation": 7.958078640513122e-13,
+          "bound_violation": 0.0,
+          "groups": {
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 7.958078640513122e-13,
+            "left_chord": 0.0,
+            "calendar": 0.0,
+            "local_lower": 8.365530490550555e-14,
+            "local_upper": 2.3658852654762086e-13,
+            "ask": 0.0,
+            "bid": 0.0
+          },
+          "tolerance": 1e-08,
+          "semantics": "absolute residuals of unscaled binary64 LP"
+        },
+        "independent_audit": {
+          "passed": true,
+          "checks": {
+            "ask": 0.0,
+            "bid": 0.0,
+            "call_lower": 0.0,
+            "call_upper": 0.0,
+            "slope_upper": 0.0,
+            "slope_lower": 0.0,
+            "convexity": 8.791321283085132e-13,
+            "calendar": 0.0,
+            "left_chord": 0.0,
+            "local_lower": 8.366007539506448e-14,
+            "local_upper": 2.365151260605436e-13
+          },
+          "tolerance": 1e-08,
+          "method": "direct finite differences, independently of sparse assembly"
+        },
+        "witness_file": "backward_epsilon.witness.npz",
+        "unidentified_cells": 0,
+        "total_interior_cells": 376,
+        "local_variance_range": [
+          0.03239999999882236,
+          0.04840000006526289
+        ],
+        "epsilon_upper_bound_numeric": 0.0,
+        "epsilon_star_numeric": 0.0
+      },
+      "variance_relaxation": {
+        "lambda_star_numeric": 0.0,
+        "bracket": [
+          0.0,
+          0.0
+        ],
+        "checks": [
+          {
+            "lambda": 0.0,
+            "result": "feasible_numeric"
+          }
+        ]
+      }
+    }
+  },
+  "F0": {
+    "status": "optimal",
+    "native_status": "Optimal",
+    "objective": 0.0,
+    "simplex_iterations": 434,
+    "ipm_iterations": 0,
+    "backend": "highs",
+    "version": "1.15.1",
+    "wall_seconds": 0.01599999999962165,
+    "lp_sha256": "e114d41bc370b17b8954d9f96737b707c8a724229fc9a69adda87b9cd2df3ec6",
+    "model_file": "F0.lp.npz",
+    "conclusion": "feasible_numeric",
+    "audit": {
+      "passed": true,
+      "max_violation": 4.547473508864641e-13,
+      "bound_violation": 0.0,
+      "groups": {
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 4.547473508864641e-13,
+        "left_chord": 1.7763568394002505e-15,
+        "calendar": 8.673617379884035e-19,
+        "ask": 0.0,
+        "bid": 0.0
+      },
+      "tolerance": 1e-08,
+      "semantics": "absolute residuals of unscaled binary64 LP"
+    },
+    "independent_audit": {
+      "passed": true,
+      "checks": {
+        "ask": 0.0,
+        "bid": 0.0,
+        "call_lower": 0.0,
+        "call_upper": 0.0,
+        "slope_upper": 0.0,
+        "slope_lower": 0.0,
+        "convexity": 2.0039361593167995e-13,
+        "calendar": 8.673617379884035e-19,
+        "left_chord": 0.0
+      },
+      "tolerance": 1e-08,
+      "method": "direct finite differences, independently of sparse assembly"
+    },
+    "witness_file": "F0.witness.npz",
+    "unidentified_cells": 286,
+    "total_interior_cells": 376,
+    "local_variance_range": [
+      -4.420774202465799e-18,
+      2.773377184091849
+    ]
+  },
+  "artifacts_sha256": {
+    "backward.lp.npz": "665e25c9965cd6945124e7826a534dda52226602d3028b1d58f51f0aae3a6697",
+    "backward.surface.csv": "55d01121065844695b14b80e130e1a785cb096bced2bd6b072bd8ce1d2bad5ad",
+    "backward.witness.npz": "fb64962662cf0e141e46ab9f8fa185faa6698bbd821de016a69a76de7bc52679",
+    "backward_epsilon.lp.npz": "5e200a47a235d3704d5747b1e655fc59a93fbbe499a9f8fdc314a78038019351",
+    "backward_epsilon.surface.csv": "02dc5ab159fdef3a245ccca9d4089acd6dbee4e58e2e09fd788278f9b79190fa",
+    "backward_epsilon.witness.npz": "31b91acfb476905930bdbba9240db1838eafd907a2c39ccce2c504c7548a2f3f",
+    "F0.lp.npz": "4c7cca9a042e448f768dda8bd82b949ed0cf8754722c3ca6da9c632cc21c7c47",
+    "F0.surface.csv": "1afc146197ba3af80df4f0f4fd1c9b5ac94f00a755234ec6f43335344cbb4268",
+    "F0.witness.npz": "377a856ac94f85222152ebbc4013599f6b1ba5f0b64d352097bcb028c777b4fb",
+    "forward.certificate.json": "4d4ec3b128b7f740e97579489591585d63b9ad9cfa00d489e628d655b648e354",
+    "forward.lp.npz": "95ffdff93442839d765946fc6fc9ea3d8cb167d5a336bb9d843802c9b904b728",
+    "forward_epsilon.lp.npz": "a26c51f6916eab52e5001837cd50711c0cacbbe6b576aad37807cdff83138b48",
+    "forward_epsilon.surface.csv": "fa9e3fb00abfacf72e3e437e4058dece34641e55dd87085e20a0a92214f2c914",
+    "forward_epsilon.witness.npz": "5ff34ba7a0e1bfce0a0a1a72216e71ee5d7ef3cd061ccb47aff9e0dca1737223",
+    "observations.csv": "131cf26b7cbcb448e4697cc5bbd719fbd8cf750ce2701d1e4173f7f6f4b3abc9"
+  }
+}

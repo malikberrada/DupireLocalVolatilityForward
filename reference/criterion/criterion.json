@@ -1,0 +1,96 @@
+{
+  "theorem": "docs/CRITERE_PROUVE.md, Theoreme 1",
+  "F0": {
+    "solver_status": "optimal",
+    "conclusion": "feasible_exact",
+    "scheme": "none",
+    "problem_sha256": "dd913279abb9c0bc76ad92aa59371f2b6c93b58370819f6256bb6a956af51310",
+    "rows": 1652,
+    "nodes": 375,
+    "verification": {
+      "verified": true,
+      "minimum_slack": {
+        "price_box": "1820000/9955272289",
+        "slope_upper": "3294862955058/30558764831783796773",
+        "slope_lower": "117536549562751871440673227/136873282683774084308341411015644",
+        "convexity": "8787696075628944363380190948342202728481124543762956609/156819645040404099347878641832508925119401567266076736000",
+        "left_chord": "1073592679615326398691085859946/50159867345357418566582550837686525",
+        "calendar": "8841196534501517/21951206509971667660",
+        "ask": "5267271997/48852206708571696",
+        "bid": "48222701/447249612065560"
+      },
+      "checked_rows": 1652,
+      "checked_price_bounds": 750,
+      "minimum_gamma": "8787696075628944363380190948342202728481124543762956609/156819645040404099347878641832508925119401567266076736000",
+      "zero_gamma_nodes": 0,
+      "variance_quotient_everywhere_identifiable": true,
+      "arithmetic": "exact rationals on the original declared data and geometry",
+      "kind": "primal",
+      "scheme": "none",
+      "problem_sha256": "dd913279abb9c0bc76ad92aa59371f2b6c93b58370819f6256bb6a956af51310"
+    },
+    "certificate": "F0.certificate.json"
+  },
+  "requested": {
+    "solver_status": "optimal",
+    "conclusion": "feasible_exact",
+    "scheme": "joint",
+    "problem_sha256": "6dc8249ffa406d5e65e2e5505acfaa75b5ccaec42baf607fe74503b25e2ee706",
+    "rows": 2820,
+    "nodes": 375,
+    "verification": {
+      "verified": true,
+      "minimum_slack": {
+        "price_box": "446737/2444469412",
+        "slope_upper": "6337703683/143070960124973867",
+        "slope_lower": "54270359913727970832984111/59251528768352446212062410507660",
+        "convexity": "53409692361579422525227466683393599905283499041259920064537/769858608746667954278232696221849881573768171723365520602375",
+        "left_chord": "37887461925234877240497468378/4308573160161962856854983633773895",
+        "calendar": "17534008339160957/43485931787092068185",
+        "forward_local_lower": "21999055982314085929296948817938311804891537078438958523189619946683/2883528638577800411039459670722044284708054845936866287299674097611250000",
+        "forward_local_upper": "160330209481247548514869114495307553877372597185668952102096929821183/800168912944546569900635058165844627559300570407413817207399669204955625",
+        "backward_local_lower": "418240735323135435220314059923992835529628559351693954056874754716937531/489141734491761021424280321709004272261604490900432152726456767296941083180000",
+        "backward_local_upper": "606929232038910868161746601840608790348088278237337742040969874913/2862761414460542969975060083795834696906818957907045667276243306853420",
+        "ask": "229257723/5175395429322490",
+        "bid": "94058315/2123326404231853"
+      },
+      "checked_rows": 2820,
+      "checked_price_bounds": 750,
+      "minimum_gamma": "53409692361579422525227466683393599905283499041259920064537/769858608746667954278232696221849881573768171723365520602375",
+      "zero_gamma_nodes": 0,
+      "variance_quotient_everywhere_identifiable": true,
+      "arithmetic": "exact rationals on the original declared data and geometry",
+      "kind": "primal",
+      "scheme": "joint",
+      "problem_sha256": "6dc8249ffa406d5e65e2e5505acfaa75b5ccaec42baf607fe74503b25e2ee706"
+    },
+    "certificate": "criterion.certificate.json"
+  },
+  "conclusion": "feasible_exact",
+  "diagnosis": "compatible_on_declared_grid",
+  "source": {
+    "kind": "rational_normalized_grid",
+    "filename": "F0.exact_grid.json",
+    "sha256": "c6494ac8fd99caba2edf7de02327e65d2b1db1190c578c69e7e2fc296faf8e27"
+  },
+  "assumptions": {
+    "common_cartesian_grid": true,
+    "shape": [
+      5,
+      75
+    ],
+    "all_observations_retained": true,
+    "observation_count": 121,
+    "normalization_fixed": true,
+    "variance_bounds": [
+      "1/400",
+      "1"
+    ],
+    "same_surface_for_both_schemes": true,
+    "zero_tail_anchor": false,
+    "payoff_at_T0": false
+  },
+  "continuous_extension_proved": false,
+  "normalization_uncertainty_propagated": false,
+  "numerical_discovery_is_complete_exact_algorithm": false
+}

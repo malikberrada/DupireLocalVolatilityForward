@@ -1,0 +1,112 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "FH2015",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.1016/j.jeconom.2014.09.003",
+  "retrieved_at": "2026-10-27T07:26:55.969199+00:00",
+  "raw_response_sha256": "49d2c2966eb745a1296b322687953ea46d0cd090dcdb333b6a4b25c2e9601255",
+  "projection": {
+    "DOI": "10.1016/j.jeconom.2014.09.003",
+    "title": [
+      "Semi-nonparametric estimation of the call-option price surface under strike and time-to-expiry no-arbitrage constraints"
+    ],
+    "author": [
+      {
+        "given": "Matthias R.",
+        "family": "Fengler",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lin-Yee",
+        "family": "Hin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Journal of Econometrics"
+    ],
+    "volume": "184",
+    "issue": "2",
+    "page": "242-261",
+    "published": {
+      "date-parts": [
+        [
+          2015,
+          2
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2015,
+          2
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2014,
+          9,
+          16
+        ]
+      ],
+      "date-time": "2014-09-16T05:02:15Z",
+      "timestamp": 1410843735000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          6,
+          2
+        ]
+      ],
+      "date-time": "2024-06-02T10:55:58Z",
+      "timestamp": 1717325758000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          20
+        ]
+      ],
+      "date-time": "2026-08-20T15:20:38Z",
+      "timestamp": 1787239238300,
+      "version": "build-2736575974"
+    },
+    "URL": "https://doi.org/10.1016/j.jeconom.2014.09.003",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0304407614001845?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0304407614001845?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ]
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

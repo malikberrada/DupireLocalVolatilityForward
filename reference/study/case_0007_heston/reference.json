@@ -1,0 +1,8 @@
+{
+  "quadrature_error_indicator": 6.2821894352888604e-09,
+  "tolerance": 1e-07,
+  "rigorous_enclosure": false,
+  "nodes_final": 512,
+  "cutoff_final": 320.0,
+  "different_observed_strikes_by_maturity": true
+}

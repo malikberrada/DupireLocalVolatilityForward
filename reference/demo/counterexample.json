@@ -1,0 +1,12 @@
+{
+  "sigma_BS": 0.2,
+  "discrete_sigma": {
+    "forward": 0.1695296146742226,
+    "backward": 0.2332333449426174
+  },
+  "bounds_sigma": [
+    0.18,
+    0.22
+  ],
+  "reference_arithmetic": "binary64; not an interval enclosure"
+}

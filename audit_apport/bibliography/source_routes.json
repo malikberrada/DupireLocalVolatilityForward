@@ -1,0 +1,19 @@
+{
+  "format": "dupire-reading-routes-v1",
+  "note": "Candidate public full-text routes, not evidence of completed reading. No CV is used as a thesis.",
+  "routes": {
+    "BR2016": ["https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf"],
+    "KKTG2016": ["https://link.springer.com/content/pdf/10.1186/s13660-016-1097-x.pdf", "https://link.springer.com/article/10.1186/s13660-016-1097-x"],
+    "KKT2024": ["https://link.springer.com/content/pdf/10.1007/s10614-023-10368-5.pdf", "https://link.springer.com/article/10.1007/s10614-023-10368-5/fulltext.html"],
+    "SANOS2026": ["https://arxiv.org/pdf/2601.11209v4"],
+    "CCD2020": ["https://arxiv.org/pdf/2007.10462v1"],
+    "ZHANG2025": ["https://arxiv.org/pdf/2511.09175v1"],
+    "AUSTING2020": ["https://www.risk.net/media/download/1053071/download"],
+    "KUNDU2017": [],
+    "CARR2014": ["https://arxiv.org/pdf/1308.2326v2"],
+    "FH2015": ["https://ux-tauri.unisg.ch/RePEc/usg/econwp/EWP-1136.pdf"],
+    "CN1947": ["https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0305004100023197"],
+    "YOO2024": ["https://link.springer.com/content/pdf/10.1007/s10614-024-10590-9.pdf"],
+    "NAM2026": ["https://link.springer.com/content/pdf/10.1007/s40819-026-02112-y.pdf"]
+  }
+}

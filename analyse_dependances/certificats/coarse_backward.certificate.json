@@ -1,0 +1,13 @@
+{
+  "format": "dupire-exact-grid-certificate-v1",
+  "kind": "primal",
+  "problem_sha256": "4a6556ab292b0bb47c2d5c4ad30e4e4bb02f53db86601228d753a9db28d9c742",
+  "prices": [
+    "41/400",
+    "1/20",
+    "29/2500",
+    "41/400",
+    "253/5000",
+    "29/2500"
+  ]
+}

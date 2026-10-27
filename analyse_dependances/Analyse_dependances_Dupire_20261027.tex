@@ -1,0 +1,338 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[provide=*,french]{babel}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,tabularx,xcolor}
+\usepackage[margin=21mm,headheight=14pt]{geometry}
+\usepackage{fancyhdr,enumitem,hyperref,microtype}
+\definecolor{ink}{HTML}{183B4E}
+\definecolor{accent}{HTML}{086C7C}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={Dépendances et portée scientifique du projet Dupire},pdfauthor={Note d'analyse assistée}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{ink} DUPIRE / DÉPENDANCES ET PORTÉE}
+\fancyhead[R]{\small 27 octobre 2026}
+\fancyfoot[L]{\footnotesize Analyse mathématique et documentaire assistée}
+\fancyfoot[R]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=16pt,itemsep=3pt,topsep=3pt}
+\newcommand{\stitle}[1]{\vspace{3mm}{\Large\bfseries\color{ink}#1}\par\vspace{3mm}}
+\newcommand{\subt}[1]{\vspace{2mm}{\bfseries\color{accent}#1}\par}
+\newcommand{\BR}{Buehler--Ryskin}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\dd}{\,\mathrm{d}}
+\begin{document}
+
+{\huge\bfseries\color{ink} Dépendances et portée scientifique}\par
+{\Large Projet Dupire : trois revendications examinées}\par
+\vspace{3mm}
+\textbf{Objet.} Déterminer ce qui est démontré, ce qui se reconstruit à partir d'outils antérieurs, et ce qui distingue réellement le projet d'une construction publiée. Cette note accompagne des calculs rationnels reproductibles ; elle n'est ni une expertise indépendante ni un dépôt public de priorité.
+
+\subt{Résultat principal de l'analyse}
+Une \textbf{non-implication ciblée est démontrée} : dans l'exemple certifié à spreads strictement positifs, aucune calibration backward sur la grille grossière ne peut conserver son prix central final et devenir conjointement admissible après une seule subdivision temporelle. Pourtant le problème conjoint raffiné est faisable avec les mêmes six fourchettes. Les ensembles de prix terminaux sont séparés par au moins
+\[
+\boxed{\frac{1153}{128000000}>0.}
+\]
+Cette séparation s'applique au raffinement de \BR{}, \S4.4, \emph{en tant qu'il conserve les prix déjà calibrés}. Elle ne dit pas que leur article interdit une nouvelle calibration sur une grille fine : cette possibilité est expressément évoquée au début de la section.
+
+\subt{Ce que l'on peut conclure sur C1--C3}
+\begin{tabularx}{\textwidth}{@{}p{9mm}X X@{}}
+\toprule
+& Dépendance établie & Portée scientifique défendable\\\midrule
+C1 & Taylor sur les deux stencils, contrôle d'un quotient à dénominateur positif, marge stricte ; positivité de Bernstein. & Critère quantitatif suffisant explicite. Sa preuve utilise une chaîne classique ; cela ne prouve pas que l'énoncé exact ait été publié.\\[2mm]
+C2 & Intersection des contraintes déjà connues, construction d'une instance, certificat de séparation linéaire. & Contre-exemple exact, robuste aux spreads et discriminant pour une méthode antérieure précise. Priorité du contre-exemple non établie.\\[2mm]
+C3 & Le seuil local est une élimination algébrique des deux contraintes ; la récurrence est le point milieu implicite pour une équation scalaire linéaire. & Caractérisation d'une classe restreinte et raffinement constructif ; pas d'indépendance de mécanisme démontrée.\\\bottomrule
+\end{tabularx}
+
+\subt{Verdict}
+Les preuves justifient \textbf{un apport mathématique précis de caractérisation et de certification}. Elles ne justifient pas actuellement l'affirmation générale : « résultat scientifiquement inédit et non dérivable des travaux antérieurs ». Une reconstruction classique ne suffit pas davantage à prouver l'absence de toute nouveauté d'énoncé ou de combinaison. La contribution doit être présentée à l'échelle exacte des résultats ci-dessous.
+
+\clearpage
+\stitle{1. C1 : dérivation complète du critère suffisant}
+Soit $P(T,x)$ sur un rectangle intérieur avec $x\ge x_a>0$. On suppose les contraintes continues de forme, les observations dans leurs fourchettes, et
+\[
+ P_{xx}\ge\gamma_0>0,\qquad
+ l+\delta\le v:=\frac{2P_T}{x^2P_{xx}}\le u-\delta,
+ \quad 0<2\delta<u-l.
+\]
+On borne $|P_{xxx}|\le M_3$, $|P_{xxxx}|\le M_4$, $|P_{TT}|\le M_{TT}$.
+Il s'agit d'hypothèses supplémentaires ; elles ne découlent pas d'une simple faisabilité discrète antérieure.
+
+\subt{De Taylor au contrôle des deux quotients}
+Pour $p=h_+>0$, $q=h_->0$, le stencil spatial commun est
+\[
+ \Gamma_h=\frac{2}{p+q}
+ \left(\frac{P(x+p)-P(x)}p-\frac{P(x)-P(x-q)}q\right).
+\]
+Taylor avec reste borné donne
+\begin{equation}
+ |\Gamma_h-P_{xx}|\le\frac{|p-q|}{3}M_3+
+ \frac{p^3+q^3}{12(p+q)}M_4.\label{tay}
+\end{equation}
+Soient $H$ le plus grand pas spatial initial, $D_h$ la plus grande différence de pas adjacents et $\tau$ le plus grand pas temporel. Après subdivision dyadique par $r=2^\ell$,
+\[
+ |\Gamma_h-P_{xx}|\le e_r=\frac ar+\frac b{r^2},\qquad
+ a=\frac{D_hM_3}{3},\quad b=\frac{H^2M_4}{12}.
+\]
+Aux nouveaux nœuds intérieurs à un ancien intervalle, les deux pas sont égaux ; aux anciens nœuds, leur différence est divisée par $r$. L'inégalité
+$(p^3+q^3)/(p+q)=p^2-pq+q^2\le\max(p,q)^2$ donne la borne uniforme.
+
+La différence temporelle $\Theta_h$ est une moyenne de $P_T$. À chacune des deux extrémités $T_*$ de la cellule,
+\[
+ |\Theta_h-P_T(T_*,x)|\le\frac{\tau M_{TT}}{2r}.
+\]
+Si $e_r<\gamma_0$, l'identité de perturbation du quotient donne, pour les deux extrémités,
+\[
+ \left|\frac{2\Theta_h}{x^2\Gamma_h}-v(T_*,x)\right|
+ \le \frac{d/r+u e_r}{\gamma_0-e_r},
+ \qquad d=\frac{\tau M_{TT}}{x_a^2}.
+\]
+Imposer à cette borne d'être au plus $\delta$ équivaut à
+\[
+ \boxed{Cr^2-Ar-B\ge0},\quad
+ C=\delta\gamma_0,\quad A=d+(u+\delta)a,\quad B=(u+\delta)b.
+\]
+Cette condition implique elle-même $e_r<\gamma_0$. Les deux variances brutes sont donc dans $[l,u]$, pour les \emph{mêmes} valeurs nodales de $P$. Le polynôme reste positif au-delà de sa racine positive. Les anciens nœuds restent présents, donc leurs cotations restent dans les mêmes fourchettes.
+
+\subt{Bernstein et qualification du résultat}
+À degré fixé, $f=\sum b_iB_i$ avec $b_i\ge0$ implique $f\ge0$, car $B_i\ge0$ et $\sum B_i=1$. Appliquer ce fait aux polynômes de forme et à $P_T-\tfrac12(l+\delta)x^2P_{xx}$ et $\tfrac12(u-\delta)x^2P_{xx}-P_T$ fournit le système linéaire suffisant du projet. Les contraintes de forme par coefficients sont déjà utilisées par Kundu et al. (2016), \S3.2--3.3.
+
+\textbf{Conclusion C1.} Le seuil est une conséquence de ces estimations et de la marge. Il n'est ni nécessaire ni un niveau minimal de faisabilité. La chaîne de preuve est classique ; l'antériorité de sa formulation exacte n'est pas établie par cette dérivation.
+
+\clearpage
+\stitle{2. C3 : seuil et récurrence, sans ambiguïté}
+On fixe trois strikes, des voisins constants et un prix central initial. Écrire
+\[
+ \kappa=\frac{2}{h_-h_+},\quad a=\frac{x^2\Delta t}{2},\quad
+ d=c_1-c_0,\quad g_1=g_0-\kappa d,\quad g_0>0,\quad 0<l<u.
+\]
+Les contraintes intérieures (18) et (21) de \BR{}, une fois les grilles identifiées, donnent
+\[
+ al g_0\le d\le au g_0,\qquad al g_1\le d\le au g_1.
+\]
+Il s'agit d'une identification des \emph{contraintes locales}. Le système complet de \BR{} comporte d'autres conditions de bord, de normalisation et de calibration ; le projet utilise une fenêtre intérieure finie.
+
+\subt{Élimination du prix terminal}
+Le membre inférieur forward impose $d>0$ ; ainsi $g_1<g_0$. La borne inférieure backward est plus faible et la borne supérieure backward plus forte. Les quatre contraintes équivalent à
+\[
+ al g_0\le d\le \frac{au g_0}{1+a\kappa u}.
+\]
+L'intervalle est non vide exactement lorsque
+\begin{equation}
+ a\kappa lu\le u-l
+ \quad\Longleftrightarrow\quad
+ \Delta t\le\frac{2(u-l)}{x^2\kappa lu}.\label{seuil}
+\end{equation}
+Sous cette condition, $a\kappa l\le(u-l)/u<1$ ; choisir $d=al g_0$ donne $g_1>0$ et prouve la suffisance. Une fourchette terminale ajoute encore une intersection à vérifier.
+
+\subt{Identification exacte au point milieu}
+Pour $v_*=2lu/(l+u)$, posons
+\[
+ c_* = \frac{\kappa x^2v_*}{2},\qquad
+ z=\frac{c_*\Delta t}{2},\qquad
+ \rho=\frac{1-z}{1+z}.
+\]
+L'équation scalaire $g'=-c_*g$, discrétisée par le point milieu implicite, est
+\[
+ \frac{g_1-g_0}{\Delta t}=-c_*\frac{g_1+g_0}{2}.
+\]
+Sa résolution donne précisément $g_1=\rho g_0$ et $d=(g_0-g_1)/\kappa$. Pour cette équation linéaire, elle est identique à la règle trapézoïdale. Les variances des deux stencils sont
+\[
+ v_f=\frac{v_*}{1+z},\qquad v_b=\frac{v_*}{1-z}.
+\]
+La condition \eqref{seuil} équivaut à $z\le(u-l)/(u+l)$ et assure $v_f,v_b\in[l,u]$. Sur $r$ pas égaux, $g_r=g_0\rho_r^r$. Pour $\lambda=c_*D\in(0,1)$, Bernoulli donne
+\[
+ 1-\lambda\le\rho_r^r\le\frac1{1+\lambda},\qquad
+ \frac{g_0}{\kappa}\frac{\lambda}{1+\lambda}
+ \le c_r-c_0\le\frac{g_0}{\kappa}\lambda.
+\]
+La seconde borne est uniforme en $r$ admissible. C'est le mécanisme du lemme de conservation des fourchettes dans le projet.
+
+\textbf{Conclusion C3.} Le seuil se dérive des contraintes locales antérieures ; la récurrence utilise un schéma classique. Ni cette identification ni la différence de notation ne démontrent que le résultat complet soit déjà publié, ou qu'il soit scientifiquement indépendant.
+
+\clearpage
+\stitle{3. Caractérisation exacte avec fourchette terminale}
+\textbf{Proposition.} Fixer les deux prix voisins, $g_0>0$, $0<l<u$, et des pas quelconques $a_j=x^2\Delta t_j/2>0$, $1\le j\le r$. On n'impose pas de cotations centrales intermédiaires. Soit $J=[b,a]$ une fourchette de l'\emph{incrément} central final.
+
+Il existe un chemin respectant les quatre contraintes locales à chaque étape et l'incrément terminal dans $J$ si et seulement si :
+\begin{align}
+ &a_j\kappa lu\le u-l \quad\text{pour tout }j,\label{local}\\
+ &J\cap\left[\frac{g_0}{\kappa}\Big(1-\prod_{j=1}^r\beta_j\Big),
+                  \frac{g_0}{\kappa}\Big(1-\prod_{j=1}^r\alpha_j\Big)\right]\ne\varnothing,
+ \label{terminal}\\[-2mm]
+ &\hspace{6mm}\alpha_j=\frac1{1+\kappa a_j u},\qquad
+ \beta_j=1-\kappa a_j l.\nonumber
+\end{align}
+Si les données sont rationnelles, un chemin rationnel peut être construit sans extraction de racines.
+
+\subt{Preuve de nécessité et de suffisance}
+À une étape, l'élimination de la page précédente donne exactement
+\[
+ \alpha_j\le\frac{g_j}{g_{j-1}}\le\beta_j.
+\]
+Cet intervalle est non vide si et seulement si \eqref{local} ; il est alors contenu dans $(0,1)$. Les rapports sont librement sélectionnables à chaque étape. L'ensemble de leurs produits est tout l'intervalle
+$[\prod\alpha_j,\prod\beta_j]$ : c'est l'image continue d'un rectangle connexe, et ses extrema sont les produits des extrema positifs. Comme
+$c_r-c_0=(g_0-g_r)/\kappa$, on obtient exactement \eqref{terminal}.
+
+Voici une construction rationnelle qui prouve aussi l'atteignabilité effective. Choisir un incrément rationnel dans l'intersection de \eqref{terminal} et poser $G=g_0-\kappa d_{\rm final}$. À l'étape $j$, choisir $g_j$ dans
+\[
+ [\alpha_j g_{j-1},\beta_j g_{j-1}]
+ \cap\left[\frac{G}{\prod_{k>j}\beta_k},
+            \frac{G}{\prod_{k>j}\alpha_k}\right].
+\]
+L'hypothèse d'atteignabilité restante rend l'intersection non vide ; ses extrémités et son milieu sont rationnels. À la dernière étape, l'intersection impose $g_r=G$. Poser ensuite $d_j=(g_{j-1}-g_j)/\kappa$. Toutes les contraintes locales sont satisfaites.\hfill$\square$
+
+\subt{Forme et application à l'exemple}
+Si la tranche initiale satisfait les contraintes de forme du projet, chaque centre augmente vers la corde fixe des deux voisins, sans l'atteindre. Les deux pentes restent entre leurs valeurs initiales ; les bornes de prix, la convexité, les calendriers et le raccord gauche sont conservés. Les fourchettes des voisins doivent contenir leurs prix constants.
+
+Pour des pas égaux $a_j=a/r$, l'intervalle terminal exact devient
+\[
+ \frac{g_0}{\kappa}\left[1-(1-\kappa al/r)^r,\quad
+                       1-(1+\kappa au/r)^{-r}\right].
+\]
+Avec les paramètres certifiés, $r=1$ est impossible ; pour $r=2$, cet intervalle vaut
+\[
+ \boxed{[87/128000,\;9/12500]}
+ \subset[1/2000,\;11/10000].
+\]
+Cette proposition complète le critère suffisant fondé sur un seul chemin au point milieu, dans cette classe précise. Sa preuve est une autre élimination des contraintes locales, pas une preuve d'antériorité ou d'indépendance. Elle ne caractérise pas le problème général à voisins variables.
+
+\clearpage
+\stitle{4. Séparation stricte d'un raffinement antérieur}
+\textbf{Données.} $T_0=1/4$, $T_1=7/20$, $D=1/10$, $l=3/100$, $u=1/25$ et $\varepsilon=10^{-6}$. Toutes les fourchettes ont une largeur strictement positive.
+\begin{center}
+\begin{tabular}{@{}lll@{}}\toprule
+Strike & Fourchette initiale & Fourchette finale\\\midrule
+$9/10$ & $41/400\pm\varepsilon$ & $41/400\pm\varepsilon$\\
+$1$ & $1/20\pm\varepsilon$ & $[1/20+1/2000,\;1/20+11/10000]$\\
+$27/25$ & $29/2500\pm\varepsilon$ & $29/2500\pm\varepsilon$\\\bottomrule
+\end{tabular}
+\end{center}
+La vérification indépendante conserve les six mêmes fourchettes et les mêmes bornes dans les quatre problèmes : forward grossier faisable, backward grossier faisable, conjoint grossier infaisable, conjoint après subdivision faisable. Le certificat dual initial a sept termes et une marge exacte $991/8000000$.
+
+\subt{Borne pour toute calibration backward grossière}
+Les coefficients de gamma sont
+\[
+ w_0=1000/9,\quad -\kappa=-250,\quad w_2=1250/9.
+\]
+Le gamma des prix médians est $1/2$. Sur \emph{toute} la boîte initiale,
+\[
+ \frac{999}{2000}\le g_0\le\frac{1001}{2000}.
+\]
+Si $d$ est l'incrément central et
+$q=w_0\Delta c_{\rm gauche}+w_2\Delta c_{\rm droite}$, les calendriers et les fourchettes donnent $0\le q\le1/2000$. Comme $g_1=g_0+q-\kappa d$, backward-upper impose, avec $a=D/2=1/20$,
+\[
+ d\le au(g_0+q-\kappa d)
+ \quad\Rightarrow\quad
+ c_{\rm final}\le\frac1{20}+\varepsilon+
+ \frac{au(1001/2000+1/2000)}{1+a\kappa u}
+ =\boxed{\frac{50669}{1000000}}.
+\]
+Cette borne est nécessaire, même si l'on autorise tous les déplacements de voisins permis par les spreads.
+
+\subt{Borne pour tout témoin conjoint après une subdivision}
+Poser $a_h=a/2=1/40$. Les deux bornes forward-lower donnent
+\[
+ d_0\ge a_hl g_0,\qquad
+ d_1\ge a_hl(g_0+q_0-\kappa d_0),\quad q_0\ge0.
+\]
+Puisque $1-\kappa a_hl=13/16>0$,
+\[
+ d_0+d_1\ge(2a_hl-\kappa a_h^2l^2)g_0.
+\]
+Ainsi, pour tout témoin conjoint raffiné,
+\[
+ c_{\rm final}\ge\frac1{20}-\varepsilon+
+ (2a_hl-\kappa a_h^2l^2)\frac{999}{2000}
+ =\boxed{\frac{1297357}{25600000}}.
+\]
+Les bornes sont séparées par $1153/128000000>0$ ; elles n'ont pas besoin d'être optimales pour conclure. Il est donc impossible de conserver le prix final de \emph{n'importe quel} fit backward grossier et de satisfaire le problème conjoint après une subdivision.
+
+\clearpage
+\stitle{5. Sens exact de la non-implication obtenue}
+Dans \BR{}, \S4.4, les petits opérateurs ont pour produit le grand opérateur calibré. Leurs formules (39)--(40) conservent donc les prix aux échéances de calibration. Le résultat de la page précédente s'applique à cette propriété de conservation :
+\[
+ \begin{gathered}
+ \text{fit backward grossier avec les bornes et fourchettes données}\\
+ +\;\text{conservation de son prix final}\quad\not\Longrightarrow\\
+ \text{fit conjoint sur la grille issue d'une seule subdivision.}
+ \end{gathered}
+\]
+En revanche, les fourchettes autorisent un \emph{autre} choix de prix final. Avec les voisins médians constants et $g_0=1/2$, le chemin au point milieu a
+\[
+ z=3/28,\quad\rho=25/31,\quad
+ c_{\rm final}-c_0=84/120125.
+\]
+Il respecte les deux stencils sur chaque demi-pas, et toutes les observations. Le témoin rationnel et le contrôle intégral des contraintes sont fournis dans le dossier.
+
+Un certificat complémentaire à dix multiplicateurs positifs établit directement l'infaisabilité du système « contraintes conjointes raffinées + borne supérieure backward grossière sur les mêmes variables de prix aux extrémités ». Sa combinaison linéaire annule tous les coefficients et donne une contradiction de marge $4739/384000000>0$. C'est une seconde preuve arithmétique du défaut de conservation, distincte des deux bornes séparées de la page 5.
+
+\subt{Ce que cette preuve exclut}
+La récupération en un seul niveau de raffinement de cet exemple n'est pas une application directe de la conservation des prix calibrés de \S4.4 avec maintien des bornes backward grossières. Même une modification des prix intermédiaires ne peut annuler la séparation si les prix finaux et les contraintes considérées sont maintenus.
+
+\subt{Ce qu'elle n'exclut pas}
+\begin{itemize}
+\item Une nouvelle calibration sur la grille fine, qui peut sélectionner un autre prix dans la même fourchette. \BR{} évoquent eux-mêmes la recalibration sur une grille plus fine au début de \S4.4.
+\item Une adaptation de leurs contraintes ou l'emploi d'autres outils classiques pour construire le contre-exemple : les pages 2--4 montrent justement de telles dérivations.
+\item Une antériorité du même phénomène dans un autre article, un ouvrage ou une thèse. Aucune absence de formule dans les extraits n'est utilisée comme preuve de nouveauté.
+\end{itemize}
+
+\subt{Trois distinctions indispensables}
+\textbf{Non-implication d'un énoncé identifié.} Elle se prouve par un contre-exemple qui satisfait ses hypothèses applicables et viole la conclusion supplémentaire. Ici, la séparation concerne une propriété nécessaire de conservation des prix ; elle n'attaque pas la validité du théorème antérieur.
+
+\textbf{Reconstruction par des outils antérieurs.} C1 et les composantes de C3 se démontrent avec des arguments classiques sous leurs hypothèses supplémentaires. Il ne faut pas confondre cette dépendance avec un corollaire d'un théorème de \BR{} sans ces hypothèses.
+
+\textbf{Originalité bibliographique.} La première formulation d'un résultat particulier ou d'une combinaison utile peut être originale malgré une preuve classique. Cette priorité demande une attribution documentaire précise ; le présent calcul ne l'accorde pas automatiquement.
+
+\subt{Formulation scientifique soutenue par les preuves}
+Le projet fournit un critère quantitatif suffisant de faisabilité conjointe sous marge régulière, une famille locale exactement analysable, et un exemple rationnel à spreads positifs où un niveau de raffinement permet une calibration conjointe inaccessible en conservant un fit backward grossier. La revendication doit porter sur ces énoncés précis, avec leurs dépendances explicites.
+
+\clearpage
+\stitle{6. Contrôle des arguments bibliographiques}
+Les pages indiquées sont les pages physiques des versions examinées, et non une déclaration de lecture intégrale de chaque œuvre. Les empreintes des PDF effectivement consultés figurent dans \texttt{sources.json}. Aucun texte intégral tiers n'est redistribué.
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{31mm}X@{}}\toprule
+Source et passage & Conséquence documentaire retenue\\\midrule
+\BR{}, extensive 2.401, pp.17--18, 33--34, 45--46 & Contraintes locales, question de non-vacuité, raffinement conservant les opérateurs, stencil irrégulier dérivé de Taylor. Les dérivations de cette note sont des inférences explicites, pas l'attribution de nos formules au texte.\\[2mm]
+Kundu et al., 2016, pp.6--8, (18)--(25) & Contraintes de forme suffisantes via coefficients de Bernstein et formulation finie à contraintes linéaires antérieures. Cela ne suffit pas à attribuer le critère conjoint C1.\\[2mm]
+Austing, Risk 2020, six pages ; (22)--(24), (38) & Texte intégral nouvellement obtenu. Reproduction exacte des prix par discrétisation cohérente. Son couple forward/backward concerne des équations adjointes : il n'est pas identifié sans preuve aux deux quotients bruts du projet.\\[2mm]
+Fornberg, 1998, pp.685--691 & Différences finies sur grilles arbitraires et calcul des poids antérieurs. Sert à situer le mécanisme ; les constantes de C1 sont dérivées directement page 2.\\[2mm]
+Zhang, arXiv v1, lemme S0.2, p.5 & Dénominateur éloigné de zéro et contrôle d'erreur déjà présents ; norme $L^2(W)$, opérateurs et clipping différents. L'obstruction à l'identification littérale de A5 n'est pas une preuve d'originalité.\\[2mm]
+SANOS, arXiv v4, th.3.7 et prop.3.8, p.17 & Reproduction et lissage dans les fourchettes sous hypothèses propres. Il faudrait encore établir les deux bornes brutes communes pour en déduire le critère visé.\\[2mm]
+Chataigner--Crépey--Dixon, v1, pp.3--6 & Les pénalités de demi-variance et contraintes de forme ne sont pas assimilées à des garanties dures uniformes sur les deux stencils.\\[2mm]
+Carr--Nadtochiy, v2, pp.27--30 & Calibration exacte LVG antérieure ; son coefficient de diffusion n'est pas identifié aux deux quotients bruts imposés ici.\\[2mm]
+Fengler--Hin, document mai 2013, pp.16,19--22,31 & Forme, calendriers et estimation ne se confondent pas avec les bornes conjointes du présent problème. La version publiée en 2015 n'est pas réputée relue.\\\bottomrule
+\end{tabularx}
+
+\subt{Lacunes qui ne sont pas converties en conclusions}
+Kundu--Kumar--Tomar, article publié en ligne en 2023, volume 2024 : résumé et aperçu d'une page retrouvés, corps principal non obtenu. La thèse Kundu 2017 n'a pas été obtenue ; un CV ne la remplace pas. Pour Yoo, la notice de thèse 2025 n'est pas le texte de l'article de journal. Nam 2026 n'est évalué qu'au niveau des métadonnées et du résumé. Les notices SSRN distinguent aussi Austing 2020 révisé en 2022 et son guide 2022, qui annonce des corrections ; leurs corps révisés n'ont pas été relus ici.
+
+Ces limitations empêchent une certification de priorité globale. Elles n'empêchent pas les dérivations et la séparation d'ensembles de prix démontrées dans cette note.
+
+\clearpage
+\stitle{7. Références, traçabilité et reproduction}
+\small
+\begin{enumerate}[leftmargin=18pt,itemsep=5pt]
+\item H. Buehler, E. Ryskin, \emph{Discrete Local Volatility for Large Time Steps}, extensive version 2.401, 2015--2016. \href{https://quantitative-research.de/dl/Discrete\%20Local\%20Volatility\%20-\%20Extensive.pdf}{PDF de l'auteur}. \S3.3, résultats 3.2--3.3 ; \S4.4 ; annexe A.1.
+\item A. Kundu, S. Kumar, N. K. Tomar, S. K. Gupta, \emph{Call option price function in Bernstein polynomial basis with no-arbitrage inequality constraints}, Journal of Inequalities and Applications 2016:153. \href{https://doi.org/10.1186/s13660-016-1097-x}{DOI 10.1186/s13660-016-1097-x}.
+\item P. Austing, \emph{Finite difference schemes with exact recovery of vanilla option prices}, Risk, novembre 2020. \href{https://www.risk.net/media/download/1053071/download}{Version éditeur, six pages}. Ne pas confondre avec la version SSRN de quatorze pages révisée en 2022.
+\item B. Fornberg, \emph{Calculation of Weights in Finite Difference Formulas}, SIAM Review 40(3), 685--691, 1998. \href{https://www.colorado.edu/amath/sites/default/files/attached-files/sirev_cl.pdf}{PDF de l'auteur} ; \href{https://doi.org/10.1137/S0036144596322507}{DOI}.
+\item E. Hairer, G. Wanner, \emph{Stiff differential equations solved by Radau methods}, J. Comput. Appl. Math. 111, 93--111, 1999. \href{https://doi.org/10.1016/S0377-0427(99)00134-X}{DOI}. Introduction consultée dans l'index primaire ; PDF non obtenu. L'identité du point milieu est démontrée directement page 3, indépendamment de cet accès.
+\item J. Zhang, \emph{Proof-Carrying No-Arbitrage Surfaces}, \href{https://arxiv.org/abs/2511.09175v1}{arXiv:2511.09175v1}, 2025. Lemme S0.2.
+\item H. Buehler et al., \emph{SANOS}, \href{https://arxiv.org/abs/2601.11209v4}{arXiv:2601.11209v4}, révision du 22 mai 2026. Théorème 3.7, proposition 3.8.
+\item M. Chataigner, S. Crépey, M. Dixon, \emph{Deep Local Volatility}, \href{https://arxiv.org/abs/2007.10462v1}{arXiv:2007.10462v1}, 2020.
+\item P. Carr, S. Nadtochiy, \emph{Local Variance Gamma and Explicit Calibration to Option Prices}, \href{https://arxiv.org/abs/1308.2326v2}{arXiv:1308.2326v2}, version février 2014.
+\item M. R. Fengler, L.-Y. Hin, \emph{Semi-nonparametric estimation of the call price surface under strike and time-to-expiry no-arbitrage constraints}, document de travail mai 2013. \href{https://ux-tauri.unisg.ch/RePEc/usg/econwp/EWP-1136.pdf}{PDF institutionnel}. L'identifiant FH2015 du dossier renvoie au travail, pas à une lecture de la version du journal.
+\end{enumerate}
+\normalsize
+\subt{Contenu reproductible du dossier}
+\texttt{verifier\_dependances.py} contrôle des identités polynomiales, construit des chemins rationnels aux extrémités et à l'intérieur des intervalles atteignables, et recalcule les deux bornes séparées sur l'intégralité des boîtes bid/ask. Il appelle le vérificateur indépendant existant pour reconstruire et contrôler les quatre certificats initiaux, puis reconstruit le système étendu et contrôle le nouveau certificat dual à dix termes. Aucun solveur ni accès réseau n'est utilisé.
+
+Depuis le dossier extrait, avec Python 3.10 ou ultérieur :
+\begin{quote}\ttfamily\small
+python -I -S verifier\_dependances.py\\
+python -I -S verifier\_dependances.py --verify-json preuves\_dependances.json
+\end{quote}
+Le contrôle porte sur l'arithmétique et les instances décrites. La preuve générale est rédigée dans cette note ; elle n'est pas vérifiée par un assistant de preuve formelle. Les annotations bibliographiques restent des interprétations documentaires attribuées comme telles. Aucun nom de lecteur humain, lecture intégrale ou validation de priorité n'est créé automatiquement.
+
+\textbf{Périmètre final.} Un résultat de séparation précis est désormais prouvé et exploitable dans un article. La qualification « premier résultat de la littérature » ou « non dérivable de l'ensemble des travaux antérieurs » n'est pas acquise. Les mécanismes classiques identifiés doivent être cités, même si une contribution d'énoncé ou de combinaison est ensuite défendue.
+\end{document}

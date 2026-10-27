@@ -1,0 +1,522 @@
+{
+  "BR2016": {
+    "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+    "version_id": "author-pdf-current",
+    "page_index_sha256": "8d1571b48e39905ced80a0f606621c103c3736effc802923a0b1676faa1b6829",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "gamma": {
+        "page": 12,
+        "anchor": "Gamma",
+        "line": 32,
+        "evidence_id": "p0012:l0025-0040",
+        "evidence_ids": [
+          "p0012:l0025-0040",
+          "p0012:l0037-0052",
+          "p0012:l0049-0064",
+          "p0012:l0061-0076"
+        ],
+        "passage_text_sha256": {
+          "p0012:l0025-0040": "e07bb938d7e0e85b9d43f48e4fffa6a90acbb38dcf7ba7c5401813b2471eabd9",
+          "p0012:l0037-0052": "6fc181bd24d2a3c52e8acab392b940ffdebe2bb1a8cd174641755d005de7d565",
+          "p0012:l0049-0064": "618829dfbf09d155dcb500308f571fa461dd82d4f33a039e908134b8a9388c1a",
+          "p0012:l0061-0076": "36334df3cde8aa552fad1c1e8cefacb0156994c098ffcbbf6aac9f693ad837fd"
+        }
+      },
+      "theta": {
+        "page": 13,
+        "anchor": "Theta –",
+        "line": 36,
+        "evidence_id": "p0013:l0025-0040",
+        "evidence_ids": [
+          "p0013:l0025-0040",
+          "p0013:l0037-0052"
+        ],
+        "passage_text_sha256": {
+          "p0013:l0025-0040": "519a09a3db7bdb0cc8cd57b74d5b6471266dfed0b2908119eb5b702208cf15d6",
+          "p0013:l0037-0052": "81d8d25d0e0c4a452e1133746a1924d7483d081c78d20e3720983c0df3557491"
+        }
+      },
+      "forward": {
+        "page": 17,
+        "anchor": "Result 3.2",
+        "line": 49,
+        "evidence_id": "p0017:l0037-0052",
+        "evidence_ids": [
+          "p0017:l0037-0052",
+          "p0017:l0049-0064",
+          "p0017:l0061-0076",
+          "p0017:l0073-0076",
+          "p0018:l0001-0016"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0037-0052": "cae33cea6628b54db3727176ad0b542346ea3faf7bc3f0239e4f24519ce17a90",
+          "p0017:l0049-0064": "4339b08163cf471c7f8f0099bb4b504d3257345be14e48600937936bd7f292ee",
+          "p0017:l0061-0076": "f3fb54ab53431d001bf2d397f4c05e7718abdffbaa5a32ac9e8e7524c9145105",
+          "p0017:l0073-0076": "4cce870acbdb5bfa47f867ceb92891a720a8557dd23cd2e1a0a022d31a834095",
+          "p0018:l0001-0016": "7788b0279dafc994250862503fdd75ad141c6e44cf39c219a80155555664850b"
+        }
+      },
+      "backward": {
+        "page": 18,
+        "anchor": "Boundness",
+        "line": 42,
+        "evidence_id": "p0018:l0037-0052",
+        "evidence_ids": [
+          "p0018:l0037-0052",
+          "p0018:l0049-0064",
+          "p0018:l0061-0072",
+          "p0019:l0001-0016"
+        ],
+        "passage_text_sha256": {
+          "p0018:l0037-0052": "9778285869aa03ae622732eb63a83ab525ca9f7571d42e89ac9f717da9cfa071",
+          "p0018:l0049-0064": "5516120f0edbf84b8e47fdf4d3da791432a5ed0264fb3e0943d7af1bc8f69f3c",
+          "p0018:l0061-0072": "3bbe3f83e028bbd2b8299700bde7e3e03f60f0a18a56df659c9744d18a28bdee",
+          "p0019:l0001-0016": "a6b8af5eab9ee38b23d085fd71f4d14dc3b63477bacb3d222b035237cb7b6c0e"
+        }
+      },
+      "obstruction": {
+        "page": 18,
+        "anchor": "no guarantee",
+        "line": 6,
+        "evidence_id": "p0018:l0001-0016",
+        "evidence_ids": [
+          "p0018:l0001-0016",
+          "p0018:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0018:l0001-0016": "7788b0279dafc994250862503fdd75ad141c6e44cf39c219a80155555664850b",
+          "p0018:l0013-0028": "777af40933dc3f497ba4a5ef41c28c54343515117fca7d6a61b0f180906f62cb"
+        }
+      },
+      "small_steps": {
+        "page": 33,
+        "anchor": "4.4 Small Steps",
+        "line": 1,
+        "evidence_id": "p0033:l0001-0016",
+        "evidence_ids": [
+          "p0033:l0001-0016",
+          "p0033:l0013-0028",
+          "p0033:l0025-0040",
+          "p0033:l0037-0052",
+          "p0033:l0049-0064",
+          "p0033:l0061-0071",
+          "p0034:l0001-0016",
+          "p0034:l0013-0028",
+          "p0034:l0025-0033"
+        ],
+        "passage_text_sha256": {
+          "p0033:l0001-0016": "fff05370f303e54358d1f976c005f37bdf727c1948c7696d8203b37110d6ac4c",
+          "p0033:l0013-0028": "b21a96e2d894033864c1fe9744f2a0b8efc2615e18fb91e844b1bda569be4594",
+          "p0033:l0025-0040": "64b1a56e270bc2bc00f03c837fd818043d64a6ad29f76b22b010c6f8398c5757",
+          "p0033:l0037-0052": "c830d8e688f4b6ba430f9e572f3cea1161ad39e870d42d24a42e383d29ad7316",
+          "p0033:l0049-0064": "6a5d75824953a8c6fa207f291ce539375b3e2e0d5850649055bb30af46fb0bb8",
+          "p0033:l0061-0071": "b8227a07aff459c67e836582ce5d28f11aef30f94b987d116f6133a2544cba36",
+          "p0034:l0001-0016": "744966d8dbddbc2342efb4f05851df029106ddf5eb77408b02e003eb5c687589",
+          "p0034:l0013-0028": "0d44c236bae540261943d54af0d3a011b4a8f4379fb8c0d9b943b50a4a336fa5",
+          "p0034:l0025-0033": "7dbf973f77aa6981722652d607f035cd2ccda07ef0ae1c4554cc0f2c113e2d82"
+        }
+      }
+    }
+  },
+  "SANOS2026": {
+    "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+    "version_id": "arxiv-v4",
+    "page_index_sha256": "f8cbdf92e099e8b84550858f145465cf8297c91904a2dc525b984fd9a9710b4f",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "parametrization": {
+        "page": 17,
+        "anchor": "Theorem 3.7",
+        "line": 1,
+        "evidence_id": "p0017:l0001-0016",
+        "evidence_ids": [
+          "p0017:l0001-0016",
+          "p0017:l0013-0028",
+          "p0017:l0025-0040",
+          "p0017:l0037-0052",
+          "p0017:l0049-0064"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0001-0016": "e5011074975df5f5cb544f4e83b015beff3f556230035e1bd66a3dd450763b31",
+          "p0017:l0013-0028": "29f76143c5b55429ab545006994ab943c3a1c6e6f514dece5c01c49ee6023a3f",
+          "p0017:l0025-0040": "8bb65fa26eadc3406bbd859a36782b6ca3b13cb10becbd5a8ef3c811c8b9a5a2",
+          "p0017:l0037-0052": "f1508ed36898d4eef0319123b799054ebae271145b3b148ef251cefcd5a24bb3",
+          "p0017:l0049-0064": "f891d0ea00a6d2bce2174ab6f7f5593af8f292b6814e8d8c2161c70c252bbfb2"
+        }
+      },
+      "smoothing": {
+        "page": 17,
+        "anchor": "3.3 Smoothed",
+        "line": 58,
+        "evidence_id": "p0017:l0049-0064",
+        "evidence_ids": [
+          "p0017:l0049-0064",
+          "p0017:l0061-0076",
+          "p0017:l0073-0088",
+          "p0017:l0085-0100",
+          "p0017:l0097-0110"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0049-0064": "f891d0ea00a6d2bce2174ab6f7f5593af8f292b6814e8d8c2161c70c252bbfb2",
+          "p0017:l0061-0076": "80dc27e273f9c68e94bd7f4f681a46cbf8323e3573549444d32c61571df786f2",
+          "p0017:l0073-0088": "fda8d2fb66ba298108ae77294661345733e4cac11cebf3d7d9bf4c8905b6d8be",
+          "p0017:l0085-0100": "3c8e7c188bc2195c3005b776c305c6c808b10d090ab0e1c10e6a95f1ffe293cc",
+          "p0017:l0097-0110": "3f338d8188a4b4d5c89d910194742d6c22e3c6902d55abda9aac0ea1e56e7b99"
+        }
+      }
+    }
+  },
+  "CCD2020": {
+    "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+    "version_id": "arxiv-v1",
+    "page_index_sha256": "1a645877da07157b0fb6000157a7b77eb8d7dcd519bd5513014c2ab5186ad16d",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "formula": {
+        "page": 3,
+        "anchor": "(1)",
+        "line": 34,
+        "evidence_id": "p0003:l0001-0016",
+        "evidence_ids": [
+          "p0003:l0001-0016",
+          "p0003:l0013-0028",
+          "p0003:l0025-0040",
+          "p0003:l0037-0041"
+        ],
+        "passage_text_sha256": {
+          "p0003:l0001-0016": "e61a43b840e815a45ff6919327bef62e9cefa8775c7bac86d645db49d4f1b161",
+          "p0003:l0013-0028": "316ee8bb7aa68686d418570a48d4fa08f4081abb53f54942d1dcf6a279e45675",
+          "p0003:l0025-0040": "a283df4ee7e8c0f861c81da30458ff60199324d9021ef6ccfb47dcfc015a0e63",
+          "p0003:l0037-0041": "3eada7073306c4f968f1c3f60e368832204f714a13e183094f68b5b96d035dfe"
+        }
+      },
+      "hard": {
+        "page": 4,
+        "anchor": "3.1 Hard Constraints Approach",
+        "line": 37,
+        "evidence_id": "p0004:l0025-0040",
+        "evidence_ids": [
+          "p0004:l0025-0040",
+          "p0004:l0037-0051",
+          "p0004:l0049-0051",
+          "p0005:l0001-0016",
+          "p0005:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0025-0040": "b3e03cb2e38191d6ea3e9b6c8b9ed90a855b112e3b00f6a9cf1d9dd87fd4121a",
+          "p0004:l0037-0051": "7fef8dee09055bb373e788e613f8c9e06a4afeb12c2ebbd4a18000f98919dd01",
+          "p0004:l0049-0051": "2b5e7d10358e32e8fad8c5a8dec3a46c615181f1d0077fdadb656918171ac694",
+          "p0005:l0001-0016": "e94e9f6686cd2216050815b646284e7cd3a0d5fe0610d2934c9b04771a3f1221",
+          "p0005:l0013-0028": "0cf413d3bad6cfb04777e0c1fa1aa88d3513d26f5c1125e703f885c0c48597f7"
+        }
+      },
+      "soft": {
+        "page": 5,
+        "anchor": "3.2 Soft Constraints Approach",
+        "line": 24,
+        "evidence_id": "p0005:l0013-0028",
+        "evidence_ids": [
+          "p0005:l0013-0028",
+          "p0005:l0025-0031",
+          "p0006:l0001-0016",
+          "p0006:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0005:l0013-0028": "0cf413d3bad6cfb04777e0c1fa1aa88d3513d26f5c1125e703f885c0c48597f7",
+          "p0005:l0025-0031": "4a7158060998c7e2310dadfba68a8e2ad4341fc43073e6b8b113983bb8de0f7a",
+          "p0006:l0001-0016": "becb380b49525bd9d58ea5e9b63ef8e56779f9c47497b0d8deb6edb0be35d6f7",
+          "p0006:l0013-0028": "05ec6e6fff1b01f8b3a593285a9d062be5e225e6e35353000e86395290b9ccec"
+        }
+      },
+      "penalty": {
+        "page": 6,
+        "anchor": "the penalties only control",
+        "line": 7,
+        "evidence_id": "p0006:l0001-0016",
+        "evidence_ids": [
+          "p0006:l0001-0016",
+          "p0006:l0013-0028",
+          "p0006:l0025-0040",
+          "p0006:l0037-0052",
+          "p0006:l0049-0054"
+        ],
+        "passage_text_sha256": {
+          "p0006:l0001-0016": "becb380b49525bd9d58ea5e9b63ef8e56779f9c47497b0d8deb6edb0be35d6f7",
+          "p0006:l0013-0028": "05ec6e6fff1b01f8b3a593285a9d062be5e225e6e35353000e86395290b9ccec",
+          "p0006:l0025-0040": "9b0469bc7dc6bec37976fb030dae23dc1b3cc15d014a60e785af97c0cd785a81",
+          "p0006:l0037-0052": "af6e4d8fa1e41243fb469423761fc572f570fd7803018cc3ed367e15015168d9",
+          "p0006:l0049-0054": "56927616e71c953c3285d73e5a0795c3fea10e74a30ed707a11f17db1f197b28"
+        }
+      }
+    }
+  },
+  "ZHANG2025": {
+    "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+    "version_id": "arxiv-v1",
+    "page_index_sha256": "9c166755fc3fa31272758ecda93e1f5f1ace698f182cc89c2cf0a207ad332a48",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "cone": {
+        "page": 4,
+        "anchor": "3.2 Arbitrage-feasible set",
+        "line": 41,
+        "evidence_id": "p0004:l0001-0016",
+        "evidence_ids": [
+          "p0004:l0001-0016",
+          "p0004:l0013-0028",
+          "p0004:l0025-0040",
+          "p0004:l0037-0052",
+          "p0004:l0049-0053"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0001-0016": "f7f905ff12a57d9728cb97483de3bf91f1c6d7369cc460b40bdc838a519b2173",
+          "p0004:l0013-0028": "198f1a8f22c1739b6168d11378ee044634145faa475016c5b0765c74db276dd4",
+          "p0004:l0025-0040": "25a47041d755c0c2b2912f37b2c8c5be38fc564395c1ee792e8728cbd2e024be",
+          "p0004:l0037-0052": "409b2d6cd9965e0b97f04fc93e1adca11f3058e031ae407409f147ea31a13110",
+          "p0004:l0049-0053": "3e922a758e64d021cd3f739f3045863c1aa6f1f65e379e4c36ef0ac03443b8a4"
+        }
+      },
+      "mesh": {
+        "page": 4,
+        "anchor": "Admissibility conditions (A5)",
+        "line": 51,
+        "evidence_id": "p0004:l0037-0052",
+        "evidence_ids": [
+          "p0004:l0037-0052",
+          "p0004:l0049-0053",
+          "p0005:l0001-0016",
+          "p0005:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0037-0052": "409b2d6cd9965e0b97f04fc93e1adca11f3058e031ae407409f147ea31a13110",
+          "p0004:l0049-0053": "3e922a758e64d021cd3f739f3045863c1aa6f1f65e379e4c36ef0ac03443b8a4",
+          "p0005:l0001-0016": "697d56d44925462f0d8204828b7b1e93ed5c75bcdad3328207da5c96620a9e0c",
+          "p0005:l0013-0028": "90d12b123fde216e8292dd96cf8e11de015465da91beca30bbca876f62b15638"
+        }
+      },
+      "lemma": {
+        "page": 5,
+        "anchor": "Lemma S0.2 (operator stability",
+        "line": 29,
+        "evidence_id": "p0005:l0025-0040",
+        "evidence_ids": [
+          "p0005:l0025-0040",
+          "p0005:l0037-0052",
+          "p0005:l0049-0064",
+          "p0005:l0061-0076"
+        ],
+        "passage_text_sha256": {
+          "p0005:l0025-0040": "32586e197bb96986107955dd7ab296f568a9fbfad27b69b881bdfc88bbcbfb1d",
+          "p0005:l0037-0052": "713d87713e47259bf22659fd5bfa7718df42c2bd1209fe17fb5de0326bc6d537",
+          "p0005:l0049-0064": "04ef67a511259f2f1f5c9ec7231490252564fcec55859e4ff9184999772a0509",
+          "p0005:l0061-0076": "93dc76b077f4aec7dd4c534139ff16e03d2d5b086e36c3fd282c00df390860ec"
+        }
+      },
+      "projection": {
+        "page": 13,
+        "anchor": "Theorem 6",
+        "line": 8,
+        "evidence_id": "p0013:l0001-0016",
+        "evidence_ids": [
+          "p0013:l0001-0016",
+          "p0013:l0013-0028",
+          "p0013:l0025-0040",
+          "p0013:l0037-0052",
+          "p0013:l0049-0052"
+        ],
+        "passage_text_sha256": {
+          "p0013:l0001-0016": "a727bfb7dfb7825b4ba7fcfade8041bfda7c87de8146300d0d087d5db749b9ae",
+          "p0013:l0013-0028": "c194ae722c90e4939a6221ed8dd52ba553a4285e0ce9df737a382525d995bbb5",
+          "p0013:l0025-0040": "4417aae8b18e71ac6300a75524a3059a483daee47a0365a7c7bbb5b7d7945d81",
+          "p0013:l0037-0052": "f8b1be368c446f201aa83e75695faf95e978041e2e073a8cb94c1546eee506fc",
+          "p0013:l0049-0052": "355db7bf30051d9c7abe82b786adad4fc0b9dcc29096cbf222b3575f940e74cc"
+        }
+      }
+    }
+  },
+  "CARR2014": {
+    "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+    "version_id": "arxiv-v2",
+    "page_index_sha256": "1fd1ff3d61e47fad541152d7c7ee13d8d0c980563cd56d416426a58d7a587194",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "data": {
+        "page": 27,
+        "anchor": "Assumption 2.",
+        "line": 21,
+        "evidence_id": "p0027:l0013-0028",
+        "evidence_ids": [
+          "p0027:l0013-0028",
+          "p0027:l0025-0040",
+          "p0027:l0037-0052",
+          "p0027:l0049-0053",
+          "p0028:l0001-0016",
+          "p0028:l0013-0028",
+          "p0028:l0025-0040"
+        ],
+        "passage_text_sha256": {
+          "p0027:l0013-0028": "ba43658aa748e61580378e5f538498826275f3e9dd61508f9abdd5b719dc2f0f",
+          "p0027:l0025-0040": "a1e270a07d14f4ea7a671226102c395e301631b2fb32b32e94d8e99ea72b9eb2",
+          "p0027:l0037-0052": "bee21a5f4fb6707dd26348f16c62fd658197c7ae2a30988d817ea3de38070dd0",
+          "p0027:l0049-0053": "04ff3d03d169d476e554b20af5c2a7365fa611ee54be55d008e207c7551fc981",
+          "p0028:l0001-0016": "97f1058c657fef42c188d82b9d056f2327cbe22b293c6a2b37cccfdaf65d6987",
+          "p0028:l0013-0028": "ec9bc67056d4f22828dbaf2b7ccdb0762d86b35715734e20fa0650a52ee10385",
+          "p0028:l0025-0040": "e85dd5031e3c50a50fc6410c115bf67579ff805177371904bef10a030497aef1"
+        }
+      },
+      "admissibility": {
+        "page": 28,
+        "anchor": "Definition 14.",
+        "line": 31,
+        "evidence_id": "p0028:l0001-0016",
+        "evidence_ids": [
+          "p0028:l0001-0016",
+          "p0028:l0013-0028",
+          "p0028:l0025-0040",
+          "p0028:l0037-0052",
+          "p0028:l0049-0064",
+          "p0028:l0061-0065"
+        ],
+        "passage_text_sha256": {
+          "p0028:l0001-0016": "97f1058c657fef42c188d82b9d056f2327cbe22b293c6a2b37cccfdaf65d6987",
+          "p0028:l0013-0028": "ec9bc67056d4f22828dbaf2b7ccdb0762d86b35715734e20fa0650a52ee10385",
+          "p0028:l0025-0040": "e85dd5031e3c50a50fc6410c115bf67579ff805177371904bef10a030497aef1",
+          "p0028:l0037-0052": "e41e02fe5eb55061268101a45fadd175231c618d294abe071473116216b2cd4f",
+          "p0028:l0049-0064": "547d5f981100bbb12cd8172ddadf63c01c9079f180d51ba18e53e2f470f58106",
+          "p0028:l0061-0065": "696fc887826946994ab4c2ea9bbef4eb7c6b2f475a51e1b9e8d0308dc056fd6a"
+        }
+      },
+      "theorem": {
+        "page": 29,
+        "anchor": "Theorem 16.",
+        "line": 20,
+        "evidence_id": "p0029:l0001-0016",
+        "evidence_ids": [
+          "p0029:l0001-0016",
+          "p0029:l0013-0028",
+          "p0029:l0025-0040",
+          "p0029:l0037-0052",
+          "p0029:l0049-0058",
+          "p0030:l0001-0016",
+          "p0030:l0013-0026",
+          "p0030:l0025-0026"
+        ],
+        "passage_text_sha256": {
+          "p0029:l0001-0016": "853c2a7bd2b3d091d48837d4ae06523b2d7c1892545fe5c11665666324852419",
+          "p0029:l0013-0028": "9a5802e146b1a3bbc2eff66b7469a15104e8752f93ebb9d75900b616d2e1279d",
+          "p0029:l0025-0040": "3247bf831c4c4b9723bd6d41ea7587269e4373f411d54df5830a7e346823f90f",
+          "p0029:l0037-0052": "8abd56f2c72f5b4cf3980241601ba9e2c9f4d57f0ee4d941e014a6f05c42cd4a",
+          "p0029:l0049-0058": "f3e84d5ec88f2b9c49c6600604cce118fb3766766d331e0a91a68f41dcbb63ff",
+          "p0030:l0001-0016": "632487107bd66a1bf8269299f094381bb654617d24dce9b96ae41af8c1863841",
+          "p0030:l0013-0026": "f483d731ddec26672d9210b5295a4bd9e3e85d5eabf99ba1b6f12ebfefcae538",
+          "p0030:l0025-0026": "f5f9b6d13c138d456b117134af9529973f25b9a17d68338ae14dfa01eec47a40"
+        }
+      }
+    }
+  },
+  "FH2015": {
+    "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+    "version_id": "working-paper-labelled-2013-05",
+    "page_index_sha256": "55e575195c4f95c015ef3bf6beb117ee2b52f017d1ed81a026af31bfe80964fc",
+    "extractor": "pypdf 6.10.0",
+    "references": {
+      "statistics": {
+        "page": 16,
+        "anchor": "Proposition 3.1",
+        "line": 1,
+        "evidence_id": "p0016:l0001-0016",
+        "evidence_ids": [
+          "p0016:l0001-0016",
+          "p0016:l0013-0028",
+          "p0016:l0025-0040",
+          "p0016:l0037-0052",
+          "p0016:l0049-0064",
+          "p0016:l0061-0076",
+          "p0016:l0073-0088",
+          "p0016:l0085-0100",
+          "p0016:l0097-0111",
+          "p0016:l0109-0111"
+        ],
+        "passage_text_sha256": {
+          "p0016:l0001-0016": "1e0b73c28167c02bd8302784f041ff355e9159a1a4873abb284b80c2dfd06865",
+          "p0016:l0013-0028": "bcf9386a3a275585c3bbe496e59a50ff5d0579d394fa1b3c4cfa17f4c0e49173",
+          "p0016:l0025-0040": "57095ee95e7807884d14040e674082baf06113ad2b6bfcda94fd6b9ab1629b65",
+          "p0016:l0037-0052": "38d541b971fbab993baf747584492b7531d21dd0efdff17a96bfbe0ee5372d87",
+          "p0016:l0049-0064": "2f321cc35da077391f5a74a0ad09a95d17589f70612352cc6d549d43f5f1275a",
+          "p0016:l0061-0076": "65d2725e45f0b63ce684656de409f7e77612e9d50694f240b5169b1129b92790",
+          "p0016:l0073-0088": "0304e10009e105858dfe2ae1a916d064abf7db0d9e4ac65ac83c5b77e4c91e35",
+          "p0016:l0085-0100": "09d764e7e69debd58326181a16a5422359f10596bbfee28e73b711357a0aeb40",
+          "p0016:l0097-0111": "10293649115adaa2bb082084cc73649a2b63e462bcedbe969c552d2411b91983",
+          "p0016:l0109-0111": "5e4b87dfb94c06ca22cda153201c539e738805e061cde25b07c182c23cecaa82"
+        }
+      },
+      "price": {
+        "page": 19,
+        "anchor": "Proposition 4.1",
+        "line": 20,
+        "evidence_id": "p0019:l0001-0016",
+        "evidence_ids": [
+          "p0019:l0001-0016",
+          "p0019:l0013-0028",
+          "p0019:l0025-0033"
+        ],
+        "passage_text_sha256": {
+          "p0019:l0001-0016": "a94b1b8805e9962a7c24916705a1d6770b65159243b0aa7c95c59df5399f7030",
+          "p0019:l0013-0028": "74e6bc7679c3326cb967c676f2fa7dd126d63532a8871024b70798f1bddba788",
+          "p0019:l0025-0033": "77cf55041aca636d8951c2b22b9ab51db1c4079866ca5bca0c9bc226c39f6ad8"
+        }
+      },
+      "shape": {
+        "page": 20,
+        "anchor": "Proposition 4.2",
+        "line": 6,
+        "evidence_id": "p0020:l0001-0016",
+        "evidence_ids": [
+          "p0020:l0001-0016",
+          "p0020:l0013-0028",
+          "p0020:l0025-0037",
+          "p0020:l0037-0037"
+        ],
+        "passage_text_sha256": {
+          "p0020:l0001-0016": "96bad2eaeb2c71e24d02a0ed0642818d4d454b87f0b9555e6920d3112061e607",
+          "p0020:l0013-0028": "9e729bfee21471ad2f78e9f09e5a906e991515b2a618e81691a781392a1320d3",
+          "p0020:l0025-0037": "73bda5beec35e70c5e7d866386dafb372a246b330d1dcb3e01a1570db6088be7",
+          "p0020:l0037-0037": "0234a350f4d56ae45c5ece57b08c54496f372bc570bd83a465fb6d2d85531479"
+        }
+      },
+      "calendar": {
+        "page": 22,
+        "anchor": "Corollary 4.5",
+        "line": 15,
+        "evidence_id": "p0022:l0001-0016",
+        "evidence_ids": [
+          "p0022:l0001-0016",
+          "p0022:l0013-0028",
+          "p0022:l0025-0031"
+        ],
+        "passage_text_sha256": {
+          "p0022:l0001-0016": "0b5df9406362aeea78d90f2ad7727d6cbe78c1e0046dc15aa00c1fc8dcf5cf7d",
+          "p0022:l0013-0028": "fc5bce7569e3aa69e8df5cccc80f10cec6ef9b215461258ce4801d5477eb1336",
+          "p0022:l0025-0031": "7d5004e796ead7198bd943ad721084728939067ce57d1dacf888cdeccc802133"
+        }
+      },
+      "dupire": {
+        "page": 31,
+        "anchor": "(33)",
+        "line": 16,
+        "evidence_id": "p0031:l0001-0016",
+        "evidence_ids": [
+          "p0031:l0001-0016",
+          "p0031:l0013-0028",
+          "p0031:l0025-0035"
+        ],
+        "passage_text_sha256": {
+          "p0031:l0001-0016": "e4669bad33b516a0e1aa9f188624e4d2e228152ba132ea4119a7e44bfea05532",
+          "p0031:l0013-0028": "c209eb72105ad2a2d47c3795db1984cb30d7eca97d57c4c714e7eecfbf91e038",
+          "p0031:l0025-0035": "220e3c5a1e02a776f99e2f5af6eccbbaa247551889ab10e3c8a1b233581bc319"
+        }
+      }
+    }
+  }
+}

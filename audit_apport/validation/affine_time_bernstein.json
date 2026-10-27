@@ -1,0 +1,151 @@
+{
+  "origin": "new exact support for the scoped A5 comparison; not a new originality claim",
+  "coefficients": [
+    [
+      "8281/80000",
+      "10843/200000",
+      "6529/500000"
+    ],
+    [
+      "41567/400000",
+      "54701/1000000",
+      "34103/2500000"
+    ]
+  ],
+  "spec": {
+    "t0": "1/4",
+    "t1": "7/20",
+    "x0": "9/10",
+    "x1": "27/25",
+    "vmin": "19/1000",
+    "vmax": "21/1000",
+    "buffer": "1/2000",
+    "gamma_floor": "1/2"
+  },
+  "observations": [
+    [
+      "1/4",
+      "9/10",
+      "207023/2000000",
+      "207027/2000000",
+      "1"
+    ],
+    [
+      "1/4",
+      "1",
+      "51249/1000000",
+      "51251/1000000",
+      "1"
+    ],
+    [
+      "1/4",
+      "27/25",
+      "13057/1000000",
+      "13059/1000000",
+      "1"
+    ],
+    [
+      "3/10",
+      "9/10",
+      "51857/500000",
+      "25929/250000",
+      "1"
+    ],
+    [
+      "3/10",
+      "1",
+      "51499/1000000",
+      "51501/1000000",
+      "1"
+    ],
+    [
+      "3/10",
+      "27/25",
+      "66743/5000000",
+      "66753/5000000",
+      "1"
+    ],
+    [
+      "7/20",
+      "9/10",
+      "207833/2000000",
+      "207837/2000000",
+      "1"
+    ],
+    [
+      "7/20",
+      "1",
+      "51749/1000000",
+      "51751/1000000",
+      "1"
+    ],
+    [
+      "7/20",
+      "27/25",
+      "68201/5000000",
+      "68211/5000000",
+      "1"
+    ]
+  ],
+  "checks": {
+    "passed": true,
+    "minima": {
+      "price_nonnegative": "6529/500000",
+      "intrinsic": "281/80000",
+      "price_upper": "358433/400000",
+      "decreasing": "22811/50000",
+      "slope_lower": "1809/4000",
+      "gamma_floor": "1/400",
+      "local_lower": "58887/800000000",
+      "local_upper": "19521/160000000",
+      "left_origin": "32281/80000",
+      "quotes": "1/1000000"
+    },
+    "constants": {
+      "gamma0": "201/400",
+      "M3": 0,
+      "M4": 0,
+      "Mtt": 0
+    }
+  },
+  "mesh_plan": {
+    "geometry": {
+      "dt": "1/20",
+      "h": "1/10",
+      "asymmetry": "1/50"
+    },
+    "quadratic_criterion": {
+      "a": "0",
+      "b": "0",
+      "d": "0",
+      "A": "0",
+      "B": "0",
+      "C": "201/800000",
+      "discriminant": "0",
+      "level_upper_bound": 0,
+      "root_formula": "(A + sqrt(A^2 + 4*B*C))/(2*C)",
+      "condition": "C*r^2 - A*r - B >= 0, r=2^level"
+    },
+    "finite_threshold_exists_by_theorem": true,
+    "observations_unchanged_at_all_levels": true,
+    "same_surface_for_forward_and_backward": true,
+    "guaranteed_level": 0,
+    "shape": [
+      3,
+      3
+    ],
+    "all_further_dyadic_levels": true,
+    "trials": [
+      {
+        "level": 0,
+        "E_gamma": "0",
+        "E_variance": "0",
+        "quadratic_margin": "201/800000",
+        "condition_passed": true
+      }
+    ]
+  },
+  "solver_called": false,
+  "network_used": false,
+  "scientific_priority_certified": false
+}

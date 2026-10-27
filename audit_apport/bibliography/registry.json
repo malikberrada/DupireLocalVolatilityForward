@@ -1,0 +1,1049 @@
+{
+  "format": "dupire-priority-registry-v1",
+  "as_of": "2026-10-27",
+  "scientific_priority_certified": false,
+  "claims": [
+    {
+      "id": "C1",
+      "label": "Seuil quantifié de raffinement avec conservation des observations",
+      "statement": "Théorème 2 de CRITERE_PROUVE_0.1.6.md : sur un rectangle intérieur fini et une grille cartésienne éventuellement irrégulière, un polynôme rationnel P de Bernstein vérifie les formes, tous les spreads retenus, P_xx >= gamma0 > 0 et une variance continue strictement intérieure aux bornes de delta. Les bornes certifiées M3,M4,Mtt donnent C*r^2-A*r-B >= 0, suffisant pour que le même P échantillonné satisfasse les deux stencils à chaque niveau dyadique ultérieur, sans retirer ni élargir les observations. Ni caractérisation nécessaire, ni extension globale de diffusion."
+    },
+    {
+      "id": "C2",
+      "label": "Exemple rationnel : faisabilités séparées et intersection vide",
+      "statement": "JOINT_SEPARATION.md et quatre certificats : sur 2 dates et 3 strikes irréguliers, mêmes six spreads strictement positifs et mêmes bornes [3/100,1/25], il existe un témoin forward et un autre backward, mais aucun témoin commun. Un séparateur exact à 7 lignes, écart 991/8000000, exclut toutes les sélections dans les spreads. Une subdivision temporelle donne un témoin commun sur 3x3, mêmes données; premier niveau dyadique faisable prouvé égal à 1. Ce cas précis est revendiqué, pas la non-implication abstraite concernant l’intersection d’ensembles."
+    },
+    {
+      "id": "C3",
+      "label": "Seuil temporel exact dans la classe à trois strikes",
+      "statement": "JOINT_SEPARATION.md, lemmes 1–3 : trois strikes, prix voisins constants, gamma initial positif, bornes constantes 0<l<u et extrémité centrale libre. Avec kappa=2/(h_minus*h_plus), l’existence d’un incrément central commun exige et suffit à DeltaT <= 2*(u-l)/(x^2*kappa*l*u). Les quotes terminales ajoutent leurs propres conditions. La récurrence de point milieu à variance harmonique 2*l*u/(l+u) conserve, sous les bornes démontrées pour cette famille, les observations à tous les niveaux dyadiques ultérieurs. Aucune nouveauté générique du point milieu, de la stabilité ou de la consistance n’est revendiquée."
+    }
+  ],
+  "works": [
+    {
+      "id": "BR2016",
+      "title": "Discrete Local Volatility for Large Time Steps",
+      "url": "https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf",
+      "selected_version": "author-pdf-current",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "ssrn_first",
+          "kind": "ssrn_posted",
+          "date_parts": [
+            2015,
+            8,
+            13
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2642630",
+          "locator": "Indexed primary SSRN record: Posted 13 Aug 2015; body retrieval returned 403"
+        },
+        {
+          "id": "ssrn_revised",
+          "kind": "ssrn_revised",
+          "date_parts": [
+            2020,
+            5,
+            18
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2642630",
+          "locator": "Indexed primary SSRN record: Last revised 18 May 2020; NOT pinned to current author-hosted PDF"
+        }
+      ],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted.",
+      "doi": "10.2139/ssrn.2642630",
+      "snapshot": "snapshots/BR2016.json",
+      "crossref_version_fields": {}
+    },
+    {
+      "id": "KKTG2016",
+      "title": "Call option price function in Bernstein polynomial basis with no-arbitrage inequality constraints",
+      "url": "https://link.springer.com/article/10.1186/s13660-016-1097-x",
+      "selected_version": "version-of-record",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted.",
+      "doi": "10.1186/s13660-016-1097-x",
+      "snapshot": "snapshots/KKTG2016.json",
+      "crossref_version_fields": {
+        "published-online": "version-of-record",
+        "published-print": "version-of-record"
+      }
+    },
+    {
+      "id": "KKT2024",
+      "title": "A Semi-Closed Form Approximation of Arbitrage-Free Call Option Price Surface",
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5",
+      "selected_version": "version-of-record",
+      "access": "abstract_and_public_appendix_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted.",
+      "doi": "10.1007/s10614-023-10368-5",
+      "snapshot": "snapshots/KKT2024.json",
+      "crossref_version_fields": {
+        "published-online": "version-of-record",
+        "published-print": "version-of-record"
+      }
+    },
+    {
+      "id": "SANOS2026",
+      "title": "SANOS",
+      "url": "https://arxiv.org/html/2601.11209v4",
+      "selected_version": "arxiv-v4",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "arxiv_v1",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2026,
+            1,
+            16
+          ],
+          "version_id": "arxiv-v1",
+          "evidence_url": "https://arxiv.org/abs/2601.11209v4",
+          "locator": "arXiv submission history [v1]"
+        },
+        {
+          "id": "arxiv_v2",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2026,
+            1,
+            19
+          ],
+          "version_id": "arxiv-v2",
+          "evidence_url": "https://arxiv.org/abs/2601.11209v4",
+          "locator": "arXiv submission history [v2]"
+        },
+        {
+          "id": "arxiv_v3",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2026,
+            2,
+            28
+          ],
+          "version_id": "arxiv-v3",
+          "evidence_url": "https://arxiv.org/abs/2601.11209v4",
+          "locator": "arXiv submission history [v3]"
+        },
+        {
+          "id": "arxiv_v4",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2026,
+            5,
+            22
+          ],
+          "version_id": "arxiv-v4",
+          "evidence_url": "https://arxiv.org/abs/2601.11209v4",
+          "locator": "arXiv submission history [v4]"
+        }
+      ],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted."
+    },
+    {
+      "id": "CCD2020",
+      "title": "Deep Local Volatility",
+      "url": "https://arxiv.org/html/2007.10462v1",
+      "selected_version": "arxiv-v1",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "arxiv_v1",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2020,
+            7,
+            20
+          ],
+          "version_id": "arxiv-v1",
+          "evidence_url": "https://arxiv.org/abs/2007.10462v1",
+          "locator": "Primary record: submission history arxiv-v1"
+        }
+      ],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted."
+    },
+    {
+      "id": "ZHANG2025",
+      "title": "Proof-Carrying No-Arbitrage Surfaces",
+      "url": "https://arxiv.org/html/2511.09175v1",
+      "selected_version": "arxiv-v1",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "arxiv_v1",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2025,
+            11,
+            12
+          ],
+          "version_id": "arxiv-v1",
+          "evidence_url": "https://arxiv.org/abs/2511.09175v1",
+          "locator": "Primary record: submission history arxiv-v1"
+        }
+      ],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted."
+    },
+    {
+      "id": "AUSTING2020",
+      "title": "Finite difference schemes with exact recovery of vanilla option prices",
+      "url": "https://www.risk.net/media/download/1053071/download",
+      "selected_version": "publisher-pdf-reviewed",
+      "access": "full_text_sections_reviewed",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "ssrn_first",
+          "kind": "ssrn_posted",
+          "date_parts": [
+            2020,
+            3,
+            2
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3530561",
+          "locator": "Indexed primary SSRN record: Posted 2 Mar 2020"
+        },
+        {
+          "id": "ssrn_revised",
+          "kind": "ssrn_revised",
+          "date_parts": [
+            2022,
+            8,
+            30
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3530561",
+          "locator": "Indexed primary SSRN record: Last revised 30 Aug 2022; not pinned to the Risk PDF"
+        },
+        {
+          "id": "risk_first",
+          "kind": "published-online",
+          "date_parts": [
+            2020,
+            11,
+            10
+          ],
+          "version_id": null,
+          "evidence_url": "https://www.risk.net/cutting-edge/banking/7707996/finite-difference-schemes-with-exact-recovery-of-vanilla-option-prices",
+          "locator": "Publisher article date: 10 Nov 2020; content version of downloaded PDF not independently archived"
+        }
+      ],
+      "reading_provenance": "Selected passages inherited from the v0.3 annotated crosswalk; no full-work exclusion asserted.",
+      "date_note": "Dates publiques SSRN/Risk identifiées. La rédaction interne du 2 août 2019 ne constitue pas une date de dépôt public."
+    },
+    {
+      "id": "KUNDU2017",
+      "title": "Modelling and Numerics For Arbitrage-Free Option Pricing using Bernstein Polynomial Basis",
+      "url": "https://www.iitp.ac.in/images/faculty/nktomar.pdf",
+      "selected_version": "thesis-unretrieved",
+      "access": "institutional_metadata_only",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [],
+      "date_note": "La notice institutionnelle mentionne 2017 pour la thèse; contenu et date de dépôt public non vérifiés. Aucun événement public inventé."
+    },
+    {
+      "id": "CARR2014",
+      "title": "Local Variance Gamma and Explicit Calibration to Option Prices",
+      "url": "https://arxiv.org/abs/1308.2326v2",
+      "selected_version": "arxiv-v2",
+      "access": "full_text_selected_statements_reviewed",
+      "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "arxiv_v1",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2013,
+            8,
+            10
+          ],
+          "version_id": "arxiv-v1",
+          "evidence_url": "https://arxiv.org/abs/1308.2326v2",
+          "locator": "arXiv submission history [v1]"
+        },
+        {
+          "id": "arxiv_v2",
+          "kind": "arxiv_submitted",
+          "date_parts": [
+            2014,
+            1,
+            31
+          ],
+          "version_id": "arxiv-v2",
+          "evidence_url": "https://arxiv.org/abs/1308.2326v2",
+          "locator": "arXiv submission history [v2]"
+        }
+      ],
+      "source_url": "https://arxiv.org/pdf/1308.2326v2",
+      "source_not_redistributed": true,
+      "version_date_note": "Dépôt public arXiv v2 : 2014-01-31; le PDF porte en interne February 3, 2014. La date interne ne remplace pas la date de diffusion attestée par le dépôt."
+    },
+    {
+      "id": "FH2015",
+      "title": "Semi-nonparametric estimation of the call-option price surface under strike and time-to-expiry no-arbitrage constraints",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910737",
+      "selected_version": "working-paper-labelled-2013-05",
+      "access": "full_text_selected_statements_reviewed",
+      "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [
+        {
+          "id": "ssrn_first",
+          "kind": "ssrn_posted",
+          "date_parts": [
+            2011,
+            8,
+            17
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910737",
+          "locator": "Indexed primary SSRN record: Posted 17 Aug 2011; body retrieval returned 403"
+        },
+        {
+          "id": "ssrn_revised",
+          "kind": "ssrn_revised",
+          "date_parts": [
+            2015,
+            3,
+            19
+          ],
+          "version_id": null,
+          "evidence_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910737",
+          "locator": "Indexed primary SSRN record: Last revised 19 Mar 2015; full text not retrieved"
+        }
+      ],
+      "doi": "10.1016/j.jeconom.2014.09.003",
+      "snapshot": "snapshots/FH2015.json",
+      "crossref_version_fields": {},
+      "source_url": "https://ux-tauri.unisg.ch/RePEc/usg/econwp/EWP-1136.pdf",
+      "source_not_redistributed": true,
+      "version_date_note": "Le PDF actuel du document de travail porte May 2013, Discussion Paper 2011-36. Cette étiquette interne ne date pas son premier dépôt public. La version journal de 2015 reste non lue.",
+      "metadata_conflict_note": "La notice institutionnelle Alexandria indique Date Issued 2015-09-02, contre 2015-02 pour la parution imprimée Crossref. Ces champs restent distincts; aucun remplacement par une date de dépôt supposée."
+    },
+    {
+      "id": "CN1947",
+      "title": "A practical method for numerical evaluation of solutions of partial differential equations of the heat-conduction type",
+      "url": "https://doi.org/10.1017/S0305004100023197",
+      "selected_version": "version-of-record",
+      "access": "metadata_only",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C3"
+      ],
+      "events": [],
+      "doi": "10.1017/s0305004100023197",
+      "snapshot": "snapshots/CN1947.json",
+      "crossref_version_fields": {
+        "published-online": "version-of-record",
+        "published-print": "version-of-record"
+      }
+    },
+    {
+      "id": "YOO2024",
+      "title": "Calibration of Local Volatility Surfaces from Observed Market Call and Put Option Prices",
+      "url": "https://link.springer.com/article/10.1007/s10614-024-10590-9",
+      "selected_version": "version-of-record",
+      "access": "abstract_only",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [],
+      "doi": "10.1007/s10614-024-10590-9",
+      "snapshot": "snapshots/YOO2024.json",
+      "crossref_version_fields": {
+        "published-online": "version-of-record",
+        "published-print": "version-of-record"
+      }
+    },
+    {
+      "id": "NAM2026",
+      "title": "Reconstructing the Quadratic Local Volatility Surface for European Options",
+      "url": "https://link.springer.com/article/10.1007/s40819-026-02112-y",
+      "selected_version": "version-of-record",
+      "access": "abstract_only",
+      "source_sha256": null,
+      "required_for_claims": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "events": [],
+      "doi": "10.1007/s40819-026-02112-y",
+      "snapshot": "snapshots/NAM2026.json",
+      "crossref_version_fields": {
+        "published-online": "version-of-record",
+        "published-print": "version-of-record"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "work_id": "BR2016",
+      "claim_id": "C1",
+      "version_id": "author-pdf-current",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§2.2, (9)–(12), PDF pp.12–13; §3.2–3.3, résultats 3.2–3.3, (18)–(22), pp.17–18; §4.4, pp.33–34",
+      "hypotheses": "Les résultats 3.2–3.3 partent de prix normalisés, de contraintes de forme et de bornes sur les volatilités implicite et locale. Ils définissent séparément les ensembles admissibles forward et backward. Leur non-vacuité ne résulte pas de la seule formulation des programmes.",
+      "conclusion": "Un minimiseur sur chacun de ces ensembles donne un ajustement optimal pour la famille de contraintes choisie. Le texte décrit aussi une décomposition de noyaux de transition en petits pas.",
+      "derivability": "unresolved",
+      "derivation_note": "C1 exige une garantie uniforme, non clippée, pour les deux stencils et toutes les observations conservées. Une différence de représentation ou l’absence de la formule Cr^2-Ar-B>=0 ne démontre ni nouveauté ni non-dérivabilité. La condition quadratique de C1 est suffisante ; son échec ne prouve pas l’infaisabilité. La dérivation à partir des résultats ciblés reste à construire ou à exclure par un argument mathématique précis.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "BR2016",
+      "claim_id": "C2",
+      "version_id": "author-pdf-current",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§2.2, (9)–(12), PDF pp.12–13; §3.2–3.3, résultats 3.2–3.3, (18)–(22), pp.17–18; §4.4, pp.33–34",
+      "hypotheses": "Les résultats 3.2–3.3 partent de prix normalisés, de contraintes de forme et de bornes sur les volatilités implicite et locale. Ils définissent séparément les ensembles admissibles forward et backward. Leur non-vacuité ne résulte pas de la seule formulation des programmes.",
+      "conclusion": "Un minimiseur sur chacun de ces ensembles donne un ajustement optimal pour la famille de contraintes choisie. Le texte décrit aussi une décomposition de noyaux de transition en petits pas.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "BR2016",
+      "claim_id": "C3",
+      "version_id": "author-pdf-current",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+      "scope": "selected_statement",
+      "relation": "component_prior",
+      "locator": "§2.2, (9)–(12), PDF pp.12–13; §3.2–3.3, résultats 3.2–3.3, (18)–(22), pp.17–18; §4.4, pp.33–34",
+      "hypotheses": "Les résultats 3.2–3.3 partent de prix normalisés, de contraintes de forme et de bornes sur les volatilités implicite et locale. Ils définissent séparément les ensembles admissibles forward et backward. Leur non-vacuité ne résulte pas de la seule formulation des programmes.",
+      "conclusion": "Un minimiseur sur chacun de ces ensembles donne un ajustement optimal pour la famille de contraintes choisie. Le texte décrit aussi une décomposition de noyaux de transition en petits pas.",
+      "derivability": "component_only",
+      "derivation_note": "Pour la composante seuil de C3, poser a=x^2*DeltaT/2, g1=g0-kappa*d et sigma_minus^2=l, sigma_plus^2=u dans (18),(21). Les quatre bornes se réduisent à a*l*g0<=d<=a*u*g0/(1+a*u*kappa), intervalle non vide si et seulement si DeltaT<=2*(u-l)/(x^2*kappa*l*u). La dérivation algébrique est fournie et vérifiée dans le dossier. Cette composante provient donc des contraintes antérieures par spécialisation ; la formule n’est pas attribuée textuellement à BR. Cette vérification ne tranche pas la dérivabilité de la construction à variance harmonique et de sa conservation des spreads à tous les niveaux.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKTG2016",
+      "claim_id": "C1",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2 (18)–(23); §3.3 (24)–(25)",
+      "hypotheses": "Prix en base de Bernstein et contraintes de forme.",
+      "conclusion": "Construction/fitting sous restrictions de non-arbitrage.",
+      "derivability": "unresolved",
+      "derivation_note": "La base de Bernstein et les restrictions de forme sont antérieures; examiner séparément la spécialisation du seuil.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKTG2016",
+      "claim_id": "C2",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2 (18)–(23); §3.3 (24)–(25)",
+      "hypotheses": "Prix en base de Bernstein et contraintes de forme.",
+      "conclusion": "Construction/fitting sous restrictions de non-arbitrage.",
+      "derivability": "unresolved",
+      "derivation_note": "La base de Bernstein et les restrictions de forme sont antérieures; examiner séparément la spécialisation du seuil.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKTG2016",
+      "claim_id": "C3",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2 (18)–(23); §3.3 (24)–(25)",
+      "hypotheses": "Prix en base de Bernstein et contraintes de forme.",
+      "conclusion": "Construction/fitting sous restrictions de non-arbitrage.",
+      "derivability": "unresolved",
+      "derivation_note": "La base de Bernstein et les restrictions de forme sont antérieures; examiner séparément la spécialisation du seuil.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKT2024",
+      "claim_id": "C1",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur; annexe technique publique, QP (35), A1–A2",
+      "hypotheses": "Combinaison de polynômes de Bernstein sous restrictions de forme, données bid/ask.",
+      "conclusion": "Surface ajustée par programmation quadratique.",
+      "derivability": "unresolved",
+      "derivation_note": "Texte principal et preuve complète non lus; aucune exclusion d’un résultat équivalent.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKT2024",
+      "claim_id": "C2",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur; annexe technique publique, QP (35), A1–A2",
+      "hypotheses": "Combinaison de polynômes de Bernstein sous restrictions de forme, données bid/ask.",
+      "conclusion": "Surface ajustée par programmation quadratique.",
+      "derivability": "unresolved",
+      "derivation_note": "Texte principal et preuve complète non lus; aucune exclusion d’un résultat équivalent.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KKT2024",
+      "claim_id": "C3",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur; annexe technique publique, QP (35), A1–A2",
+      "hypotheses": "Combinaison de polynômes de Bernstein sous restrictions de forme, données bid/ask.",
+      "conclusion": "Surface ajustée par programmation quadratique.",
+      "derivability": "unresolved",
+      "derivation_note": "Texte principal et preuve complète non lus; aucune exclusion d’un résultat équivalent.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "SANOS2026",
+      "claim_id": "C1",
+      "version_id": "arxiv-v4",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Théorème 3.7 et proposition 3.8, (21)–(24), PDF pp.15–17",
+      "hypotheses": "Le théorème 3.7 suppose des calls discrets sans arbitrage et utilise une interpolation entre grilles, avec convention 0/0=0. La proposition 3.8 suppose notamment des spreads non nuls et des prix sans arbitrage entre bid et ask, avec marge sous ask.",
+      "conclusion": "Le théorème reproduit les prix discrets par un opérateur de transition. La proposition fournit un paramètre de lissage positif conservant les prix dans les fourchettes sous ses hypothèses.",
+      "derivability": "unresolved",
+      "derivation_note": "C1 exige une garantie uniforme, non clippée, pour les deux stencils et toutes les observations conservées. Une différence de représentation ou l’absence de la formule Cr^2-Ar-B>=0 ne démontre ni nouveauté ni non-dérivabilité. La condition quadratique de C1 est suffisante ; son échec ne prouve pas l’infaisabilité. La dérivation à partir des résultats ciblés reste à construire ou à exclure par un argument mathématique précis.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "SANOS2026",
+      "claim_id": "C2",
+      "version_id": "arxiv-v4",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Théorème 3.7 et proposition 3.8, (21)–(24), PDF pp.15–17",
+      "hypotheses": "Le théorème 3.7 suppose des calls discrets sans arbitrage et utilise une interpolation entre grilles, avec convention 0/0=0. La proposition 3.8 suppose notamment des spreads non nuls et des prix sans arbitrage entre bid et ask, avec marge sous ask.",
+      "conclusion": "Le théorème reproduit les prix discrets par un opérateur de transition. La proposition fournit un paramètre de lissage positif conservant les prix dans les fourchettes sous ses hypothèses.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "SANOS2026",
+      "claim_id": "C3",
+      "version_id": "arxiv-v4",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Théorème 3.7 et proposition 3.8, (21)–(24), PDF pp.15–17",
+      "hypotheses": "Le théorème 3.7 suppose des calls discrets sans arbitrage et utilise une interpolation entre grilles, avec convention 0/0=0. La proposition 3.8 suppose notamment des spreads non nuls et des prix sans arbitrage entre bid et ask, avec marge sous ask.",
+      "conclusion": "Le théorème reproduit les prix discrets par un opérateur de transition. La proposition fournit un paramètre de lissage positif conservant les prix dans les fourchettes sous ses hypothèses.",
+      "derivability": "unresolved",
+      "derivation_note": "Le seuil de C3 est nécessaire et suffisant seulement dans la classe à trois strikes, voisins constants, gamma initial positif et centre terminal libre. Des cotations terminales ajoutent leurs contraintes. La formule peut être dérivée de contraintes déjà connues ; son absence littérale ne démontre pas une nouveauté. La construction à point milieu et la conservation des spreads à tous les niveaux doivent être analysées séparément.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CCD2020",
+      "claim_id": "C1",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§2–4, (1)–(4), PDF pp.3–6; §6, PDF p.11",
+      "hypotheses": "L’architecture hard impose des restrictions de poids et d’activations assurant les formes visées. L’approche soft ajoute des pénalités aux points d’apprentissage. Les bornes de demi-variance Dupire sont ajoutées par pénalisation ; ces garanties doivent être distinguées.",
+      "conclusion": "L’architecture garantit ses conditions de forme ; la pénalisation de demi-variance améliore expérimentalement la calibration et la stabilité sans constituer une garantie uniforme des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "C1 exige une garantie uniforme, non clippée, pour les deux stencils et toutes les observations conservées. Une différence de représentation ou l’absence de la formule Cr^2-Ar-B>=0 ne démontre ni nouveauté ni non-dérivabilité. La condition quadratique de C1 est suffisante ; son échec ne prouve pas l’infaisabilité. La dérivation à partir des résultats ciblés reste à construire ou à exclure par un argument mathématique précis.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CCD2020",
+      "claim_id": "C2",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§2–4, (1)–(4), PDF pp.3–6; §6, PDF p.11",
+      "hypotheses": "L’architecture hard impose des restrictions de poids et d’activations assurant les formes visées. L’approche soft ajoute des pénalités aux points d’apprentissage. Les bornes de demi-variance Dupire sont ajoutées par pénalisation ; ces garanties doivent être distinguées.",
+      "conclusion": "L’architecture garantit ses conditions de forme ; la pénalisation de demi-variance améliore expérimentalement la calibration et la stabilité sans constituer une garantie uniforme des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CCD2020",
+      "claim_id": "C3",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§2–4, (1)–(4), PDF pp.3–6; §6, PDF p.11",
+      "hypotheses": "L’architecture hard impose des restrictions de poids et d’activations assurant les formes visées. L’approche soft ajoute des pénalités aux points d’apprentissage. Les bornes de demi-variance Dupire sont ajoutées par pénalisation ; ces garanties doivent être distinguées.",
+      "conclusion": "L’architecture garantit ses conditions de forme ; la pénalisation de demi-variance améliore expérimentalement la calibration et la stabilité sans constituer une garantie uniforme des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "Le seuil de C3 est nécessaire et suffisant seulement dans la classe à trois strikes, voisins constants, gamma initial positif et centre terminal libre. Des cotations terminales ajoutent leurs contraintes. La formule peut être dérivée de contraintes déjà connues ; son absence littérale ne démontre pas une nouveauté. La construction à point milieu et la conservation des spreads à tous les niveaux doivent être analysées séparément.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "ZHANG2025",
+      "claim_id": "C1",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2–3.4, hypothèse A5, lemme S0.2 et (1)–(5), PDF pp.4–5; §7.1, PDF p.13",
+      "hypotheses": "Le lemme S0.2 suppose une surface C^3 en strike et C^2 en temps, l’admissibilité A5 et C_KK éloigné de zéro sur la grille. Les opérateurs proviennent d’ajustements quadratiques locaux ; le quotient de variance est clippé. La norme de contrôle est L2(W).",
+      "conclusion": "Les estimations annoncées contrôlent les erreurs des dérivées et du champ Dupire en L2(W), ainsi que la composition avec une projection non expansive. Ce n’est pas, par ces seules estimations, un contrôle uniforme des deux quotients bruts C1.",
+      "derivability": "not_a_direct_corollary",
+      "derivation_note": "L’application littérale du lemme S0.2 à toute la classe C1, avec C=P et enveloppes de courbure exactes, est bloquée par A5 : le polynôme P=4/5-x+x^2*(1+T/50)/4 satisfait les hypothèses continues C1 sur le rectangle indiqué dans argument_checks.json, mais P_TT=0, donc l’inégalité temporelle A5 échoue pour tout pas strictement positif. De plus, les contrôles L2(W) et le clipping n’impliquent pas seuls la marge uniforme des quotients bruts. Ceci écarte cette application directe précise, sans démontrer une indépendance logique, une erreur du lemme ou une nouveauté scientifique. Une adaptation des estimations classiques de consistance peut encore fournir l’argument recherché. Le seuil C1 reste seulement suffisant.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "ZHANG2025",
+      "claim_id": "C2",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2–3.4, hypothèse A5, lemme S0.2 et (1)–(5), PDF pp.4–5; §7.1, PDF p.13",
+      "hypotheses": "Le lemme S0.2 suppose une surface C^3 en strike et C^2 en temps, l’admissibilité A5 et C_KK éloigné de zéro sur la grille. Les opérateurs proviennent d’ajustements quadratiques locaux ; le quotient de variance est clippé. La norme de contrôle est L2(W).",
+      "conclusion": "Les estimations annoncées contrôlent les erreurs des dérivées et du champ Dupire en L2(W), ainsi que la composition avec une projection non expansive. Ce n’est pas, par ces seules estimations, un contrôle uniforme des deux quotients bruts C1.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "ZHANG2025",
+      "claim_id": "C3",
+      "version_id": "arxiv-v1",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "§3.2–3.4, hypothèse A5, lemme S0.2 et (1)–(5), PDF pp.4–5; §7.1, PDF p.13",
+      "hypotheses": "Le lemme S0.2 suppose une surface C^3 en strike et C^2 en temps, l’admissibilité A5 et C_KK éloigné de zéro sur la grille. Les opérateurs proviennent d’ajustements quadratiques locaux ; le quotient de variance est clippé. La norme de contrôle est L2(W).",
+      "conclusion": "Les estimations annoncées contrôlent les erreurs des dérivées et du champ Dupire en L2(W), ainsi que la composition avec une projection non expansive. Ce n’est pas, par ces seules estimations, un contrôle uniforme des deux quotients bruts C1.",
+      "derivability": "unresolved",
+      "derivation_note": "Le seuil de C3 est nécessaire et suffisant seulement dans la classe à trois strikes, voisins constants, gamma initial positif et centre terminal libre. Des cotations terminales ajoutent leurs contraintes. La formule peut être dérivée de contraintes déjà connues ; son absence littérale ne démontre pas une nouveauté. La construction à point milieu et la conservation des spreads à tous les niveaux doivent être analysées séparément.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "AUSTING2020",
+      "claim_id": "C1",
+      "version_id": "publisher-pdf-reviewed",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Discretisation; Local volatility, (22)–(24); conclusion",
+      "hypotheses": "Schéma de différences finies adapté à la récupération des vanilles.",
+      "conclusion": "Reproduction exacte des prix.",
+      "derivability": "unresolved",
+      "derivation_note": "L’exactitude sur les vanilles est antérieure; comparer les bornes locales et la compatibilité des deux familles.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "AUSTING2020",
+      "claim_id": "C2",
+      "version_id": "publisher-pdf-reviewed",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Discretisation; Local volatility, (22)–(24); conclusion",
+      "hypotheses": "Schéma de différences finies adapté à la récupération des vanilles.",
+      "conclusion": "Reproduction exacte des prix.",
+      "derivability": "unresolved",
+      "derivation_note": "L’exactitude sur les vanilles est antérieure; comparer les bornes locales et la compatibilité des deux familles.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "AUSTING2020",
+      "claim_id": "C3",
+      "version_id": "publisher-pdf-reviewed",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Discretisation; Local volatility, (22)–(24); conclusion",
+      "hypotheses": "Schéma de différences finies adapté à la récupération des vanilles.",
+      "conclusion": "Reproduction exacte des prix.",
+      "derivability": "unresolved",
+      "derivation_note": "L’exactitude sur les vanilles est antérieure; comparer les bornes locales et la compatibilité des deux familles.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KUNDU2017",
+      "claim_id": "C1",
+      "version_id": "thesis-unretrieved",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "not_reviewed",
+      "relation": "unresolved",
+      "locator": "Notice institutionnelle seulement; texte de thèse non obtenu",
+      "hypotheses": "Hypothèses du théorème non évaluées.",
+      "conclusion": "Contenu mathématique non évalué.",
+      "derivability": "unresolved",
+      "derivation_note": "La proximité du sujet impose la lecture de la thèse, pas une conclusion à partir du titre.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KUNDU2017",
+      "claim_id": "C2",
+      "version_id": "thesis-unretrieved",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "not_reviewed",
+      "relation": "unresolved",
+      "locator": "Notice institutionnelle seulement; texte de thèse non obtenu",
+      "hypotheses": "Hypothèses du théorème non évaluées.",
+      "conclusion": "Contenu mathématique non évalué.",
+      "derivability": "unresolved",
+      "derivation_note": "La proximité du sujet impose la lecture de la thèse, pas une conclusion à partir du titre.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "KUNDU2017",
+      "claim_id": "C3",
+      "version_id": "thesis-unretrieved",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "not_reviewed",
+      "relation": "unresolved",
+      "locator": "Notice institutionnelle seulement; texte de thèse non obtenu",
+      "hypotheses": "Hypothèses du théorème non évaluées.",
+      "conclusion": "Contenu mathématique non évalué.",
+      "derivability": "unresolved",
+      "derivation_note": "La proximité du sujet impose la lecture de la thèse, pas une conclusion à partir du titre.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CARR2014",
+      "claim_id": "C1",
+      "version_id": "arxiv-v2",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Assumption 2, Definition 14, Remark 15 et Theorem 16, PDF pp.27–30",
+      "hypotheses": "L’hypothèse 2 impose une structure de strikes et d’intervalles entre échéances. La définition 14 exige une admissibilité stricte des prix sélectionnés : décroissance, convexité et inégalités intertemporelles appropriées.",
+      "conclusion": "Le théorème 16 construit des paramètres LVG et des courbes reproduisant exactement ces prix. La remarque 15 traite une complétion des données par faisabilité linéaire. Le coefficient du modèle ne s’identifie pas sans preuve aux variances des deux stencils du projet.",
+      "derivability": "unresolved",
+      "derivation_note": "C1 exige une garantie uniforme, non clippée, pour les deux stencils et toutes les observations conservées. Une différence de représentation ou l’absence de la formule Cr^2-Ar-B>=0 ne démontre ni nouveauté ni non-dérivabilité. La condition quadratique de C1 est suffisante ; son échec ne prouve pas l’infaisabilité. La dérivation à partir des résultats ciblés reste à construire ou à exclure par un argument mathématique précis.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CARR2014",
+      "claim_id": "C2",
+      "version_id": "arxiv-v2",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Assumption 2, Definition 14, Remark 15 et Theorem 16, PDF pp.27–30",
+      "hypotheses": "L’hypothèse 2 impose une structure de strikes et d’intervalles entre échéances. La définition 14 exige une admissibilité stricte des prix sélectionnés : décroissance, convexité et inégalités intertemporelles appropriées.",
+      "conclusion": "Le théorème 16 construit des paramètres LVG et des courbes reproduisant exactement ces prix. La remarque 15 traite une complétion des données par faisabilité linéaire. Le coefficient du modèle ne s’identifie pas sans preuve aux variances des deux stencils du projet.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CARR2014",
+      "claim_id": "C3",
+      "version_id": "arxiv-v2",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Assumption 2, Definition 14, Remark 15 et Theorem 16, PDF pp.27–30",
+      "hypotheses": "L’hypothèse 2 impose une structure de strikes et d’intervalles entre échéances. La définition 14 exige une admissibilité stricte des prix sélectionnés : décroissance, convexité et inégalités intertemporelles appropriées.",
+      "conclusion": "Le théorème 16 construit des paramètres LVG et des courbes reproduisant exactement ces prix. La remarque 15 traite une complétion des données par faisabilité linéaire. Le coefficient du modèle ne s’identifie pas sans preuve aux variances des deux stencils du projet.",
+      "derivability": "unresolved",
+      "derivation_note": "Le seuil de C3 est nécessaire et suffisant seulement dans la classe à trois strikes, voisins constants, gamma initial positif et centre terminal libre. Des cotations terminales ajoutent leurs contraintes. La formule peut être dérivée de contraintes déjà connues ; son absence littérale ne démontre pas une nouveauté. La construction à point milieu et la conservation des spreads à tous les niveaux doivent être analysées séparément.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "FH2015",
+      "claim_id": "C1",
+      "version_id": "working-paper-labelled-2013-05",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Document de travail étiqueté mai 2013 : proposition 3.1, PDF p.16; propositions 4.1–4.2, pp.19–20; corollaire 4.5, p.22; (33), p.31",
+      "hypotheses": "Fengler–Hin emploient des B-splines tensorielles et des contraintes sur leur réseau de contrôle. La proposition 3.1 requiert A1–A5 pour des taux statistiques ; les propositions 4.1–4.2 et le corollaire 4.5 donnent des conditions suffisantes de forme.",
+      "conclusion": "Les contraintes de coefficients assurent les propriétés de forme annoncées ; les taux concernent les estimateurs statistiques. La section 6 extrait une variance locale par dérivées de la surface ajustée. Les bornes de prix et de pente ne sont pas des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "C1 exige une garantie uniforme, non clippée, pour les deux stencils et toutes les observations conservées. Une différence de représentation ou l’absence de la formule Cr^2-Ar-B>=0 ne démontre ni nouveauté ni non-dérivabilité. La condition quadratique de C1 est suffisante ; son échec ne prouve pas l’infaisabilité. La dérivation à partir des résultats ciblés reste à construire ou à exclure par un argument mathématique précis.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "FH2015",
+      "claim_id": "C2",
+      "version_id": "working-paper-labelled-2013-05",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Document de travail étiqueté mai 2013 : proposition 3.1, PDF p.16; propositions 4.1–4.2, pp.19–20; corollaire 4.5, p.22; (33), p.31",
+      "hypotheses": "Fengler–Hin emploient des B-splines tensorielles et des contraintes sur leur réseau de contrôle. La proposition 3.1 requiert A1–A5 pour des taux statistiques ; les propositions 4.1–4.2 et le corollaire 4.5 donnent des conditions suffisantes de forme.",
+      "conclusion": "Les contraintes de coefficients assurent les propriétés de forme annoncées ; les taux concernent les estimateurs statistiques. La section 6 extrait une variance locale par dérivées de la surface ajustée. Les bornes de prix et de pente ne sont pas des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "C2 est une instance constructive précise. L’implication abstraite « deux ensembles non vides ont une intersection non vide » est fausse en général, et la dualité des programmes linéaires ne constitue pas à elle seule un apport original. La vérification de l’instance ne prouve pas son inédit bibliographique. Les résultats ciblés ne suffisent pas à décider sa dérivabilité ; cette question reste ouverte.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "FH2015",
+      "claim_id": "C3",
+      "version_id": "working-paper-labelled-2013-05",
+      "reviewer": "OpenAI / Codex, analyse assistée de passages primaires identifiés",
+      "review_date": "2026-10-27",
+      "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "scope": "selected_statement",
+      "relation": "different_statement",
+      "locator": "Document de travail étiqueté mai 2013 : proposition 3.1, PDF p.16; propositions 4.1–4.2, pp.19–20; corollaire 4.5, p.22; (33), p.31",
+      "hypotheses": "Fengler–Hin emploient des B-splines tensorielles et des contraintes sur leur réseau de contrôle. La proposition 3.1 requiert A1–A5 pour des taux statistiques ; les propositions 4.1–4.2 et le corollaire 4.5 donnent des conditions suffisantes de forme.",
+      "conclusion": "Les contraintes de coefficients assurent les propriétés de forme annoncées ; les taux concernent les estimateurs statistiques. La section 6 extrait une variance locale par dérivées de la surface ajustée. Les bornes de prix et de pente ne sont pas des bornes de variance.",
+      "derivability": "unresolved",
+      "derivation_note": "Le seuil de C3 est nécessaire et suffisant seulement dans la classe à trois strikes, voisins constants, gamma initial positif et centre terminal libre. Des cotations terminales ajoutent leurs contraintes. La formule peut être dérivée de contraintes déjà connues ; son absence littérale ne démontre pas une nouveauté. La construction à point milieu et la conservation des spreads à tous les niveaux doivent être analysées séparément.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "CN1947",
+      "claim_id": "C3",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "not_reviewed",
+      "relation": "unresolved",
+      "locator": "Notice bibliographique Crossref; texte non lu",
+      "hypotheses": "Méthode numérique historique pour une EDP de diffusion.",
+      "conclusion": "Antécédent méthodologique du schéma de point milieu.",
+      "derivability": "unresolved",
+      "derivation_note": "Ne pas attribuer notre seuil spécialisé à cet article sans lire son contenu; ne pas revendiquer le point milieu comme invention.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "YOO2024",
+      "claim_id": "C1",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "EDP de Black–Scholes généralisée; différences finies; interpolant dispersé.",
+      "conclusion": "Calibration par moindres carrés des volatilités et positions des points.",
+      "derivability": "unresolved",
+      "derivation_note": "Les points optimisés décrits dans le résumé appellent une comparaison avec nos observations fixes; preuves non accessibles ici.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "YOO2024",
+      "claim_id": "C2",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "EDP de Black–Scholes généralisée; différences finies; interpolant dispersé.",
+      "conclusion": "Calibration par moindres carrés des volatilités et positions des points.",
+      "derivability": "unresolved",
+      "derivation_note": "Les points optimisés décrits dans le résumé appellent une comparaison avec nos observations fixes; preuves non accessibles ici.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "YOO2024",
+      "claim_id": "C3",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "EDP de Black–Scholes généralisée; différences finies; interpolant dispersé.",
+      "conclusion": "Calibration par moindres carrés des volatilités et positions des points.",
+      "derivability": "unresolved",
+      "derivation_note": "Les points optimisés décrits dans le résumé appellent une comparaison avec nos observations fixes; preuves non accessibles ici.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "NAM2026",
+      "claim_id": "C1",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "Volatilité quadratique en prix du sous-jacent, interpolation linéaire en temps.",
+      "conclusion": "Reconstruction et expériences sur données synthétiques et de marché.",
+      "derivability": "unresolved",
+      "derivation_note": "Comparateur récent ajouté; seule sa description méthodologique est lue, aucune exclusion de théorème.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "NAM2026",
+      "claim_id": "C2",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "Volatilité quadratique en prix du sous-jacent, interpolation linéaire en temps.",
+      "conclusion": "Reconstruction et expériences sur données synthétiques et de marché.",
+      "derivability": "unresolved",
+      "derivation_note": "Comparateur récent ajouté; seule sa description méthodologique est lue, aucune exclusion de théorème.",
+      "annotation_truth_auto_verified": false
+    },
+    {
+      "work_id": "NAM2026",
+      "claim_id": "C3",
+      "version_id": "version-of-record",
+      "reviewer": "OpenAI / Codex, lecture assistée et annotations explicites",
+      "review_date": "2026-10-27",
+      "source_sha256": null,
+      "scope": "selected_statement",
+      "relation": "unresolved",
+      "locator": "Résumé éditeur uniquement",
+      "hypotheses": "Volatilité quadratique en prix du sous-jacent, interpolation linéaire en temps.",
+      "conclusion": "Reconstruction et expériences sur données synthétiques et de marché.",
+      "derivability": "unresolved",
+      "derivation_note": "Comparateur récent ajouté; seule sa description méthodologique est lue, aucune exclusion de théorème.",
+      "annotation_truth_auto_verified": false
+    }
+  ],
+  "new_evidence": [
+    "KKT2024 : publication en ligne documentée le 10 mars 2023; parution imprimée en avril 2024. Le texte principal reste inaccessible.",
+    "Buehler–Ryskin, version extensive : notice SSRN déposée le 13 août 2015, révisée le 18 mai 2020. Ces dates ne datent pas les passages du PDF auteur actuel non épinglé.",
+    "Fengler–Hin : dépôt SSRN le 17 août 2011, avant la parution de février 2015. Document de travail institutionnel obtenu, étiqueté mai 2013; lecture ciblée de Proposition 3.1, Propositions 4.1–4.2, Corollary 4.5 et extraction de Dupire. La version journal reste non lue.",
+    "Carr–Nadtochiy : PDF arXiv v2 obtenu et empreinte calculée; lecture ciblée de l’Assumption 2, Definition 14, Remark 15 et Theorem 16. Version publique v2 : 31 janvier 2014; v1 : 10 août 2013.",
+    "Yoo et al. : publication en ligne le 5 avril 2024 et volume de mars 2025. Nam et al. : publication en ligne le 8 avril 2026. Résumés comparés, preuves non lues.",
+    "Crank–Nicolson : janvier 1947 pour l’imprimé, 24 octobre 2008 pour la mise en ligne; la numérisation tardive ne devient pas la date d’invention.",
+    "Austing : dépôt SSRN documenté le 2 mars 2020, article Risk daté du 10 novembre 2020. La date de rédaction interne de 2019 ne devient pas une date de dépôt public.",
+    "Trois revendications séparées; analyse de spécialisation directe requise, en plus des différences littérales entre énoncés.",
+    "La version publique datée du projet doit encore être renseignée; une empreinte locale ou une recherche sans résultat n’en tient pas lieu.",
+    "Révision 0.5.3 : 18 comparaisons ciblées et deux arguments explicités ; voir corrections_v053.json et verification_v053.md. Aucune lecture intégrale ni priorité certifiée."
+  ]
+}

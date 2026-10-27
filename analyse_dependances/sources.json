@@ -1,0 +1,181 @@
+{
+  "as_of": "2026-10-27",
+  "purpose": "Source_versions_and_evidence_scopes_not_a_priority_certificate",
+  "sources": [
+    {
+      "id": "BR2016",
+      "title": "Discrete Local Volatility for Large Time Steps",
+      "url": "https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf",
+      "doi": "10.2139/ssrn.2642630",
+      "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+      "bytes": 1756938,
+      "physical_pages_targeted": [
+        17,
+        18,
+        33,
+        34,
+        45,
+        46
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "KKTG2016",
+      "title": "Call option price function in Bernstein polynomial basis with no-arbitrage inequality constraints",
+      "url": "https://link.springer.com/article/10.1186/s13660-016-1097-x",
+      "doi": "10.1186/s13660-016-1097-x",
+      "source_sha256": "69cf8411195b2288726249ad3cadd3619b53d0c71ffb84c8bc79b392c2c96db7",
+      "bytes": 1862241,
+      "physical_pages_targeted": [
+        6,
+        7,
+        8
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "ZHANG2025",
+      "title": "Proof-Carrying No-Arbitrage Surfaces",
+      "url": "https://arxiv.org/html/2511.09175v1",
+      "doi": null,
+      "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+      "bytes": 2193653,
+      "physical_pages_targeted": [
+        5
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "SANOS2026",
+      "title": "SANOS",
+      "url": "https://arxiv.org/html/2601.11209v4",
+      "doi": null,
+      "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+      "bytes": 4573612,
+      "physical_pages_targeted": [
+        17
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "CCD2020",
+      "title": "Deep Local Volatility",
+      "url": "https://arxiv.org/html/2007.10462v1",
+      "doi": null,
+      "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+      "bytes": 3937320,
+      "physical_pages_targeted": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "CARR2014",
+      "title": "Local Variance Gamma and Explicit Calibration to Option Prices",
+      "url": "https://arxiv.org/abs/1308.2326v2",
+      "doi": null,
+      "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+      "bytes": 662169,
+      "physical_pages_targeted": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "FH2015",
+      "title": "Semi-nonparametric estimation of the call-option price surface under strike and time-to-expiry no-arbitrage constraints",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1910737",
+      "doi": "10.1016/j.jeconom.2014.09.003",
+      "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+      "bytes": 825579,
+      "physical_pages_targeted": [
+        16,
+        19,
+        20,
+        21,
+        22,
+        31
+      ],
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "scope": "No whole_work_absence_or_human_reading_certification"
+    },
+    {
+      "id": "AUSTING2020",
+      "url": "https://www.risk.net/media/download/1053071/download",
+      "source_sha256": "787cd4eb128ddce197921317f3213e49819c95275e587b51d77bbf161e306601",
+      "bytes": 836381,
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "physical_pages_targeted": [
+        2,
+        3,
+        4
+      ],
+      "version": "Risk_November_2020_6_pages",
+      "new_access_in_this_analysis": true
+    },
+    {
+      "id": "FORNBERG1998",
+      "url": "https://www.colorado.edu/amath/sites/default/files/attached-files/sirev_cl.pdf",
+      "source_sha256": "1aa1475da0c2904294fe270f2e0094dcf348b1110043c2d73c77ffb323486bd3",
+      "bytes": 272330,
+      "access": "full_pdf_obtained_selected_sections_examined",
+      "physical_pages_targeted": [
+        1,
+        2
+      ],
+      "version": "SIAM_Review_40_3_1998_685_691",
+      "new_access_in_this_analysis": true
+    }
+  ],
+  "limited_access": [
+    {
+      "id": "KKT2024",
+      "title": "A Semi-Closed Form Approximation of Arbitrage-Free Call Option Price Surface",
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5",
+      "access": "metadata_abstract_or_preview_only_full_body_not_obtained"
+    },
+    {
+      "id": "YOO2024",
+      "title": "Calibration of Local Volatility Surfaces from Observed Market Call and Put Option Prices",
+      "url": "https://link.springer.com/article/10.1007/s10614-024-10590-9",
+      "access": "metadata_abstract_or_preview_only_full_body_not_obtained"
+    },
+    {
+      "id": "NAM2026",
+      "title": "Reconstructing the Quadratic Local Volatility Surface for European Options",
+      "url": "https://link.springer.com/article/10.1007/s40819-026-02112-y",
+      "access": "metadata_abstract_or_preview_only_full_body_not_obtained"
+    },
+    {
+      "id": "KUNDU_THESIS2017",
+      "access": "institutional_title_confirmation_only_no_thesis_body"
+    },
+    {
+      "id": "AUSTING2022",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4194884",
+      "access": "metadata_and_abstract_only",
+      "note": "Abstract_announces_corrections_to_original_proof"
+    },
+    {
+      "id": "HAIRER_WANNER1999",
+      "doi": "10.1016/S0377-0427(99)00134-X",
+      "url": "https://www.unige.ch/~hairer/preprints/coimbra.pdf",
+      "access": "primary_indexed_introduction_and_publisher_metadata_no_full_pdf",
+      "note": "Midpoint_identity_is_derived_directly_not_asserted_from_unread_full_text"
+    }
+  ],
+  "source_bytes_reverified": true,
+  "full_texts_redistributed": false
+}

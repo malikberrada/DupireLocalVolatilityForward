@@ -1,0 +1,70 @@
+{
+  "status": "derivations_and_strict_method_separation_checked",
+  "symbolic_arithmetic": {
+    "unequal_spacing_Taylor_monomials": "exact_through_degree_4",
+    "C1_quadratic_rearrangement": "exact_polynomial_identity",
+    "C3_midpoint_recurrence": "exact_polynomial_identity"
+  },
+  "original_example": {
+    "status": "independent_joint_separation_verified",
+    "proofs": {
+      "coarse_forward": {
+        "kind": "primal",
+        "verified": true,
+        "rows": 29,
+        "price_bounds": 12
+      },
+      "coarse_backward": {
+        "kind": "primal",
+        "verified": true,
+        "rows": 29,
+        "price_bounds": 12
+      },
+      "coarse_joint": {
+        "kind": "dual",
+        "verified": true,
+        "rows": 31,
+        "support_size": 7,
+        "separation_margin": "991/8000000"
+      },
+      "refined_joint": {
+        "kind": "primal",
+        "verified": true,
+        "rows": 44,
+        "price_bounds": 18
+      }
+    },
+    "individual_feasibility_does_not_imply_joint_feasibility": true,
+    "same_quotes_and_bounds": true,
+    "time_refinement_verified": true,
+    "scientific_priority_certified": false,
+    "third_party_imports": false,
+    "solver_called": false,
+    "network_used": false
+  },
+  "complete_special_case": {
+    "scope": "three_strikes_constant_neighbours_no_intermediate_centre_quotes",
+    "two_step_exact_increment_interval": [
+      "87/128000",
+      "9/12500"
+    ],
+    "rational_endpoint_and_quote_checks": 25,
+    "midpoint_terminal_increment": "84/120125"
+  },
+  "additional_method_separation": {
+    "coarse_backward_terminal_price_upper_bound": "50669/1000000",
+    "two_half_steps_joint_terminal_price_lower_bound": "1297357/25600000",
+    "strict_gap": "1153/128000000",
+    "positive_spread_box_scope": true,
+    "conclusion": "no_coarse_backward_fit_can_be_preserved_by_a_joint_fit_after_one_halving",
+    "scope_of_comparison": "BR2016_section_4_4_preserves_calibrated_expiry_prices; no_claim_about_all_possible_modifications"
+  },
+  "additional_method_separation_dual": {
+    "verified": true,
+    "support_size": 10,
+    "strict_margin": "4739/384000000",
+    "scope": "refined_joint_plus_coarse_backward_upper_on_identical_endpoint_variables"
+  },
+  "bibliographic_conclusion": "targeted_nonimplication_proved_global_originality_not_established",
+  "scope": "arithmetic_checks_and_written_proofs_not_automated_semantic_or_formal_verification"
+}

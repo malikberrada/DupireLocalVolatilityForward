@@ -1,0 +1,91 @@
+{
+  "format": "dupire-bibliographic-snapshot-v1",
+  "work_id": "BR2016",
+  "provider": "Crossref",
+  "url": "https://api.crossref.org/works/10.2139/ssrn.2642630",
+  "retrieved_at": "2026-10-27T07:31:04.336931+00:00",
+  "raw_response_sha256": "51d042a77b300e20e955956e244fbce0d1f8ae449272c9a4da475500afc3017a",
+  "projection": {
+    "DOI": "10.2139/ssrn.2642630",
+    "title": [
+      "Discrete Local Volatility for Large Time Steps (Extended Version)"
+    ],
+    "author": [
+      {
+        "given": "Hans",
+        "family": "Buehler",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Evgeny",
+        "family": "Ryskin",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [],
+    "published": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "posted": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2015,
+          8,
+          19
+        ]
+      ],
+      "date-time": "2015-08-19T11:02:32Z",
+      "timestamp": 1439982152000
+    },
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          12
+        ]
+      ],
+      "date-time": "2026-08-12T08:54:21Z",
+      "timestamp": 1786524861000
+    },
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          12
+        ]
+      ],
+      "date-time": "2026-08-12T09:33:11Z",
+      "timestamp": 1786527191509,
+      "version": "build-2736575974"
+    },
+    "URL": "https://doi.org/10.2139/ssrn.2642630"
+  },
+  "projection_is_not_a_signed_timestamp": true
+}

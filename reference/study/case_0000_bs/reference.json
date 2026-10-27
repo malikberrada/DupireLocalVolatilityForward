@@ -1,0 +1,5 @@
+{
+  "analytic_generator": "Black-Scholes",
+  "sigma": 0.2001628385514867,
+  "different_observed_strikes_by_maturity": true
+}

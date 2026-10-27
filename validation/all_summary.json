@@ -1,0 +1,61 @@
+{
+  "profile": "all",
+  "output": "<REPO>/runs/verification/all",
+  "network_used": false,
+  "status": "reproduced_and_checked",
+  "results": {
+    "exact_dependencies": {
+      "dual_support_size": 10,
+      "dual_strict_margin": "4739/384000000",
+      "robust_terminal_price_gap": "1153/128000000"
+    },
+    "constructive": {
+      "conclusion": "feasible_from_guaranteed_level",
+      "guaranteed_level": 2
+    },
+    "attempt_01": {
+      "raw_sha256": "0c44b9b66a46b238d891ffbeb21fcaf65299f4987a9cf8b9f51993921e60db41",
+      "conclusion": "feasible_exact",
+      "observations": 121,
+      "shape": [
+        5,
+        75
+      ]
+    },
+    "attempt_02": {
+      "raw_sha256": "a1d569a311389ab28b1cd1abe37ba040d7d34ae64db45aadf46d4df08ee47a5a",
+      "conclusion": "feasible_exact",
+      "observations": 121,
+      "shape": [
+        5,
+        75
+      ]
+    },
+    "attempt_03": {
+      "raw_sha256": "add46f2a167f37e3895179ac1c0f5172a689386ca1932f715dad666f8b594d65",
+      "conclusion": "feasible_exact",
+      "observations": 121,
+      "shape": [
+        5,
+        75
+      ]
+    },
+    "audit": "joint_separation_and_time_refinement_certified",
+    "live_capture": {
+      "raw_sha256": "37b290ee90e1e93dd3c80a86ee327ffe7d9e20f7e52d3f3b9b7e8d23d990f84c",
+      "conclusion": "feasible_exact",
+      "observations": 121,
+      "shape": [
+        5,
+        75
+      ]
+    },
+    "archived_study": "evidence_reverified_with_original_quotes",
+    "study_refit": {
+      "conclusions_compared": 108,
+      "identical_conclusions": 108,
+      "identical_models": 108
+    }
+  },
+  "scientific_priority_certified": false
+}

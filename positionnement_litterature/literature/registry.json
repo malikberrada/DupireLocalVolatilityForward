@@ -1,0 +1,766 @@
+{
+  "format": "dupire-literature-registry-v1",
+  "cutoff": "2026-10-26",
+  "annotation_date": "2026-10-26",
+  "date_semantics": "available_date is a verified availability upper bound, not necessarily the first publication date; unknown exact dates use the review date.",
+  "annotation_method": "Human reading of the listed primary-source sections or abstracts; missing evidence never becomes absence.",
+  "features": {
+    "bernstein_shape": "Forme par Bernstein",
+    "linear_program": "Programme linéaire",
+    "hard_bidask": "Bid/ask durs",
+    "local_bounds": "Bornes locales",
+    "smooth_surface": "Lissage (portée citée)",
+    "exact_arithmetic": "Certificat rationnel",
+    "preserved_refinement": "Seuil préservant les observations"
+  },
+  "papers": [
+    {
+      "id": "BR2016",
+      "title": "Discrete Local Volatility for Large Time Steps (Extensive Version)",
+      "authors": [
+        "Hans Buehler",
+        "Evgeny Ryskin"
+      ],
+      "year": 2016,
+      "url": "https://quantitative-research.de/dl/Discrete%20Local%20Volatility%20-%20Extensive.pdf",
+      "version": "Extensive 2.401, January 2015–November 2016",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§3.3, Results 3.2–3.3, equations (18)–(22), printed pp.17–19",
+        "Appendix A.1"
+      ],
+      "overlap": "LP et bornes locales discrètes sont antérieurs au projet.",
+      "comparison_caveat": "Le transport entre grilles et les bords du papier diffèrent de notre fenêtre commune.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "documented",
+          "locator": "§3.3, Results 3.2–3.3"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "documented",
+          "locator": "§3.3, equations (18), (21)"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2026-10-26",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "KKTG2016",
+      "title": "Call option price function in Bernstein polynomial basis with no-arbitrage inequality constraints",
+      "authors": [
+        "Arindam Kundu",
+        "Sumit Kumar",
+        "Nutan Kumar Tomar",
+        "Shiv Kumar Gupta"
+      ],
+      "year": 2016,
+      "url": "https://link.springer.com/article/10.1186/s13660-016-1097-x",
+      "version": "Journal of Inequalities and Applications 2016:153",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§3.1–3.2, equations (11)–(22)"
+      ],
+      "overlap": "Les contraintes linéaires de forme en coefficients de Bernstein sont déjà explicites.",
+      "comparison_caveat": "Régression quadratique par échéance ; aucune équivalence avec notre théorème de raffinement n’est déduite.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "documented",
+          "locator": "§3.2, equations (13)–(22)"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "documented",
+          "locator": "§3.1, polynomial strike slices"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2016-06-10",
+      "doi": "10.1186/s13660-016-1097-x",
+      "review_snapshot_sha256": "07457df666467f0ce73d3543854748fb67c6285bccdfea7e1af7e67a5d1b8be2"
+    },
+    {
+      "id": "KKT2024",
+      "title": "A Semi-Closed Form Approximation of Arbitrage-Free Call Option Price Surface",
+      "authors": [
+        "Arindam Kundu",
+        "Sumit Kumar",
+        "Nutan Kumar Tomar"
+      ],
+      "year": 2024,
+      "url": "https://link.springer.com/article/10.1007/s10614-023-10368-5",
+      "version": "Online 10 March 2023; Computational Economics 63 (2024), 1431–1457",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Abstract; publisher metadata"
+      ],
+      "overlap": "Une surface fondée sur des polynômes de Bernstein sous contraintes de forme est antérieure.",
+      "comparison_caveat": "Texte intégral non accessible pendant cette revue : une éventuelle garantie équivalente reste non évaluée.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "documented",
+          "locator": "Abstract"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2023-03-10",
+      "doi": "10.1007/s10614-023-10368-5",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "SANOS2026",
+      "title": "SANOS — Smooth strictly Arbitrage-free Non-parametric Option Surfaces",
+      "authors": [
+        "Hans Buehler",
+        "Blanka Horvath",
+        "Anastasis Kratsios",
+        "Yannick Limmer",
+        "Raeid Saqur"
+      ],
+      "year": 2026,
+      "url": "https://arxiv.org/html/2601.11209v4",
+      "version": "arXiv:2601.11209v4, 22 May 2026",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§3.2, Theorems 3.4 and 3.7",
+        "§3.3, Proposition 3.8",
+        "§4.1–4.2"
+      ],
+      "overlap": "Lissage, LP et interpolation dans bid/ask sont déjà documentés.",
+      "comparison_caveat": "La paramétrisation par transition et les ancrages globaux ne sont pas notre polynôme sur fenêtre intérieure.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "documented",
+          "locator": "§3.2 and §4"
+        },
+        "hard_bidask": {
+          "status": "documented",
+          "locator": "§3.3, Proposition 3.8; §4.1"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "documented",
+          "locator": "§3.3, Proposition 3.8"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2026-05-22",
+      "review_snapshot_sha256": "c93048229ba0bc54f68279344c35114ab8bfb4f42c9e443489bdc965eebfeb8b"
+    },
+    {
+      "id": "CRW2020",
+      "title": "Detecting and repairing arbitrage in traded option prices",
+      "authors": [
+        "Samuel N. Cohen",
+        "Christoph Reisinger",
+        "Sheng Wang"
+      ],
+      "year": 2020,
+      "url": "https://arxiv.org/html/2008.09454v1",
+      "version": "arXiv:2008.09454v1, 21 August 2020",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§2.3–2.4",
+        "§3.1–3.2, four-affine f_j and LP (9)"
+      ],
+      "overlap": "La réparation LP avec objectif tenant compte des fourchettes est établie.",
+      "comparison_caveat": "Les fourchettes sont souples dans cet objectif ; notre comparaison adapte ses contraintes à F0.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "documented",
+          "locator": "§3.1–3.2"
+        },
+        "hard_bidask": {
+          "status": "different_problem",
+          "locator": "§3.2, soft rather than hard constraints"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2020-08-21",
+      "doi": "10.1080/1350486X.2020.1846573",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "AH2010",
+      "title": "Volatility Interpolation",
+      "authors": [
+        "Jesper Andreasen",
+        "Brian Norsk Huge"
+      ],
+      "year": 2010,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1694972",
+      "version": "SSRN 1694972, revised 30 October 2010; distinguish the 2011 revision",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Author abstract on SSRN"
+      ],
+      "overlap": "Une interpolation cohérente en strike et maturité par différences implicites est antérieure.",
+      "comparison_caveat": "L’accès intégral a échoué ; aucune absence de théorème n’est affirmée.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2010-10-30",
+      "doi": "10.2139/ssrn.1694972",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "GJ2014",
+      "title": "Arbitrage-free SVI volatility surfaces",
+      "authors": [
+        "Jim Gatheral",
+        "Antoine Jacquier"
+      ],
+      "year": 2014,
+      "url": "https://arxiv.org/abs/1204.0646v4",
+      "version": "arXiv:1204.0646v4, 21 March 2013; journal 2014",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§2, static arbitrage",
+        "§4, Theorems 4.1–4.3",
+        "§5, calibration and interpolation"
+      ],
+      "overlap": "Les familles paramétriques garantissant l’absence d’arbitrage statique sont établies.",
+      "comparison_caveat": "Les conditions sur la variance implicite ne sont pas nos deux bornes de variance locale discrète.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2013-03-21",
+      "fetch_url": "https://arxiv.org/pdf/1204.0646v4",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "FENGLER2009",
+      "title": "Arbitrage-free smoothing of the implied volatility surface",
+      "authors": [
+        "Matthias R. Fengler"
+      ],
+      "year": 2009,
+      "url": "https://alexandria.unisg.ch/entities/publication/046bd387-89ba-405a-8659-2795b5fa8885",
+      "version": "Quantitative Finance 9(4), 417–428; distinguish the 2005 preprint",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Abstract in author university repository"
+      ],
+      "overlap": "Le lissage par splines sous contraintes de forme est antérieur.",
+      "comparison_caveat": "Le texte final intégral n’a pas été audité ici.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2009-06-09",
+      "doi": "10.1080/14697680802595585",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "CCD2020",
+      "title": "Deep Local Volatility",
+      "authors": [
+        "Marc Chataigner",
+        "Stéphane Crépey",
+        "Matthew Dixon"
+      ],
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2007.10462v1",
+      "version": "arXiv:2007.10462v1; Risks 8(3), 82 (2020)",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Abstract"
+      ],
+      "overlap": "La prise en compte de bornes de volatilité locale pendant l’apprentissage est antérieure.",
+      "comparison_caveat": "Le résumé ne suffit pas à comparer une pénalisation, une contrainte globale et un certificat exact.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "documented",
+          "locator": "Abstract"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2020-07-20",
+      "doi": "10.3390/risks8030082",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "CCCDG2021",
+      "title": "Beyond Surrogate Modeling: Learning the Local Volatility Via Shape Constraints",
+      "authors": [
+        "Marc Chataigner",
+        "Areski Cousin",
+        "Stéphane Crépey",
+        "Matthew Dixon",
+        "Djibril Gueye"
+      ],
+      "year": 2021,
+      "url": "https://arxiv.org/abs/2212.09957v1",
+      "version": "SIAM J. Financial Mathematics 2021; arXiv v1 deposited 20 December 2022",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§2–2.1, GP, noisy observations and shape constraints",
+        "§3, NN local-volatility regularization"
+      ],
+      "overlap": "Contraintes de forme et régularisation locale sont déjà combinées.",
+      "comparison_caveat": "La modélisation bruitée bid/ask diffère de nos intervalles imposés exactement.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "different_problem",
+          "locator": "§2, noisy replications at the same input location"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2022-12-20",
+      "fetch_url": "https://arxiv.org/pdf/2212.09957v1",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "EE2005",
+      "title": "Tikhonov regularization applied to the inverse problem of option pricing: convergence analysis and rates",
+      "authors": [
+        "Herbert Egger",
+        "Heinz W. Engl"
+      ],
+      "year": 2005,
+      "url": "https://research.jku.at/en/publications/tikhonov-regularization-applied-to-the-inverse-problem-of-option-/",
+      "version": "Inverse Problems 21(3), 1027–1045",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Abstract in author university repository"
+      ],
+      "overlap": "La stabilité et la convergence d’une inversion régularisée de volatilité sont établies.",
+      "comparison_caveat": "Une convergence de régularisation ne vaut pas automatiquement raffinement conservant chaque fourchette.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2005-06-01",
+      "doi": "10.1088/0266-5611/21/3/014",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "BERNSTEIN_TEXT",
+      "title": "Shape Interrogation for Computer Aided Design and Manufacturing, Bernstein polynomials",
+      "authors": [
+        "Nicholas M. Patrikalakis",
+        "Takashi Maekawa",
+        "Wonjoon Cho"
+      ],
+      "year": 2009,
+      "url": "https://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node9.html",
+      "version": "Online book, §1.3.1–1.3.2",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§1.3.1, equations (1.19)–(1.24)"
+      ],
+      "overlap": "Positivité, partition de l’unité et dérivation des coefficients sont classiques.",
+      "comparison_caveat": "Cet outil d’approximation n’établit aucune priorité financière.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "documented",
+          "locator": "§1.3.1"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2026-10-26",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "FARKAS_TEXT",
+      "title": "CS361B — Advanced Algorithms",
+      "authors": [
+        "Serge Plotkin"
+      ],
+      "year": 2014,
+      "url": "https://web.stanford.edu/class/cs361b/files/cs361b-notes.pdf",
+      "version": "Spring 2014, §7.1",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§7.1, Lemma 7.1 and alternative forms"
+      ],
+      "overlap": "L’alternative de faisabilité et les séparateurs linéaires sont classiques.",
+      "comparison_caveat": "Une implémentation rationnelle ne rend pas nouvelle l’alternative de Farkas.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "documented",
+          "locator": "§7.1"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "available_date": "2026-10-26",
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "FH2015",
+      "title": "Semi-nonparametric estimation of the call-option price surface under strike and time-to-expiry no-arbitrage constraints",
+      "authors": [
+        "Matthias R. Fengler",
+        "Lin-Yee Hin"
+      ],
+      "year": 2015,
+      "url": "https://alexandria.unisg.ch/entities/publication/8e4a6117-4af7-46df-971c-7802fb157294",
+      "doi": "10.1016/j.jeconom.2014.09.003",
+      "version": "Journal of Econometrics 184(2), 242–261; distinguish the 2011 working paper",
+      "available_date": "2015-09-02",
+      "access": "abstract_only",
+      "reviewed_locators": [
+        "Abstract in author university repository"
+      ],
+      "overlap": "Les surfaces B-splines tensorielles avec contraintes de forme linéaires et QP sont antérieures.",
+      "comparison_caveat": "Le contrôle conjoint strike/temps est établi ; une équivalence du seuil de raffinement reste à examiner dans le texte intégral.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "not_assessed"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "review_snapshot_sha256": null
+    },
+    {
+      "id": "GG2020",
+      "title": "Consistency of option prices under bid–ask spreads",
+      "authors": [
+        "Stefan Gerhold",
+        "Ismail Cetin Gülüm"
+      ],
+      "year": 2020,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7155110/",
+      "doi": "10.1111/mafi.12230",
+      "version": "Published online 11 November 2019; Mathematical Finance 30(2), 377–402 (2020)",
+      "available_date": "2019-11-11",
+      "access": "full_text_sections",
+      "reviewed_locators": [
+        "§2, consistency definitions",
+        "§3, Theorem 3.1",
+        "§4–5, multiple maturities"
+      ],
+      "overlap": "Des conditions de consistance de prix sous bid/ask sont antérieures.",
+      "comparison_caveat": "Le spread du sous-jacent et le problème de martingale diffèrent des courbes fixées et des deux stencils locaux du projet.",
+      "evidence": {
+        "bernstein_shape": {
+          "status": "not_assessed"
+        },
+        "linear_program": {
+          "status": "not_assessed"
+        },
+        "hard_bidask": {
+          "status": "documented",
+          "locator": "§2, consistency definitions"
+        },
+        "local_bounds": {
+          "status": "not_assessed"
+        },
+        "smooth_surface": {
+          "status": "not_assessed"
+        },
+        "exact_arithmetic": {
+          "status": "not_assessed"
+        },
+        "preserved_refinement": {
+          "status": "not_assessed"
+        }
+      },
+      "review_snapshot_sha256": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Contraintes de forme linéaires en coefficients de Bernstein",
+      "status": "established_prior_art",
+      "sources": [
+        "KKTG2016",
+        "KKT2024",
+        "BERNSTEIN_TEXT"
+      ]
+    },
+    {
+      "id": "C1b",
+      "statement": "Contraintes linéaires sur le réseau de contrôle d’une surface tensorielle",
+      "status": "established_prior_art",
+      "sources": [
+        "FH2015"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Calibration LP et prise en compte des bid/ask",
+      "status": "established_prior_art",
+      "sources": [
+        "BR2016",
+        "CRW2020",
+        "SANOS2026"
+      ]
+    },
+    {
+      "id": "C2b",
+      "statement": "Consistance des prix sous bid/ask et existence de modèles",
+      "status": "established_prior_art",
+      "sources": [
+        "GG2020"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Bornes de volatilité locale pendant la calibration",
+      "status": "established_prior_art",
+      "sources": [
+        "BR2016",
+        "CCD2020"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "Témoin polynomial certifié et seuil dyadique explicite pour les deux stencils, à observations inchangées",
+      "status": "candidate_contribution",
+      "sources": [
+        "BR2016",
+        "KKTG2016",
+        "KKT2024",
+        "SANOS2026",
+        "CCD2020"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "Vérification rationnelle du témoin et de la géométrie, export reproductible des preuves",
+      "status": "engineering_contribution",
+      "sources": [
+        "FARKAS_TEXT",
+        "BERNSTEIN_TEXT"
+      ]
+    }
+  ],
+  "feature_definitions": {
+    "local_bounds": "Prise en compte de bornes pendant calibration ; pas nécessairement une garantie globale exacte.",
+    "smooth_surface": "Courbe ou surface lisse sur le domaine du résultat cité ; une tranche en strike ne garantit pas la régularité en temps.",
+    "preserved_refinement": "Seuil quantifié assurant les mêmes bornes sur les deux stencils à tous les raffinements suivants, avec les mêmes observations."
+  }
+}

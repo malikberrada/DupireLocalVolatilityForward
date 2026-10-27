@@ -1,0 +1,16 @@
+{
+  "format": "dupire-reading-corrections-v1",
+  "review_date": "2026-10-27",
+  "input_workbook_sha256": "63105b2f24c16ed5fc350c6a7facf87435c2c0344c5dd0b85157c8c65f20bff6",
+  "packet_sha256": "2404e4c8b64b491361dbd61b5c613868dbfa7d9d4b22f161e4554882e507f4d6",
+  "campaign_manifest_sha256": "d8ef6b759460ef7d51ee67a18a3009db577ea2a569c5a7b3aa1d6fca56bcbc94",
+  "source_bytes_verified_when_applied": true,
+  "source_count": 6,
+  "comparisons_corrected": 18,
+  "axis_cells_rewritten": 162,
+  "human_readings_automatically_accepted": 0,
+  "semantic_annotations_auto_verified": false,
+  "scientific_priority_certified": false,
+  "solver_called": false,
+  "network_used": false
+}

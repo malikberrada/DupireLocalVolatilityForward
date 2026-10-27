@@ -1,2 +1,17 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+* text=auto eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf
+*.npz binary
+*.npy binary
+*.pdf binary
+*.csv -text
+*.json -text
+# The exact bytes below are bound by SHA-256. Do not normalize their line endings.
+data/** -text
+reference/** -text
+analyse_dependances/** -text
+audit_apport/fixtures/** -text
+audit_apport/validation/** -text
+audit_apport/bibliography/** -text
+audit_apport/literature/** -text
+positionnement_litterature/fixtures/** -text

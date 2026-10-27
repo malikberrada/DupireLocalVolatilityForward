@@ -1,0 +1,11 @@
+{
+  "status": "archived_evidence_reverified",
+  "reports": 36,
+  "exact_dual_certificates": 70,
+  "numeric_primal_witnesses": 32,
+  "indeterminate_results_preserved": 6,
+  "artifact_hashes": 444,
+  "arithmetic": "dual certificates exact for saved binary64 LP; primal witnesses numerical",
+  "solver_called": false,
+  "network_used": false
+}

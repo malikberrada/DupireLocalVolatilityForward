@@ -1,0 +1,446 @@
+{
+  "BR2016": {
+    "source_sha256": "5275be927d6b069c0b60aef5b2def8b579360da855847b9e901995c721a372ca",
+    "version_id": "author-pdf-current",
+    "page_index_sha256": "088d0b96b436de512eef89ce71dc60f7906c0314a0f9eb6ad1f51b111d8582f7",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "gamma": {
+        "page": 12,
+        "anchor": "Gamma",
+        "line": 18,
+        "evidence_id": "p0012:l0013-0028",
+        "evidence_ids": [
+          "p0012:l0013-0028",
+          "p0012:l0025-0040"
+        ],
+        "passage_text_sha256": {
+          "p0012:l0013-0028": "87901dad3d8aa308d3e9fdbaa334809745c142a7da6c2064709b5ae8d5a75087",
+          "p0012:l0025-0040": "c0974992ccda48a4439d520f7b531e15a62aca691cbe25cf49c22a4113c78ca9"
+        }
+      },
+      "theta": {
+        "page": 13,
+        "anchor": "Theta –",
+        "line": 19,
+        "evidence_id": "p0013:l0013-0028",
+        "evidence_ids": [
+          "p0013:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0013:l0013-0028": "6d5f7739a9eebfd13127983e5eb57c1dc9b0ceb3c9948d908680af2ec8fc3acd"
+        }
+      },
+      "forward": {
+        "page": 17,
+        "anchor": "Result 3.2",
+        "line": 29,
+        "evidence_id": "p0017:l0025-0038",
+        "evidence_ids": [
+          "p0017:l0025-0038",
+          "p0017:l0037-0038",
+          "p0018:l0001-0016"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0025-0038": "969b1c8bb35878fabf1fb0229dfa0e120f5f0dfb324e80a1ecc9b9e0a775973a",
+          "p0017:l0037-0038": "91c16ca2aacce4473a65755a16dc808aba74015eae2f146b842108c09e1db1fd",
+          "p0018:l0001-0016": "7788b0279dafc994250862503fdd75ad141c6e44cf39c219a80155555664850b"
+        }
+      },
+      "backward": {
+        "page": 18,
+        "anchor": "Boundness",
+        "line": 29,
+        "evidence_id": "p0018:l0025-0039",
+        "evidence_ids": [
+          "p0018:l0025-0039",
+          "p0018:l0037-0039",
+          "p0019:l0001-0016"
+        ],
+        "passage_text_sha256": {
+          "p0018:l0025-0039": "c3bafc0a4a339f56d256eea38e4d25eae12214856f6f2c65df3d7c1b865e68e5",
+          "p0018:l0037-0039": "f60add9fc14bc806569659b9b22861b117eb0b9589dec43dbbdf9bb3408a5bd0",
+          "p0019:l0001-0016": "a6b8af5eab9ee38b23d085fd71f4d14dc3b63477bacb3d222b035237cb7b6c0e"
+        }
+      },
+      "obstruction": {
+        "page": 18,
+        "anchor": "no guarantee",
+        "line": 6,
+        "evidence_id": "p0018:l0001-0016",
+        "evidence_ids": [
+          "p0018:l0001-0016",
+          "p0018:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0018:l0001-0016": "7788b0279dafc994250862503fdd75ad141c6e44cf39c219a80155555664850b",
+          "p0018:l0013-0028": "1167d7fa9c42a94ce2b49065e3cfe59d02f3f3aaab677ee90af518e63896b1d5"
+        }
+      },
+      "small_steps": {
+        "page": 33,
+        "anchor": "4.4 Small Steps",
+        "line": 1,
+        "evidence_id": "p0033:l0001-0016",
+        "evidence_ids": [
+          "p0033:l0001-0016",
+          "p0033:l0013-0028",
+          "p0033:l0025-0040",
+          "p0033:l0037-0043",
+          "p0034:l0001-0016",
+          "p0034:l0013-0026"
+        ],
+        "passage_text_sha256": {
+          "p0033:l0001-0016": "454804e1dabbda30b7c7335e3abd5acdb3311354420aa35cf59f7b042efd1fbe",
+          "p0033:l0013-0028": "c62feba0d6af9d9551a775d6c911b65764eda44e1a7fc845d24d19a87388aa09",
+          "p0033:l0025-0040": "0a874e8769aad0a1e64c63783504918da2f0e1e546df917bd970e3d425ec180f",
+          "p0033:l0037-0043": "0c6c73e070733ea6d78c5cd08d1c56a3e99b33c1f579cac2f0547addf4cdf6b8",
+          "p0034:l0001-0016": "28fdf2967b0369a9d970987925ae08205adc577f1946dfe54de4fc201292907c",
+          "p0034:l0013-0026": "90d2bd5a582a2af7daf845e1998b34b269a97a8300882ae665a0ab19aaa83f74"
+        }
+      }
+    }
+  },
+  "SANOS2026": {
+    "source_sha256": "cc0911bef35b13f1ee94b033d7623aa54a96b67023e201ef30c6afe6f7d84c3e",
+    "version_id": "arxiv-v4",
+    "page_index_sha256": "989443c895a5b275034f635232d3951a7721666d80dea0bd4f5b3c3ff9e64af6",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "parametrization": {
+        "page": 17,
+        "anchor": "Theorem 3.7",
+        "line": 1,
+        "evidence_id": "p0017:l0001-0016",
+        "evidence_ids": [
+          "p0017:l0001-0016",
+          "p0017:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0001-0016": "bbc07006e6b7413483dcb1bb9899005bd7d6d13d55653b38e5b691f497138a05",
+          "p0017:l0013-0028": "73f4b39be1e6848cb1f5a15b29d3337c3af87e25140e055052f03a8fce0c7def"
+        }
+      },
+      "smoothing": {
+        "page": 17,
+        "anchor": "3.3 Smoothed",
+        "line": 19,
+        "evidence_id": "p0017:l0013-0028",
+        "evidence_ids": [
+          "p0017:l0013-0028",
+          "p0017:l0025-0040",
+          "p0017:l0037-0045"
+        ],
+        "passage_text_sha256": {
+          "p0017:l0013-0028": "73f4b39be1e6848cb1f5a15b29d3337c3af87e25140e055052f03a8fce0c7def",
+          "p0017:l0025-0040": "d60b2c6e22dca10572af20ecb108467c9ecf86b3160d81b12209d919581a6864",
+          "p0017:l0037-0045": "927668a868dadfe40926572b7790a97c4af0563f4640cb64acbd6e60e2ad9b13"
+        }
+      }
+    }
+  },
+  "CCD2020": {
+    "source_sha256": "194c1955089081cb8b158ece10b513848980e41d7d1b1f470abb116dc92eca12",
+    "version_id": "arxiv-v1",
+    "page_index_sha256": "088825bb50055173bb98a5f3d608110257a1e66887ecb6bf3d3d2689f3c3f43d",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "formula": {
+        "page": 3,
+        "anchor": "(1)",
+        "line": 28,
+        "evidence_id": "p0003:l0001-0016",
+        "evidence_ids": [
+          "p0003:l0001-0016",
+          "p0003:l0013-0028",
+          "p0003:l0025-0035"
+        ],
+        "passage_text_sha256": {
+          "p0003:l0001-0016": "b82de925ed5e37f3b3219b9a9ee423c81bba696205a2a73ddb77357f35e1389a",
+          "p0003:l0013-0028": "e2871315c5b2b57098b24d6cd34a7d8e13f506ad55b57f582780ef61b507854e",
+          "p0003:l0025-0035": "44f32367baff8448ad203d6aec5e9adf626bcb65a1e2a1b2e229e7691b1a5e0f"
+        }
+      },
+      "hard": {
+        "page": 4,
+        "anchor": "3.1 Hard Constraints Approach",
+        "line": 28,
+        "evidence_id": "p0004:l0013-0028",
+        "evidence_ids": [
+          "p0004:l0013-0028",
+          "p0004:l0025-0039",
+          "p0004:l0037-0039",
+          "p0005:l0001-0016",
+          "p0005:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0013-0028": "d7abb9420fbee7e6733513ea1963d91c7a591858838e26865a84f1bb16541a38",
+          "p0004:l0025-0039": "8689320fc67c419156a3022380b23876df5cac30f9ce13d3e6e803ad459bd453",
+          "p0004:l0037-0039": "2b5e7d10358e32e8fad8c5a8dec3a46c615181f1d0077fdadb656918171ac694",
+          "p0005:l0001-0016": "e94e9f6686cd2216050815b646284e7cd3a0d5fe0610d2934c9b04771a3f1221",
+          "p0005:l0013-0028": "0cf413d3bad6cfb04777e0c1fa1aa88d3513d26f5c1125e703f885c0c48597f7"
+        }
+      },
+      "soft": {
+        "page": 5,
+        "anchor": "3.2 Soft Constraints Approach",
+        "line": 24,
+        "evidence_id": "p0005:l0013-0028",
+        "evidence_ids": [
+          "p0005:l0013-0028",
+          "p0005:l0025-0031",
+          "p0006:l0001-0016",
+          "p0006:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0005:l0013-0028": "0cf413d3bad6cfb04777e0c1fa1aa88d3513d26f5c1125e703f885c0c48597f7",
+          "p0005:l0025-0031": "4a7158060998c7e2310dadfba68a8e2ad4341fc43073e6b8b113983bb8de0f7a",
+          "p0006:l0001-0016": "becb380b49525bd9d58ea5e9b63ef8e56779f9c47497b0d8deb6edb0be35d6f7",
+          "p0006:l0013-0028": "24289ebac750d6c868160d7dfd540cf4ecd443d01bfc6c0bba6cfb6e08ac4c0c"
+        }
+      },
+      "penalty": {
+        "page": 6,
+        "anchor": "the penalties only control",
+        "line": 7,
+        "evidence_id": "p0006:l0001-0016",
+        "evidence_ids": [
+          "p0006:l0001-0016",
+          "p0006:l0013-0028",
+          "p0006:l0025-0040",
+          "p0006:l0037-0049",
+          "p0006:l0049-0049"
+        ],
+        "passage_text_sha256": {
+          "p0006:l0001-0016": "becb380b49525bd9d58ea5e9b63ef8e56779f9c47497b0d8deb6edb0be35d6f7",
+          "p0006:l0013-0028": "24289ebac750d6c868160d7dfd540cf4ecd443d01bfc6c0bba6cfb6e08ac4c0c",
+          "p0006:l0025-0040": "32f1c364cd375ce939813fef6eb60b5c66855c28c5ab48303c268d88b44d9de0",
+          "p0006:l0037-0049": "50cd40411440ef3cb005a5faa5aa599e8dd195390fd8fcccc0a71a6551f3bfb8",
+          "p0006:l0049-0049": "92e9e7e5922d26e17e48f0869ab25cc99499fdab722c065de8e0965c96c68e86"
+        }
+      }
+    }
+  },
+  "ZHANG2025": {
+    "source_sha256": "8b4b56551195b746adedd1f0c6021f47a2f6b9ea4d5c6eedd77eca2518d6874f",
+    "version_id": "arxiv-v1",
+    "page_index_sha256": "14d4924769ed2b6929ca05ac4a34f141986ba782e6dfeed1b28463583d0c9a2d",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "cone": {
+        "page": 4,
+        "anchor": "3.2 Arbitrage-feasible set",
+        "line": 34,
+        "evidence_id": "p0004:l0001-0016",
+        "evidence_ids": [
+          "p0004:l0001-0016",
+          "p0004:l0013-0028",
+          "p0004:l0025-0040",
+          "p0004:l0037-0046"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0001-0016": "edfbc16e45b1edfa16f6fc276d67e90f50b471df84f18e8c3e2534c49c7ccf22",
+          "p0004:l0013-0028": "afa90b549411834e00bc1438b78239a3213898d253de5d8ab2274c4ae7193158",
+          "p0004:l0025-0040": "f55b2069c39911a5142f2e65ecd765c24be924d382cfe7a0568dba984f2ba6f8",
+          "p0004:l0037-0046": "407eab904a2d9f3e78ea9c483cf0791478a0c3df596bfdbac02375a8503711e9"
+        }
+      },
+      "mesh": {
+        "page": 4,
+        "anchor": "Admissibility conditions (A5)",
+        "line": 44,
+        "evidence_id": "p0004:l0037-0046",
+        "evidence_ids": [
+          "p0004:l0037-0046",
+          "p0005:l0001-0016"
+        ],
+        "passage_text_sha256": {
+          "p0004:l0037-0046": "407eab904a2d9f3e78ea9c483cf0791478a0c3df596bfdbac02375a8503711e9",
+          "p0005:l0001-0016": "574bdaea1955dc664e67a9532ce752473bb335ba390dd5781f2c59547cc359fb"
+        }
+      },
+      "lemma": {
+        "page": 5,
+        "anchor": "Lemma S0.2 (operator stability",
+        "line": 14,
+        "evidence_id": "p0005:l0001-0016",
+        "evidence_ids": [
+          "p0005:l0001-0016",
+          "p0005:l0013-0028",
+          "p0005:l0025-0040"
+        ],
+        "passage_text_sha256": {
+          "p0005:l0001-0016": "574bdaea1955dc664e67a9532ce752473bb335ba390dd5781f2c59547cc359fb",
+          "p0005:l0013-0028": "481e41660d71c3363ef03438190eea1a1e21c3ec65bfb3e8da577a9debd86ee2",
+          "p0005:l0025-0040": "5d30c6d92c05d55913f373304dc9784268dad929f5f1b775f5006e3adc1a42de"
+        }
+      },
+      "projection": {
+        "page": 13,
+        "anchor": "Theorem 6",
+        "line": 4,
+        "evidence_id": "p0013:l0001-0016",
+        "evidence_ids": [
+          "p0013:l0001-0016",
+          "p0013:l0013-0028",
+          "p0013:l0025-0039",
+          "p0013:l0037-0039"
+        ],
+        "passage_text_sha256": {
+          "p0013:l0001-0016": "3197cda4977dc8e00b4c4824727b45a6e0831d109985bab04ceab6b17117ff6b",
+          "p0013:l0013-0028": "106c6086e26c3fb82086de74a788532d507ae99fbe4ccebbfa8bc2e0e67d9c96",
+          "p0013:l0025-0039": "f974c931b8abe5c068861b0b5c8e224446e8362419c1c5c1bd3c4b75bd6c376f",
+          "p0013:l0037-0039": "611af4fc85f2c3a7a9987d71ccebdee21fe904f720515b0f6973c71867753a49"
+        }
+      }
+    }
+  },
+  "CARR2014": {
+    "source_sha256": "2c1628d22b84db2b28be314717110861a3a2b83febda7f01551e4638dac76f1a",
+    "version_id": "arxiv-v2",
+    "page_index_sha256": "54f88caa317d0489281acd13e746aaacb1934f47e25b641de18d7a3dbc649c6a",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "data": {
+        "page": 27,
+        "anchor": "Assumption 2.",
+        "line": 13,
+        "evidence_id": "p0027:l0001-0016",
+        "evidence_ids": [
+          "p0027:l0001-0016",
+          "p0027:l0013-0024",
+          "p0028:l0001-0016",
+          "p0028:l0013-0028"
+        ],
+        "passage_text_sha256": {
+          "p0027:l0001-0016": "a8ba92dbdcd59000d5db2200aeef04989b8edc1640d7b579dfcd66d4fa9d3090",
+          "p0027:l0013-0024": "5690958165012eafb31931a2f2402c1240ac3a27a92e82ab2badef73c50e24b5",
+          "p0028:l0001-0016": "9e93f8e431c61aa420083c69294a7187715741bb99b32e1506f91458f0362851",
+          "p0028:l0013-0028": "495b830569ea67e3e3f52064173d5abbc39fbe2fe8d319b95790790dad6958ee"
+        }
+      },
+      "admissibility": {
+        "page": 28,
+        "anchor": "Definition 14.",
+        "line": 17,
+        "evidence_id": "p0028:l0001-0016",
+        "evidence_ids": [
+          "p0028:l0001-0016",
+          "p0028:l0013-0028",
+          "p0028:l0025-0031"
+        ],
+        "passage_text_sha256": {
+          "p0028:l0001-0016": "9e93f8e431c61aa420083c69294a7187715741bb99b32e1506f91458f0362851",
+          "p0028:l0013-0028": "495b830569ea67e3e3f52064173d5abbc39fbe2fe8d319b95790790dad6958ee",
+          "p0028:l0025-0031": "5511aea5fef9ff98dd61780d65704581fd1a60ad23bc221834088ffa50e7b39c"
+        }
+      },
+      "theorem": {
+        "page": 29,
+        "anchor": "Theorem 16.",
+        "line": 19,
+        "evidence_id": "p0029:l0001-0016",
+        "evidence_ids": [
+          "p0029:l0001-0016",
+          "p0029:l0013-0028",
+          "p0029:l0025-0033",
+          "p0030:l0001-0016",
+          "p0030:l0013-0026",
+          "p0030:l0025-0026"
+        ],
+        "passage_text_sha256": {
+          "p0029:l0001-0016": "9cbc46d64a0ad6218f4c1d4b9c0ef12e40144d5c5df94c73d29d547d3b522b1c",
+          "p0029:l0013-0028": "f017ac6163312a561133e98e02539d2b7d9136a3e80cffccdb038f788f823718",
+          "p0029:l0025-0033": "41868b5c4a18f288a49d40733afaf13f8151ad078b622f4b1991af0c2839ace3",
+          "p0030:l0001-0016": "632487107bd66a1bf8269299f094381bb654617d24dce9b96ae41af8c1863841",
+          "p0030:l0013-0026": "f483d731ddec26672d9210b5295a4bd9e3e85d5eabf99ba1b6f12ebfefcae538",
+          "p0030:l0025-0026": "f5f9b6d13c138d456b117134af9529973f25b9a17d68338ae14dfa01eec47a40"
+        }
+      }
+    }
+  },
+  "FH2015": {
+    "source_sha256": "543eca0c1edb23460de9e4d4ef3666e205eb0b463805c8e63eb377581090a822",
+    "version_id": "working-paper-labelled-2013-05",
+    "page_index_sha256": "384f6c2b9eea8674fdc66ef106909336ab52a05c17a32eb68ffaaa4e526bf295",
+    "extractor": "pypdf 6.21.2",
+    "references": {
+      "statistics": {
+        "page": 16,
+        "anchor": "Proposition 3.1",
+        "line": 1,
+        "evidence_id": "p0016:l0001-0016",
+        "evidence_ids": [
+          "p0016:l0001-0016",
+          "p0016:l0013-0028",
+          "p0016:l0025-0040",
+          "p0016:l0037-0040"
+        ],
+        "passage_text_sha256": {
+          "p0016:l0001-0016": "0e5e8f2df203835204d31548fd91b6aaf3bbfc838e63939496c9487ed19afbaa",
+          "p0016:l0013-0028": "5091e493bcd1825e0e8542eb93e6bd774e9e360b629e1950d7d8c32307e45839",
+          "p0016:l0025-0040": "0098776ebb0edfc10625eb6d7eb43557f5b04bfc7d68390ff0c363a09621b8df",
+          "p0016:l0037-0040": "893d840d8ada8bb8c71ac688a8aeb94b1e90f41ec9f4b7920c2d9a3f07f20746"
+        }
+      },
+      "price": {
+        "page": 19,
+        "anchor": "Proposition 4.1",
+        "line": 18,
+        "evidence_id": "p0019:l0001-0016",
+        "evidence_ids": [
+          "p0019:l0001-0016",
+          "p0019:l0013-0024"
+        ],
+        "passage_text_sha256": {
+          "p0019:l0001-0016": "e1e160f73296a50ec68eb96ec60b665b9a2dd14a3b50ba6dba66a5e6c81f7826",
+          "p0019:l0013-0024": "a66f1269a385b0c3a7d143c836ae7b6a300e4d25ae258294d5cafc8066d17e8a"
+        }
+      },
+      "shape": {
+        "page": 20,
+        "anchor": "Proposition 4.2",
+        "line": 6,
+        "evidence_id": "p0020:l0001-0016",
+        "evidence_ids": [
+          "p0020:l0001-0016",
+          "p0020:l0013-0023"
+        ],
+        "passage_text_sha256": {
+          "p0020:l0001-0016": "d998846cb223f59532b94cd22971b36b39a9d532c14ad0e77c24472edbaad1dc",
+          "p0020:l0013-0023": "8a032ac7d376d3260cd52409af91852c834eeab1b2f960d77d345a477b2bd2c2"
+        }
+      },
+      "calendar": {
+        "page": 22,
+        "anchor": "Corollary 4.5",
+        "line": 11,
+        "evidence_id": "p0022:l0001-0016",
+        "evidence_ids": [
+          "p0022:l0001-0016",
+          "p0022:l0013-0022"
+        ],
+        "passage_text_sha256": {
+          "p0022:l0001-0016": "c943e60c0a88b7b93403f134c1b04100e1b4698ff9eb4fb198cc3619a85d6a25",
+          "p0022:l0013-0022": "10f44efc9f9b0484fe6076897fa4de89e1a0433c7f7064a84ce2a74dcd041920"
+        }
+      },
+      "dupire": {
+        "page": 31,
+        "anchor": "(33)",
+        "line": 9,
+        "evidence_id": "p0031:l0001-0016",
+        "evidence_ids": [
+          "p0031:l0001-0016",
+          "p0031:l0013-0028",
+          "p0031:l0025-0028"
+        ],
+        "passage_text_sha256": {
+          "p0031:l0001-0016": "7eb7b75bf3bfdc8b7863f408e942e4b254a192be8deb46df93ae748430f8d2c4",
+          "p0031:l0013-0028": "ccc25cede5c547a89d1374f99aca7b041adaa58412685603455458097faa7de1",
+          "p0031:l0025-0028": "72ccbe4a80d7e115384e62d3e110ce03d2b3ba90c3b5496738a7bf11407f6e67"
+        }
+      }
+    }
+  }
+}

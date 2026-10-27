@@ -1,0 +1,23 @@
+{
+  "format": "dupire-exact-grid-certificate-v1",
+  "kind": "dual",
+  "problem_sha256": "6036117cf66731ef093e11ad3a3a407379ef2d473b327076fb9b5b46e40f4a56",
+  "rows": [
+    15,
+    18,
+    20,
+    21,
+    24,
+    25,
+    29
+  ],
+  "multipliers": [
+    "3/2",
+    "1",
+    "1/4",
+    "1/16",
+    "5/16",
+    "2/9",
+    "5/18"
+  ]
+}

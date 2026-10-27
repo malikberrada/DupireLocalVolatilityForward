@@ -1,0 +1,284 @@
+[
+  {
+    "pair_id": "BR2016_C1",
+    "before_analysis_sha256": "330d337db087cbf205a09c82bcee64511157daf6ead49b3e7d99c5b54fcc4dc6",
+    "after_analysis_sha256": "fb9cc2607794e1505f2edbed7f96d613ca5559ac2b1c3ecef754c3810aaab04d",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "BR2016_C2",
+    "before_analysis_sha256": "5ab1985fa8c8cd58abf49a0ce2af48a58ee82a9175f71c1fb2c97771c31e155c",
+    "after_analysis_sha256": "f988fd756c4c07d4dd9cdf041f1446dd554ace8c62eea1070ad83587e4727d1f",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "BR2016_C3",
+    "before_analysis_sha256": "55662e17386b2b07199607e7590d6adf48ca91f106cfd25554a0547c12a5d6f3",
+    "after_analysis_sha256": "66985139d123433a2d25547fa00411630a87540bc78d29a43165939a302fcafa",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "relation",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "SANOS2026_C1",
+    "before_analysis_sha256": "a0cbdbf4c65b47369a0fb0a21a206d0c58e83a70a678a7e909e010e3bf8f68d2",
+    "after_analysis_sha256": "c39ad1bab3638958d83c34de806b8594d1551c740b5b1114f9fb07d28e2ba6bb",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "SANOS2026_C2",
+    "before_analysis_sha256": "c2c44873855a91bc76d4b605b67bb1b0da0f7c82159512869e38044fcac1c4fc",
+    "after_analysis_sha256": "7e54403328c2176f61d8a27d68295cfa4784ebcc856b796090a422ad5a006511",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "SANOS2026_C3",
+    "before_analysis_sha256": "99e11a0f446bccfdbf4362a7ddebda1817b07ebac39434e448ae6d34c6f7fd4e",
+    "after_analysis_sha256": "abfc71297821d7fb2de5103dc0be570ddbaa5c2afc2ef6f4dc05781b2fdf1dac",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "relation",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CCD2020_C1",
+    "before_analysis_sha256": "8051fa72c87f699a98e45ac1deaab71aa0d3326ccc70f08029640e3bd16a9a2e",
+    "after_analysis_sha256": "7483bd6873b1b5f3dd271e5c82f72d584c46436e438eb0280837e67f160bb1a3",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CCD2020_C2",
+    "before_analysis_sha256": "3049eebbde78de379ba95391592ffe570652ef357f9038f176fe20417094c979",
+    "after_analysis_sha256": "81789b7783b7e02014b06994a9cba70d91a5eaaec70f96191cd6bf0ba12ade51",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CCD2020_C3",
+    "before_analysis_sha256": "1beb7fead8466dd4958eb9300f1da4129130f7c6951cea8ad895cf5830dd7a3b",
+    "after_analysis_sha256": "fb9b048c820fc12c3259430034a71f0592edaca3661b1d5a1f0feab2005d03a7",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "relation",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "ZHANG2025_C1",
+    "before_analysis_sha256": "f2dcf4da35d815151bbda848fb4854aa885ab94cbd72ab3ad04db1e79ee3ed0c",
+    "after_analysis_sha256": "b9fbb3f9bdee13be5d9ac167586d5e6c430670f6c72c60403cddb9d054d239d5",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "ZHANG2025_C2",
+    "before_analysis_sha256": "87b2cb39a7323c559a3b4a5380a211cb7ae2904413c9e83e6c3df1eaec6f3749",
+    "after_analysis_sha256": "136036c24baab631bc5816118ccfece9218f23c44c0a379cb295e2bab9182602",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "ZHANG2025_C3",
+    "before_analysis_sha256": "66db46148056eb33340676991e281a0c5f3bcc2b70114a3f8f9bef639ce68b10",
+    "after_analysis_sha256": "aece460e3b5236b82a68d300472ba69982c138bf0858f18b34961c0c6cdf3e55",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "relation",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CARR2014_C1",
+    "before_analysis_sha256": "1537f28b6571d164ad2ddffd7564f28a2babf22013a5ef633bdb1f490fd1e617",
+    "after_analysis_sha256": "4335a751e63c981e986662b6160263de419f3f41b8d9e330913df3e817222963",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CARR2014_C2",
+    "before_analysis_sha256": "bee182214f982d470c72e658cd4393e846b72be08494cc71912ed54abe011f70",
+    "after_analysis_sha256": "47ae18cb3c5d6d13e184e3441f66ded7e8d1d7271bd2a6836e409bc29ea12e4e",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "CARR2014_C3",
+    "before_analysis_sha256": "3f9dbe6d4fb1271812e2e5f958f336f69da62aa02bbbce13ce9e91e3d0aee9a9",
+    "after_analysis_sha256": "107e9bc48ccf6e42956607e26db810cf0006b938425172739662bef5e87674be",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "FH2015_C1",
+    "before_analysis_sha256": "10b4f1772e23142a78114ec87e4ac883bc7e30627ef6276e3afa7f09eb63fa39",
+    "after_analysis_sha256": "c2c3e4cb7294471f43104cf2b615e2e1f0291e27bdec4ae53747d4e299f9aada",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivability",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "FH2015_C2",
+    "before_analysis_sha256": "6bafc2884acec48f7043d6589f56f3ee6eada4e1030cb92251b1d01d152d1578",
+    "after_analysis_sha256": "27ba15b5ec1e637784d49eb4b18cb55e073aed292441361d69ff8da870b0e4a1",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  },
+  {
+    "pair_id": "FH2015_C3",
+    "before_analysis_sha256": "ee133ecfe44be7a243179c5e54a96d6e1acdf914549faf29b0f0e581af1c0663",
+    "after_analysis_sha256": "0351d720bc77fe2279cded2fffb77189cc746afb4d40aeaf527d1e2de5d5eff1",
+    "changed_fields": [
+      "hypotheses",
+      "conclusion",
+      "derivation_note",
+      "axes",
+      "limitations",
+      "evidence_ids"
+    ],
+    "scope": "selected_statement",
+    "human_approved": false
+  }
+]
