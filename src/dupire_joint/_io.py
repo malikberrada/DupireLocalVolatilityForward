@@ -1,13 +1,14 @@
 """Shared JSON I/O for supervisors, progress and scientific checkpoints.
 
-Windows readers explicitly share DELETE access so an atomic rename may happen
-while they read the previous snapshot. Transient sharing/access errors receive
-bounded retries; a failed scientific write preserves the previous snapshot.
+Windows readers buffer a snapshot and close the disk handle before returning
+it, so an atomic rename can happen while that snapshot is consumed. Transient
+sharing/access errors receive bounded retries; a failed scientific write
+preserves the previous snapshot.
 No numerical library is imported by this module.
 """
 from __future__ import annotations
 import errno
-from functools import lru_cache
+from io import BytesIO
 import json
 import os
 from pathlib import Path
@@ -52,45 +53,19 @@ def atomic_json(path,data,*,timeout=2.0):
             pass
 
 
-@lru_cache(maxsize=1)
-def _windows_reader_api():
-    import ctypes
-    from ctypes import wintypes
-    kernel=ctypes.WinDLL("kernel32",use_last_error=True)
-    create=kernel.CreateFileW
-    create.argtypes=[wintypes.LPCWSTR,wintypes.DWORD,wintypes.DWORD,
-                     wintypes.LPVOID,wintypes.DWORD,wintypes.DWORD,wintypes.HANDLE]
-    create.restype=wintypes.HANDLE
-    close=kernel.CloseHandle
-    close.argtypes=[wintypes.HANDLE]
-    close.restype=wintypes.BOOL
-    return ctypes,create,close
-
-
 def _open_shared_read(path):
     if os.name!="nt":
         return open(path,"rb")
-    import msvcrt
-    ctypes,create,close=_windows_reader_api()
     name=os.path.abspath(os.fspath(path))
     if not name.startswith("\\\\?\\"):
         name="\\\\?\\UNC\\"+name[2:] if name.startswith("\\\\") else "\\\\?\\"+name
-    # GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
-    # OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL.
-    handle=create(name,0x80000000,0x1|0x2|0x4,None,3,0x80,None)
-    if handle is None or handle==ctypes.c_void_p(-1).value:
-        raise ctypes.WinError(ctypes.get_last_error())
-    try:
-        fd=msvcrt.open_osfhandle(int(handle),os.O_RDONLY|os.O_BINARY)
-    except BaseException:
-        close(handle)
-        raise
-    try:
-        # Ownership of the Windows handle moved to the CRT fd and this stream.
-        return os.fdopen(fd,"rb")
-    except BaseException:
-        os.close(fd)
-        raise
+    # MoveFileExW (used by os.replace) cannot replace an open destination,
+    # even when that reader grants FILE_SHARE_DELETE. JSON is already read
+    # in full by json.load, so retain its bytes instead of a live disk handle.
+    # A concurrent writer can retry the brief read, then publish a new file
+    # while the caller continues to parse this consistent previous snapshot.
+    with open(name,"rb") as handle:
+        return BytesIO(handle.read())
 
 
 def read_json(path):

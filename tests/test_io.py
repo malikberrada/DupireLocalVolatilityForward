@@ -73,12 +73,12 @@ def test_open_reader_allows_atomic_replacement(tmp_path):
     assert _io.read_json(path)=={"stage":"new"}
 
 
-@pytest.mark.skipif(os.name!="nt",reason="Native Windows sharing API requires a Windows test host")
+@pytest.mark.skipif(os.name!="nt",reason="Windows path and replacement semantics require a Windows test host")
 def test_windows_shared_reader_handles_long_unicode_path(tmp_path):
     parent=tmp_path
     while len(str(parent))<260:
-        parent=parent/"long_windows_path"
-    path=parent/"etat.json"
+        parent=parent/"long_windows_path_\u00e9_\U0001f9ea"
+    path=parent/"\u00e9tat.json"
     _io.atomic_json(path,{"stage":"ready"})
     with _io._open_shared_read(path) as reader:
         _io.atomic_json(path,{"stage":"done"})
