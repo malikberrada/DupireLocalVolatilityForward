@@ -44,7 +44,10 @@ def project_reference(root, claim_id):
     text=path.read_text(encoding='utf-8')
     if claim_id=='C1':
         definitions=text[text.index('## 2.'):text.index('## 3.')]
-        theorem=text[text.index('## 4.'):text.index('### Preuve',text.index('## 4.'))]
+        start=text.index('## 4.')
+        proof=re.search(r'^### (?:Proof|Preuve)\b',text[start:],re.MULTILINE)
+        require(proof is not None,'Missing proof heading in project reference: '+name)
+        theorem=text[start:start+proof.start()]
         selection=definitions+'\n'+theorem
     elif claim_id=='C2':
         selection=text[text.index('## 1.'):text.index('## 2.')]+text[text.index('## 4.'):text.index('## 5.')]
