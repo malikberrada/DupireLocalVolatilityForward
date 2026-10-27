@@ -475,6 +475,24 @@ def test_project_reference_contains_equations_and_is_labelled_as_project_work():
         assert ref['text'].strip()
 
 
+@pytest.mark.parametrize('proof_heading', ['Proof', 'Preuve'])
+def test_project_reference_preserves_the_statement_in_both_document_languages(tmp_path, proof_heading):
+    from dossier.reading_recovery import project_reference
+    import re
+
+    expected = project_reference(r.ROOT, 'C1')
+    name = expected['file']
+    text = (r.ROOT/'literature'/name).read_text(encoding='utf-8')
+    text = re.sub(r'^### (?:Proof|Preuve)\b', '### '+proof_heading, text, flags=re.MULTILINE)
+    (tmp_path/'literature').mkdir()
+    path = tmp_path/'literature'/name
+    path.write_text(text, encoding='utf-8')
+
+    actual = project_reference(tmp_path, 'C1')
+    assert actual['text'] == expected['text']
+    assert actual['source_sha256'] == sha(path)
+
+
 def test_workbook_diagnosis_does_not_invent_failure_causes(campaign):
     from dossier.reading_recovery import diagnose
     d=diagnose(campaign/'lectures_a_valider.json')

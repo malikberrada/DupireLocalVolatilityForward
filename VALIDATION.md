@@ -1,27 +1,42 @@
-# Validation du 27 octobre 2026
+# Validation record for 27 October 2026
 
-Les vérifications ont été exécutées dans un nouvel environnement virtuel Python **3.12.14**, sous Linux, avec les versions exactes de `requirements-lock.txt`. Le moteur a été installé depuis les sources de ce dépôt. Aucun paquet de l’environnement utilisateur n’a été utilisé. La livraison ZIP a ensuite été extraite dans un autre dossier, réinstallée dans un second environnement virtuel indépendant puis contrôlée : les 315 tests et les 16 étapes du parcours principal passent également après extraction.
+This record distinguishes the original local validation from the subsequent GitHub Actions runs. The numerical research inputs and archived receipts remain unchanged.
 
-| Contrôle | Résultat |
+## Native GitHub Actions validation
+
+The Windows JSON checkpoint fix was validated in [workflow run 40526125833](https://github.com/malikberrada/DupireLocalVolatilityForward/actions/runs/40526125833), head commit `07ee8124dce96535f988831de813af4ef0011061`, then merged into `main` as `173d1cf0c941a14669bb14fd65ac438f7796a0de`.
+
+| Platform | Tests passed | Tests skipped | Core reproduction |
+|---|---:|---:|---|
+| Ubuntu | 315 | 3 | All 16 steps passed |
+| Windows | 316 | 2 | All 16 steps passed |
+
+The workflow installs Python 3.12 and the locked CPU dependencies, tests the source tree, runs the core reproduction from the original raw inputs, and uploads the evidence. The native Windows sharing test runs on Windows; PyTorch and CUDA tests depend on optional runtime availability. These results establish native CPU validation on both platforms. No native CUDA or macOS validation is recorded here.
+
+## Original local and extracted-archive validation
+
+The initial preparation used a fresh Linux Python **3.12.14** virtual environment with the exact versions in `requirements-lock.txt`. The ZIP was then extracted elsewhere and installed into a second independent environment. Both the 315 passing tests and the 16 core steps passed after extraction.
+
+| Check | Recorded result |
 |---|---|
-| Tests du moteur, collecteur, téléchargements et audits | **315 réussites, 3 tests optionnels ignorés** |
-| Profil `core` | Réussi : preuves, ajustement polynomial, rejeu brut, courbes, deux schémas et critère conjoint, traçabilité |
-| Profil `all` | Réussi : quatre instantanés historiques et douze cas d’étude recalculés |
-| Comparaison de l’étude | **108/108 modèles LP et conclusions identiques** |
-| Preuves archivées de l’étude | 70 certificats duals exacts et 32 témoins primaux numériques revérifiés ; 6 résultats indéterminés conservés |
-| Nouveau certificat dual | 10 termes, marge exacte `4739/384000000` |
-| Séparation robuste aux spreads | Écart exact `1153/128000000` |
-| Construction polynomiale | Certificat d’origine vérifié ; nouvel ajustement certifié au niveau garanti 2 |
-| Construction pip | Roue Python et distribution source construites avec succès, sans CMake |
-| Dépendances installées | `pip check` ne trouve aucune incompatibilité |
-| Dépendances Windows Python 3.12 x64 | Toutes les roues du verrou ont été résolues et téléchargées |
+| Engine, collector, download, and audit tests | 315 passed, 3 optional or platform-specific skips |
+| `core` profile | Proofs, polynomial fit, raw replay, curves, separate and joint criteria, provenance passed |
+| `all` profile | Four historical snapshots and twelve synthetic cases recomputed |
+| Synthetic comparison | 108/108 LP models and conclusions matched |
+| Archived synthetic evidence | 70 exact dual certificates for stored binary64 LPs, 32 numerical primal witnesses, and 6 indeterminate outcomes preserved |
+| Additional dual | 10 nonzero terms; exact margin `4739/384000000` |
+| Positive-spread separation | Exact gap `1153/128000000` |
+| Polynomial construction | Original certificate verified; new fit certified at sufficient level 2 |
+| Packaging | Python wheel and source distribution built without CMake |
+| Dependency consistency | `pip check` reported no conflicts |
+| Windows dependency resolution | All locked Python 3.12 x64 wheels resolved and downloaded before the native CI run |
 
-Les trois tests ignorés dépendent de l’API de partage de fichiers native Windows, de PyTorch ou d’un GPU CUDA. **L’exécution native Windows et CUDA n’a pas été réalisée ici.** Le workflow GitHub Actions prépare les tests CPU sur Ubuntu et Windows ; son exécution distante nécessite la publication du dépôt.
+## Acquisition and interpretation
 
-Un test de téléchargement Yahoo réel le 27 octobre 2026, de **14:12:10 à 14:12:29 UTC**, a reçu six chaînes sans erreur réseau. La collecte a ensuite été rejetée pour incohérence de parité/qualité sur certaines échéances. Le code de sortie non nul et la conservation des tentatives sont attendus dans ce cas ; aucune réussite mathématique n’a été déclarée pour cette nouvelle collecte. Ces nouvelles données ne remplacent pas les quatre entrées historiques du dépôt.
+A fresh Yahoo test on 27 October 2026, **14:12:10 to 14:12:29 UTC**, received six chains without a network error. Parity/quality checks subsequently rejected some expiries. The nonzero exit and retained attempts are expected for rejected inputs; the test did not establish a successful calibration for that new capture. It did not replace the four historical inputs.
 
-La route de téléchargement des données figées par GitHub est couverte par des tests de contrôle des octets, des URLs à commit complet et du refus des contenus modifiés. Le dépôt distant n’étant pas encore publié, cette route n’a pas été exercée contre une URL de ce nouveau dépôt. Les mêmes données sont présentes dans l’archive livrée et ont été rejouées intégralement.
+Frozen-data downloads verify byte sizes, full-commit URLs, and SHA-256 hashes, and reject altered content. The repository is now published; the original local `validation/` receipts describe its preparation before publication. Reproduction from a pinned GitHub download is documented in [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
 
-Les reçus lisibles par programme sont dans `validation/` : environnement, tests, parcours principal/complet, comparaison détaillée de l’étude et acquisition actuelle. Les preuves de référence inchangées sont dans `reference/`. Les commandes complètes et journaux sont régénérés dans `runs/` à chaque exécution.
+Machine-readable local receipts are in `validation/`; original evidence is in `reference/`. New runs generate their own commands, logs, summaries, environment record, and output hashes under the selected output directory. A documentation revision does not relabel historical receipts as new experiments.
 
-La validation des calculs ne certifie pas une priorité scientifique, une extension continue ou une synchronisation des bid/ask.
+Computational validation establishes the stated calculations and software checks. Scientific priority, continuous extension, quote synchronization, and correctness of external market measurements remain separate questions.

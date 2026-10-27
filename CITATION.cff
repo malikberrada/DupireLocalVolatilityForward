@@ -1,10 +1,12 @@
 cff-version: 1.2.0
 message: "Please cite this software and the exact Git commit used for reproduction."
 type: software
-title: "Discrete Dupire: feasibility and reproducible certificates"
+title: "Dupire Local Volatility: Joint Feasibility and Observation Preserving Refinement"
 authors:
   - family-names: Berrada
     given-names: Abdelmalik
 version: 0.1.6
 date-released: 2026-10-27
 license: MIT
+repository-code: "https://github.com/malikberrada/DupireLocalVolatilityForward"
+url: "https://github.com/malikberrada/DupireLocalVolatilityForward"
